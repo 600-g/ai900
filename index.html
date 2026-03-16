@@ -20,6 +20,19 @@
   --ms-text: #323130;
   --ms-muted: #605e5c;
 }
+[data-theme="dark"] { --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a; }
+[data-theme="dark"] .header { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .top-bar { background:var(--ms-dark); }
+[data-theme="dark"] .mode-card { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .mode-card:hover { box-shadow:0 4px 16px rgba(0,120,212,.2); }
+[data-theme="dark"] .mode-card.selected { background:#1e3a5f; border-color:var(--ms-blue); }
+[data-theme="dark"] .po-btn { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .opt { border-color:var(--ms-border); }
+[data-theme="dark"] .opt:hover { background:#2a3441; }
+[data-theme="dark"] .opt-key { background:var(--ms-border); }
+[data-theme="dark"] .nav-links a.active { background:#1e3a5f; }
+[data-theme="dark"] .nav-links a:hover { background:rgba(255,255,255,.08); }
+[data-theme="dark"] .explanation { background:#1e3a5f; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--ms-bg); color: var(--ms-text); min-height: 100vh; }
 
@@ -28,7 +41,7 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
 .header h1 { font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
 .header h1 .badge-exam { background: var(--ms-blue); color: #fff; font-size: .7rem; padding: 3px 10px; border-radius: 4px; font-weight: 600; }
 .nav-links { display: flex; gap: 4px; }
-.nav-links a { text-decoration: none; color: var(--ms-muted); padding: 8px 14px; border-radius: 6px; font-size: .9rem; font-weight: 500; transition: all .15s; display: flex; align-items: center; gap: 6px; }
+.nav-links a { text-decoration: none; color: var(--ms-muted); padding: 8px 14px; border-radius: 6px; font-size: .9rem; font-weight: 500; transition: all .15s; display: flex; align-items: center; gap: 6px; white-space:nowrap; }
 .nav-links a:hover { background: #f3f2f1; color: var(--ms-text); }
 .nav-links a.active { color: var(--ms-blue); background: #e8f0fe; }
 
@@ -180,8 +193,13 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
   .quiz-top { flex-wrap: wrap; gap: 8px; }
   .q-actions { flex-wrap: wrap; }
   .q-actions > * { flex: 1 1 auto; }
+  .header { flex-direction:column; align-items:flex-start; }
+  .nav-links { flex-wrap:wrap; }
 }
 </style>
+<script>
+(function(){ if(localStorage.getItem('ai900_dark_mode')==='true') document.documentElement.setAttribute('data-theme','dark'); })();
+</script>
 </head>
 <body>
 
@@ -194,6 +212,8 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
     <a href="index.html" class="active"><i class="bi bi-pencil-square"></i> 시험</a>
     <a href="review.html"><i class="bi bi-journal-x"></i> 오답노트</a>
     <a href="stats.html"><i class="bi bi-bar-chart-line"></i> 성적표</a>
+    <a href="generate.html"><i class="bi bi-robot"></i> AI생성</a>
+    <a href="settings.html"><i class="bi bi-gear"></i> 설정</a>
   </div>
 </div>
 
@@ -313,6 +333,9 @@ async function init() {
   try {
     const res = await fetch('data/questions.json');
     ALL = await res.json();
+    // AI 생성 문제 병합
+    const generated = JSON.parse(localStorage.getItem('ai900_generated') || '[]');
+    if (generated.length > 0) ALL = ALL.concat(generated);
     document.getElementById('total-q').textContent = ALL.length;
     buildDomainWeights();
     buildPracticeOpts();
@@ -538,6 +561,10 @@ function submitAnswer() {
   if (mode === 'practice') {
     revealed[current] = true;
     renderQ();
+    // 자동 넘기기
+    if (localStorage.getItem('ai900_auto_next') === 'true' && current < QUIZ.length - 1) {
+      setTimeout(() => { if (revealed[current]) nextQuestion(); }, 2000);
+    }
   }
 }
 

@@ -9,6 +9,13 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 :root { --ms-blue:#0078d4; --ms-dark:#1b1b1b; --ms-green:#107c10; --ms-red:#d13438; --ms-orange:#ff8c00; --ms-bg:#f3f2f1; --ms-card:#fff; --ms-border:#e1dfdd; --ms-text:#323130; --ms-muted:#605e5c; }
+[data-theme="dark"] { --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a; }
+[data-theme="dark"] .header { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .top-bar { background:var(--ms-dark); }
+[data-theme="dark"] .nav-links a.active { background:#1e3a5f; }
+[data-theme="dark"] .nav-links a:hover { background:rgba(255,255,255,.08); }
+[data-theme="dark"] .session-table th { border-color:var(--ms-border); }
+[data-theme="dark"] .session-table td { border-color:var(--ms-border); }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg); color:var(--ms-text); }
 .top-bar { background:var(--ms-dark); color:#fff; padding:8px 20px; font-size:.8rem; }
@@ -16,9 +23,10 @@ body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg);
 .header h1 { font-size:1.3rem; font-weight:700; display:flex; align-items:center; gap:10px; }
 .header h1 .badge-exam { background:var(--ms-blue); color:#fff; font-size:.7rem; padding:3px 10px; border-radius:4px; }
 .nav-links { display:flex; gap:4px; }
-.nav-links a { text-decoration:none; color:var(--ms-muted); padding:8px 14px; border-radius:6px; font-size:.9rem; font-weight:500; display:flex; align-items:center; gap:6px; }
-.nav-links a:hover { background:#f3f2f1; color:var(--ms-text); }
+.nav-links a { text-decoration:none; color:var(--ms-muted); padding:8px 14px; border-radius:6px; font-size:.9rem; font-weight:500; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+.nav-links a:hover { background:rgba(0,0,0,.05); color:var(--ms-text); }
 .nav-links a.active { color:var(--ms-blue); background:#e8f0fe; }
+@media (max-width:600px) { .stat-grid { grid-template-columns:repeat(2,1fr); } .session-table { font-size:.8rem; } .header { flex-direction:column; align-items:flex-start; } .nav-links { flex-wrap:wrap; } }
 .wrap { max-width:860px; margin:0 auto; padding:24px 16px; }
 
 .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px; }
@@ -42,9 +50,10 @@ body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg);
 .empty p { color:var(--ms-muted); margin-top:12px; }
 
 .reset-btn { display:block; margin:20px auto; padding:12px 24px; background:var(--ms-red); color:#fff; border:none; border-radius:8px; font-size:.9rem; font-weight:600; cursor:pointer; }
-
-@media (max-width:600px) { .stat-grid { grid-template-columns:repeat(2,1fr); } .session-table { font-size:.8rem; } }
 </style>
+<script>
+(function(){ if(localStorage.getItem('ai900_dark_mode')==='true') document.documentElement.setAttribute('data-theme','dark'); })();
+</script>
 </head>
 <body>
 
@@ -55,6 +64,8 @@ body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg);
     <a href="index.html"><i class="bi bi-pencil-square"></i> 시험</a>
     <a href="review.html"><i class="bi bi-journal-x"></i> 오답노트</a>
     <a href="stats.html" class="active"><i class="bi bi-bar-chart-line"></i> 성적표</a>
+    <a href="generate.html"><i class="bi bi-robot"></i> AI생성</a>
+    <a href="settings.html"><i class="bi bi-gear"></i> 설정</a>
   </div>
 </div>
 
