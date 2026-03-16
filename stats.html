@@ -14,12 +14,16 @@
 [data-theme="dark"] .top-bar { background:var(--ms-dark); }
 [data-theme="dark"] .nav-links a.active { background:#1e3a5f; }
 [data-theme="dark"] .nav-links a:hover { background:rgba(255,255,255,.08); }
-[data-theme="dark"] .session-table th { border-color:var(--ms-border); }
-[data-theme="dark"] .session-table td { border-color:var(--ms-border); }
+[data-theme="dark"] .sg { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .card-section { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .session-table th { border-color:var(--ms-border); color:var(--ms-muted); }
+[data-theme="dark"] .session-table td { border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .empty i { color:var(--ms-blue); }
+[data-theme="dark"] .empty p { color:var(--ms-muted); }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg); color:var(--ms-text); }
 .top-bar { background:var(--ms-dark); color:#fff; padding:8px 20px; font-size:.8rem; }
-.header { background:#fff; border-bottom:1px solid var(--ms-border); padding:16px 20px; display:flex; align-items:center; justify-content:space-between; }
+.header { background:var(--ms-card); border-bottom:1px solid var(--ms-border); padding:16px 20px; display:flex; align-items:center; justify-content:space-between; }
 .header h1 { font-size:1.3rem; font-weight:700; display:flex; align-items:center; gap:10px; }
 .header h1 .badge-exam { background:var(--ms-blue); color:#fff; font-size:.7rem; padding:3px 10px; border-radius:4px; }
 .nav-links { display:flex; gap:4px; }
