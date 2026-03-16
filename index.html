@@ -2,413 +2,357 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI-900 모의시험</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-900 문제풀이</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f5f5f5;color:#222}
-.btn{border:none;border-radius:12px;cursor:pointer;font-weight:700;transition:all .2s}
-.btn:active{transform:scale(.97)}
+:root {
+  --primary: #0078d4;
+  --success: #107c10;
+  --danger: #d13438;
+  --bg: #f4f4f4;
+  --card-bg: #fff;
+  --text: #323130;
+  --text-muted: #605e5c;
+  --border: #edebe9;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', -apple-system, sans-serif; margin: 0; padding: 0; }
+.navbar { background: var(--primary); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+.navbar h1 { color: #fff; font-size: 1.2rem; margin: 0; font-weight: 600; }
+.navbar a { color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; margin-left: 16px; }
+.navbar a:hover { color: #fff; }
+.container-custom { max-width: 720px; margin: 0 auto; padding: 20px 16px; }
+
+/* 시작 화면 */
+.setup-card { background: var(--card-bg); border-radius: 12px; padding: 32px 24px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.setup-card h2 { font-size: 1.4rem; margin-bottom: 24px; text-align: center; }
+.domain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-bottom: 24px; }
+.domain-btn { padding: 10px; border: 2px solid var(--border); border-radius: 8px; background: #fff; cursor: pointer; text-align: center; font-size: .85rem; transition: all .15s; }
+.domain-btn:hover { border-color: var(--primary); }
+.domain-btn.active { border-color: var(--primary); background: #e8f0fe; color: var(--primary); font-weight: 600; }
+.count-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; justify-content: center; }
+.count-btn { padding: 10px 20px; border: 2px solid var(--border); border-radius: 8px; background: #fff; cursor: pointer; font-size: 1rem; transition: all .15s; }
+.count-btn:hover { border-color: var(--primary); }
+.count-btn.active { border-color: var(--primary); background: #e8f0fe; color: var(--primary); font-weight: 600; }
+.start-btn { display: block; width: 100%; padding: 14px; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+.start-btn:hover { background: #106ebe; }
+.start-btn:disabled { background: #bbb; cursor: not-allowed; }
+
+/* 퀴즈 화면 */
+.quiz-card { background: var(--card-bg); border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.progress-bar-wrap { background: var(--border); border-radius: 6px; height: 8px; margin-bottom: 16px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 6px; transition: width .3s; }
+.quiz-meta { display: flex; justify-content: space-between; font-size: .85rem; color: var(--text-muted); margin-bottom: 16px; }
+.quiz-question { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; font-weight: 500; }
+.quiz-question img { max-width: 100%; border-radius: 8px; margin-top: 12px; }
+.option-list { list-style: none; padding: 0; margin: 0 0 20px; }
+.option-item { padding: 14px 16px; border: 2px solid var(--border); border-radius: 8px; margin-bottom: 10px; cursor: pointer; transition: all .15s; display: flex; align-items: flex-start; gap: 10px; }
+.option-item:hover { border-color: var(--primary); background: #fafafa; }
+.option-item.selected { border-color: var(--primary); background: #e8f0fe; }
+.option-item.correct { border-color: var(--success); background: #dff6dd; }
+.option-item.wrong { border-color: var(--danger); background: #fde7e9; }
+.option-item.disabled { pointer-events: none; }
+.option-label { font-weight: 600; color: var(--primary); min-width: 24px; }
+.explanation-box { background: #f0f6ff; border-left: 4px solid var(--primary); padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 20px; font-size: .95rem; line-height: 1.6; display: none; }
+.btn-row { display: flex; gap: 10px; }
+.submit-btn, .next-btn { flex: 1; padding: 12px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+.submit-btn { background: var(--primary); color: #fff; }
+.submit-btn:hover { background: #106ebe; }
+.submit-btn:disabled { background: #bbb; cursor: not-allowed; }
+.next-btn { background: #e8f0fe; color: var(--primary); display: none; }
+.next-btn:hover { background: #d0e2fc; }
+
+/* 결과 화면 */
+.result-card { background: var(--card-bg); border-radius: 12px; padding: 32px 24px; box-shadow: 0 2px 8px rgba(0,0,0,.08); text-align: center; }
+.result-score { font-size: 3rem; font-weight: 700; color: var(--primary); }
+.result-label { font-size: 1rem; color: var(--text-muted); margin-bottom: 20px; }
+.result-detail { font-size: .95rem; margin-bottom: 8px; }
+.result-actions { display: flex; gap: 10px; margin-top: 24px; justify-content: center; flex-wrap: wrap; }
+.result-actions a, .result-actions button { padding: 12px 24px; border-radius: 8px; font-size: .95rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; }
+.btn-primary-custom { background: var(--primary); color: #fff; }
+.btn-outline-custom { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
+
+/* 모바일 */
+@media (max-width: 480px) {
+  .container-custom { padding: 12px; }
+  .setup-card, .quiz-card, .result-card { padding: 20px 16px; }
+  .domain-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 </head>
 <body>
-<div id="root"></div>
+
+<nav class="navbar">
+  <h1>AI-900 문제풀이</h1>
+  <div>
+    <a href="review.html">오답복습</a>
+    <a href="stats.html">통계</a>
+  </div>
+</nav>
+
+<div class="container-custom">
+  <!-- 시작 화면 -->
+  <div id="setup-screen" class="setup-card">
+    <h2>시험 준비 시작</h2>
+    <p style="text-align:center;color:var(--text-muted);margin-bottom:20px;">도메인과 문제 수를 선택하세요</p>
+
+    <label style="font-weight:600;margin-bottom:8px;display:block;">도메인 선택</label>
+    <div class="domain-grid" id="domain-grid"></div>
+
+    <label style="font-weight:600;margin-bottom:8px;display:block;">문제 수</label>
+    <div class="count-grid" id="count-grid"></div>
+
+    <button class="start-btn" id="start-btn" onclick="startQuiz()">시작하기</button>
+    <p id="question-info" style="text-align:center;color:var(--text-muted);font-size:.85rem;margin-top:12px;"></p>
+  </div>
+
+  <!-- 퀴즈 화면 -->
+  <div id="quiz-screen" style="display:none;">
+    <div class="quiz-card">
+      <div class="progress-bar-wrap"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="quiz-meta">
+        <span id="quiz-counter">1 / 10</span>
+        <span id="quiz-domain" class="badge bg-secondary"></span>
+      </div>
+      <div class="quiz-question" id="quiz-question"></div>
+      <ul class="option-list" id="option-list"></ul>
+      <div class="explanation-box" id="explanation-box"></div>
+      <div class="btn-row">
+        <button class="submit-btn" id="submit-btn" onclick="submitAnswer()">답 제출</button>
+        <button class="next-btn" id="next-btn" onclick="nextQuestion()">다음 문제 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 결과 화면 -->
+  <div id="result-screen" style="display:none;">
+    <div class="result-card">
+      <div class="result-score" id="result-score">0%</div>
+      <div class="result-label">정답률</div>
+      <div class="result-detail" id="result-detail"></div>
+      <div class="result-detail" id="result-wrong-count"></div>
+      <div class="result-actions">
+        <button class="btn-primary-custom" onclick="location.reload()">다시 풀기</button>
+        <a href="review.html" class="btn-outline-custom">오답 복습</a>
+        <a href="stats.html" class="btn-outline-custom">통계 보기</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-var B=[
-{d:"AI워크로드",q:"회사가 고객 서비스 팀을 운영하여 전화와 이메일로 고객을 지원합니다. 회사가 웹챗 봇을 개발하여 일반적인 고객 질문에 자동 답변하려 합니다. 이 솔루션으로 기대할 수 있는 비즈니스 이점은?",o:["매출 증가","고객 서비스 상담원의 업무량 감소","제품 신뢰성 향상","시스템 유지비 절감"],a:1,e:"웹챗 봇은 반복적인 질문을 자동 처리하여 상담원의 업무 부담을 줄여줍니다."},
-{d:"AI워크로드",q:"시계열 데이터에서 비정상적인 변화를 자동으로 감지하는 AI 솔루션을 구축하려 합니다. 이는 어떤 AI 워크로드에 해당합니까?",o:["컴퓨터 비전","자연어 처리","이상 탐지(Anomaly Detection)","생성형 AI"],a:2,e:"시계열 데이터의 비정상 패턴 감지는 이상 탐지(Anomaly Detection) 워크로드입니다."},
-{d:"AI워크로드",q:"Azure Cognitive Search를 활용하여 대량의 비정형 문서에서 인사이트를 추출하는 솔루션을 구축하려 합니다. 이는 어떤 AI 워크로드에 해당합니까?",o:["컴퓨터 비전","지식 마이닝(Knowledge Mining)","이상 탐지","대화형 AI"],a:1,e:"비정형 문서에서 정보를 추출하는 것은 지식 마이닝 워크로드입니다."},
-{d:"AI워크로드",q:"병원에서 X-ray 이미지를 분석하여 폐렴 여부를 사전 진단하는 AI 시스템을 도입하려 합니다. 이때 의사가 최종 결정을 내리도록 설계해야 합니다. 이 요구사항은 어떤 책임 AI 원칙과 관련됩니까?",o:["투명성","공정성","포용성","책임감(Accountability)"],a:3,e:"AI가 아닌 사람이 최종 결정을 내리도록 하는 것은 책임감 원칙입니다."},
-{d:"AI워크로드",q:"이메일, 전화, 라이브챗 등 여러 채널에서 고객 질문에 자동으로 응답하는 AI 솔루션을 구축하려 합니다. 이는 어떤 AI 워크로드에 해당합니까?",o:["ML 회귀 분석","컴퓨터 비전","대화형 AI(Conversational AI)","이상 탐지"],a:2,e:"여러 채널에서 자동 응답하는 것은 대화형 AI 워크로드입니다."},
-{d:"AI워크로드",q:"공장 장비에 센서를 부착하여 데이터를 수집하고, 장비 고장을 사전에 감지하려 합니다. 어떤 AI 워크로드를 사용해야 합니까?",o:["자연어 처리","이상 탐지(Anomaly Detection)","이미지 분류","생성형 AI"],a:1,e:"센서 데이터로 고장을 사전 감지하는 것은 이상 탐지 워크로드입니다."},
-{d:"AI워크로드",q:"매장 CCTV 영상을 분석하여 실시간으로 방문 고객 수를 세고 동선을 추적하는 솔루션을 구축하려 합니다. 어떤 AI 워크로드에 해당합니까?",o:["자연어 처리","이상 탐지","컴퓨터 비전(Computer Vision)","생성형 AI"],a:2,e:"영상에서 사람을 감지하고 추적하는 것은 컴퓨터 비전 워크로드입니다."},
-{d:"AI워크로드",q:"온라인 결제 시스템에서 실시간으로 사기 거래를 탐지하는 AI 솔루션을 구축하려 합니다. 어떤 AI 워크로드를 사용해야 합니까?",o:["생성형 AI","이상 탐지(Anomaly Detection)","컴퓨터 비전","대화형 AI"],a:1,e:"정상 패턴에서 벗어난 거래를 감지하는 것은 이상 탐지입니다."},
-{d:"AI워크로드",q:"호텔 예약 시스템에 24시간 운영되는 자동 응답 봇을 도입하여 객실 예약, 변경, 취소를 처리하려 합니다. 어떤 AI 워크로드에 해당합니까?",o:["이상 탐지","컴퓨터 비전","대화형 AI(Conversational AI)","클러스터링"],a:2,e:"자동 응답으로 예약을 처리하는 것은 대화형 AI 워크로드입니다."},
-{d:"AI워크로드",q:"Azure AI 서비스를 사용하기 위해 반드시 필요한 것은 무엇입니까?",o:["Azure 구독과 리소스 그룹","물리 GPU 서버","특별한 프로그래밍 언어","Microsoft 365 라이선스"],a:0,e:"Azure AI 서비스 사용에는 Azure 구독과 리소스가 필요합니다."},
-{d:"AI워크로드",q:"의료 영상 분석 AI 시스템에서 특정 인종이나 성별에 따라 진단 정확도가 달라지는 문제가 발견되었습니다. 이는 어떤 책임 AI 원칙을 위반한 것입니까?",o:["투명성","포용성","신뢰성","공정성(Fairness)"],a:3,e:"특정 그룹에 따라 성능이 달라지는 것은 공정성 원칙 위반입니다."},
-{d:"AI워크로드",q:"귀사는 AI 기반 채용 시스템을 도입했습니다. 이 시스템이 특정 대학 출신을 우대하는 편향이 발견되었습니다. 위반된 책임 AI 원칙은?",o:["투명성","공정성(Fairness)","포용성","신뢰성"],a:1,e:"특정 그룹을 우대하거나 차별하는 것은 공정성 원칙 위반입니다."},
-{d:"책임AI",q:"장애가 있는 사용자도 AI 솔루션의 혜택을 받을 수 있도록 설계해야 합니다. 이는 Microsoft의 어떤 책임 AI 원칙에 해당합니까?",o:["공정성","포용성(Inclusiveness)","신뢰성","책임감"],a:1,e:"모든 사용자가 혜택을 받도록 하는 것은 포용성 원칙입니다."},
-{d:"책임AI",q:"AI 시스템이 특정 결정을 내린 이유를 사용자가 이해할 수 있어야 합니다. 이는 어떤 책임 AI 원칙에 해당합니까?",o:["투명성(Transparency)","포용성","공정성","개인정보 보호"],a:0,e:"AI 결정의 이유를 설명할 수 있어야 하는 것은 투명성 원칙입니다."},
-{d:"책임AI",q:"Azure Machine Learning의 자동화된 ML(AutoML) UI를 사용하여 모델을 빌드합니다. Microsoft의 투명성 원칙을 충족하려면 어떻게 해야 합니까?",o:["Validation type을 Auto로 설정","Explain best model을 활성화","Primary metric을 accuracy로 설정","Max concurrent iterations를 0으로 설정"],a:1,e:"Explain best model을 활성화하면 모델의 결정 과정을 설명할 수 있어 투명성을 충족합니다."},
-{d:"책임AI",q:"사용자의 개인 데이터를 무단으로 수집하여 AI 모델 학습에 사용했습니다. 위반된 책임 AI 원칙은?",o:["신뢰성","개인정보 보호 및 보안(Privacy & Security)","포용성","투명성"],a:1,e:"개인 데이터의 무단 사용은 개인정보 보호 원칙 위반입니다."},
-{d:"책임AI",q:"AI 챗봇이 예기치 않은 입력에 대해 부적절한 응답을 생성하지 않도록 해야 합니다. 이는 어떤 책임 AI 원칙과 관련됩니까?",o:["공정성","투명성","신뢰성 및 안전성(Reliability & Safety)","책임감"],a:2,e:"예기치 않은 상황에서도 안전하게 동작해야 하는 것은 신뢰성 및 안전성 원칙입니다."},
-{d:"책임AI",q:"귀사는 AI 시스템의 영향을 검토하고 감독하기 위해 거버넌스 위원회를 구성했습니다. 이는 어떤 책임 AI 원칙을 실현하는 것입니까?",o:["투명성","공정성","책임감(Accountability)","포용성"],a:2,e:"AI에 대한 감독과 거버넌스 체계를 구축하는 것은 책임감 원칙입니다."},
-{d:"책임AI",q:"시각 장애인을 위해 화면 읽기 프로그램과 호환되는 AI 기반 웹 애플리케이션을 개발해야 합니다. 이는 어떤 원칙을 따르는 것입니까?",o:["투명성","공정성","신뢰성","포용성(Inclusiveness)"],a:3,e:"장애인도 사용할 수 있도록 설계하는 것은 포용성 원칙입니다."},
-{d:"책임AI",q:"AI가 생성한 콘텐츠에 대해 사용자에게 AI가 만든 것임을 명확히 표시해야 합니다. 이는 어떤 원칙입니까?",o:["포용성","투명성(Transparency)","공정성","신뢰성"],a:1,e:"AI 생성 콘텐츠임을 알리는 것은 투명성 원칙입니다."},
-{d:"책임AI",q:"온라인 콘텐츠 모더레이션 AI가 혐오 발언을 정확히 필터링하면서도 정상 발언을 잘못 차단하지 않아야 합니다. 이는 어떤 원칙과 가장 관련됩니까?",o:["포용성","투명성","신뢰성 및 안전성(Reliability & Safety)","공정성"],a:2,e:"정확하고 안전한 필터링은 신뢰성 및 안전성 원칙입니다."},
-{d:"책임AI",q:"Microsoft의 책임 AI 원칙 6가지에 해당하지 않는 것은?",o:["공정성, 포용성","신뢰성 및 안전성, 개인정보 보호","투명성, 책임감","수익성, 효율성"],a:3,e:"수익성과 효율성은 책임 AI 원칙에 포함되지 않습니다."},
-{d:"책임AI",q:"대출 심사 AI가 지원자의 우편번호를 기반으로 결정을 내려, 특정 지역 거주자에게 불이익을 주고 있습니다. 가장 관련된 책임 AI 원칙은?",o:["투명성","공정성(Fairness)","책임감","개인정보 보호"],a:1,e:"특정 그룹에 불이익을 주는 편향은 공정성 원칙 위반입니다."},
-{d:"책임AI",q:"AI 개발팀이 모델의 의사결정 과정을 문서화하고 개발자에게 API 사용 가이드를 제공합니다. 이는 어떤 원칙을 지원합니까?",o:["투명성(Transparency)","공정성","포용성","신뢰성"],a:0,e:"문서화와 사용 가이드 제공은 투명성을 지원합니다."},
-{d:"책임AI",q:"자율주행 차량의 AI 시스템이 예기치 않은 도로 상황에서도 안전하게 대응할 수 있어야 합니다. 가장 관련된 원칙은?",o:["공정성","포용성","신뢰성 및 안전성(Reliability & Safety)","투명성"],a:2,e:"예기치 않은 상황에서의 안전한 대응은 신뢰성 및 안전성입니다."},
-{d:"ML기본",q:"머신러닝 프로세스에서 학습 데이터와 평가 데이터를 어떻게 분할해야 합니까?",o:["Features로 학습하고 Labels로 평가","데이터를 행 단위로 무작위 분할","Labels로 학습하고 Features로 평가","데이터를 열 단위로 무작위 분할"],a:1,e:"Split Data 모듈은 행 단위로 무작위 분할하여 학습/평가 세트를 만듭니다."},
-{d:"ML기본",q:"의료 연구 프로젝트에서 익명화된 뇌 스캔 이미지를 사전 정의된 뇌출혈 유형으로 분류하려 합니다. 사람이 검토하기 전에 다른 유형을 조기 감지해야 합니다. 어떤 ML 유형을 사용해야 합니까?",o:["클러스터링","회귀","분류(Classification)","이상 탐지"],a:2,e:"사전 정의된 범주로 이미지를 분류하는 것은 분류 모델입니다."},
-{d:"ML기본",q:"부동산 회사가 주택의 면적, 방 수, 위치 등의 특성을 기반으로 판매 가격을 예측하려 합니다. 어떤 ML 유형을 사용해야 합니까?",o:["분류","회귀(Regression)","클러스터링","강화학습"],a:1,e:"연속적인 숫자(가격)를 예측하는 것은 회귀 모델입니다."},
-{d:"ML기본",q:"기후 연구팀이 향후 10년간 해수면 높이를 예측하는 모델을 만들려 합니다. 어떤 ML 유형에 해당합니까?",o:["분류","회귀(Regression)","클러스터링","강화학습"],a:1,e:"미래의 연속적인 수치를 예측하는 것은 회귀입니다."},
-{d:"ML기본",q:"온라인 쇼핑몰에서 구매 패턴이 유사한 고객끼리 자동으로 그룹화하려 합니다. 레이블이 없는 데이터를 사용합니다. 어떤 ML 유형을 사용해야 합니까?",o:["분류","회귀","클러스터링(Clustering)","이상 탐지"],a:2,e:"레이블 없이 유사한 항목을 그룹화하는 것은 클러스터링입니다."},
-{d:"ML기본",q:"택시 요금 예측 모델에서 '이동 거리', '승차 시간', '승객 수'는 무엇에 해당합니까?",o:["Label","Feature","Validation set","Inference"],a:1,e:"입력 변수(특성)는 Feature입니다. Label은 예측 대상(요금)입니다."},
-{d:"ML기본",q:"Azure Machine Learning 디자이너에서 Predicted Value와 True Value를 비교하는 평가 방법은 어떤 ML 유형 전용입니까?",o:["분류","회귀(Regression)","클러스터링","강화학습"],a:1,e:"예측값과 실제값의 차이를 비교하는 것은 회귀 평가 방법입니다."},
-{d:"ML기본",q:"분류 모델의 평가에 사용되는 지표는 무엇입니까?",o:["True Positive Rate, Precision, F1 Score","MAE, RMSE","R², 결정계수","실루엣 계수"],a:0,e:"TPR, Precision, F1 Score는 분류 모델 평가 지표입니다."},
-{d:"ML기본",q:"Azure Machine Learning 디자이너에서 Split Data 모듈의 역할은 무엇입니까?",o:["특정 열 선택","새 행 추가","학습/검증 데이터 분할","데이터셋 조인"],a:2,e:"Split Data는 데이터를 학습용과 검증용으로 분할합니다."},
-{d:"ML기본",q:"환자의 혈압, 나이, 체중 데이터를 기반으로 당뇨병 여부(예/아니오)를 판별하려 합니다. 어떤 ML 유형입니까?",o:["회귀","분류(Classification)","클러스터링","이상 탐지"],a:1,e:"두 가지 범주(예/아니오)로 판별하는 것은 이진 분류입니다."},
-{d:"ML기본",q:"커피 한 잔의 온도를 시간에 따라 예측, 통근 방법(버스/지하철/자가용) 예측, 고객 세그먼트 자동 그룹화. 이 세 가지를 순서대로 나열하면?",o:["분류/회귀/클러스터링","회귀/분류/클러스터링","클러스터링/분류/회귀","회귀/클러스터링/분류"],a:1,e:"온도=회귀(연속값), 통근방법=분류(범주), 그룹화=클러스터링."},
-{d:"ML기본",q:"Azure Machine Learning 디자이너에서 파이프라인을 실행하기 전에 반드시 필요한 것은?",o:["모델 등록","컴퓨팅 리소스(Compute)","Jupyter 노트북","REST 엔드포인트"],a:1,e:"파이프라인 실행에는 컴퓨팅 리소스가 필요합니다."},
-{d:"ML기본",q:"Azure Machine Learning의 자동화된 ML(AutoML)에 대한 올바른 설명은?",o:["전문가만 사용 가능","여러 알고리즘을 자동으로 시도하여 최적 모델 탐색","레이블 없이 학습","하나의 알고리즘만 사용"],a:1,e:"AutoML은 여러 알고리즘과 하이퍼파라미터를 자동 탐색합니다."},
-{d:"ML기본",q:"학습된 모델의 여러 버전을 관리하고 추적하려면 Azure Machine Learning에서 무엇을 해야 합니까?",o:["모델 설명(Explain)","모델 등록(Register)","데이터셋 등록","추론 파이프라인 생성"],a:1,e:"모델 등록을 통해 버전을 관리하고 추적할 수 있습니다."},
-{d:"ML기본",q:"배포된 ML 서비스에 접근하기 위해 필요한 것은?",o:["모델 파일과 학습 엔드포인트","인증 키와 REST 엔드포인트","원본 데이터와 모듈","Azure 구독만"],a:1,e:"배포된 서비스 접근에는 인증 키와 REST 엔드포인트가 필요합니다."},
-{d:"ML기본",q:"회귀 모델 평가에 사용되는 지표 조합은?",o:["R²(결정계수)와 RMSE(평균 제곱근 오차)","F1 Score와 AUC","Accuracy와 Precision","True Positive Rate와 Recall"],a:0,e:"R²와 RMSE는 회귀 모델의 대표적 평가 지표입니다."},
-{d:"ML기본",q:"대출 심사 모델에서 '나이', '소득', '근무 연수'는 무엇에 해당합니까?",o:["Feature(특성)","Label(레이블)","Validation Data","Test Data"],a:0,e:"예측에 사용되는 입력 변수는 Feature입니다."},
-{d:"ML기본",q:"레이블이 없는 데이터를 사용하는 비지도 학습(Unsupervised Learning)에 해당하는 ML 유형은?",o:["분류","회귀","클러스터링(Clustering)","이미지 분류"],a:2,e:"비지도 학습은 레이블 없이 패턴을 찾는 클러스터링입니다."},
-{d:"ML기본",q:"분류 모델에서 실제로는 음성(Negative)인 데이터를 양성(Positive)으로 잘못 예측한 것을 무엇이라 합니까?",o:["True Positive","False Positive","False Negative","True Negative"],a:1,e:"음성을 양성으로 오탐한 것은 False Positive입니다."},
-{d:"ML기본",q:"분류 모델의 AUC(Area Under Curve) 값이 1.0에 가까울수록 의미하는 것은?",o:["오차가 크다","분류 성능이 우수하다","클러스터가 많다","과적합이 심하다"],a:1,e:"AUC가 1에 가까울수록 분류 모델의 성능이 우수합니다."},
-{d:"ML기본",q:"모델이 학습 데이터에서는 성능이 좋지만 새로운 데이터에서는 성능이 크게 떨어집니다. 이 현상은?",o:["과소적합(Underfitting)","과적합(Overfitting)","정규화","데이터 부족"],a:1,e:"학습 데이터에만 최적화되어 새 데이터에서 성능이 떨어지는 것은 과적합입니다."},
-{d:"ML기본",q:"머신러닝에서 테스트 데이터의 주된 용도는?",o:["모델 학습","하이퍼파라미터 튜닝","최종 모델 성능 평가","데이터 정규화"],a:2,e:"테스트 데이터는 학습이 완료된 모델의 최종 성능을 평가하는 데 사용됩니다."},
-{d:"ML기본",q:"Azure Machine Learning에서 추론 파이프라인(Inference Pipeline)의 목적은?",o:["모델 학습 자동화","새 데이터에 대한 예측 수행","데이터 전처리만 수행","모델 비교"],a:1,e:"추론 파이프라인은 학습된 모델로 새 데이터에 대한 예측을 수행합니다."},
-{d:"ML기본",q:"Confusion Matrix에서 True Negative가 의미하는 것은?",o:["양성을 양성으로 정확히 예측","음성을 음성으로 정확히 예측","양성을 음성으로 잘못 예측","음성을 양성으로 잘못 예측"],a:1,e:"True Negative는 실제 음성인 데이터를 음성으로 정확히 예측한 것입니다."},
-{d:"ML기본",q:"Azure Machine Learning Studio에서 Normalize Data 모듈의 목적은?",o:["데이터를 같은 스케일로 변환","결측값 제거","특성 선택","데이터 시각화"],a:0,e:"Normalize Data는 서로 다른 범위의 데이터를 같은 스케일로 변환합니다."},
-{d:"CV",q:"자선 행사에서 선글라스를 착용한 사람들의 사진을 리트윗하려 합니다. 얼굴이 포함되어 있고 선글라스를 착용한 사람이 있는지 분석하려면 어떤 서비스를 사용해야 합니까?",o:["Custom Vision","Azure AI Vision의 이미지 분석","Face API의 Detect 기능","Form Recognizer"],a:2,e:"얼굴 감지 및 선글라스 같은 속성 분석은 Face API의 Detect 기능입니다."},
-{d:"CV",q:"제조 공장에서 생산 라인의 병 모양을 검사하여 불량품을 자동으로 걸러내려 합니다. 어떤 AI 워크로드를 사용해야 합니까?",o:["이상 탐지","컴퓨터 비전(Computer Vision)","자연어 처리","대화형 AI"],a:1,e:"이미지를 분석하여 불량을 판별하는 것은 컴퓨터 비전입니다."},
-{d:"CV",q:"종이 영수증을 스캔하여 날짜, 금액, 항목 등의 텍스트를 자동으로 추출하려 합니다. 어떤 기술을 사용해야 합니까?",o:["시맨틱 분할","이미지 분류","객체 감지","OCR(광학 문자 인식)"],a:3,e:"이미지에서 텍스트를 추출하는 것은 OCR입니다."},
-{d:"CV",q:"축구 경기 영상에서 선수 등번호를 자동으로 읽으려 합니다. 어떤 기술을 사용해야 합니까?",o:["얼굴 인식","OCR(광학 문자 인식)","이미지 분류","시맨틱 분할"],a:1,e:"이미지에서 숫자/텍스트를 읽는 것은 OCR입니다."},
-{d:"CV",q:"농업 드론이 촬영한 이미지에서 잡초의 정확한 위치와 크기를 파악하려 합니다. 어떤 컴퓨터 비전 기술을 사용해야 합니까?",o:["객체 감지(Object Detection)","OCR","시맨틱 분할","이미지 분류"],a:0,e:"객체의 위치와 크기를 바운딩 박스로 파악하는 것은 객체 감지입니다."},
-{d:"CV",q:"자율주행 차량이 전방 차량과의 거리를 추정하려 합니다. 어떤 컴퓨터 비전 기술이 필요합니까?",o:["OCR","객체 감지(Object Detection)","이미지 분류","얼굴 인식"],a:1,e:"차량의 위치를 파악하고 거리를 추정하는 것은 객체 감지입니다."},
-{d:"CV",q:"Azure에서 특정 도메인(예: 제품 불량)에 맞는 커스텀 이미지 분류 모델을 만들려면 어떤 서비스를 사용해야 합니까?",o:["Custom Vision","Form Recognizer","Face API","Azure AI Vision"],a:0,e:"도메인별 커스텀 이미지 모델은 Custom Vision으로 만듭니다."},
-{d:"CV",q:"송장, 영수증 등 정형 문서에서 키-값 쌍과 테이블 데이터를 자동으로 추출하려 합니다. 어떤 서비스를 사용합니까?",o:["Custom Vision","Text Analytics","Azure AI Document Intelligence(Form Recognizer)","LUIS"],a:2,e:"정형 문서의 키-값 쌍과 테이블 추출은 Document Intelligence입니다."},
-{d:"CV",q:"Azure AI Vision 서비스에서 이미지에 대한 자동 캡션(설명)을 생성하는 기능은?",o:["OCR","관심 영역","객체 감지","Describe(이미지 설명)"],a:3,e:"이미지에 대한 자연어 설명을 생성하는 것은 Describe 기능입니다."},
-{d:"CV",q:"도서관에서 오래된 신문 기사를 디지털화하여 검색 가능하게 만들려 합니다. 어떤 기술을 사용해야 합니까?",o:["객체 감지","얼굴 인식","이미지 분류","OCR(광학 문자 인식)"],a:3,e:"종이 문서를 디지털 텍스트로 변환하는 것은 OCR입니다."},
-{d:"CV",q:"보안 시스템에서 특정인의 신분증 사진과 실제 얼굴을 비교하여 동일인인지 확인하려 합니다. Face API의 어떤 기능을 사용해야 합니까?",o:["식별(Identify)","검증(Verify)","유사도(Find Similar)","그룹화(Group)"],a:1,e:"두 얼굴이 동일인인지 1:1 비교하는 것은 검증(Verify)입니다."},
-{d:"CV",q:"사무실 출입 관리 시스템에서 카메라로 촬영한 얼굴이 등록된 직원 중 누구인지 식별하려 합니다. Face API의 어떤 기능을 사용해야 합니까?",o:["감지(Detect)","검증(Verify)","식별(Identify)","유사도(Find Similar)"],a:2,e:"등록된 그룹에서 누구인지 1:N 매칭하는 것은 식별(Identify)입니다."},
-{d:"CV",q:"이미지 분류(Classification)와 객체 감지(Object Detection)의 차이점은?",o:["분류가 위치도 알려줌","분류는 이미지 전체에 레이블, 감지는 위치+종류 표시","둘은 동일한 기술","감지는 비지도 학습"],a:1,e:"분류는 전체 이미지에 레이블, 객체 감지는 각 객체의 위치와 종류를 표시합니다."},
-{d:"CV",q:"공장에서 제품 외관을 촬영하여 양품/불량품으로 자동 판별하려 합니다. 어떤 컴퓨터 비전 기술을 사용해야 합니까?",o:["이미지 분류(Classification)","객체 감지","시맨틱 분할","OCR"],a:0,e:"이미지를 특정 범주로 판별하는 것은 이미지 분류입니다."},
-{d:"CV",q:"자율주행 차량이 도로 이미지에서 차선, 보도, 차량 등 모든 영역을 픽셀 단위로 구분해야 합니다. 어떤 기술입니까?",o:["이미지 분류","객체 감지","시맨틱 분할(Semantic Segmentation)","OCR"],a:2,e:"이미지의 모든 픽셀을 카테고리별로 분류하는 것은 시맨틱 분할입니다."},
-{d:"CV",q:"Custom Vision 서비스로 이미지 분류 모델을 만들 때 필요한 최소 요구사항은?",o:["수천 장의 이미지","각 태그당 소량(최소 15장)의 태그된 이미지","비디오 데이터","음성 데이터"],a:1,e:"Custom Vision은 태그당 최소 15장의 이미지로 모델을 학습할 수 있습니다."},
-{d:"CV",q:"소셜 미디어에서 친구 얼굴을 자동으로 태그하는 이미지 솔루션을 구축하려 합니다. 어떤 Azure Cognitive Services를 사용해야 합니까?",o:["Custom Vision","Azure AI Vision","Face API","Form Recognizer"],a:2,e:"얼굴 인식 및 태그는 Face API를 사용합니다."},
-{d:"CV",q:"의료 이미지에서 종양의 정확한 경계를 구분해야 합니다. 어떤 컴퓨터 비전 기술이 가장 적합합니까?",o:["이미지 분류","객체 감지","시맨틱 분할(Semantic Segmentation)","OCR"],a:2,e:"정확한 경계 구분은 픽셀 단위 분류인 시맨틱 분할이 적합합니다."},
-{d:"NLP",q:"온라인 쇼핑몰에서 수천 건의 제품 리뷰가 긍정적인지 부정적인지 자동으로 분류하려 합니다. 어떤 NLP 기능을 사용해야 합니까?",o:["언어 감지","감정 분석(Sentiment Analysis)","핵심 구 추출","개체 인식"],a:1,e:"텍스트의 긍부정을 판별하는 것은 감정 분석입니다."},
-{d:"NLP",q:"뉴스 기사에서 주요 논점과 핵심 용어를 자동으로 추출하려 합니다. 어떤 NLP 기능을 사용해야 합니까?",o:["개체 인식","핵심 구 추출(Key Phrase Extraction)","감정 분석","언어 감지"],a:1,e:"텍스트에서 주요 주제와 용어를 추출하는 것은 핵심 구 추출입니다."},
-{d:"NLP",q:"요리 앱에서 레시피를 음성으로 읽어주는 기능을 추가하려 합니다. 어떤 AI 기능이 필요합니까?",o:["Text Analytics","Translator","Speech - 텍스트 음성 변환(TTS)","LUIS"],a:2,e:"텍스트를 음성으로 변환하는 것은 TTS(Text-to-Speech)입니다."},
-{d:"NLP",q:"국제 회의에서 발표자의 음성을 실시간으로 텍스트 자막으로 변환하려 합니다. 어떤 AI 기능이 필요합니까?",o:["TTS","STT(Speech-to-Text)","번역","화자 인식"],a:1,e:"음성을 텍스트로 변환하는 것은 STT입니다."},
-{d:"NLP",q:"글로벌 기업의 웹사이트를 10개 이상의 언어로 자동 번역하여 제공하려 합니다. 어떤 Azure 서비스를 사용해야 합니까?",o:["Azure AI Translator","Text Analytics","Speech Service","LUIS"],a:0,e:"다국어 텍스트 번역은 Azure AI Translator입니다."},
-{d:"NLP",q:"Language Understanding(LUIS) 앱에서 사용자가 말하는 전체 문장은 무엇이라 합니까?",o:["Intent(의도)","Utterance(발화)","Domain(도메인)","Entity(엔터티)"],a:1,e:"사용자가 입력하는 전체 문장을 Utterance(발화)라 합니다."},
-{d:"NLP",q:"LUIS 앱에서 학습된 의도에 해당하지 않는 발화를 처리하려면 어떻게 해야 합니까?",o:["새로운 발화 추가","None Intent 설정","새 엔터티 생성","새 모델 빌드"],a:1,e:"범위 밖 발화는 None Intent로 처리합니다."},
-{d:"NLP",q:"회사의 제품 문제 해결 가이드(Word)와 FAQ 웹페이지를 기반으로 고객 질문에 자동 답변하는 챗봇을 만들려 합니다. 문서를 처리하는 데 어떤 서비스를 사용해야 합니까?",o:["Bot Service","LUIS","Text Analytics","QnA Maker(Azure AI Language)"],a:3,e:"FAQ 및 문서 기반 Q&A 시스템은 QnA Maker를 사용합니다."},
-{d:"NLP",q:"QnA Maker에서 사용자가 인사를 하면 친근한 답변을 자동으로 제공하는 기능은?",o:["신뢰도 점수","활성 학습","멀티턴 대화","Chit-chat 기능"],a:3,e:"일상적 인사에 대한 자동 응답은 Chit-chat 기능입니다."},
-{d:"NLP",q:"고객 리뷰에서 언급된 회사명/제품명을 추출하고, 각 리뷰의 긍부정을 판별하려 합니다. 순서대로 어떤 NLP 기능을 사용해야 합니까?",o:["개체 인식(NER) → 감정 분석","감정 분석 → 핵심 구 추출","번역 → 개체 인식","핵심 구 추출 → 번역"],a:0,e:"회사명/제품명 추출은 NER, 긍부정 판별은 감정 분석입니다."},
-{d:"NLP",q:"게임 캐릭터가 자연스러운 음성으로 대사를 말하게 하려면 어떤 AI 기능이 필요합니까?",o:["STT","TTS(Text-to-Speech)","번역","감정 분석"],a:1,e:"텍스트를 자연스러운 음성으로 변환하는 것은 TTS입니다."},
-{d:"NLP",q:"음악 페스티벌 LUIS 앱에서 '메인 스테이지에서 어떤 공연이 있나요?'라는 질문의 '메인 스테이지'는 무엇에 해당합니까?",o:["Intent","Utterance","Entity(엔터티)","None"],a:2,e:"문장 내 특정 데이터(장소, 시간 등)는 Entity입니다."},
-{d:"NLP",q:"Azure Text Analytics 서비스가 지원하지 않는 기능은?",o:["감정 분석","언어 감지","필기 문자 인식(OCR)","개체 인식"],a:2,e:"필기 문자 인식은 컴퓨터 비전(CV) 기능이지 Text Analytics가 아닙니다."},
-{d:"NLP",q:"다국어 PDF 문서의 형식을 유지하면서 번역하려 합니다. 어떤 기능을 사용해야 합니까?",o:["Text Analytics","Speech Service","Translator 문서 번역","QnA Maker"],a:2,e:"문서 형식을 유지한 번역은 Translator의 문서 번역 기능입니다."},
-{d:"NLP",q:"QnA Maker에서 사용자가 자주 묻는 질문의 답변 품질을 개선하기 위해 사용하는 기능은?",o:["핵심 구 추출","감정 분석","비즈니스 로직","활성 학습(Active Learning)"],a:3,e:"활성 학습은 사용자 질문 패턴을 분석하여 답변을 개선합니다."},
-{d:"NLP",q:"다국어 고객 지원 시스템에서 고객이 입력한 텍스트의 언어를 자동으로 판별하려 합니다. 어떤 NLP 기능을 사용해야 합니까?",o:["감정 분석","언어 감지(Language Detection)","핵심 구 추출","개체 인식"],a:1,e:"텍스트의 언어를 판별하는 것은 언어 감지입니다."},
-{d:"NLP",q:"스마트 홈 시스템에서 음성 명령으로 조명, 에어컨 등을 제어하려 합니다. 이 솔루션에 필요한 두 가지 NLP 워크로드는?",o:["STT + NLU(자연어 이해)","감정 분석 + 번역","OCR + TTS","핵심 구 추출 + 언어 감지"],a:0,e:"음성을 텍스트로 변환(STT)한 후 의도를 파악(NLU)해야 합니다."},
-{d:"NLP",q:"LUIS 앱에서 '내일 오전 9시 회의실 예약해줘'라는 발화의 Intent(의도)는?",o:["GetTime","BookRoom","Cancel","None"],a:1,e:"회의실 예약 요청이므로 Intent는 BookRoom입니다."},
-{d:"NLP",q:"Azure Bot Service를 사용하여 챗봇을 배포할 수 있는 채널에 해당하지 않는 것은?",o:["Microsoft Teams","웹사이트","Slack","Azure SQL Database"],a:3,e:"Azure SQL은 데이터베이스이지 봇 배포 채널이 아닙니다."},
-{d:"NLP",q:"콜센터에서 통화를 녹음한 후 고객 불만 사항을 자동으로 분류하려 합니다. 필요한 AI 기능의 올바른 순서는?",o:["STT → 감정 분석","TTS → 핵심 구","번역 → OCR","OCR → 개체 인식"],a:0,e:"음성을 텍스트로 변환(STT)한 후 감정 분석을 수행합니다."},
-{d:"생성형AI",q:"대규모 언어 모델(LLM)이 텍스트를 생성하는 기본 방식은?",o:["이미지를 텍스트로 변환","다음 토큰을 확률적으로 예측","데이터베이스에서 정확한 답변 검색","미리 정해진 규칙에 따라 응답"],a:1,e:"LLM은 이전 토큰들을 기반으로 다음 토큰을 확률적으로 예측합니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 Temperature 파라미터를 0으로 설정하면 어떤 효과가 있습니까?",o:["더 창의적이고 다양한 응답","더 일관되고 결정적인 응답","더 긴 응답 생성","더 빠른 응답 속도"],a:1,e:"Temperature 0은 가장 확률이 높은 토큰만 선택하여 일관된 응답을 생성합니다."},
-{d:"생성형AI",q:"회사의 내부 문서와 최신 데이터를 기반으로 AI가 정확한 답변을 하도록 하려 합니다. 어떤 기술을 사용해야 합니까?",o:["모델 처리 속도 향상","RAG(검색 증강 생성)","이미지 생성","모델 크기 축소"],a:1,e:"RAG는 외부 데이터 소스를 검색하여 AI 응답을 보강합니다."},
-{d:"생성형AI",q:"AI 모델이 사실이 아닌 정보를 그럴듯하게 생성하는 환각(Hallucination) 현상을 줄이는 가장 효과적인 방법은?",o:["더 긴 프롬프트 작성","그라운딩(Grounding) 적용","파인튜닝만 수행","토큰 수 증가"],a:1,e:"그라운딩은 신뢰할 수 있는 데이터 소스를 연결하여 환각을 줄입니다."},
-{d:"생성형AI",q:"Azure AI Foundry(이전 AI Studio)의 이전 이름은?",o:["Cognitive Services","Azure AI Studio","Bot Service","ML Designer"],a:1,e:"Azure AI Foundry는 이전에 Azure AI Studio로 불렸습니다."},
-{d:"생성형AI",q:"텍스트 설명을 기반으로 이미지를 생성하는 Azure OpenAI 모델은?",o:["GPT-4o","DALL-E","Whisper","Embeddings"],a:1,e:"텍스트를 이미지로 변환하는 모델은 DALL-E입니다."},
-{d:"생성형AI",q:"텍스트를 숫자 벡터(수치 표현)로 변환하여 유사도 검색에 활용하려 합니다. 어떤 모델을 사용해야 합니까?",o:["GPT-4","DALL-E","Whisper","Embeddings"],a:3,e:"텍스트를 벡터로 변환하는 것은 Embeddings 모델입니다."},
-{d:"생성형AI",q:"Azure Bot Service를 사용하여 챗봇을 Microsoft Teams, 웹사이트, Slack 등 여러 채널에 배포하려 합니다. 이를 위해 사용하는 서비스는?",o:["Text Analytics","Azure Bot Service","Translator","Form Recognizer"],a:1,e:"다채널 봇 배포는 Azure Bot Service입니다."},
-{d:"생성형AI",q:"Azure OpenAI 서비스에서 유해하거나 부적절한 콘텐츠가 생성되는 것을 방지하는 기능은?",o:["모델 카탈로그","프롬프트 플로우","콘텐츠 필터(Content Filter)","모델 벤치마크"],a:2,e:"유해 콘텐츠를 차단하는 것은 콘텐츠 필터입니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 시스템 메시지(System Message)의 역할은?",o:["사용자 질문 전달","AI의 행동 방식과 역할 정의","응답 길이 제한","데이터 저장"],a:1,e:"시스템 메시지는 AI의 역할, 어조, 제한사항 등을 정의합니다."},
-{d:"생성형AI",q:"오디오 파일의 음성을 텍스트로 변환하는 Azure OpenAI 모델은?",o:["GPT-4","DALL-E","Whisper","Embeddings"],a:2,e:"음성을 텍스트로 변환하는 모델은 Whisper입니다."},
-{d:"생성형AI",q:"AI가 원하는 결과를 생성하도록 입력 프롬프트를 설계하고 최적화하는 기술을 무엇이라 합니까?",o:["추가 학습(Fine-tuning)","프롬프트 엔지니어링(Prompt Engineering)","데이터 정리","수동 조정"],a:1,e:"프롬프트를 최적화하는 기술은 프롬프트 엔지니어링입니다."},
-{d:"생성형AI",q:"프롬프트에 예시 입출력을 포함하여 AI가 원하는 형식으로 응답하도록 유도하는 기법은?",o:["Zero-shot learning","Few-shot learning","Fine-tuning","프롬프트 없이 학습"],a:1,e:"예시를 포함하여 유도하는 것은 Few-shot learning입니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 Top-P 파라미터는 무엇을 제어합니까?",o:["최대 응답 길이","누적 확률 범위 내에서 토큰 선택","모델 학습률","배포 인스턴스 수"],a:1,e:"Top-P는 누적 확률 범위 내의 토큰만 후보로 선택합니다."},
-{d:"생성형AI",q:"LLM에서 '토큰(Token)'이란 무엇입니까?",o:["학습 에포크","텍스트의 기본 처리 단위(단어/부분 단어)","API 인증 키","신경망 레이어"],a:1,e:"토큰은 모델이 처리하는 텍스트의 기본 단위입니다."},
-{d:"생성형AI",q:"같은 프롬프트에 대해 항상 동일한 응답을 받으려면 어떤 설정이 필요합니까?",o:["Temperature를 0으로","Temperature를 1로","Top-P를 1로","max_tokens를 최대로"],a:0,e:"Temperature 0은 결정적 응답을 생성합니다."},
-{d:"생성형AI",q:"AI 모델이 학습 데이터에 없는 내용을 그럴듯하게 만들어내는 현상을 무엇이라 합니까?",o:["그라운딩","토큰화","환각(Hallucination)","임베딩"],a:2,e:"사실이 아닌 정보를 생성하는 것을 환각이라 합니다."},
-{d:"생성형AI",q:"Azure AI Search와 Azure OpenAI를 함께 사용하여 회사 내부 데이터 기반으로 답변하는 패턴은?",o:["이상 탐지","RAG(검색 증강 생성)","분류","음성 합성"],a:1,e:"검색+생성 결합 패턴은 RAG입니다."},
-{d:"생성형AI",q:"AI에게 '당신은 친절한 여행 가이드입니다'라고 역할을 부여하려면 어떤 방법을 사용합니까?",o:["시스템 메시지(System Message)","Few-shot 예시","Temperature 조정","파인튜닝"],a:0,e:"AI의 역할을 정의하는 것은 시스템 메시지입니다."},
-{d:"생성형AI",q:"고객 지원팀이 내부 기술 문서를 기반으로 고객 질문에 답변하는 AI 시스템을 구축하려 합니다. 가장 적합한 아키텍처는?",o:["CV + OCR","RAG + Azure OpenAI","이상 탐지","Face API + Bot"],a:1,e:"내부 문서 기반 Q&A는 RAG + OpenAI 아키텍처가 적합합니다."},
-{d:"생성형AI",q:"Azure OpenAI의 Embeddings 모델이 출력하는 것은?",o:["자연어 텍스트","이미지","숫자 벡터(Numerical Vector)","음성"],a:2,e:"Embeddings는 텍스트를 숫자 벡터로 변환합니다."},
-{d:"생성형AI",q:"기존 LLM을 특정 도메인 데이터로 추가 학습시키는 것을 무엇이라 합니까?",o:["Few-shot learning","파인튜닝(Fine-tuning)","Temperature 조정","RAG"],a:1,e:"도메인 데이터로 모델 가중치를 추가 학습시키는 것은 파인튜닝입니다."},
-{d:"생성형AI",q:"RAG와 파인튜닝의 핵심 차이점은?",o:["RAG=외부 데이터 검색 후 생성, 파인튜닝=모델 가중치 재학습","RAG가 더 비싸다","파인튜닝은 프롬프트 기법이다","둘은 동일하다"],a:0,e:"RAG는 검색 기반, 파인튜닝은 모델 자체를 재학습합니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 max_tokens 파라미터의 역할은?",o:["학습 에포크 수","생성할 최대 토큰 수 제한","Temperature 대체","API 호출 제한"],a:1,e:"max_tokens는 AI가 생성할 응답의 최대 길이를 제한합니다."},
-{d:"생성형AI",q:"Microsoft 365 Copilot의 핵심 기술 구성요소는?",o:["CV + OCR","LLM + RAG + 프롬프트 엔지니어링","이상 탐지","Face API + Bot"],a:1,e:"Copilot은 LLM, RAG, 프롬프트 엔지니어링을 결합한 기술입니다."},
-{d:"생성형AI",q:"Azure OpenAI Playground의 주된 용도는?",o:["모델 학습","프롬프트 테스트 및 파라미터 조정","서버 관리","데이터베이스 쿼리"],a:1,e:"Playground는 프롬프트를 테스트하고 파라미터를 조정하는 환경입니다."},
-{d:"생성형AI",q:"Azure AI Content Safety 서비스의 역할은?",o:["이미지 생성","텍스트/이미지에서 부적절한 콘텐츠 감지","번역","모델 학습"],a:1,e:"Content Safety는 유해/부적절 콘텐츠를 감지하고 차단합니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 GPT-4o 모델의 특징으로 올바른 것은?",o:["이미지 생성 전용","텍스트+이미지+음성 멀티모달 지원","벡터 변환 전용","음성만 처리"],a:1,e:"GPT-4o는 텍스트, 이미지, 음성을 모두 처리하는 멀티모달 모델입니다."},
-{d:"생성형AI",q:"프롬프트에 아무런 예시 없이 지시만으로 AI를 유도하는 기법은?",o:["Zero-shot learning","Few-shot learning","Fine-tuning","RAG"],a:0,e:"예시 없이 지시만으로 유도하는 것은 Zero-shot learning입니다."},
-{d:"생성형AI",q:"Azure OpenAI 서비스를 사용하기 위해 필요한 것은?",o:["Azure 구독 + Azure OpenAI 리소스 생성","물리 GPU 서버 구매","Microsoft 365 라이선스만","별도 신청 불필요"],a:0,e:"Azure OpenAI 사용에는 Azure 구독과 리소스 생성이 필요합니다."},
-{d:"AI워크로드",q:"병원에서 환자의 진료 기록, 연구 논문, 의약품 정보 등 대량의 비정형 데이터에서 치료법에 대한 인사이트를 추출하려 합니다. 어떤 AI 워크로드에 해당합니까?",o:["대화형 AI","지식 마이닝(Knowledge Mining)","이상 탐지","컴퓨터 비전"],a:1,e:"비정형 데이터에서 인사이트를 추출하는 것은 지식 마이닝입니다."},
-{d:"AI워크로드",q:"물류 회사가 배송 차량의 GPS 데이터와 교통 정보를 분석하여 최적 배송 경로를 예측하려 합니다. 이 시나리오에 가장 적합한 AI 워크로드는?",o:["컴퓨터 비전","대화형 AI","머신러닝 예측(ML Prediction)","이상 탐지"],a:2,e:"데이터 기반 경로 최적화 예측은 머신러닝 워크로드입니다."},
-{d:"AI워크로드",q:"Azure AI 서비스의 리소스를 생성할 때 선택해야 하는 두 가지 필수 항목은?",o:["가격 책정 계층과 리전(지역)","GPU 유형과 메모리","프로그래밍 언어와 프레임워크","도메인 이름과 SSL 인증서"],a:0,e:"AI 서비스 리소스 생성 시 가격 책정 계층과 배포 리전을 선택해야 합니다."},
-{d:"AI워크로드",q:"은행에서 고객 통화 내용을 분석하여 불만 사항을 자동으로 분류하고 우선순위를 매기려 합니다. 이 솔루션에 필요한 AI 워크로드 조합은?",o:["CV + 이상 탐지","NLP(음성→텍스트 + 감정 분석)","생성형 AI + 이미지 분류","대화형 AI + OCR"],a:1,e:"통화 내용 분석에는 STT와 감정 분석 등 NLP 워크로드가 필요합니다."},
-{d:"AI워크로드",q:"Azure에서 여러 AI 서비스(Vision, Language, Speech)를 하나의 엔드포인트로 사용하려면 어떤 리소스를 만들어야 합니까?",o:["각 서비스별 개별 리소스","멀티서비스 리소스(Multi-service resource)","Azure Functions","Azure Logic Apps"],a:1,e:"멀티서비스 리소스 하나로 여러 AI 서비스에 접근할 수 있습니다."},
-{d:"AI워크로드",q:"AI 워크로드 중 사전 정의된 패턴에서 벗어나는 데이터 포인트를 찾아내는 것은?",o:["분류","회귀","이상 탐지(Anomaly Detection)","생성형 AI"],a:2,e:"정상 패턴에서 벗어난 데이터를 찾는 것은 이상 탐지입니다."},
-{d:"AI워크로드",q:"전자상거래 회사가 고객에게 이전 구매 이력을 기반으로 관련 제품을 추천하려 합니다. 이는 어떤 AI 워크로드입니까?",o:["이상 탐지","대화형 AI","머신러닝 추천 시스템","컴퓨터 비전"],a:2,e:"구매 이력 기반 제품 추천은 머신러닝 추천 시스템입니다."},
-{d:"AI워크로드",q:"건물 관리 시스템에서 에너지 소비 패턴을 분석하고 이상 소비를 실시간으로 감지하려 합니다. 어떤 AI 워크로드를 사용해야 합니까?",o:["대화형 AI","컴퓨터 비전","이상 탐지(Anomaly Detection)","지식 마이닝"],a:2,e:"에너지 소비의 이상 패턴 감지는 이상 탐지 워크로드입니다."},
-{d:"책임AI",q:"AI 채용 시스템이 지원서의 이름을 기반으로 특정 성별이나 민족을 추론하여 편향된 결정을 내립니다. 이를 방지하기 위해 적용해야 할 원칙은?",o:["투명성","공정성(Fairness)","책임감","포용성"],a:1,e:"이름 기반 편향을 방지하는 것은 공정성 원칙입니다."},
-{d:"책임AI",q:"AI 시스템의 학습 데이터에 개인 식별 정보(PII)가 포함되어 있어 이를 익명화 처리해야 합니다. 이는 어떤 원칙과 관련됩니까?",o:["투명성","공정성","개인정보 보호 및 보안(Privacy & Security)","책임감"],a:2,e:"개인정보 익명화는 개인정보 보호 및 보안 원칙입니다."},
-{d:"책임AI",q:"회사가 AI 모델의 결정 과정을 감사(Audit)할 수 있도록 로그를 기록하고 보고서를 작성합니다. 이는 어떤 원칙을 지원합니까?",o:["포용성","투명성(Transparency) + 책임감(Accountability)","공정성","신뢰성"],a:1,e:"감사 가능한 로그와 보고서는 투명성과 책임감을 모두 지원합니다."},
-{d:"책임AI",q:"자율주행 AI가 갑작스런 시스템 오류 시 안전하게 정차하도록 설계되어야 합니다. 이는 어떤 원칙입니까?",o:["공정성","포용성","신뢰성 및 안전성(Reliability & Safety)","투명성"],a:2,e:"오류 시 안전한 대응은 신뢰성 및 안전성 원칙입니다."},
-{d:"책임AI",q:"AI 기반 의료 진단 시스템에서 의사가 AI의 추천을 검토하고 최종 진단을 내릴 수 있어야 합니다. 이는 어떤 원칙을 실현합니까?",o:["투명성","공정성","포용성","인간 감독(Human oversight) / 책임감"],a:3,e:"사람이 최종 결정권을 갖는 것은 책임감과 인간 감독 원칙입니다."},
-{d:"책임AI",q:"음성 인식 AI가 특정 방언이나 억양을 가진 사용자의 명령을 잘 인식하지 못합니다. 이는 어떤 원칙의 문제입니까?",o:["투명성","공정성","포용성(Inclusiveness)","책임감"],a:2,e:"특정 사용자 그룹이 서비스를 제대로 이용하지 못하는 것은 포용성 문제입니다."},
-{d:"책임AI",q:"AI 서비스 제공업체가 사용자 데이터를 어떻게 수집, 저장, 사용하는지 명확히 공개해야 합니다. 이는 어떤 원칙입니까?",o:["투명성(Transparency)","공정성","신뢰성","포용성"],a:0,e:"데이터 사용 방식의 공개는 투명성 원칙입니다."},
-{d:"ML기본",q:"Azure Machine Learning에서 학습된 모델을 웹 서비스로 배포하면 어떤 형태로 접근할 수 있습니까?",o:["REST API 엔드포인트","FTP 서버","이메일 알림","파일 다운로드 링크"],a:0,e:"배포된 모델은 REST API 엔드포인트를 통해 접근합니다."},
-{d:"ML기본",q:"분류 모델에서 Recall(재현율)이 높다는 것은 무엇을 의미합니까?",o:["오탐(False Positive)이 적다","실제 양성 중 놓친 것이 적다","전체 정확도가 높다","학습 속도가 빠르다"],a:1,e:"Recall이 높으면 실제 양성 데이터를 대부분 올바르게 감지합니다."},
-{d:"ML기본",q:"보험 회사가 고객의 나이, 건강 상태, 흡연 여부를 기반으로 월 보험료를 예측하려 합니다. 이 시나리오에서 '월 보험료'는 무엇입니까?",o:["Feature","Label(레이블)","Validation","Hyperparameter"],a:1,e:"예측하려는 대상(월 보험료)은 Label입니다."},
-{d:"ML기본",q:"Azure Machine Learning 디자이너에서 Select Columns in Dataset 모듈의 역할은?",o:["데이터 분할","특정 열만 선택하여 사용","결측값 채우기","모델 평가"],a:1,e:"Select Columns는 데이터셋에서 필요한 열만 선택합니다."},
-{d:"ML기본",q:"F1 Score가 높은 분류 모델이 의미하는 것은?",o:["Precision과 Recall 모두 높음","R² 값이 높음","클러스터 품질이 좋음","학습 시간이 짧음"],a:0,e:"F1 Score는 Precision과 Recall의 조화 평균으로 둘 다 높을 때 높습니다."},
-{d:"ML기본",q:"Azure Machine Learning에서 파이프라인(Pipeline)의 장점은?",o:["코드 없이 시각적으로 워크플로우 구성","모델 배포 불가","단일 알고리즘만 사용","데이터 저장만 가능"],a:0,e:"파이프라인은 데이터 전처리부터 학습까지의 워크플로우를 시각적으로 구성합니다."},
-{d:"ML기본",q:"전자상거래에서 고객이 특정 제품을 구매할지 여부(구매/미구매)를 예측하려 합니다. 어떤 ML 유형입니까?",o:["회귀","이진 분류(Binary Classification)","클러스터링","이상 탐지"],a:1,e:"두 가지 결과(구매/미구매)를 예측하는 것은 이진 분류입니다."},
-{d:"ML기본",q:"날씨 데이터를 기반으로 다음 날 아이스크림 판매량을 예측하려 합니다. 이때 '날씨(기온, 습도)'는 무엇이고 '판매량'은 무엇입니까?",o:["날씨=Label, 판매량=Feature","날씨=Feature, 판매량=Label","둘 다 Feature","둘 다 Label"],a:1,e:"입력(날씨)은 Feature, 예측 대상(판매량)은 Label입니다."},
-{d:"ML기본",q:"모델이 학습 데이터와 테스트 데이터 모두에서 성능이 나쁩니다. 이 현상은?",o:["과적합","과소적합(Underfitting)","정규화","데이터 증강"],a:1,e:"전체적으로 성능이 낮은 것은 과소적합으로 모델이 너무 단순합니다."},
-{d:"ML기본",q:"Azure ML에서 Responsible AI Dashboard를 통해 확인할 수 있는 것은?",o:["모델 배포 비용","모델의 공정성, 해석성, 오류 분석","GPU 사용량","데이터 저장 용량"],a:1,e:"Responsible AI Dashboard는 공정성, 해석성, 오류 분석 등을 제공합니다."},
-{d:"ML기본",q:"실루엣 계수(Silhouette Score)는 어떤 ML 유형의 평가 지표입니까?",o:["분류","회귀","클러스터링(Clustering)","이상 탐지"],a:2,e:"실루엣 계수는 클러스터링 모델의 품질을 평가하는 지표입니다."},
-{d:"ML기본",q:"의류 쇼핑몰에서 고객을 구매 패턴에 따라 'VIP', '일반', '이탈 위험' 등으로 나누려 합니다. 레이블이 이미 있다면 어떤 ML 유형입니까?",o:["클러스터링","다중 분류(Multi-class Classification)","회귀","이상 탐지"],a:1,e:"사전 정의된 여러 범주로 분류하는 것은 다중 분류입니다."},
-{d:"ML기본",q:"교차 검증(Cross-Validation)의 목적은?",o:["학습 속도 향상","모델의 일반화 성능을 더 정확히 평가","데이터 크기 증가","특성 선택"],a:1,e:"교차 검증은 데이터를 여러 번 나눠 학습/평가하여 일반화 성능을 평가합니다."},
-{d:"ML기본",q:"Azure ML에서 데이터 드리프트(Data Drift) 모니터링의 목적은?",o:["모델 학습 속도 향상","시간이 지나면서 입력 데이터 분포가 변했는지 감지","GPU 사용량 모니터링","비용 절감"],a:1,e:"데이터 드리프트는 입력 데이터 분포의 변화를 감지하여 모델 재학습 시점을 판단합니다."},
-{d:"ML기본",q:"분류 모델에서 Precision(정밀도)이 중요한 시나리오는?",o:["스팸 메일 필터링(정상 메일을 스팸으로 분류하면 안 됨)","질병 진단(환자를 놓치면 안 됨)","고객 세분화","매출 예측"],a:0,e:"False Positive가 비용이 큰 경우(정상→스팸 오분류) Precision이 중요합니다."},
-{d:"CV",q:"Azure AI Vision 서비스에서 이미지의 주요 영역(사람, 물체 등)을 감지하고 각각에 태그를 붙이는 기능은?",o:["OCR","이미지 태깅(Tagging)","시맨틱 분할","얼굴 인식"],a:1,e:"이미지 내 요소를 감지하고 태그를 붙이는 것은 이미지 태깅입니다."},
-{d:"CV",q:"Azure Custom Vision에서 학습된 모델을 엣지 디바이스(IoT)에서 실행하려면 어떤 기능을 사용해야 합니까?",o:["클라우드 배포만 가능","Compact 도메인으로 학습 후 ONNX 내보내기","REST API 호출","Form Recognizer 연동"],a:1,e:"Compact 도메인으로 학습하면 ONNX 형식으로 내보내 엣지에서 실행할 수 있습니다."},
-{d:"NLP",q:"Azure AI Language 서비스에서 PII(개인 식별 정보)를 자동으로 감지하고 마스킹하는 기능은?",o:["감정 분석","PII 감지(PII Detection)","언어 감지","핵심 구 추출"],a:1,e:"텍스트에서 이름, 주소, 전화번호 등을 감지하는 것은 PII 감지입니다."},
-{d:"NLP",q:"Azure Speech 서비스에서 특정 화자의 음성을 인식하여 누가 말하는지 구분하는 기능은?",o:["TTS","STT","화자 인식(Speaker Recognition)","번역"],a:2,e:"누가 말하는지 식별하는 것은 화자 인식(Speaker Recognition)입니다."},
-{d:"NLP",q:"고객 서비스 챗봇이 사용자의 의도를 파악하지 못할 때 적절한 대응 방법은?",o:["무응답","None Intent로 분류 후 사람 상담원에게 전달","임의 응답","서비스 종료"],a:1,e:"파악할 수 없는 의도는 None Intent로 분류하고 상담원에게 에스컬레이션합니다."},
-{d:"NLP",q:"Azure Translator에서 지원하는 기능이 아닌 것은?",o:["실시간 텍스트 번역","문서 번역(형식 유지)","사용자 정의 번역 모델","음성 합성(TTS)"],a:3,e:"음성 합성은 Speech 서비스의 기능이지 Translator가 아닙니다."},
-{d:"NLP",q:"LUIS 앱에서 '서울역에서 부산역까지 KTX 예매해줘'에서 '서울역', '부산역', 'KTX'는 각각 무엇입니까?",o:["Intent","Utterance","Entity(엔터티)","Domain"],a:2,e:"문장 내 특정 데이터(장소, 열차 유형)는 Entity입니다."},
-{d:"NLP",q:"Azure AI Language의 감정 분석에서 반환하는 결과에 포함되는 것은?",o:["긍정/부정/중립 점수와 문장별 감정","번역된 텍스트","음성 파형","이미지 태그"],a:0,e:"감정 분석은 전체 및 문장별 긍정/부정/중립 점수를 반환합니다."},
-{d:"NLP",q:"멀티턴 대화(Multi-turn Conversation)란 무엇입니까?",o:["한 번의 질답으로 끝나는 대화","후속 질문으로 이어지는 계층적 대화","여러 언어를 섞는 대화","음성+텍스트 혼합"],a:1,e:"멀티턴 대화는 후속 질문(follow-up)으로 이어지는 계층적 대화 구조입니다."},
-{d:"NLP",q:"NER(Named Entity Recognition)이 텍스트에서 식별하는 것은?",o:["문장의 감정","사람, 장소, 조직, 날짜 등 명명된 개체","문법 오류","언어 종류"],a:1,e:"NER은 텍스트에서 사람, 장소, 조직 등 명명된 개체를 식별합니다."},
-{d:"NLP",q:"Azure Speech 서비스에서 Custom Speech 모델을 만드는 이유는?",o:["비용 절감","특정 도메인 용어나 환경 소음에 맞게 STT 정확도 향상","음악 생성","이미지 처리"],a:1,e:"Custom Speech는 도메인 특화 용어나 소음 환경에서 STT 성능을 높입니다."},
-{d:"NLP",q:"Azure Cognitive Service for Language에서 텍스트 요약(Summarization) 기능의 두 가지 유형은?",o:["추출적 요약 + 생성적 요약","감정 분석 + 핵심 구","번역 + OCR","TTS + STT"],a:0,e:"텍스트 요약은 원문에서 핵심 문장을 추출하거나 새로운 요약을 생성합니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 모델을 배포할 때 선택할 수 있는 배포 유형은?",o:["Standard 배포와 Provisioned 배포","GPU 배포만","CPU 배포만","온프레미스 배포만"],a:0,e:"Standard(종량제)와 Provisioned(예약) 배포 유형을 선택할 수 있습니다."},
-{d:"생성형AI",q:"RAG(검색 증강 생성) 아키텍처에서 Azure AI Search의 역할은?",o:["모델 학습","관련 문서를 검색하여 프롬프트에 컨텍스트 제공","이미지 생성","음성 합성"],a:1,e:"AI Search는 질문과 관련된 문서를 검색하여 프롬프트의 컨텍스트를 보강합니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 Responsible AI를 위해 기본적으로 활성화되는 기능은?",o:["자동 파인튜닝","콘텐츠 필터링(Content Filtering)","모델 압축","데이터 백업"],a:1,e:"Azure OpenAI는 기본적으로 콘텐츠 필터링이 활성화되어 유해 콘텐츠를 차단합니다."},
-{d:"생성형AI",q:"Copilot이 사용자의 질문에 답변할 때 참조한 출처를 함께 표시합니다. 이는 어떤 기술 덕분입니까?",o:["파인튜닝","그라운딩(Grounding) / RAG","Temperature 설정","Embeddings"],a:1,e:"출처를 함께 표시하는 것은 그라운딩/RAG로 검색된 데이터를 참조하기 때문입니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 사용할 수 있는 GPT 모델의 최대 컨텍스트 윈도우가 크면 어떤 이점이 있습니까?",o:["학습 속도 증가","한 번의 대화에서 더 많은 텍스트를 처리 가능","이미지 품질 향상","비용 감소"],a:1,e:"큰 컨텍스트 윈도우는 더 많은 텍스트를 한 번에 처리할 수 있게 합니다."},
-{d:"생성형AI",q:"프롬프트 엔지니어링에서 'Chain of Thought' 기법이란?",o:["여러 모델을 연결","단계별 추론 과정을 포함하도록 유도","프롬프트 길이 최소화","Temperature 자동 조정"],a:1,e:"Chain of Thought는 AI가 단계별로 추론 과정을 보여주도록 유도하는 기법입니다."},
-{d:"생성형AI",q:"Azure OpenAI의 콘텐츠 필터가 감지하는 4가지 카테고리는?",o:["폭력, 성적 콘텐츠, 자해, 증오","속도, 비용, 정확도, 지연","텍스트, 이미지, 음성, 비디오","학습, 추론, 배포, 모니터링"],a:0,e:"콘텐츠 필터는 폭력, 성적 콘텐츠, 자해, 증오의 4가지를 감지합니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 모델이 이전 대화 내용을 기억하는 방법은?",o:["자동 메모리","이전 메시지를 모두 프롬프트에 포함하여 전송","데이터베이스 조회","캐시 저장"],a:1,e:"모델은 메모리가 없으므로 이전 대화를 프롬프트에 포함해야 합니다."},
-{d:"생성형AI",q:"Azure AI Foundry에서 프롬프트 플로우(Prompt Flow)의 목적은?",o:["모델 학습 자동화","LLM 기반 앱의 개발/테스트/배포 워크플로우 관리","데이터 저장","네트워크 설정"],a:1,e:"프롬프트 플로우는 LLM 앱의 전체 워크플로우를 시각적으로 관리합니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 함수 호출(Function Calling)이란?",o:["Python 함수 실행","모델이 외부 API/도구를 호출할 수 있도록 구조화된 출력 생성","파인튜닝","데이터 전처리"],a:1,e:"함수 호출은 모델이 외부 도구 사용을 위한 구조화된 JSON을 생성하는 기능입니다."},
-{d:"CV",q:"Azure AI Vision의 스마트 크롭(Smart Crop) 기능은 무엇입니까?",o:["이미지 해상도 증가","관심 영역을 자동으로 감지하여 최적 비율로 자르기","이미지 색상 보정","배경 제거"],a:1,e:"스마트 크롭은 이미지에서 주요 관심 영역을 자동 감지하여 최적으로 잘라줍니다."},
-{d:"CV",q:"Azure AI Vision 4.0에서 새롭게 추가된 기능으로, 배경을 제거하거나 전경 객체만 추출할 수 있는 것은?",o:["OCR","이미지 분류","배경 제거(Background Removal)","시맨틱 분할"],a:2,e:"Vision 4.0은 이미지에서 배경을 제거하고 전경만 추출하는 기능을 제공합니다."},
-{d:"CV",q:"건설 현장에서 작업자가 안전모를 착용했는지 자동으로 감지하려 합니다. 가장 적합한 Azure 서비스와 기술은?",o:["Text Analytics + 감정 분석","Custom Vision + 객체 감지","QnA Maker","Azure Bot Service"],a:1,e:"커스텀 도메인(안전모)의 객체 감지는 Custom Vision으로 구현합니다."},
-{d:"CV",q:"Document Intelligence(Form Recognizer)에서 사전 학습된 모델이 지원하는 문서 유형이 아닌 것은?",o:["송장(Invoice)","영수증(Receipt)","신분증(ID Document)","음악 악보"],a:3,e:"사전 학습 모델은 송장, 영수증, 신분증 등을 지원하지만 음악 악보는 아닙니다."},
-{d:"NLP",q:"Azure AI Language에서 텍스트의 전반적인 의견(Opinion)뿐만 아니라 특정 측면(예: 음식, 서비스)에 대한 감정을 분석하는 기능은?",o:["핵심 구 추출","Aspect-based Sentiment Analysis(측면 기반 감정 분석)","언어 감지","NER"],a:1,e:"측면 기반 감정 분석은 특정 측면별 감정을 세분화하여 분석합니다."},
-{d:"NLP",q:"회의 녹음 파일에서 참석자별 발언 내용을 구분하여 회의록을 자동 생성하려 합니다. 필요한 Azure Speech 기능은?",o:["TTS","STT + 화자 분리(Speaker Diarization)","번역","감정 분석"],a:1,e:"STT로 텍스트 변환 후 화자 분리로 참석자별 발언을 구분합니다."},
-{d:"AI워크로드",q:"Azure에서 AI 서비스에 접근할 때 사용하는 두 가지 인증 방식은?",o:["키 인증과 Azure Active Directory(AAD) 인증","사용자 이름/비밀번호만","SMS 인증만","인증 불필요"],a:0,e:"Azure AI 서비스는 API 키와 AAD 토큰 두 가지 인증 방식을 지원합니다."},
-{d:"AI워크로드",q:"Azure AI 서비스의 가격 책정에서 '종량제(Pay-as-you-go)'란?",o:["월 고정 요금","사용한 만큼만 비용 지불","무료 사용","연간 계약"],a:1,e:"종량제는 API 호출 수, 처리량 등 실제 사용량에 따라 비용을 지불합니다."},
-{d:"책임AI",q:"Microsoft의 책임 AI Standard에서 '인간 감독(Human Oversight)'이 필요한 이유는?",o:["비용 절감","AI의 결정이 항상 100% 정확하지 않으므로 사람이 검토해야 함","법적 의무 없음","AI가 자율적으로 학습하므로"],a:1,e:"AI는 오류가 있을 수 있으므로 중요한 결정에는 사람의 검토가 필요합니다."},
-{d:"책임AI",q:"AI 모델의 편향을 줄이기 위해 학습 데이터에서 확인해야 할 것은?",o:["데이터 크기만","다양한 인구통계학적 그룹이 균형 있게 대표되는지","파일 형식","저장 위치"],a:1,e:"학습 데이터가 다양한 그룹을 균형 있게 대표해야 편향을 줄일 수 있습니다."},
-{d:"ML기본",q:"Azure Machine Learning에서 엔드포인트(Endpoint)의 역할은?",o:["데이터 저장","외부 애플리케이션이 모델에 예측을 요청할 수 있는 접점","모델 학습 시작","데이터 전처리"],a:1,e:"엔드포인트는 배포된 모델에 예측 요청을 보내는 접점입니다."},
-{d:"ML기본",q:"K-Means 알고리즘은 어떤 ML 유형에 사용됩니까?",o:["분류","회귀","클러스터링(Clustering)","강화학습"],a:2,e:"K-Means는 비지도 학습의 대표적인 클러스터링 알고리즘입니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 JSON Mode를 활성화하면?",o:["이미지만 출력","모델이 유효한 JSON 형식으로만 응답","학습 데이터가 JSON으로 변환","비용이 무료"],a:1,e:"JSON Mode는 모델이 항상 유효한 JSON을 출력하도록 강제합니다."},
-{d:"생성형AI",q:"멀티모달 모델(GPT-4o)에서 이미지를 입력으로 제공할 때의 용도는?",o:["이미지 저장만","이미지 내용을 분석하고 질문에 답변","이미지 편집","이미지 압축"],a:1,e:"멀티모달 모델은 이미지를 분석하여 내용에 대한 질문에 답변할 수 있습니다."},
-{d:"CV",q:"Azure AI Vision에서 이미지에 대한 풍부한 설명을 생성하는 Dense Captions 기능은 기존 Caption과 어떻게 다릅니까?",o:["동일한 기능","이미지 내 여러 영역에 대해 각각 별도의 캡션 생성","텍스트만 추출","색상 분석만"],a:1,e:"Dense Captions는 이미지 내 각 영역에 대해 개별 캡션을 생성합니다."},
-{d:"NLP",q:"Azure AI Language에서 CLU(Conversational Language Understanding)는 LUIS의 후속 서비스입니다. CLU의 장점은?",o:["비용만 저렴","다국어 지원 향상, 통합 Language 리소스에서 관리","음성 합성 포함","이미지 분류 포함"],a:1,e:"CLU는 LUIS보다 다국어 지원이 강화되고 통합 Language 리소스에서 관리됩니다."},
-{d:"AI워크로드",q:"Responsible AI 원칙 중 '신뢰성 및 안전성'을 보장하기 위한 기술적 접근 방법은?",o:["다양한 조건에서 철저한 테스트 및 모니터링","데이터 암호화만","UI 디자인 개선","마케팅 강화"],a:0,e:"다양한 조건에서의 테스트와 지속적 모니터링이 신뢰성을 보장합니다."},
-{d:"ML기본",q:"Azure Machine Learning에서 환경(Environment)의 역할은?",o:["데이터 저장","모델 학습/배포에 필요한 소프트웨어 패키지와 설정을 정의","가격 설정","사용자 인증"],a:1,e:"환경은 Python 패키지 등 학습/배포에 필요한 소프트웨어 구성을 정의합니다."},
-{d:"생성형AI",q:"Azure AI Foundry에서 모델 카탈로그(Model Catalog)의 용도는?",o:["데이터 저장","사용 가능한 LLM과 SLM을 탐색하고 비교하여 배포","네트워크 설정","사용자 관리"],a:1,e:"모델 카탈로그에서 다양한 모델을 탐색, 비교, 배포할 수 있습니다."},
-{d:"CV",q:"Face API에서 얼굴 감지(Detect) 시 반환되는 정보에 포함되지 않는 것은?",o:["얼굴 위치(좌표)","나이/성별 추정","얼굴 속성(안경, 감정 등)","신용카드 정보"],a:3,e:"Face Detect는 위치, 나이/성별 추정, 속성을 반환하지만 금융 정보는 아닙니다."},
-{d:"NLP",q:"Azure AI Language 서비스에서 텍스트 분류(Custom Text Classification)를 사용하는 시나리오는?",o:["이미지 분류","고객 문의를 '기술 지원', '결제', '배송' 등 카테고리로 자동 분류","음성 합성","영상 분석"],a:1,e:"텍스트를 사전 정의된 카테고리로 분류하는 것은 Custom Text Classification입니다."},
-{d:"AI워크로드",q:"AI 프로젝트의 수명 주기에서 '데이터 수집 → 모델 학습 → 평가 → 배포 → 모니터링'의 순서가 중요한 이유는?",o:["비용 절감만","각 단계가 다음 단계의 품질에 직접적으로 영향을 미치므로","법적 요구사항","기술적 제한"],a:1,e:"데이터 품질이 모델 성능에, 모델 성능이 배포 결과에 영향을 미칩니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 '시스템 메시지에 개인정보를 포함하지 마세요'라는 가이드의 이유는?",o:["성능 저하","시스템 메시지가 프롬프트 인젝션으로 노출될 수 있으므로","비용 증가","모델 학습에 사용될 수 있으므로"],a:1,e:"프롬프트 인젝션 공격으로 시스템 메시지 내용이 노출될 수 있어 개인정보를 넣지 않아야 합니다."},
-{d:"ML기본",q:"특성 엔지니어링(Feature Engineering)이란?",o:["모델 아키텍처 설계","원시 데이터를 모델 학습에 유용한 형태로 변환하는 과정","하이퍼파라미터 튜닝","모델 배포"],a:1,e:"특성 엔지니어링은 데이터를 모델이 더 잘 학습할 수 있는 형태로 가공하는 과정입니다."},
-{d:"책임AI",q:"AI 시스템이 특정 결정을 내릴 때 영향을 받는 사람에게 이의 제기(Appeal) 할 수 있는 경로를 제공하는 것은 어떤 원칙입니까?",o:["투명성","공정성","책임감(Accountability)","신뢰성"],a:2,e:"이의 제기 경로를 제공하는 것은 AI에 대한 책임감을 실현하는 방법입니다."},
-{d:"생성형AI",q:"Azure OpenAI에서 Abuse Monitoring이란?",o:["모델 성능 모니터링","서비스 악용(유해 콘텐츠 생성 등)을 감지하고 방지하는 시스템","비용 모니터링","네트워크 모니터링"],a:1,e:"Abuse Monitoring은 서비스가 악용되는 것을 감지하고 방지합니다."},
-{d:"NLP",q:"Azure AI Language에서 '엔터티 링킹(Entity Linking)'이란?",o:["엔터티 삭제","텍스트에서 식별된 엔터티를 Wikipedia 등 지식 베이스의 항목과 연결","문장 번역","감정 점수 계산"],a:1,e:"엔터티 링킹은 텍스트의 엔터티를 Wikipedia 등 외부 지식과 연결합니다."},
-{d:"CV",q:"Azure AI Vision 서비스의 Analyze Image API를 호출할 때 지정할 수 있는 Visual Features가 아닌 것은?",o:["Tags(태그)","Description(설명)","Objects(객체)","Translation(번역)"],a:3,e:"번역은 Translator 서비스의 기능이지 Vision의 Visual Feature가 아닙니다."},
-{d:"ML기본",q:"Azure Machine Learning에서 데이터셋을 등록(Register)하는 이점은?",o:["비용 절감","여러 실험에서 동일 데이터를 재사용하고 버전 추적 가능","학습 속도 향상","모델 정확도 향상"],a:1,e:"데이터셋 등록으로 재사용성과 버전 관리가 가능합니다."},
-{d:"AI워크로드",q:"Azure Cognitive Services와 Azure Machine Learning의 차이점은?",o:["차이 없음","Cognitive Services는 사전 학습된 API, ML은 커스텀 모델 학습 플랫폼","ML이 더 저렴","Cognitive Services는 무료"],a:1,e:"Cognitive Services는 바로 사용 가능한 API, ML은 커스텀 모델을 학습하는 플랫폼입니다."}
-];
-var TQ=45,TM=45*60,PS=700;
-var DF={"AI워크로드":"AI 워크로드","책임AI":"책임 AI","ML기본":"ML 기본","CV":"컴퓨터 비전","NLP":"자연어 처리","생성형AI":"생성형 AI"};
-var DC={"AI워크로드":"#1565C0","책임AI":"#C62828","ML기본":"#0B3D91","CV":"#00838F","NLP":"#6A1B9A","생성형AI":"#FF6D00"};
+let allQuestions = [];
+let quizQuestions = [];
+let currentIndex = 0;
+let selectedOption = null;
+let answered = false;
+let correctCount = 0;
+let sessionWrong = [];
 
-function sGet(k){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}}
-function sSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+const COUNTS = [10, 20, 50];
+let selectedDomain = '전체';
+let selectedCount = 10;
 
-var qs,ci,ans,tl,tid,att=0;
-var phase="home";
-
-function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=0|Math.random()*(i+1);var t=a[i];a[i]=a[j];a[j]=t;}return a;}
-function fm(s){return ('0'+Math.floor(s/60)).slice(-2)+':'+('0'+(s%60)).slice(-2);}
-function R(){return document.getElementById('root');}
-
-function getPool(){
-  var gen=sGet('ai900-gen')||[];
-  return B.concat(gen);
-}
-function getHist(){return sGet('ai900-hist')||[];}
-function getWrong(){return sGet('ai900-wrong')||{};}
-
-function showHome(){
-  phase="home";
-  var hist=getHist();
-  var pool=getPool();
-  var best=hist.length?Math.max.apply(null,hist.map(function(h){return h.sc;})):0;
-  var genCount=(sGet('ai900-gen')||[]).length;
-
-  R().innerHTML='<div style="min-height:100vh;background:linear-gradient(135deg,#0D1B40,#1a237e);display:flex;align-items:center;justify-content:center;padding:16px"><div style="background:#fff;border-radius:20px;padding:40px 32px;max-width:500px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)"><div style="font-size:13px;font-weight:700;color:#FF6D00;letter-spacing:2px;margin-bottom:6px">MICROSOFT CERTIFIED</div><div style="font-size:42px;font-weight:900;color:#0D1B40">AI-900</div><div style="font-size:15px;color:#666;margin:4px 0 24px">Azure AI Fundamentals 모의시험</div><div style="background:#f8f9fa;border-radius:12px;padding:18px 22px;text-align:left;margin-bottom:16px;font-size:14px;line-height:2.2;color:#333">📝 <b>45문제</b> (총 '+pool.length+'문제 풀 랜덤)<br>⏱ <b>45분</b> · ✅ <b>700/1000점 합격</b></div>'+(genCount>0?'<div style="font-size:11px;color:#1565C0;font-weight:600;margin-bottom:6px">🤖 AI생성 '+genCount+'문제 포함</div>':'')+(hist.length>0?'<div style="font-size:12px;color:#FF6D00;font-weight:600;margin-bottom:12px">🔄 '+hist.length+'회 응시 · 최고 '+best+'점</div>':'')+'<button onclick="startExam()" class="btn" style="width:100%;padding:16px;font-size:18px;color:#fff;background:linear-gradient(135deg,#FF6D00,#FF8F00)">'+(hist.length>0?'다시 응시 🔄':'시험 시작 →')+'</button><div style="display:flex;gap:8px;margin-top:10px">'+(hist.length>0?'<button onclick="showStats()" class="btn" style="flex:1;padding:13px;font-size:14px;color:#0D1B40;background:#f0f0f0">📊 학습 분석</button>':'')+'<button onclick="showGenerate()" class="btn" style="flex:1;padding:13px;font-size:14px;color:#1565C0;background:#E8F0FE">🤖 AI 문제 생성</button></div></div></div>';
-}
-
-function startExam(){
-  var pool=getPool();
-  qs=sh(pool).slice(0,TQ);ci=0;ans={};tl=TM;att++;phase="exam";
-  clearInterval(tid);
-  tid=setInterval(function(){
-    tl--;var e=document.getElementById('tm');
-    if(e){e.textContent='⏱ '+fm(tl);e.style.color=tl<300?'#E53935':'#0D1B40';e.style.background=tl<300?'#FFEBEE':'#f8f9fa';}
-    if(tl<=0){clearInterval(tid);submitExam();}
-  },1000);
-  drawExam();
-}
-
-function drawExam(){
-  var q=qs[ci],ac=Object.keys(ans).length;
-  var dots='';
-  for(var i=0;i<qs.length;i++){
-    var bg=i==ci?'#0D1B40':ans[i]!=null?'#E8F0FE':'#fff';
-    var co=i==ci?'#fff':ans[i]!=null?'#1565C0':'#bbb';
-    dots+='<div onclick="ci='+i+';drawExam()" style="width:26px;height:26px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;cursor:pointer;border:1px solid '+(i==ci?'#0D1B40':'#e0e0e0')+';background:'+bg+';color:'+co+';margin:1px">'+(i+1)+'</div>';
+async function loadQuestions() {
+  try {
+    const res = await fetch('data/questions.json');
+    allQuestions = await res.json();
+    buildSetup();
+  } catch (e) {
+    document.getElementById('setup-screen').innerHTML = '<p style="text-align:center;color:red;">문제 데이터를 불러올 수 없습니다.<br>data/questions.json 파일을 확인해주세요.</p>';
   }
-  var opts='';
-  for(var j=0;j<q.o.length;j++){
-    var s=ans[ci]==j;
-    opts+='<div onclick="ans[ci]='+j+';drawExam()" style="padding:13px 16px;border-radius:10px;cursor:pointer;border:2px solid '+(s?'#1565C0':'#e8e8e8')+';background:'+(s?'#E8F0FE':'#fff')+';color:'+(s?'#0D47A1':'#333')+';font-size:14px;font-weight:'+(s?'600':'400')+';margin-bottom:8px;display:flex;align-items:center;gap:10px;line-height:1.5"><div style="width:22px;height:22px;border-radius:50%;border:2px solid '+(s?'#1565C0':'#ccc')+';background:'+(s?'#1565C0':'transparent')+';display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:#fff">'+(s?'●':'')+'</div>'+q.o[j]+'</div>';
-  }
-  var nav='<button onclick="if(ci>0){ci--;drawExam()}" '+(ci==0?'disabled':'')+' class="btn" style="flex:1;padding:14px;font-size:15px;border:2px solid #e0e0e0;background:#fff;color:'+(ci==0?'#ccc':'#0D1B40')+';opacity:'+(ci==0?'.4':'1')+'">← 이전</button>';
-  if(ci<qs.length-1)nav+='<button onclick="ci++;drawExam()" class="btn" style="flex:1;padding:14px;font-size:15px;background:#0D1B40;color:#fff">다음 →</button>';
-  else nav+='<button onclick="submitExam()" class="btn" style="flex:1;padding:14px;font-size:15px;background:linear-gradient(135deg,#FF6D00,#FF8F00);color:#fff">제출 ✓</button>';
-  var early=ci<qs.length-1&&ac==qs.length?'<button onclick="submitExam()" class="btn" style="width:100%;margin-top:8px;padding:12px;font-size:13px;background:#FFF8E1;color:#FF6D00;border:2px solid #FFE0B2">전부 완료 — 제출</button>':'';
-
-  R().innerHTML='<div style="min-height:100vh;background:#f5f5f5"><div style="position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e0e0e0;box-shadow:0 2px 8px rgba(0,0,0,.05)"><div style="max-width:660px;margin:0 auto;padding:10px 16px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-size:14px;font-weight:800;color:#0D1B40">AI-900</span><div style="display:flex;align-items:center;gap:10px"><span style="font-size:12px;color:#999">'+ac+'/'+qs.length+'</span><span id="tm" style="font-size:16px;font-weight:800;padding:3px 10px;border-radius:8px;color:#0D1B40;background:#f8f9fa">⏱ '+fm(tl)+'</span></div></div><div style="height:4px;background:#e0e0e0;border-radius:2px"><div style="width:'+(ac/qs.length*100)+'%;height:100%;background:linear-gradient(90deg,#FF6D00,#FF8F00);border-radius:2px;transition:width .3s"></div></div></div></div><div style="max-width:660px;margin:0 auto;padding:16px"><div style="margin-bottom:14px">'+dots+'</div><div style="background:#fff;border-radius:16px;padding:24px 20px;box-shadow:0 2px 10px rgba(0,0,0,.05);border-top:4px solid '+(DC[q.d]||'#999')+'"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><span style="font-size:11px;font-weight:700;color:'+(DC[q.d]||'#999')+';background:'+(DC[q.d]||'#999')+'18;padding:3px 12px;border-radius:20px">'+(DF[q.d]||q.d)+'</span><span style="font-size:11px;color:#bbb">Q'+(ci+1)+'/'+qs.length+'</span></div><div style="font-size:15px;font-weight:600;line-height:1.7;margin-bottom:20px">'+q.q+'</div>'+opts+'</div><div style="display:flex;gap:10px;margin-top:14px">'+nav+'</div>'+early+'</div></div>';
 }
 
-function submitExam(){
-  clearInterval(tid);phase="result";
-  var cc=0,ds={},nw=getWrong();
-  for(var i=0;i<qs.length;i++){
-    var d=qs[i].d;if(!ds[d])ds[d]={t:0,c:0};ds[d].t++;
-    if(ans[i]==qs[i].a){cc++;ds[d].c++;}
-    else{var k=qs[i].q.slice(0,40);nw[k]=(nw[k]||0)+1;}
-  }
-  var sc=Math.round(cc/qs.length*1000),pa=sc>=PS,el=TM-tl;
-  var hist=getHist();
-  hist.push({dt:new Date().toLocaleDateString('ko'),sc:sc,cc:cc,tot:qs.length,tm:el,ds:ds,pa:pa});
-  sSet('ai900-hist',hist);sSet('ai900-wrong',nw);
-  showResult();
-}
-
-function showResult(){
-  var hist=getHist();var r=hist[hist.length-1];
-  var dsh='';
-  for(var d in r.ds){var p=Math.round(r.ds[d].c/r.ds[d].t*100);dsh+='<div style="margin-bottom:6px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px"><span style="font-weight:600;color:'+(DC[d]||'#999')+'">'+(DF[d]||d)+'</span><span style="color:#999">'+r.ds[d].c+'/'+r.ds[d].t+' ('+p+'%)</span></div><div style="height:6px;background:#e0e0e0;border-radius:3px"><div style="width:'+p+'%;height:100%;background:'+(p>=70?'#43A047':'#E53935')+';border-radius:3px"></div></div></div>';}
-  var weak=[];for(var d in r.ds){var p=Math.round(r.ds[d].c/r.ds[d].t*100);if(p<70)weak.push(DF[d]||d);}
-
-  R().innerHTML='<div style="min-height:100vh;background:'+(r.pa?'linear-gradient(135deg,#1B5E20,#2E7D32)':'linear-gradient(135deg,#B71C1C,#C62828)')+';padding:16px"><div style="max-width:540px;margin:0 auto"><div style="background:#fff;border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);margin-bottom:16px"><div style="font-size:52px;margin-bottom:4px">'+(r.pa?'🎉':'😢')+'</div><div style="font-size:24px;font-weight:900;color:'+(r.pa?'#1B5E20':'#B71C1C')+'">'+(r.pa?'합격 (PASS)':'불합격 (FAIL)')+'</div><div style="font-size:12px;color:#999;margin:6px 0 18px">소요: '+fm(r.tm)+' | '+hist.length+'회차</div><div style="display:flex;justify-content:center;gap:16px;margin-bottom:18px"><div style="background:#f8f9fa;border-radius:14px;padding:14px 24px"><div style="font-size:30px;font-weight:900;color:'+(r.pa?'#1B5E20':'#B71C1C')+'">'+r.sc+'</div><div style="font-size:10px;color:#999">/1000</div></div><div style="background:#f8f9fa;border-radius:14px;padding:14px 24px"><div style="font-size:30px;font-weight:900;color:#0D1B40">'+r.cc+'</div><div style="font-size:10px;color:#999">/'+r.tot+'</div></div></div>'+dsh+(weak.length>0?'<div style="margin-top:8px;padding:6px 10px;background:#FFEBEE;border-radius:8px;font-size:11px;color:#C62828;text-align:left">⚠ 약점: <b>'+weak.join(', ')+'</b></div>':'')+'<div style="display:flex;gap:8px;margin-top:16px"><button onclick="startExam()" class="btn" style="flex:1;padding:13px;font-size:14px;color:#fff;background:linear-gradient(135deg,#FF6D00,#FF8F00)">다시 응시</button><button onclick="showReview()" class="btn" style="flex:1;padding:13px;font-size:14px;color:#0D1B40;background:#f0f0f0">오답 리뷰</button><button onclick="showStats()" class="btn" style="flex:1;padding:13px;font-size:14px;color:#1565C0;background:#E8F0FE">📊 분석</button></div></div></div></div>';
-}
-
-function showReview(){
-  phase="review";var wh='',wc=0;
-  for(var i=0;i<qs.length;i++){
-    if(ans[i]==qs[i].a)continue;wc++;var q=qs[i],oh='';
-    for(var j=0;j<q.o.length;j++){var ic=j==q.a,iu=j==ans[i];oh+='<div style="padding:8px 12px;border-radius:8px;border:1.5px solid '+(ic?'#43A047':iu?'#E53935':'#e0e0e0')+';background:'+(ic?'#E8F5E9':iu?'#FFEBEE':'transparent')+';color:'+(ic?'#1B5E20':iu?'#B71C1C':'#444')+';font-size:13px;margin-bottom:5px;line-height:1.4">'+(ic?'✅ ':iu?'❌ ':'')+q.o[j]+'</div>';}
-    wh+='<div style="border-left:4px solid '+(DC[q.d]||'#999')+';padding:16px 18px;margin-bottom:12px;background:#fff;border-radius:0 14px 14px 0"><div style="font-size:10px;font-weight:700;color:'+(DC[q.d]||'#999')+';margin-bottom:6px">'+(DF[q.d]||q.d)+'</div><div style="font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6">'+q.q+'</div>'+oh+'<div style="margin-top:8px;padding:8px 12px;background:#FFF8E1;border-radius:8px;font-size:12px;color:#E65100;line-height:1.5">💡 '+q.e+'</div></div>';
-  }
-  R().innerHTML='<div style="min-height:100vh;background:#f5f5f5;padding:16px"><div style="max-width:600px;margin:0 auto"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><span style="font-size:17px;font-weight:800">❌ 오답 리뷰 ('+wc+'문제)</span><button onclick="showResult()" class="btn" style="padding:8px 16px;font-size:12px;background:#FF6D00;color:#fff">← 결과</button></div>'+(wc==0?'<div style="background:#fff;border-radius:14px;padding:32px;text-align:center"><div style="font-size:44px">🎯</div><div style="font-size:15px;font-weight:700;margin-top:8px">전문 정답!</div></div>':wh)+'</div></div>';
-}
-
-function showStats(){
-  phase="stats";var hist=getHist(),wm=getWrong();
-  if(!hist.length){R().innerHTML='<div style="min-height:100vh;background:#f5f5f5;display:flex;align-items:center;justify-content:center;padding:16px"><div style="background:#fff;border-radius:14px;padding:32px;text-align:center;max-width:400px;width:100%"><div style="font-size:40px;margin-bottom:8px">📝</div><div style="font-size:15px;font-weight:700;margin-bottom:4px">아직 기록 없음</div><div style="font-size:12px;color:#999;margin-bottom:16px">시험을 먼저 응시해주세요</div><button onclick="showHome()" class="btn" style="padding:10px 20px;font-size:14px;background:#0D1B40;color:#fff">← 홈</button></div></div>';return;}
-
-  var da={};hist.forEach(function(h){for(var d in h.ds){if(!da[d])da[d]={t:0,c:0};da[d].t+=h.ds[d].t;da[d].c+=h.ds[d].c;}});
-  var avg=Math.round(hist.reduce(function(a,h){return a+h.sc;},0)/hist.length);
-  var best=Math.max.apply(null,hist.map(function(h){return h.sc;}));
-  var pass=hist.filter(function(h){return h.pa;}).length;
-
-  var sum='<div style="display:flex;gap:8px;margin-bottom:12px">';
-  [["총 응시",hist.length,"#0D1B40"],["최고",best,"#1B5E20"],["평균",avg,"#FF6D00"],["합격",pass,"#1565C0"]].forEach(function(x){
-    sum+='<div style="flex:1;background:#f8f9fa;border-radius:10px;padding:10px;text-align:center"><div style="font-size:20px;font-weight:900;color:'+x[2]+'">'+x[1]+'</div><div style="font-size:9px;color:#999">'+x[0]+'</div></div>';
-  });sum+='</div>';
-
-  var chart='';
-  hist.forEach(function(h,i){
-    chart+='<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="font-size:10px;color:#999;width:30px">'+(i+1)+'회</span><div style="flex:1;height:16px;background:#f0f0f0;border-radius:8px;overflow:hidden;position:relative"><div style="width:'+(h.sc/1000*100)+'%;height:100%;background:'+(h.pa?'#43A047':'#E53935')+';border-radius:8px"></div><div style="position:absolute;left:70%;top:0;bottom:0;width:2px;background:#FF6D00"></div></div><span style="font-size:10px;font-weight:700;color:'+(h.pa?'#1B5E20':'#B71C1C')+';width:40px;text-align:right">'+h.sc+'</span></div>';
+function buildSetup() {
+  const domains = ['전체', ...new Set(allQuestions.map(q => q.domain))];
+  const grid = document.getElementById('domain-grid');
+  grid.innerHTML = '';
+  domains.forEach(d => {
+    const btn = document.createElement('div');
+    btn.className = 'domain-btn' + (d === selectedDomain ? ' active' : '');
+    btn.textContent = d;
+    const count = d === '전체' ? allQuestions.length : allQuestions.filter(q => q.domain === d).length;
+    btn.textContent = d + ' (' + count + ')';
+    btn.onclick = () => { selectedDomain = d; buildSetup(); updateInfo(); };
+    grid.appendChild(btn);
   });
 
-  var dom='';
-  for(var d in da){var p=Math.round(da[d].c/da[d].t*100);dom+='<div style="margin-bottom:5px"><div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:1px"><span style="font-weight:600;color:'+(DC[d]||'#999')+'">'+(DF[d]||d)+'</span><span style="color:#999">'+da[d].c+'/'+da[d].t+' ('+p+'%)</span></div><div style="height:6px;background:#e0e0e0;border-radius:3px"><div style="width:'+p+'%;height:100%;background:'+(p>=70?'#43A047':'#E53935')+';border-radius:3px"></div></div></div>';}
-
-  var tw=Object.entries(wm).sort(function(a,b){return b[1]-a[1];}).slice(0,8);
-  var twh='';tw.forEach(function(x){twh+='<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0f0f0;font-size:10px"><span style="flex:1;color:#333">'+x[0]+'...</span><span style="color:#E53935;font-weight:700">'+x[1]+'회</span></div>';});
-
-  R().innerHTML='<div style="min-height:100vh;background:#f5f5f5;padding:16px"><div style="max-width:560px;margin:0 auto"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><span style="font-size:17px;font-weight:800">📊 학습 분석</span><button onclick="showHome()" class="btn" style="padding:8px 16px;font-size:12px;background:#0D1B40;color:#fff">← 홈</button></div><div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:12px">'+sum+'<div style="font-size:12px;font-weight:700;margin-bottom:8px">📈 점수 추이</div>'+chart+'<div style="font-size:9px;color:#FF6D00;margin-top:4px">▮ 합격선 700점</div></div><div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:12px"><div style="font-size:12px;font-weight:700;margin-bottom:8px">🎯 영역별 누적 정답률</div>'+dom+'</div>'+(tw.length>0?'<div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:12px"><div style="font-size:12px;font-weight:700;margin-bottom:8px">❌ 자주 틀리는 문제</div>'+twh+'</div>':'')+'<button onclick="if(confirm(\'모든 데이터를 초기화할까요?\')){localStorage.removeItem(\'ai900-hist\');localStorage.removeItem(\'ai900-wrong\');localStorage.removeItem(\'ai900-gen\');showHome();}" class="btn" style="width:100%;padding:10px;font-size:12px;background:#fff;color:#E53935;border:2px solid #FFCDD2">🗑 데이터 초기화</button></div></div>';
-}
-
-function showGenerate(){
-  phase="generate";
-  var apiKey=sGet('ai900-apikey')||'';
-  var gen=sGet('ai900-gen')||[];
-  var da={};var hist=getHist();
-  hist.forEach(function(h){for(var d in h.ds){if(!da[d])da[d]={t:0,c:0};da[d].t+=h.ds[d].t;da[d].c+=h.ds[d].c;}});
-  var weakList=[];
-  for(var d in da){if(Math.round(da[d].c/da[d].t*100)<70)weakList.push(d);}
-
-  var domBtns='<div onclick="selDom=\'auto\';showGenerate()" id="dbtn-auto" style="padding:6px 12px;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;background:'+(selDom=="auto"?"#FF6D00":"#f0f0f0")+';color:'+(selDom=="auto"?"#fff":"#666")+';display:inline-block;margin:2px">🎯 약점 자동</div>';
-  for(var d in DF){domBtns+='<div onclick="selDom=\''+d+'\';showGenerate()" style="padding:6px 12px;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;background:'+(selDom==d?DC[d]||"#999":"#f0f0f0")+';color:'+(selDom==d?"#fff":"#666")+';display:inline-block;margin:2px">'+DF[d]+'</div>';}
-
-  var genInfo='';
-  if(gen.length>0){
-    var gc={};gen.forEach(function(q){gc[q.d]=(gc[q.d]||0)+1;});
-    var tags='';for(var d in gc)tags+='<span style="font-size:10px;padding:3px 8px;border-radius:6px;background:'+(DC[d]||'#999')+'18;color:'+(DC[d]||'#999')+';font-weight:600;margin:2px">'+(DF[d]||d)+' '+gc[d]+'</span>';
-    genInfo='<div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:12px"><div style="font-size:13px;font-weight:700;margin-bottom:8px">📚 AI 생성 문제: '+gen.length+'개</div><div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px">'+tags+'</div><button onclick="if(confirm(\'생성 문제를 초기화할까요?\')){sSet(\'ai900-gen\',[]);showGenerate();}" class="btn" style="width:100%;padding:8px;font-size:11px;background:#fff;color:#E53935;border:1.5px solid #FFCDD2">생성 문제 초기화</button></div>';
-  }
-
-  R().innerHTML='<div style="min-height:100vh;background:#f5f5f5;padding:16px"><div style="max-width:560px;margin:0 auto"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><span style="font-size:17px;font-weight:800">🤖 AI 문제 생성</span><button onclick="showHome()" class="btn" style="padding:8px 16px;font-size:12px;background:#0D1B40;color:#fff">← 홈</button></div><div style="background:#fff;border-radius:14px;padding:20px;margin-bottom:12px"><div style="font-size:12px;font-weight:600;margin-bottom:6px">🔑 Anthropic API Key</div><input id="apiKeyInput" type="password" value="'+apiKey+'" placeholder="sk-ant-api..." style="width:100%;padding:10px 12px;border:2px solid #e0e0e0;border-radius:8px;font-size:12px;margin-bottom:14px;box-sizing:border-box"><div style="font-size:12px;font-weight:600;margin-bottom:6px">영역 선택</div><div style="margin-bottom:14px">'+domBtns+'</div>'+(weakList.length>0?'<div style="padding:6px 10px;background:#FFF8E1;border-radius:8px;font-size:11px;color:#E65100;margin-bottom:14px">💡 약점: '+(weakList.map(function(d){return DF[d]||d;}).join(', '))+'</div>':'')+'<div style="font-size:12px;font-weight:600;margin-bottom:6px">생성 개수</div><div style="display:flex;gap:6px;margin-bottom:16px"><div onclick="genCnt=3;showGenerate()" style="padding:6px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;background:'+(genCnt==3?'#0D1B40':'#f0f0f0')+';color:'+(genCnt==3?'#fff':'#666')+'">3문제</div><div onclick="genCnt=5;showGenerate()" style="padding:6px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;background:'+(genCnt==5?'#0D1B40':'#f0f0f0')+';color:'+(genCnt==5?'#fff':'#666')+'">5문제</div><div onclick="genCnt=10;showGenerate()" style="padding:6px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;background:'+(genCnt==10?'#0D1B40':'#f0f0f0')+';color:'+(genCnt==10?'#fff':'#666')+'">10문제</div></div><button id="genBtn" onclick="doGenerate()" class="btn" style="width:100%;padding:14px;font-size:15px;color:#fff;background:linear-gradient(135deg,#FF6D00,#FF8F00)">🤖 문제 생성하기</button><div id="genStatus" style="margin-top:10px;font-size:12px;color:#999;text-align:center"></div></div>'+genInfo+'</div></div>';
-}
-
-var selDom='auto',genCnt=5;
-
-function doGenerate(){
-  var apiKey=document.getElementById('apiKeyInput').value.trim();
-  if(!apiKey){document.getElementById('genStatus').innerHTML='<span style="color:#E53935">❌ API Key를 입력해주세요</span>';return;}
-  sSet('ai900-apikey',apiKey);
-
-  var domain=selDom;
-  if(domain==='auto'){
-    var da={};var hist=getHist();
-    hist.forEach(function(h){for(var d in h.ds){if(!da[d])da[d]={t:0,c:0};da[d].t+=h.ds[d].t;da[d].c+=h.ds[d].c;}});
-    var worst=null,wp=100;
-    for(var d in da){var p=Math.round(da[d].c/da[d].t*100);if(p<wp){wp=p;worst=d;}}
-    domain=worst||'생성형AI';
-  }
-
-  var btn=document.getElementById('genBtn');
-  btn.disabled=true;btn.textContent='⏳ AI가 문제를 만들고 있어요...';btn.style.background='#bbb';
-  document.getElementById('genStatus').textContent='';
-
-  var prompt='AI-900 Azure AI Fundamentals 실전 시험 문제를 '+genCnt+'개 생성해주세요.\n\n영역: '+(DF[domain]||domain)+'\n\n규칙:\n- 반드시 실제 시험처럼 시나리오 기반 (회사 상황, 구체적 요구사항 제시 후 질문)\n- 문제 길이: 최소 40자 이상, 구체적 상황 설명 포함\n- 4지선다, 한국어, 실제 Azure 서비스명 정확히 사용\n- 단순 용어 정의가 아닌 적용/판단력 문제\n\n좋은 예: 소매 회사가 고객 리뷰 수천 건에서 제품별 감정 추이를 분석하려 합니다. 어떤 Azure AI 서비스를 사용해야 합니까?\n나쁜 예: 감정 분석 서비스는?\n\nJSON 배열만 응답(마크다운 없이).\n[{"d":"'+domain+'","q":"시나리오 문제","o":["1","2","3","4"],"a":정답인덱스,"e":"해설"}]';
-
-  fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4000,messages:[{role:'user',content:prompt}]})
-  }).then(function(r){return r.json();}).then(function(data){
-    var text=(data.content||[]).map(function(c){return c.text||'';}).join('');
-    var clean=text.replace(/```json|```/g,'').trim();
-    var parsed=JSON.parse(clean);
-    if(Array.isArray(parsed)&&parsed.length>0){
-      var gen=sGet('ai900-gen')||[];
-      gen=gen.concat(parsed);
-      sSet('ai900-gen',gen);
-      document.getElementById('genStatus').innerHTML='<span style="color:#1B5E20">✅ '+parsed.length+'문제 생성 완료! 총 '+gen.length+'문제</span>';
-    }
-    btn.disabled=false;btn.textContent='🤖 문제 생성하기';btn.style.background='linear-gradient(135deg,#FF6D00,#FF8F00)';
-    setTimeout(showGenerate,1500);
-  }).catch(function(err){
-    document.getElementById('genStatus').innerHTML='<span style="color:#E53935">❌ 오류: '+err.message+'</span>';
-    btn.disabled=false;btn.textContent='🤖 문제 생성하기';btn.style.background='linear-gradient(135deg,#FF6D00,#FF8F00)';
+  const countGrid = document.getElementById('count-grid');
+  countGrid.innerHTML = '';
+  const filtered = getFilteredQuestions();
+  COUNTS.forEach(c => {
+    if (c > filtered.length && c !== COUNTS[0]) return;
+    const btn = document.createElement('div');
+    btn.className = 'count-btn' + (c === selectedCount ? ' active' : '');
+    btn.textContent = c + '문제';
+    btn.onclick = () => { selectedCount = c; buildSetup(); };
+    countGrid.appendChild(btn);
   });
+  // 전체 버튼
+  const allBtn = document.createElement('div');
+  allBtn.className = 'count-btn' + (selectedCount === 0 ? ' active' : '');
+  allBtn.textContent = '전체 (' + filtered.length + ')';
+  allBtn.onclick = () => { selectedCount = 0; buildSetup(); };
+  countGrid.appendChild(allBtn);
+
+  updateInfo();
 }
 
-showHome();
+function getFilteredQuestions() {
+  if (selectedDomain === '전체') return [...allQuestions];
+  return allQuestions.filter(q => q.domain === selectedDomain);
+}
+
+function updateInfo() {
+  const filtered = getFilteredQuestions();
+  const actual = selectedCount === 0 ? filtered.length : Math.min(selectedCount, filtered.length);
+  document.getElementById('question-info').textContent = actual + '문제를 풀게 됩니다';
+  document.getElementById('start-btn').disabled = filtered.length === 0;
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function startQuiz() {
+  let filtered = getFilteredQuestions();
+  shuffle(filtered);
+  const count = selectedCount === 0 ? filtered.length : Math.min(selectedCount, filtered.length);
+  quizQuestions = filtered.slice(0, count);
+  currentIndex = 0;
+  correctCount = 0;
+  sessionWrong = [];
+  document.getElementById('setup-screen').style.display = 'none';
+  document.getElementById('quiz-screen').style.display = 'block';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = quizQuestions[currentIndex];
+  selectedOption = null;
+  answered = false;
+
+  const pct = ((currentIndex) / quizQuestions.length * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('quiz-counter').textContent = (currentIndex + 1) + ' / ' + quizQuestions.length;
+  document.getElementById('quiz-domain').textContent = q.domain;
+
+  let questionHTML = q.question;
+  if (q.has_image && q.image_path) {
+    questionHTML += '<img src="' + q.image_path + '" alt="문제 이미지">';
+  }
+  document.getElementById('quiz-question').innerHTML = questionHTML;
+
+  const list = document.getElementById('option-list');
+  list.innerHTML = '';
+  Object.entries(q.options).forEach(([key, val]) => {
+    const li = document.createElement('li');
+    li.className = 'option-item';
+    li.dataset.key = key;
+    li.innerHTML = '<span class="option-label">' + key + '</span><span>' + val + '</span>';
+    li.onclick = () => selectOption(li, key);
+    list.appendChild(li);
+  });
+
+  document.getElementById('explanation-box').style.display = 'none';
+  document.getElementById('submit-btn').style.display = 'block';
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('next-btn').style.display = 'none';
+}
+
+function selectOption(el, key) {
+  if (answered) return;
+  document.querySelectorAll('.option-item').forEach(i => i.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedOption = key;
+  document.getElementById('submit-btn').disabled = false;
+}
+
+function submitAnswer() {
+  if (!selectedOption || answered) return;
+  answered = true;
+  const q = quizQuestions[currentIndex];
+  const isCorrect = selectedOption === q.answer;
+
+  document.querySelectorAll('.option-item').forEach(el => {
+    el.classList.add('disabled');
+    if (el.dataset.key === q.answer) el.classList.add('correct');
+    if (el.dataset.key === selectedOption && !isCorrect) el.classList.add('wrong');
+  });
+
+  if (isCorrect) {
+    correctCount++;
+  } else {
+    sessionWrong.push(q.id);
+    saveWrong(q.id);
+  }
+
+  const expBox = document.getElementById('explanation-box');
+  expBox.innerHTML = (isCorrect ? '✅ 정답!' : '❌ 오답! 정답: ' + q.answer) + '<br><br>' + q.explanation;
+  expBox.style.display = 'block';
+
+  document.getElementById('submit-btn').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'block';
+
+  // 마지막 문제면 버튼 텍스트 변경
+  if (currentIndex === quizQuestions.length - 1) {
+    document.getElementById('next-btn').textContent = '결과 보기 →';
+  }
+}
+
+function nextQuestion() {
+  currentIndex++;
+  if (currentIndex >= quizQuestions.length) {
+    showResult();
+    return;
+  }
+  renderQuestion();
+}
+
+function showResult() {
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'block';
+
+  const pct = Math.round(correctCount / quizQuestions.length * 100);
+  document.getElementById('result-score').textContent = pct + '%';
+  document.getElementById('result-detail').textContent = quizQuestions.length + '문제 중 ' + correctCount + '문제 정답';
+  document.getElementById('result-wrong-count').textContent = sessionWrong.length > 0 ? '오답 ' + sessionWrong.length + '문제가 오답노트에 저장되었습니다' : '모두 맞혔습니다! 🎉';
+
+  saveStats(quizQuestions.length, correctCount);
+}
+
+// localStorage 관리
+function saveWrong(id) {
+  let list = JSON.parse(localStorage.getItem('ai900_wrong_list') || '[]');
+  if (!list.includes(id)) list.push(id);
+  localStorage.setItem('ai900_wrong_list', JSON.stringify(list));
+}
+
+function saveStats(total, correct) {
+  let stats = JSON.parse(localStorage.getItem('ai900_stats') || '{"sessions":[],"totalAnswered":0,"totalCorrect":0}');
+  stats.totalAnswered += total;
+  stats.totalCorrect += correct;
+  stats.sessions.push({
+    date: new Date().toISOString(),
+    total: total,
+    correct: correct,
+    domain: selectedDomain,
+    pct: Math.round(correct / total * 100)
+  });
+  localStorage.setItem('ai900_stats', JSON.stringify(stats));
+  localStorage.setItem('ai900_last_session', JSON.stringify({
+    date: new Date().toISOString(),
+    total: total,
+    correct: correct
+  }));
+}
+
+loadQuestions();
 </script>
 </body>
 </html>
