@@ -3099,7 +3099,7 @@
     },
     "answer": "B",
     "explanation": "ROC 곡선은 다양한 임계값에서의 참 양성률(True Positive Rate, Recall)과 거짓 양성률(False Positive Rate)의 관계를 그래프로 나타냅니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -3172,7 +3172,7 @@
     },
     "answer": "B",
     "explanation": "정밀도 = TP / (TP + FP) = 80 / (80 + 10) = 80 / 90 ≈ 0.89입니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -3187,7 +3187,7 @@
     },
     "answer": "A",
     "explanation": "재현율 = TP / (TP + FN) = 80 / (80 + 20) = 80 / 100 = 0.80입니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -3217,7 +3217,7 @@
     },
     "answer": "C",
     "explanation": "정확도 = (TP + TN) / (TP + FP + FN + TN) = (50 + 35) / (50 + 5 + 10 + 35) = 85 / 100 = 0.85입니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -3307,7 +3307,7 @@
     },
     "answer": "B",
     "explanation": "designer에서는 각 모듈(데이터 입력, 전처리, 모델 학습 등)을 캔버스에 배치하고, 모듈 간 연결선을 그려서 데이터 흐름과 실행 순서를 시각적으로 정의합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -3472,7 +3472,7 @@
     },
     "answer": "B",
     "explanation": "ML pipeline은 데이터 준비, 학습, 평가, 배포 등의 워크플로 단계를 자동화하고, 각 단계를 독립적으로 재사용할 수 있게 합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -3772,7 +3772,7 @@
     },
     "answer": "B",
     "explanation": "전이 학습은 대규모 데이터셋으로 사전 학습된 모델의 지식을 새로운 작업에 전이하여, 적은 데이터와 학습 시간으로도 좋은 성능을 달성할 수 있게 합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -3787,7 +3787,7 @@
     },
     "answer": "B",
     "explanation": "특성 엔지니어링은 도메인 지식을 활용하여 원시 데이터를 변환하거나 새로운 특성을 만들어 모델의 예측 성능을 향상시키는 과정입니다. 예: 날짜에서 요일, 월 등을 추출하는 것.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -4099,7 +4099,7 @@
     },
     "answer": "B",
     "explanation": "Brand Detection(브랜드 감지)은 이미지에서 상업용 로고를 감지하고 브랜드 이름, 신뢰도, 위치(사각형 좌표)를 반환합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -4713,7 +4713,7 @@
     },
     "answer": "B",
     "explanation": "Read API는 대용량 문서와 PDF를 비동기적으로 처리하도록 설계되었습니다. 50페이지의 PDF 문서에는 Read API가 가장 적합합니다. OCR API는 단일 이미지의 소량 텍스트에 적합합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -4743,7 +4743,7 @@
     },
     "answer": "A",
     "explanation": "Read API의 결과는 페이지별(readResults)로 텍스트 라인(lines)이 포함되며, 각 라인에는 텍스트 내용과 바운딩 박스(위치 좌표)가 함께 반환됩니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -4998,7 +4998,7 @@
     },
     "answer": "C",
     "explanation": "Detect Objects 기능은 이미지 내 각 객체의 바운딩 박스(rectangle), 객체 이름(object), 신뢰도(confidence)를 반환합니다. 이 응답은 사람과 개 두 객체를 감지한 결과입니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -5013,7 +5013,7 @@
     },
     "answer": "A",
     "explanation": "Describe Image는 이미지에 대한 자연어 캡션을 생성하며, confidence(0.85)는 해당 설명이 이미지를 정확하게 묘사할 확률(신뢰도)을 나타냅니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -5028,7 +5028,7 @@
     },
     "answer": "B",
     "explanation": "차량 손상 유형은 범용 모델에서 인식하지 못하는 특수 도메인입니다. Custom Vision으로 손상 유형별 이미지를 학습시켜 객체 감지 모델을 만들어야 합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -5043,7 +5043,7 @@
     },
     "answer": "A",
     "explanation": "바운딩 박스에서 x, y는 사각형의 왼쪽 상단 모서리 좌표를, w는 너비를, h는 높이를 나타냅니다. 따라서 이 사각형은 (100,50)에서 시작하여 너비 200, 높이 150의 영역입니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -5073,7 +5073,7 @@
     },
     "answer": "B",
     "explanation": "Form Recognizer의 사전 빌드 명함(Business Card) 모델은 명함에서 이름, 직책, 회사명, 전화번호, 이메일 등의 필드를 자동으로 구분하여 구조화된 데이터로 추출합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -5103,7 +5103,7 @@
     },
     "answer": "A",
     "explanation": "응답에 faces 배열에 2개의 항목이 있으므로 2명의 얼굴이 감지되었습니다. 각 항목에는 추정 나이(age), 성별(gender), 얼굴 위치(faceRectangle)가 포함되어 있습니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -5118,7 +5118,7 @@
     },
     "answer": "A",
     "explanation": "미술 작품을 식별하려면 Custom Vision으로 작품별 이미지 분류 모델을 학습시키고, 식별된 작품의 설명을 음성으로 제공하려면 Text-to-Speech 서비스를 사용합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -5673,7 +5673,7 @@
     },
     "answer": "B",
     "explanation": "블랙박스 모델(예: 딥러닝)은 내부 작동이 불투명하고, 화이트박스 모델(예: 선형 회귀, 결정 트리)은 해석이 가능합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -6048,7 +6048,7 @@
     },
     "answer": "C",
     "explanation": "Responsible AI 대시보드는 오류 분석, 모델 해석, 공정성 분석, 인과 분석 등을 포함하지만 자동 배포는 별도 기능입니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -6333,7 +6333,7 @@
     },
     "answer": "B",
     "explanation": "편향의 원인(데이터, 모델 등)을 분석하고 Fairlearn 등 공정성 도구로 완화한 후 재평가해야 합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -6858,7 +6858,7 @@
     },
     "answer": "B",
     "explanation": "Bot Framework Composer는 시각적 캔버스에서 드래그앤드롭으로 봇 대화를 설계할 수 있는 오픈소스 도구입니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
@@ -7008,7 +7008,7 @@
     },
     "answer": "B",
     "explanation": "FAQ는 QnA, 의도 분류는 CLU, 주문 조회는 Power Automate 연동, 복잡 문의는 Human Handoff로 종합 구성합니다.",
-    "has_image": true,
+    "has_image": false,
     "source": "ai_generated"
   },
   {
