@@ -40,8 +40,9 @@
     },
     "answer": "B",
     "explanation": "모델 설명 가능성.\n대부분의 비즈니스는 신뢰를 기반으로 운영되며, ML \"블랙박스\"를 열 수 있으면 투명성과 신뢰를 구축하는 데 도움이 됩니다. 의료 및 금융처럼 규제가 엄격한 산업에서는 규정과 모범 사례를 준수하는 것이 중요합니다. 이의 핵심 측면 중 하나는 입력 변수(특성)와 모델 출력 간의 관계를 이해하는 것입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p004_img1.png"
   },
   {
     "id": "q_008",
@@ -55,8 +56,9 @@
     },
     "answer": "B",
     "explanation": "포용성: Microsoft는 모든 사람이 지능형 기술의 혜택을 받아야 한다고 굳게 믿으며, 이는 광범위한 인간의 필요와 경험을 통합하고 다루어야 함을 의미합니다. 전 세계 10억 명의 장애인에게 AI 기술은 판도를 바꿀 수 있습니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p008_img1.png"
   },
   {
     "id": "q_011",
@@ -70,8 +72,9 @@
     },
     "answer": "C",
     "explanation": "정답은 C입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p011_img1.png"
   },
   {
     "id": "q_013",
@@ -85,8 +88,9 @@
     },
     "answer": "C",
     "explanation": "정답은 C입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p012_img1.png"
   },
   {
     "id": "q_014",
@@ -101,8 +105,9 @@
     },
     "answer": "C",
     "explanation": "정답은 C입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p012_img1.png"
   },
   {
     "id": "q_017",
@@ -116,8 +121,9 @@
     },
     "answer": "B",
     "explanation": "정답은 B입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p014_img2.jpeg"
   },
   {
     "id": "q_018",
@@ -146,8 +152,9 @@
     },
     "answer": "B",
     "explanation": "practices/trusted-ai\n\nresponsible-ai-practical",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p019_img1.png"
   },
   {
     "id": "q_027",
@@ -161,8 +168,9 @@
     },
     "answer": "D",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p023_img1.png"
   },
   {
     "id": "q_028",
@@ -176,8 +184,9 @@
     },
     "answer": "D",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p023_img1.png"
   },
   {
     "id": "q_031",
@@ -191,8 +200,9 @@
     },
     "answer": "D",
     "explanation": "Anomaly Detector는 문제가 발생하기 전에 예측하는 데 도움이 되는 AI 서비스입니다.\n시계열 이상 탐지 기능을 앱에 쉽게 내장하여 사용자가 문제를 빠르게 식별할 수 있도록 합니다. Anomaly Detector는 모든 유형의 시계열 데이터를 수집하고 데이터에 가장 적합한 이상 탐지 알고리즘을 선택하여 높은 정확도를 보장합니다. 단변량 및 다변량 API를 통해 급증, 하락, 주기적 패턴 이탈 및 추세 변화를 감지합니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p025_img1.jpeg"
   },
   {
     "id": "q_032",
@@ -220,8 +230,9 @@
     },
     "answer": "B",
     "explanation": "예측 vs. 실제 차트란 무엇입니까?\n예측 vs. 실제는 회귀 문제에 대해 예측 값과 해당 실제 값 간의 관계를 보여줍니다. 이 그래프는 모델의 성능을 측정하는 데 사용할 수 있으며, 예측 값이 y=x 선에 가까울수록 예측 모델의 정확도가 높습니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p029_img1.png"
   },
   {
     "id": "q_036",
@@ -234,8 +245,9 @@
     },
     "answer": "B",
     "explanation": "가장 기본적인 의미에서 회귀는 숫자 대상의 예측을 의미합니다.\n선형 회귀는 하나 이상의 독립 변수와 숫자 결과 또는 종속 변수 사이에 선형 관계를 설정하려고 시도합니다.\n이 모듈을 사용하여 선형 회귀 방법을 정의한 다음 레이블이 지정된 데이터셋을 사용하여 모델을 학습시킵니다. 학습된 모델은 예측에 사용할 수 있습니다.\n참고:\n\n회귀",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p054_img1.jpeg"
   },
   {
     "id": "q_037",
@@ -278,8 +290,9 @@
     },
     "answer": "A",
     "explanation": "Form Recognizer는 고급 머신러닝을 적용하여 문서에서 텍스트, 키/값 쌍 및 테이블을 정확하게 추출하여 비즈니스 프로세스를 가속화합니다. 소수의 샘플만으로 Form Recognizer는 온프레미스와 클라우드 모두에서 문서에 대한 이해를 맞춤화합니다. 양식을 시간과 비용의 일부로 사용 가능한 데이터로 변환하여 정보를 수집하는 것보다 정보에 따라 행동하는 데 더 많은 시간을 할애할 수 있습니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p035_img1.jpeg"
   },
   {
     "id": "q_044",
@@ -293,8 +306,9 @@
     },
     "answer": "C",
     "explanation": "게시된 파이프라인 페이지에서 게시된 파이프라인을 사용할 수 있습니다. 게시된 파이프라인을 선택하고 REST 엔드포인트를 찾으세요.\n파이프라인을 사용하려면 다음이 필요합니다:\n• 서비스의 REST 엔드포인트\n• 서비스의 기본 키\n참고:\n\nlearning-designer/deploy-service",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p036_img2.png"
   },
   {
     "id": "q_051",
@@ -307,8 +321,9 @@
     },
     "answer": "C",
     "explanation": "learning-designer/introduction",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p045_img2.jpeg"
   },
   {
     "id": "q_052",
@@ -352,8 +367,9 @@
     },
     "answer": "A",
     "explanation": "First Name, Last Name, Age, Education Level은 특성입니다. Income Range는 레이블(예측하려는 것)입니다. First Name과 Last Name은 소득과 관련이 없으므로 무관합니다. Age와 Education Level이 사용해야 하는 특성입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p047_img1.png"
   },
   {
     "id": "q_055",
@@ -367,8 +383,9 @@
     },
     "answer": "A",
     "explanation": "정답은 A입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p047_img1.png"
   },
   {
     "id": "q_058",
@@ -383,8 +400,9 @@
     },
     "answer": "A",
     "explanation": "A: R-squared(R2) 또는 결정 계수는 모델의 예측력을 -inf에서 1.00 사이의 값으로 나타냅니다. 1.00은 완벽한 적합을 의미하며, 적합도가 임의로 나쁠 수 있어 점수가 음수일 수 있습니다.\nC: RMS-loss 또는 평균 제곱근 오차(RMSE)(Root Mean Square Deviation, RMSD라고도 함)는 모델이 예측한 값과 모델링 중인 환경에서 관찰된 값 간의 차이를 측정합니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p050_img1.jpeg"
   },
   {
     "id": "q_061",
@@ -397,8 +415,9 @@
     },
     "answer": "C",
     "explanation": "클러스터링은 유사한 특성을 가진 클러스터로 데이터 인스턴스를 그룹화하는 데 사용되는 머신러닝 작업입니다. 클러스터링은 데이터셋에서 관계를 식별하는 데에도 사용할 수 있습니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p054_img1.jpeg"
   },
   {
     "id": "q_063",
@@ -412,8 +431,9 @@
     },
     "answer": "A",
     "explanation": "좋은 모델은 어떤 모습입니까?\n참양성률 100%와 거짓양성률 0%로 왼쪽 상단 모서리에 접근하는 ROC 곡선이 최적의 모델입니다. 무작위 모델은 왼쪽 하단에서 오른쪽 상단 모서리까지의 평탄한 선으로 표시됩니다. 무작위보다 나쁜 경우 y=x 선 아래로 내려갑니다.\n참고:\n\nml#classification",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p055_img2.png"
   },
   {
     "id": "q_064",
@@ -458,8 +478,9 @@
     },
     "answer": "C",
     "explanation": "정답은 C입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p063_img1.jpeg"
   },
   {
     "id": "q_074",
@@ -516,8 +537,9 @@
     },
     "answer": "B",
     "explanation": "모델을 학습시키기 위해 Azure Machine Learning Compute 리소스를 만들겠습니다.\n참고:\nvisual-interface/README.md",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p036_img2.png"
   },
   {
     "id": "q_081",
@@ -531,8 +553,9 @@
     },
     "answer": "C",
     "explanation": "AI 챗봇은 자연어 처리(NLP)를 사용하여 사용자가 텍스트, 그래픽 또는 음성을 통해 웹 서비스나 앱과 상호 작용할 수 있도록 합니다. 챗봇은 자연스러운 인간 언어를 이해하고, 인간 대화를 모방하며, 간단하고 자동화된 작업을 수행할 수 있습니다. 또한 AI 챗봇은 예측 인텔리전스와 분석을 사용하여 사용자의 선호도를 학습하고 이 지식을 사용하여 추천을 제공하고 필요를 예측합니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p069_img1.png"
   },
   {
     "id": "q_083",
@@ -575,8 +598,9 @@
     },
     "answer": "A",
     "explanation": "클러스터링 단계 이해\n클러스터링 머신러닝 모델을 학습하고 평가하는 단계를 다음과 같이 생각할 수 있습니다:\n1. 데이터 준비: 데이터셋에서 특성과 레이블을 식별합니다. 필요에 따라 데이터를 전처리하거나 정제 및 변환합니다.\n2. 모델 학습: 데이터를 학습 세트와 검증 세트의 두 그룹으로 나눕니다. 학습 데이터셋을 사용하여 머신러닝 모델을 학습시킵니다. 검증 데이터셋을 사용하여 머신러닝 모델의 성능을 테스트합니다.\n3. 성능 평가.\n4.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p074_img1.png"
   },
   {
     "id": "q_090",
@@ -589,8 +613,9 @@
     },
     "answer": "C",
     "explanation": "회귀는 숫자 값을 예측하는 데 사용되는 지도 학습 머신러닝 기법입니다.\n참고:\nmachine-learning-designer/",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p075_img1.jpeg"
   },
   {
     "id": "q_091",
@@ -648,8 +673,9 @@
     },
     "answer": "A",
     "explanation": "정답은 A입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p080_img1.jpeg"
   },
   {
     "id": "q_099",
@@ -663,8 +689,9 @@
     },
     "answer": "D",
     "explanation": "Azure의 Computer Vision API에는 이미지에서 인쇄되거나 손으로 쓴 텍스트를 추출하는 광학 문자 인식(OCR) 기능이 포함되어 있습니다. 번호판이나 일련번호가 있는 컨테이너 사진과 같은 이미지에서 텍스트를 추출할 수 있으며, 송장, 청구서, 재무 보고서, 기사 등의 문서에서도 추출할 수 있습니다.\n참고:\n\ntext",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p083_img1.png"
   },
   {
     "id": "q_101",
@@ -678,8 +705,9 @@
     },
     "answer": "B",
     "explanation": "광학 문자 인식(OCR)을 사용하면 이미지와 문서에서 인쇄되거나 손으로 쓴 텍스트를 추출할 수 있습니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p084_img1.png"
   },
   {
     "id": "q_103",
@@ -707,8 +735,9 @@
     },
     "answer": "B",
     "explanation": "객체 감지는 태깅과 유사하지만, API가 발견된 각 객체에 대한 바운딩 박스 좌표(픽셀 단위)를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다. 이 기능을 사용하여 이미지의 객체 간 관계를 처리할 수 있습니다. 또한 이미지에 동일한 태그의 여러 인스턴스가 있는지 확인할 수 있습니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p089_img1.png"
   },
   {
     "id": "q_108",
@@ -722,8 +751,9 @@
     },
     "answer": "A",
     "explanation": "객체 감지는 태깅과 유사하지만, API가 발견된 각 객체에 대한 바운딩 박스 좌표(픽셀 단위)를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다. 이 기능을 사용하여 이미지의 객체 간 관계를 처리할 수 있습니다. 또한 이미지에 동일한 태그의 여러 인스턴스가 있는지 확인할 수 있습니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p091_img1.png"
   },
   {
     "id": "q_109",
@@ -798,8 +828,9 @@
     },
     "answer": "D",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p095_img1.png"
   },
   {
     "id": "q_115",
@@ -813,8 +844,9 @@
     },
     "answer": "D",
     "explanation": "사람이 읽을 수 있는 언어로 이미지 설명\nComputer Vision은 이미지를 분석하고 그 내용을 설명하는 사람이 읽을 수 있는 문구를 생성할 수 있습니다. 알고리즘은 다양한 시각적 특성을 기반으로 여러 설명을 반환하며, 각 설명에는 신뢰도 점수가 부여됩니다. 최종 출력은 가장 높은 신뢰도에서 가장 낮은 신뢰도 순으로 정렬된 설명 목록입니다.\n이미지 설명 기능은 Analyze Image API의 일부입니다.\n참고:\ndescribing-images",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p096_img1.png"
   },
   {
     "id": "q_116",
@@ -828,8 +860,9 @@
     },
     "answer": "C",
     "explanation": "Form Recognizer는 고급 머신러닝을 적용하여 문서에서 텍스트, 키-값 쌍, 테이블 및 구조를 정확하게 추출합니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p035_img1.jpeg"
   },
   {
     "id": "q_119",
@@ -903,8 +936,9 @@
     },
     "answer": "B",
     "explanation": "정답은 B입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p106_img1.png"
   },
   {
     "id": "q_129",
@@ -918,8 +952,9 @@
     },
     "answer": "C",
     "explanation": "정답은 C입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p107_img1.jpeg"
   },
   {
     "id": "q_131",
@@ -933,8 +968,9 @@
     },
     "answer": "D",
     "explanation": "자연어 처리(NLP)는 감정 분석, 주제 감지, 언어 감지, 핵심 구문 추출 및 문서 분류와 같은 작업에 사용됩니다.\n감정 분석은 글이 긍정적인지, 부정적인지 또는 중립적인지 판별하는 프로세스입니다.\n참고:\n이 문제에는 시험에 여러 버전이 있습니다. 문제에는 다음과 같은 다른 오답 선택지가 포함될 수 있습니다:\n• 시맨틱 세그멘테이션\n참고:\n\nlanguage-processing",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p108_img2.jpeg"
   },
   {
     "id": "q_132",
@@ -1023,8 +1059,9 @@
     },
     "answer": "D",
     "explanation": "Language Understanding (LUIS)은 사용자의 대화형 자연어 텍스트에 커스텀 머신러닝 인텔리전스를 적용하여 전체 의미를 예측하고 관련된 상세 정보를 추출하는 클라우드 기반 AI 서비스입니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p115_img2.png"
   },
   {
     "id": "q_141",
@@ -1053,8 +1090,9 @@
     },
     "answer": "A",
     "explanation": "Translator는 간단한 REST API 호출을 통해 거의 실시간으로 텍스트를 번역할 수 있는 클라우드 기반 기계 번역 서비스입니다. 이 서비스는 최신 신경 기계 번역 기술을 사용하고 통계적 기계 번역 기술을 제공합니다. Custom Translator는 Translator의 확장으로, 신경 번역 시스템을 구축할 수 있게 해줍니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p129_img1.png"
   },
   {
     "id": "q_146",
@@ -1189,8 +1227,9 @@
     },
     "answer": "C",
     "explanation": "Translator는 실시간 문서 및 텍스트 번역을 위한 AI 서비스입니다.\n기계 번역의 최신 혁신으로 구동되는 100개 이상의 언어로 텍스트를 즉시 또는 일괄 번역합니다. 콜센터 번역, 다국어 대화형 에이전트 또는 앱 내 통신과 같은 다양한 사용 사례를 지원합니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p129_img1.png"
   },
   {
     "id": "q_158",
@@ -1219,8 +1258,9 @@
     },
     "answer": "C",
     "explanation": "Speech는 음성 텍스트 변환, 텍스트 음성 변환, 음성 번역 및 화자 인식과 같은 업계 최고의 음성 기능을 제공하는 관리형 서비스입니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p107_img1.jpeg"
   },
   {
     "id": "q_161",
@@ -1264,8 +1304,9 @@
     },
     "answer": "A",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p135_img1.jpeg"
   },
   {
     "id": "q_168",
@@ -1279,8 +1320,9 @@
     },
     "answer": "C",
     "explanation": "오답:\n스킬 작업에는 다음이 포함됩니다\n* 복잡한 다중 턴 작업에 스킬을 사용합니다. 예: 회의 일정 잡기 또는 항공편 예약. (A 아님, B 아님)\n* 지원되는 봇 응답을 내보내기 위해 스킬을 사용합니다. 예: 적응형 카드 표시 또는 임의 응답 전송. (C 아님)\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p137_img2.jpeg"
   },
   {
     "id": "q_169",
@@ -1324,8 +1366,9 @@
     },
     "answer": "B",
     "explanation": "introduction?view=azure-bot-service-4.0",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p141_img1.png"
   },
   {
     "id": "q_174",
@@ -1340,8 +1383,9 @@
     },
     "answer": "A",
     "explanation": "자동 추출\n자주 묻는 질문 페이지, 지원 웹사이트, Excel 파일, SharePoint 문서, 제품 매뉴얼 및 정책을 포함한 반구조화된 콘텐츠에서 질문-답변 쌍을 추출합니다.\n참고:",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p142_img1.png"
   },
   {
     "id": "q_175",
@@ -1385,8 +1429,9 @@
     },
     "answer": "A",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p144_img1.png"
   },
   {
     "id": "q_178",
@@ -1400,8 +1445,9 @@
     },
     "answer": "B",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p144_img1.png"
   },
   {
     "id": "q_179",
@@ -1445,8 +1491,9 @@
     },
     "answer": "D",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p147_img1.png"
   },
   {
     "id": "q_186",
@@ -1460,8 +1507,9 @@
     },
     "answer": "B",
     "explanation": "B: 봇은 특정 작업을 수행하도록 설계된 자동화된 소프트웨어 프로그램입니다. 몸이 없는 로봇이라고 생각하세요.\nC: 자동화된 고객 상호 작용은 모든 규모의 비즈니스에 필수적입니다. 실제로 소비자의 61%가 음성을 통한 소통을 선호하며, 대부분은 셀프 서비스를 선호합니다. 고객 만족이 모든 비즈니스의 우선 과제이기 때문에 셀프 서비스는 고객 대면 커뮤니케이션 전략의 핵심 측면입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p144_img1.png"
   },
   {
     "id": "q_189",
@@ -1475,8 +1523,9 @@
     },
     "answer": "C",
     "explanation": "정답은 C입니다.",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p153_img1.png"
   },
   {
     "id": "q_193",
@@ -1490,8 +1539,9 @@
     },
     "answer": "B",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p156_img1.jpeg"
   },
   {
     "id": "q_194",
@@ -1505,8 +1555,9 @@
     },
     "answer": "B",
     "explanation": "",
-    "has_image": false,
-    "source": "dump_pdf"
+    "has_image": true,
+    "source": "dump_pdf",
+    "image_path": "assets/images/p157_img2.jpeg"
   },
   {
     "id": "q_196",
