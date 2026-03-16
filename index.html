@@ -524,6 +524,9 @@ function renderQ() {
   let qHTML = q.question;
   if (q.has_image && q.image_path) {
     qHTML += `<img src="${q.image_path}" alt="문제 이미지" onerror="this.outerHTML='<div style=\\'padding:16px;background:var(--ms-bg);border-radius:8px;text-align:center;color:var(--ms-muted);margin-top:12px;border:2px dashed var(--ms-border)\\'>⚠️ 이미지를 불러올 수 없습니다</div>'">`;
+    if (q.image_caption) {
+      qHTML += `<div style="margin-top:8px;padding:12px 16px;background:var(--ms-bg);border-radius:8px;font-size:.85rem;line-height:1.6;color:var(--ms-muted);white-space:pre-line;border-left:3px solid var(--ms-blue)">${q.image_caption}</div>`;
+    }
   } else if (q.has_image) {
     qHTML += `<div style="padding:16px;background:var(--ms-bg);border-radius:8px;text-align:center;color:var(--ms-muted);margin-top:12px;border:2px dashed var(--ms-border)"><i class="bi bi-image" style="font-size:2rem"></i><br>이 문제에는 이미지가 포함되어 있으나 현재 제공되지 않습니다</div>`;
   }

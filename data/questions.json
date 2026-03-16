@@ -42,7 +42,8 @@
     "explanation": "모델 설명 가능성.\n대부분의 비즈니스는 신뢰를 기반으로 운영되며, ML \"블랙박스\"를 열 수 있으면 투명성과 신뢰를 구축하는 데 도움이 됩니다. 의료 및 금융처럼 규제가 엄격한 산업에서는 규정과 모범 사례를 준수하는 것이 중요합니다. 이의 핵심 측면 중 하나는 입력 변수(특성)와 모델 출력 간의 관계를 이해하는 것입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p004_img1.png"
+    "image_path": "assets/images/p004_img1.png",
+    "image_caption": "📝 혼동 행렬 표: 실제 참(Actual True) / 실제 거짓(Actual False) × 예측 양성(Predicted Positive) / 예측 음성(Predicted Negative) → TP(참양성), FN(거짓음성), FP(거짓양성), TN(참음성)"
   },
   {
     "id": "q_008",
@@ -58,7 +59,8 @@
     "explanation": "포용성: Microsoft는 모든 사람이 지능형 기술의 혜택을 받아야 한다고 굳게 믿으며, 이는 광범위한 인간의 필요와 경험을 통합하고 다루어야 함을 의미합니다. 전 세계 10억 명의 장애인에게 AI 기술은 판도를 바꿀 수 있습니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p008_img1.png"
+    "image_path": "assets/images/p008_img1.png",
+    "image_caption": "📝 AI 워크로드 매칭 표:\n• 대화형 AI → 환불 및 교환에 대한 질문에 답하는 자동 채팅\n• 컴퓨터 비전 → 사진에 사람이 포함되어 있는지 판별\n• 자연어 처리 → 리뷰가 긍정적인지 부정적인지 판별"
   },
   {
     "id": "q_011",
@@ -74,7 +76,8 @@
     "explanation": "정답은 C입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p011_img1.png"
+    "image_path": "assets/images/p011_img1.png",
+    "image_caption": "📝 워크로드 유형 매칭:\n• 필기 문자 식별 → 컴퓨터 비전\n• 소셜 미디어 게시물의 감성 예측 → 자연어 처리\n• 사기 신용카드 결제 식별 → 이상 탐지\n• 다음 달 장난감 판매 예측 → 머신러닝(회귀)"
   },
   {
     "id": "q_013",
@@ -90,7 +93,8 @@
     "explanation": "정답은 C입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p012_img1.png"
+    "image_path": "assets/images/p012_img1.png",
+    "image_caption": "📝 워크로드 유형 매칭 (정답 표시):\n• 필기 문자 식별 → 컴퓨터 비전\n• 소셜 미디어 게시물의 감성 예측 → 자연어 처리\n• 사기 신용카드 결제 식별 → 이상 탐지\n• 다음 달 장난감 판매 예측 → 머신러닝(회귀)"
   },
   {
     "id": "q_014",
@@ -107,7 +111,8 @@
     "explanation": "정답은 C입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p012_img1.png"
+    "image_path": "assets/images/p012_img1.png",
+    "image_caption": "📝 워크로드 유형 매칭 (정답 표시):\n• 필기 문자 식별 → 컴퓨터 비전\n• 소셜 미디어 게시물의 감성 예측 → 자연어 처리\n• 사기 신용카드 결제 식별 → 이상 탐지\n• 다음 달 장난감 판매 예측 → 머신러닝(회귀)"
   },
   {
     "id": "q_017",
@@ -123,7 +128,8 @@
     "explanation": "정답은 B입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p014_img2.jpeg"
+    "image_path": "assets/images/p014_img2.jpeg",
+    "image_caption": "📝 답변 영역: ____은(는) 추가 특성을 생성하는 데 사용됩니다.\n선택지: Feature engineering(특성 엔지니어링) / Feature selection(특성 선택) / Model evaluation(모델 평가) / Model training(모델 학습)\n정답: Feature engineering"
   },
   {
     "id": "q_018",
@@ -154,7 +160,8 @@
     "explanation": "practices/trusted-ai\n\nresponsible-ai-practical",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p019_img1.png"
+    "image_path": "assets/images/p019_img1.png",
+    "image_caption": "📝 답변 영역 - AI 프로세스 단계 순서:\n데이터 준비(data preparation) → 모델 학습(model training) → 모델 평가(model evaluation)"
   },
   {
     "id": "q_027",
@@ -170,7 +177,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p023_img1.png"
+    "image_path": "assets/images/p023_img1.png",
+    "image_caption": "📝 답변 영역:\n• 신뢰성 및 안전성(Reliability and safety) → AI 시스템은 예상치 못한 조건에서도 의도대로 일관되게 작동해야 한다\n• 개인정보 보호 및 보안(Privacy and security) → AI 시스템은 개인 및 비즈니스 정보를 보호하고 보안을 유지해야 한다"
   },
   {
     "id": "q_028",
@@ -186,7 +194,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p023_img1.png"
+    "image_path": "assets/images/p023_img1.png",
+    "image_caption": "📝 답변 영역:\n• 신뢰성 및 안전성(Reliability and safety) → AI 시스템은 예상치 못한 조건에서도 의도대로 일관되게 작동해야 한다\n• 개인정보 보호 및 보안(Privacy and security) → AI 시스템은 개인 및 비즈니스 정보를 보호하고 보안을 유지해야 한다"
   },
   {
     "id": "q_031",
@@ -202,7 +211,8 @@
     "explanation": "Anomaly Detector는 문제가 발생하기 전에 예측하는 데 도움이 되는 AI 서비스입니다.\n시계열 이상 탐지 기능을 앱에 쉽게 내장하여 사용자가 문제를 빠르게 식별할 수 있도록 합니다. Anomaly Detector는 모든 유형의 시계열 데이터를 수집하고 데이터에 가장 적합한 이상 탐지 알고리즘을 선택하여 높은 정확도를 보장합니다. 단변량 및 다변량 API를 통해 급증, 하락, 주기적 패턴 이탈 및 추세 변화를 감지합니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p025_img1.jpeg"
+    "image_path": "assets/images/p025_img1.jpeg",
+    "image_caption": "📝 서비스 매칭:\n서비스 목록: Azure Storage / Azure Bot Service / Language Service / Speech\n• 자연어를 사용하여 지식 기반을 쿼리 → Language Service\n• 실시간 음성-텍스트 변환 → Speech"
   },
   {
     "id": "q_032",
@@ -232,7 +242,8 @@
     "explanation": "예측 vs. 실제 차트란 무엇입니까?\n예측 vs. 실제는 회귀 문제에 대해 예측 값과 해당 실제 값 간의 관계를 보여줍니다. 이 그래프는 모델의 성능을 측정하는 데 사용할 수 있으며, 예측 값이 y=x 선에 가까울수록 예측 모델의 정확도가 높습니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p029_img1.png"
+    "image_path": "assets/images/p029_img1.png",
+    "image_caption": "📝 답변 영역: 모델의 예측에 영향을 미치는 데이터 값을 ____라고 합니다.\n선택지: 종속 변수(dependant variables) / 특성(features) / 식별자(identifiers) / 레이블(labels)\n정답: 특성(features)"
   },
   {
     "id": "q_036",
@@ -247,7 +258,8 @@
     "explanation": "가장 기본적인 의미에서 회귀는 숫자 대상의 예측을 의미합니다.\n선형 회귀는 하나 이상의 독립 변수와 숫자 결과 또는 종속 변수 사이에 선형 관계를 설정하려고 시도합니다.\n이 모듈을 사용하여 선형 회귀 방법을 정의한 다음 레이블이 지정된 데이터셋을 사용하여 모델을 학습시킵니다. 학습된 모델은 예측에 사용할 수 있습니다.\n참고:\n\n회귀",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p054_img1.jpeg"
+    "image_path": "assets/images/p054_img1.jpeg",
+    "image_caption": "📝 Azure ML 파이프라인 (부분):\nAutomobile price data (Raw) → Select Columns in Dataset (정규화 손실 제외) → Clean Missing Data (결측값 행 제거)"
   },
   {
     "id": "q_037",
@@ -292,7 +304,8 @@
     "explanation": "Form Recognizer는 고급 머신러닝을 적용하여 문서에서 텍스트, 키/값 쌍 및 테이블을 정확하게 추출하여 비즈니스 프로세스를 가속화합니다. 소수의 샘플만으로 Form Recognizer는 온프레미스와 클라우드 모두에서 문서에 대한 이해를 맞춤화합니다. 양식을 시간과 비용의 일부로 사용 가능한 데이터로 변환하여 정보를 수집하는 것보다 정보에 따라 행동하는 데 더 많은 시간을 할애할 수 있습니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p035_img1.jpeg"
+    "image_path": "assets/images/p035_img1.jpeg",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• 레이블링은 학습 데이터에 알려진 값을 태그하는 과정이다 → 예\n• 모델을 학습에 사용한 것과 동일한 데이터로 평가해야 한다 → 아니오\n• 정확도가 항상 모델 성능을 측정하는 기본 지표이다 → 아니오"
   },
   {
     "id": "q_044",
@@ -308,7 +321,8 @@
     "explanation": "게시된 파이프라인 페이지에서 게시된 파이프라인을 사용할 수 있습니다. 게시된 파이프라인을 선택하고 REST 엔드포인트를 찾으세요.\n파이프라인을 사용하려면 다음이 필요합니다:\n• 서비스의 REST 엔드포인트\n• 서비스의 기본 키\n참고:\n\nlearning-designer/deploy-service",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p036_img2.png"
+    "image_path": "assets/images/p036_img2.png",
+    "image_caption": "📝 답변 영역: 영수증에서 소계와 합계를 추출하는 기능은 ____ 서비스의 기능이다.\n선택지: Custom Vision / Form Recognizer / Ink Recognizer / Text Analytics\n정답: Form Recognizer"
   },
   {
     "id": "q_051",
@@ -323,7 +337,8 @@
     "explanation": "learning-designer/introduction",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p045_img2.jpeg"
+    "image_path": "assets/images/p045_img2.jpeg",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• AutoML은 학습 파이프라인에 커스텀 Python 스크립트를 포함할 수 있다 → 예\n• AutoML은 프로그래밍 경험 없이 ML 솔루션을 구현한다 → 예\n• AutoML은 인터랙티브 캔버스에서 데이터셋과 모듈을 시각적으로 연결하는 기능을 제공한다 → 예"
   },
   {
     "id": "q_052",
@@ -369,7 +384,8 @@
     "explanation": "First Name, Last Name, Age, Education Level은 특성입니다. Income Range는 레이블(예측하려는 것)입니다. First Name과 Last Name은 소득과 관련이 없으므로 무관합니다. Age와 Education Level이 사용해야 하는 특성입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p047_img1.png"
+    "image_path": "assets/images/p047_img1.png",
+    "image_caption": "📝 고객 데이터 테이블:\n이름(First/Last Name) | 나이(Age) | 학력(Education Level) | 소득 범위(Income Range)\nOrlando Gee, 45, 대학교, 25,000-50,000 / Keith Harris, 36, 고등학교, 25,000-50,000 / Donna Carreras, 52, 대학교, 50,000-75,000 / Janet Gates, 21, 대학교, 75,000-100,000 / Lucy Harrington, 68, 고등학교, 50,000-75,000"
   },
   {
     "id": "q_055",
@@ -385,7 +401,8 @@
     "explanation": "정답은 A입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p047_img1.png"
+    "image_path": "assets/images/p047_img1.png",
+    "image_caption": "📝 고객 데이터 테이블:\n이름(First/Last Name) | 나이(Age) | 학력(Education Level) | 소득 범위(Income Range)\nOrlando Gee, 45, 대학교, 25,000-50,000 / Keith Harris, 36, 고등학교, 25,000-50,000 / Donna Carreras, 52, 대학교, 50,000-75,000 / Janet Gates, 21, 대학교, 75,000-100,000 / Lucy Harrington, 68, 고등학교, 50,000-75,000"
   },
   {
     "id": "q_058",
@@ -402,7 +419,8 @@
     "explanation": "A: R-squared(R2) 또는 결정 계수는 모델의 예측력을 -inf에서 1.00 사이의 값으로 나타냅니다. 1.00은 완벽한 적합을 의미하며, 적합도가 임의로 나쁠 수 있어 점수가 음수일 수 있습니다.\nC: RMS-loss 또는 평균 제곱근 오차(RMSE)(Root Mean Square Deviation, RMSD라고도 함)는 모델이 예측한 값과 모델링 중인 환경에서 관찰된 값 간의 차이를 측정합니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p050_img1.jpeg"
+    "image_path": "assets/images/p050_img1.jpeg",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• 검증 세트는 모델 학습에 사용될 입력 예제를 포함한다 → 아니오\n• 검증 세트는 모델이 레이블을 얼마나 잘 예측하는지 판단하는 데 사용할 수 있다 → 예\n• 검증 세트는 모든 학습 데이터가 모델 학습에 사용되었는지 확인하는 데 사용할 수 있다 → 아니오"
   },
   {
     "id": "q_061",
@@ -417,7 +435,8 @@
     "explanation": "클러스터링은 유사한 특성을 가진 클러스터로 데이터 인스턴스를 그룹화하는 데 사용되는 머신러닝 작업입니다. 클러스터링은 데이터셋에서 관계를 식별하는 데에도 사용할 수 있습니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p054_img1.jpeg"
+    "image_path": "assets/images/p054_img1.jpeg",
+    "image_caption": "📝 Azure ML 파이프라인 (부분):\nAutomobile price data (Raw) → Select Columns in Dataset (정규화 손실 제외) → Clean Missing Data (결측값 행 제거)"
   },
   {
     "id": "q_063",
@@ -433,7 +452,8 @@
     "explanation": "좋은 모델은 어떤 모습입니까?\n참양성률 100%와 거짓양성률 0%로 왼쪽 상단 모서리에 접근하는 ROC 곡선이 최적의 모델입니다. 무작위 모델은 왼쪽 하단에서 오른쪽 상단 모서리까지의 평탄한 선으로 표시됩니다. 무작위보다 나쁜 경우 y=x 선 아래로 내려갑니다.\n참고:\n\nml#classification",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p055_img2.png"
+    "image_path": "assets/images/p055_img2.png",
+    "image_caption": "📝 답변 영역: ____ 모델은 경매 물품의 판매 가격을 예측하는 데 사용할 수 있다.\n선택지: Classification(분류) / Clustering(클러스터링) / Regression(회귀)\n정답: Regression(회귀)"
   },
   {
     "id": "q_064",
@@ -480,7 +500,8 @@
     "explanation": "정답은 C입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p063_img1.jpeg"
+    "image_path": "assets/images/p063_img1.jpeg",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• 회귀 모델은 레이블이 없는 데이터로 학습한다 → 아니오\n• 분류 기법은 시간에 따른 순차적 수치 데이터를 예측하는 데 사용된다 → 아니오\n• 공통 특성별로 항목을 그룹화하는 것은 클러스터링의 예이다 → 예"
   },
   {
     "id": "q_074",
@@ -539,7 +560,8 @@
     "explanation": "모델을 학습시키기 위해 Azure Machine Learning Compute 리소스를 만들겠습니다.\n참고:\nvisual-interface/README.md",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p036_img2.png"
+    "image_path": "assets/images/p036_img2.png",
+    "image_caption": "📝 답변 영역: 영수증에서 소계와 합계를 추출하는 기능은 ____ 서비스의 기능이다.\n선택지: Custom Vision / Form Recognizer / Ink Recognizer / Text Analytics\n정답: Form Recognizer"
   },
   {
     "id": "q_081",
@@ -555,7 +577,8 @@
     "explanation": "AI 챗봇은 자연어 처리(NLP)를 사용하여 사용자가 텍스트, 그래픽 또는 음성을 통해 웹 서비스나 앱과 상호 작용할 수 있도록 합니다. 챗봇은 자연스러운 인간 언어를 이해하고, 인간 대화를 모방하며, 간단하고 자동화된 작업을 수행할 수 있습니다. 또한 AI 챗봇은 예측 인텔리전스와 분석을 사용하여 사용자의 선호도를 학습하고 이 지식을 사용하여 추천을 제공하고 필요를 예측합니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p069_img1.png"
+    "image_path": "assets/images/p069_img1.png",
+    "image_caption": "📝 워크로드 유형 매칭:\n• 필기 문자 식별 → 컴퓨터 비전\n• 소셜 미디어 게시물의 감성 예측 → 자연어 처리\n• 비정상 신용카드 결제 식별 → 이상 탐지\n• 여러 측정값을 기반으로 동물을 그룹화 → 머신러닝(클러스터링)"
   },
   {
     "id": "q_083",
@@ -600,7 +623,8 @@
     "explanation": "클러스터링 단계 이해\n클러스터링 머신러닝 모델을 학습하고 평가하는 단계를 다음과 같이 생각할 수 있습니다:\n1. 데이터 준비: 데이터셋에서 특성과 레이블을 식별합니다. 필요에 따라 데이터를 전처리하거나 정제 및 변환합니다.\n2. 모델 학습: 데이터를 학습 세트와 검증 세트의 두 그룹으로 나눕니다. 학습 데이터셋을 사용하여 머신러닝 모델을 학습시킵니다. 검증 데이터셋을 사용하여 머신러닝 모델의 성능을 테스트합니다.\n3. 성능 평가.\n4.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p074_img1.png"
+    "image_path": "assets/images/p074_img1.png",
+    "image_caption": "📝 Azure ML 디자이너 - 클러스터링 파이프라인 모듈"
   },
   {
     "id": "q_090",
@@ -615,7 +639,8 @@
     "explanation": "회귀는 숫자 값을 예측하는 데 사용되는 지도 학습 머신러닝 기법입니다.\n참고:\nmachine-learning-designer/",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p075_img1.jpeg"
+    "image_path": "assets/images/p075_img1.jpeg",
+    "image_caption": "📝 데이터셋 테이블:\nColumnA(Integer) / ColumnB(Numeric) / ColumnC(Numeric) / ColumnD(Numeric) / ColumnE(Numeric)\n다른 숫자 열을 기반으로 ColumnE의 값을 예측해야 함"
   },
   {
     "id": "q_091",
@@ -675,7 +700,8 @@
     "explanation": "정답은 A입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p080_img1.jpeg"
+    "image_path": "assets/images/p080_img1.jpeg",
+    "image_caption": "📝 Custom Vision 객체 감지 모델에 대한 답변 영역 (예/아니오):\n• 객체 감지 모델 생성 시 Multilabel 또는 Multiclass 분류 유형을 선택해야 한다 → 아니오\n• 객체 감지 모델로 이미지 내 콘텐츠의 위치를 찾을 수 있다 → 예\n• 객체 감지 모델 생성 시 사전 정의된 도메인 세트에서 선택할 수 있다 → 예"
   },
   {
     "id": "q_099",
@@ -691,7 +717,8 @@
     "explanation": "Azure의 Computer Vision API에는 이미지에서 인쇄되거나 손으로 쓴 텍스트를 추출하는 광학 문자 인식(OCR) 기능이 포함되어 있습니다. 번호판이나 일련번호가 있는 컨테이너 사진과 같은 이미지에서 텍스트를 추출할 수 있으며, 송장, 청구서, 재무 보고서, 기사 등의 문서에서도 추출할 수 있습니다.\n참고:\n\ntext",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p083_img1.png"
+    "image_path": "assets/images/p083_img1.png",
+    "image_caption": "📝 답변 영역: 경비 영수증을 스캔하고 저장하는 모바일 앱 개발에 필요한 컴퓨터 비전 유형"
   },
   {
     "id": "q_101",
@@ -707,7 +734,8 @@
     "explanation": "광학 문자 인식(OCR)을 사용하면 이미지와 문서에서 인쇄되거나 손으로 쓴 텍스트를 추출할 수 있습니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p084_img1.png"
+    "image_path": "assets/images/p084_img1.png",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• Custom Vision 서비스는 이미지에서 객체를 감지하는 데 사용할 수 있다 → 예\n• Custom Vision 서비스는 모델 학습을 위해 자체 데이터를 제공해야 한다 → 예\n• Custom Vision 서비스는 비디오 파일을 분석하는 데 사용할 수 있다 → 아니오"
   },
   {
     "id": "q_103",
@@ -737,7 +765,8 @@
     "explanation": "객체 감지는 태깅과 유사하지만, API가 발견된 각 객체에 대한 바운딩 박스 좌표(픽셀 단위)를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다. 이 기능을 사용하여 이미지의 객체 간 관계를 처리할 수 있습니다. 또한 이미지에 동일한 태그의 여러 인스턴스가 있는지 확인할 수 있습니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p089_img1.png"
+    "image_path": "assets/images/p089_img1.png",
+    "image_caption": "📝 이미지에서 자동차 위치를 결정하여 거리를 추정하는 컴퓨터 비전 유형"
   },
   {
     "id": "q_108",
@@ -753,7 +782,8 @@
     "explanation": "객체 감지는 태깅과 유사하지만, API가 발견된 각 객체에 대한 바운딩 박스 좌표(픽셀 단위)를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다. 이 기능을 사용하여 이미지의 객체 간 관계를 처리할 수 있습니다. 또한 이미지에 동일한 태그의 여러 인스턴스가 있는지 확인할 수 있습니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p091_img1.png"
+    "image_path": "assets/images/p091_img1.png",
+    "image_caption": "📝 Computer Vision API에 이미지를 보내고 주석이 달린 이미지를 받는 화면"
   },
   {
     "id": "q_109",
@@ -830,7 +860,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p095_img1.png"
+    "image_path": "assets/images/p095_img1.png",
+    "image_caption": "📝 신문 기사 디지털화에 사용할 수 있는 기술 선택"
   },
   {
     "id": "q_115",
@@ -846,7 +877,8 @@
     "explanation": "사람이 읽을 수 있는 언어로 이미지 설명\nComputer Vision은 이미지를 분석하고 그 내용을 설명하는 사람이 읽을 수 있는 문구를 생성할 수 있습니다. 알고리즘은 다양한 시각적 특성을 기반으로 여러 설명을 반환하며, 각 설명에는 신뢰도 점수가 부여됩니다. 최종 출력은 가장 높은 신뢰도에서 가장 낮은 신뢰도 순으로 정렬된 설명 목록입니다.\n이미지 설명 기능은 Analyze Image API의 일부입니다.\n참고:\ndescribing-images",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p096_img1.png"
+    "image_path": "assets/images/p096_img1.png",
+    "image_caption": "📝 디지털 사진에 자동 캡션을 생성하는 Computer Vision 기능"
   },
   {
     "id": "q_116",
@@ -862,7 +894,8 @@
     "explanation": "Form Recognizer는 고급 머신러닝을 적용하여 문서에서 텍스트, 키-값 쌍, 테이블 및 구조를 정확하게 추출합니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p035_img1.jpeg"
+    "image_path": "assets/images/p035_img1.jpeg",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• 레이블링은 학습 데이터에 알려진 값을 태그하는 과정이다 → 예\n• 모델을 학습에 사용한 것과 동일한 데이터로 평가해야 한다 → 아니오\n• 정확도가 항상 모델 성능을 측정하는 기본 지표이다 → 아니오"
   },
   {
     "id": "q_119",
@@ -938,7 +971,8 @@
     "explanation": "정답은 B입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p106_img1.png"
+    "image_path": "assets/images/p106_img1.png",
+    "image_caption": "📝 음성 인식을 사용할 수 있는 시나리오 선택"
   },
   {
     "id": "q_129",
@@ -954,7 +988,8 @@
     "explanation": "정답은 C입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p107_img1.jpeg"
+    "image_path": "assets/images/p107_img1.jpeg",
+    "image_caption": "📝 시력이 저하된 사용자를 위해 레시피를 소리 내어 읽어주는 앱 → 텍스트 음성 변환(TTS) 사용"
   },
   {
     "id": "q_131",
@@ -970,7 +1005,8 @@
     "explanation": "자연어 처리(NLP)는 감정 분석, 주제 감지, 언어 감지, 핵심 구문 추출 및 문서 분류와 같은 작업에 사용됩니다.\n감정 분석은 글이 긍정적인지, 부정적인지 또는 중립적인지 판별하는 프로세스입니다.\n참고:\n이 문제에는 시험에 여러 버전이 있습니다. 문제에는 다음과 같은 다른 오답 선택지가 포함될 수 있습니다:\n• 시맨틱 세그멘테이션\n참고:\n\nlanguage-processing",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p108_img2.jpeg"
+    "image_path": "assets/images/p108_img2.jpeg",
+    "image_caption": "📝 웹사이트 챗봇이 고객 입력을 분석하여 의도를 파악하는 화면"
   },
   {
     "id": "q_132",
@@ -1061,7 +1097,8 @@
     "explanation": "Language Understanding (LUIS)은 사용자의 대화형 자연어 텍스트에 커스텀 머신러닝 인텔리전스를 적용하여 전체 의미를 예측하고 관련된 상세 정보를 추출하는 클라우드 기반 AI 서비스입니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p115_img2.png"
+    "image_path": "assets/images/p115_img2.png",
+    "image_caption": "📝 답변 영역: 자연어 처리를 사용하여 할 수 있는 작업\n선택지: 이메일을 업무용/개인용으로 분류 / 미래 렌터카 수 예측 / 웹사이트 방문자 거래 예측 / 극단적 온도 시 공장 프로세스 중단\n정답: 이메일을 업무용/개인용으로 분류"
   },
   {
     "id": "q_141",
@@ -1092,7 +1129,8 @@
     "explanation": "Translator는 간단한 REST API 호출을 통해 거의 실시간으로 텍스트를 번역할 수 있는 클라우드 기반 기계 번역 서비스입니다. 이 서비스는 최신 신경 기계 번역 기술을 사용하고 통계적 기계 번역 기술을 제공합니다. Custom Translator는 Translator의 확장으로, 신경 번역 시스템을 구축할 수 있게 해줍니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p129_img1.png"
+    "image_path": "assets/images/p129_img1.png",
+    "image_caption": "📝 서면 보도 자료를 다양한 언어로 제공하기 위한 서비스 선택"
   },
   {
     "id": "q_146",
@@ -1229,7 +1267,8 @@
     "explanation": "Translator는 실시간 문서 및 텍스트 번역을 위한 AI 서비스입니다.\n기계 번역의 최신 혁신으로 구동되는 100개 이상의 언어로 텍스트를 즉시 또는 일괄 번역합니다. 콜센터 번역, 다국어 대화형 에이전트 또는 앱 내 통신과 같은 다양한 사용 사례를 지원합니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p129_img1.png"
+    "image_path": "assets/images/p129_img1.png",
+    "image_caption": "📝 서면 보도 자료를 다양한 언어로 제공하기 위한 서비스 선택"
   },
   {
     "id": "q_158",
@@ -1260,7 +1299,8 @@
     "explanation": "Speech는 음성 텍스트 변환, 텍스트 음성 변환, 음성 번역 및 화자 인식과 같은 업계 최고의 음성 기능을 제공하는 관리형 서비스입니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p107_img1.jpeg"
+    "image_path": "assets/images/p107_img1.jpeg",
+    "image_caption": "📝 시력이 저하된 사용자를 위해 레시피를 소리 내어 읽어주는 앱 → 텍스트 음성 변환(TTS) 사용"
   },
   {
     "id": "q_161",
@@ -1306,7 +1346,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p135_img1.jpeg"
+    "image_path": "assets/images/p135_img1.jpeg",
+    "image_caption": "📝 고객 리뷰 웹사이트에서 리뷰를 영어로 저장하고 사용자 위치를 확인하는 시나리오"
   },
   {
     "id": "q_168",
@@ -1322,7 +1363,8 @@
     "explanation": "오답:\n스킬 작업에는 다음이 포함됩니다\n* 복잡한 다중 턴 작업에 스킬을 사용합니다. 예: 회의 일정 잡기 또는 항공편 예약. (A 아님, B 아님)\n* 지원되는 봇 응답을 내보내기 위해 스킬을 사용합니다. 예: 적응형 카드 표시 또는 임의 응답 전송. (C 아님)\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p137_img2.jpeg"
+    "image_path": "assets/images/p137_img2.jpeg",
+    "image_caption": "📝 커스텀 질문 답변 솔루션의 지식 기반을 사용하여 고객 요청에 응답하는 봇 구축"
   },
   {
     "id": "q_169",
@@ -1368,7 +1410,8 @@
     "explanation": "introduction?view=azure-bot-service-4.0",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p141_img1.png"
+    "image_path": "assets/images/p141_img1.png",
+    "image_caption": "📝 이메일, Microsoft Teams, 웹챗 등 여러 채널을 통해 사용자와 소통하는 봇 구축"
   },
   {
     "id": "q_174",
@@ -1385,7 +1428,8 @@
     "explanation": "자동 추출\n자주 묻는 질문 페이지, 지원 웹사이트, Excel 파일, SharePoint 문서, 제품 매뉴얼 및 정책을 포함한 반구조화된 콘텐츠에서 질문-답변 쌍을 추출합니다.\n참고:",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p142_img1.png"
+    "image_path": "assets/images/p142_img1.png",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• 내부 사용자의 쿼리에 응답하는 봇은 대화형 AI의 예이다 → 예\n• 검색어와 관련된 이미지를 표시하는 앱은 대화형 AI의 예이다 → 아니오\n• 비밀번호 재설정 요청을 제출하는 웹 폼은 대화형 AI의 예이다 → 예"
   },
   {
     "id": "q_175",
@@ -1431,7 +1475,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p144_img1.png"
+    "image_path": "assets/images/p144_img1.png",
+    "image_caption": "📝 대화형 AI 워크로드 시나리오 및 프로세스 다이어그램"
   },
   {
     "id": "q_178",
@@ -1447,7 +1492,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p144_img1.png"
+    "image_path": "assets/images/p144_img1.png",
+    "image_caption": "📝 대화형 AI 워크로드 시나리오 및 프로세스 다이어그램"
   },
   {
     "id": "q_179",
@@ -1493,7 +1539,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p147_img1.png"
+    "image_path": "assets/images/p147_img1.png",
+    "image_caption": "📝 웹챗 봇의 예인 시나리오 선택"
   },
   {
     "id": "q_186",
@@ -1509,7 +1556,8 @@
     "explanation": "B: 봇은 특정 작업을 수행하도록 설계된 자동화된 소프트웨어 프로그램입니다. 몸이 없는 로봇이라고 생각하세요.\nC: 자동화된 고객 상호 작용은 모든 규모의 비즈니스에 필수적입니다. 실제로 소비자의 61%가 음성을 통한 소통을 선호하며, 대부분은 셀프 서비스를 선호합니다. 고객 만족이 모든 비즈니스의 우선 과제이기 때문에 셀프 서비스는 고객 대면 커뮤니케이션 전략의 핵심 측면입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p144_img1.png"
+    "image_path": "assets/images/p144_img1.png",
+    "image_caption": "📝 대화형 AI 워크로드 시나리오 및 프로세스 다이어그램"
   },
   {
     "id": "q_189",
@@ -1525,7 +1573,8 @@
     "explanation": "정답은 C입니다.",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p153_img1.png"
+    "image_path": "assets/images/p153_img1.png",
+    "image_caption": "📝 FAQ 지식 기반을 사용하여 고객 요청에 응답하는 봇 구축"
   },
   {
     "id": "q_193",
@@ -1541,7 +1590,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p156_img1.jpeg"
+    "image_path": "assets/images/p156_img1.jpeg",
+    "image_caption": "📝 Split Data 모듈이 포함된 Azure Machine Learning 파이프라인"
   },
   {
     "id": "q_194",
@@ -1557,7 +1607,8 @@
     "explanation": "",
     "has_image": true,
     "source": "dump_pdf",
-    "image_path": "assets/images/p157_img2.jpeg"
+    "image_path": "assets/images/p157_img2.jpeg",
+    "image_caption": "📝 Microsoft의 책임 있는 AI 원칙의 예인 문장 선택"
   },
   {
     "id": "q_196",
@@ -7550,7 +7601,8 @@
     "explanation": "과거 데이터를 기반으로 주택 가격을 예측하는 것은 숫자 값을 예측하는 회귀(Regression)입니다. 이상 탐지는 정상 패턴에서 벗어나는 데이터를 찾는 것입니다.",
     "has_image": true,
     "image_path": "assets/images/p005_img2.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 표:\n• 과거 데이터 기반 주택 가격 예측은 이상 탐지의 예인가? → 아니오\n• 일반 패턴에서 벗어난 의심스러운 로그인을 식별하는 것은 이상 탐지의 예인가? → 예\n• 환자의 병력을 기반으로 당뇨병 발병 여부를 예측하는 것은 이상 탐지의 예인가? → 아니오"
   },
   {
     "id": "img_002",
@@ -7566,7 +7618,8 @@
     "explanation": "일반적인 패턴에서의 편차(이상치)를 찾아 의심스러운 로그인을 식별하는 것은 이상 탐지의 전형적인 사용 사례입니다.",
     "has_image": true,
     "image_path": "assets/images/p005_img2.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 표:\n• 과거 데이터 기반 주택 가격 예측은 이상 탐지의 예인가? → 아니오\n• 일반 패턴에서 벗어난 의심스러운 로그인을 식별하는 것은 이상 탐지의 예인가? → 예\n• 환자의 병력을 기반으로 당뇨병 발병 여부를 예측하는 것은 이상 탐지의 예인가? → 아니오"
   },
   {
     "id": "img_003",
@@ -7582,7 +7635,8 @@
     "explanation": "이미지에서 사람을 감지하거나 판단하는 것은 컴퓨터 비전 워크로드입니다.",
     "has_image": true,
     "image_path": "assets/images/p008_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 AI 워크로드 매칭 표:\n• 대화형 AI → 환불 및 교환에 대한 질문에 답하는 자동 채팅\n• 컴퓨터 비전 → 사진에 사람이 포함되어 있는지 판별\n• 자연어 처리 → 리뷰가 긍정적인지 부정적인지 판별"
   },
   {
     "id": "img_004",
@@ -7598,7 +7652,8 @@
     "explanation": "텍스트의 감성(긍정/부정)을 분석하는 것은 자연어 처리(NLP)의 감성 분석 기능입니다.",
     "has_image": true,
     "image_path": "assets/images/p008_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 AI 워크로드 매칭 표:\n• 대화형 AI → 환불 및 교환에 대한 질문에 답하는 자동 채팅\n• 컴퓨터 비전 → 사진에 사람이 포함되어 있는지 판별\n• 자연어 처리 → 리뷰가 긍정적인지 부정적인지 판별"
   },
   {
     "id": "img_005",
@@ -7614,7 +7669,8 @@
     "explanation": "Predicted vs True 차트에서 예측 선이 이상적인 대각선(Ideal)에 가까울수록 모델의 예측이 실제 값에 가깝다는 의미로, 회귀 모델의 성능이 좋다는 것을 나타냅니다.",
     "has_image": true,
     "image_path": "assets/images/p029_img2.jpeg",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 예측값 vs 실제값(Predicted vs True) 차트: X축은 실제 값(True Value), Y축은 예측 값(Predicted Value). 점선은 이상적인 예측선(Ideal), 파란 선은 평균 예측 값. 선이 점선에 가까울수록 모델 성능이 좋음."
   },
   {
     "id": "img_006",
@@ -7630,7 +7686,8 @@
     "explanation": "Predicted vs True(예측값 vs 실제값) 차트는 회귀 모델의 성능을 평가하는 데 사용됩니다. 연속적인 숫자 값의 예측 정확도를 시각적으로 확인할 수 있습니다.",
     "has_image": true,
     "image_path": "assets/images/p029_img2.jpeg",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 예측값 vs 실제값(Predicted vs True) 차트: X축은 실제 값(True Value), Y축은 예측 값(Predicted Value). 점선은 이상적인 예측선(Ideal), 파란 선은 평균 예측 값. 선이 점선에 가까울수록 모델 성능이 좋음."
   },
   {
     "id": "img_007",
@@ -7646,7 +7703,8 @@
     "explanation": "실시간 추론 파이프라인을 프로덕션 서비스로 배포하려면 Azure Kubernetes Service (AKS)에 배포해야 합니다. AKS는 높은 확장성과 안정성을 제공합니다.",
     "has_image": true,
     "image_path": "assets/images/p038_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역: Azure ML 디자이너에서 실시간 추론 파이프라인을 서비스로 배포하려면 모델을 ____에 배포해야 한다.\n선택지: 로컬 웹 서비스 / Azure Container Instances / Azure Kubernetes Service (AKS) / Azure ML compute\n정답: Azure Kubernetes Service (AKS)"
   },
   {
     "id": "img_008",
@@ -7662,7 +7720,8 @@
     "explanation": "자동차 가격(연속 숫자 값)을 예측하는 파이프라인이므로 회귀 알고리즘인 Linear Regression이 적합합니다. K-Means Clustering은 그룹화에 사용됩니다.",
     "has_image": true,
     "image_path": "assets/images/p052_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 Azure ML 디자이너 파이프라인:\nAutomobile price data (Raw) → Select Columns in Dataset → Clean Missing Data → [빈 모듈] → [빈 모듈] → Train Model → Score Model\n왼쪽 모듈 목록: Convert to CSV / K-Means Clustering / Linear Regression / Split Data / Select Columns in Dataset / Summarize Data"
   },
   {
     "id": "img_009",
@@ -7678,7 +7737,8 @@
     "explanation": "데이터 정제 후에는 학습용과 테스트용으로 데이터를 분할(Split Data)하는 것이 일반적인 ML 파이프라인 순서입니다.",
     "has_image": true,
     "image_path": "assets/images/p052_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 Azure ML 디자이너 파이프라인:\nAutomobile price data (Raw) → Select Columns in Dataset → Clean Missing Data → [빈 모듈] → [빈 모듈] → Train Model → Score Model\n왼쪽 모듈 목록: Convert to CSV / K-Means Clustering / Linear Regression / Split Data / Select Columns in Dataset / Summarize Data"
   },
   {
     "id": "img_010",
@@ -7724,7 +7784,8 @@
     "explanation": "Custom Vision은 이미지 분류와 객체 감지를 지원하지만, 비디오 파일 분석은 지원하지 않습니다. 비디오 분석은 Video Indexer 서비스를 사용해야 합니다.",
     "has_image": true,
     "image_path": "assets/images/p084_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• Custom Vision 서비스는 이미지에서 객체를 감지하는 데 사용할 수 있다 → 예\n• Custom Vision 서비스는 모델 학습을 위해 자체 데이터를 제공해야 한다 → 예\n• Custom Vision 서비스는 비디오 파일을 분석하는 데 사용할 수 있다 → 아니오"
   },
   {
     "id": "img_013",
@@ -7740,7 +7801,8 @@
     "explanation": "Custom Vision은 사용자가 자체 이미지 데이터를 제공하여 모델을 학습시키는 서비스입니다. 사전 빌드된 모델을 사용하려면 Computer Vision 서비스를 사용합니다.",
     "has_image": true,
     "image_path": "assets/images/p084_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• Custom Vision 서비스는 이미지에서 객체를 감지하는 데 사용할 수 있다 → 예\n• Custom Vision 서비스는 모델 학습을 위해 자체 데이터를 제공해야 한다 → 예\n• Custom Vision 서비스는 비디오 파일을 분석하는 데 사용할 수 있다 → 아니오"
   },
   {
     "id": "img_014",
@@ -7756,7 +7818,8 @@
     "explanation": "이메일 텍스트의 내용을 분석하여 업무용과 개인용으로 분류하는 것은 NLP의 텍스트 분류 기능입니다. 나머지는 회귀, 이상 탐지, 분류 등 다른 ML 유형입니다.",
     "has_image": true,
     "image_path": "assets/images/p115_img2.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역: 자연어 처리를 사용하여 할 수 있는 작업\n선택지: 이메일을 업무용/개인용으로 분류 / 미래 렌터카 수 예측 / 웹사이트 방문자 거래 예측 / 극단적 온도 시 공장 프로세스 중단\n정답: 이메일을 업무용/개인용으로 분류"
   },
   {
     "id": "img_015",
@@ -7770,7 +7833,8 @@
     "explanation": "Text Analytics는 텍스트 분석 서비스로, 감성 분석, 핵심 문구 추출, 언어 감지, 엔터티 인식 등을 수행합니다. 필기 서명 감지는 Computer Vision(OCR/Form Recognizer)의 기능입니다.",
     "has_image": true,
     "image_path": "assets/images/p117_img2.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• Text Analytics 서비스는 텍스트가 어떤 언어로 작성되었는지 식별할 수 있다 → 예\n• Text Analytics 서비스는 문서에서 필기 서명을 감지할 수 있다 → 아니오\n• Text Analytics 서비스는 문서에서 언급된 회사와 조직을 식별할 수 있다 → 예"
   },
   {
     "id": "img_016",
@@ -7786,7 +7850,8 @@
     "explanation": "Text Analytics의 명명된 엔터티 인식(NER) 기능은 텍스트에서 회사, 조직, 사람, 장소, 날짜 등의 엔터티를 자동으로 식별합니다.",
     "has_image": true,
     "image_path": "assets/images/p117_img2.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• Text Analytics 서비스는 텍스트가 어떤 언어로 작성되었는지 식별할 수 있다 → 예\n• Text Analytics 서비스는 문서에서 필기 서명을 감지할 수 있다 → 아니오\n• Text Analytics 서비스는 문서에서 언급된 회사와 조직을 식별할 수 있다 → 예"
   },
   {
     "id": "img_017",
@@ -7802,7 +7867,8 @@
     "explanation": "텍스트에서 사람, 위치, 조직 등의 명명된 엔터티를 추출하는 것은 엔터티 인식(Entity Recognition)입니다.",
     "has_image": true,
     "image_path": "assets/images/p118_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 NLP 워크로드 유형 매칭:\n워크로드 목록: 엔터티 인식 / 핵심 문구 추출 / 언어 모델링 / 감성 분석 / 번역 / 음성 인식 및 합성\n• 텍스트에서 사람, 위치, 조직을 추출 → 엔터티 인식\n• 긍정-부정 척도로 텍스트 평가 → 감성 분석\n• 텍스트를 다른 언어로 변환 → 번역"
   },
   {
     "id": "img_018",
@@ -7818,7 +7884,8 @@
     "explanation": "텍스트를 긍정-부정 척도로 평가하는 것은 감성 분석(Sentiment Analysis)입니다.",
     "has_image": true,
     "image_path": "assets/images/p118_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 NLP 워크로드 유형 매칭:\n워크로드 목록: 엔터티 인식 / 핵심 문구 추출 / 언어 모델링 / 감성 분석 / 번역 / 음성 인식 및 합성\n• 텍스트에서 사람, 위치, 조직을 추출 → 엔터티 인식\n• 긍정-부정 척도로 텍스트 평가 → 감성 분석\n• 텍스트를 다른 언어로 변환 → 번역"
   },
   {
     "id": "img_019",
@@ -7834,7 +7901,8 @@
     "explanation": "음성을 텍스트로 변환(Speech-to-Text)하는 것은 Azure Speech 서비스의 기능입니다.",
     "has_image": true,
     "image_path": "assets/images/p133_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 Azure Cognitive Services 매칭:\n서비스: Language service / Speech / Translator\n• 음성 요청을 텍스트로 변환 → Speech\n• 사용자 요청의 의도를 식별 → Language service\n• 엔터티와 발화에 의도를 적용 → Language service"
   },
   {
     "id": "img_020",
@@ -7850,7 +7918,8 @@
     "explanation": "사용자의 의도(intent)를 식별하는 것은 Language service(LUIS/CLU)의 기능입니다. 사용자의 자연어 입력에서 의도와 엔터티를 추출합니다.",
     "has_image": true,
     "image_path": "assets/images/p133_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 Azure Cognitive Services 매칭:\n서비스: Language service / Speech / Translator\n• 음성 요청을 텍스트로 변환 → Speech\n• 사용자 요청의 의도를 식별 → Language service\n• 엔터티와 발화에 의도를 적용 → Language service"
   },
   {
     "id": "img_021",
@@ -7864,7 +7933,8 @@
     "explanation": "검색어에 따라 이미지를 표시하는 것은 검색/추천 시스템이지, 대화형 AI가 아닙니다. 대화형 AI는 자연어로 대화하는 시스템(챗봇 등)을 의미합니다.",
     "has_image": true,
     "image_path": "assets/images/p142_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• 내부 사용자의 쿼리에 응답하는 봇은 대화형 AI의 예이다 → 예\n• 검색어와 관련된 이미지를 표시하는 앱은 대화형 AI의 예이다 → 아니오\n• 비밀번호 재설정 요청을 제출하는 웹 폼은 대화형 AI의 예이다 → 예"
   },
   {
     "id": "img_022",
@@ -7880,6 +7950,7 @@
     "explanation": "비밀번호 재설정 요청을 자연어 대화로 처리하는 웹 폼은 대화형 AI의 예가 될 수 있습니다. 사용자의 요청을 이해하고 적절한 응답을 제공하는 자동화된 시스템입니다.",
     "has_image": true,
     "image_path": "assets/images/p142_img1.png",
-    "source": "ai_generated"
+    "source": "ai_generated",
+    "image_caption": "📝 답변 영역 (예/아니오):\n• 내부 사용자의 쿼리에 응답하는 봇은 대화형 AI의 예이다 → 예\n• 검색어와 관련된 이미지를 표시하는 앱은 대화형 AI의 예이다 → 아니오\n• 비밀번호 재설정 요청을 제출하는 웹 폼은 대화형 AI의 예이다 → 예"
   }
 ]
