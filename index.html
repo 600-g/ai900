@@ -533,7 +533,21 @@ function renderQ() {
   optsList.innerHTML = '';
   const isRevealed = revealed[current];
 
-  Object.entries(q.options).forEach(([key, val]) => {
+  let optEntries = Object.entries(q.options);
+  // 보기 셔플 (설정에서 켜져있으면)
+  if (localStorage.getItem('ai900_shuffle_opts') === 'true' && !isRevealed) {
+    if (!q._shuffled) {
+      const shuffled = [...optEntries];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      q._shuffledOrder = shuffled;
+      q._shuffled = true;
+    }
+    optEntries = q._shuffledOrder;
+  }
+  optEntries.forEach(([key, val]) => {
     const li = document.createElement('li');
     let cls = 'opt';
     if (answers[current] === key) cls += ' sel';
@@ -548,6 +562,7 @@ function renderQ() {
     if (!isRevealed) li.onclick = () => pickOpt(li, key);
     optsList.appendChild(li);
   });
+  // forEach 닫기 (셔플 포함)
 
   // 버튼 상태
   const expEl = document.getElementById('explanation');
