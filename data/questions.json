@@ -7535,5 +7535,351 @@
     "explanation": "감정 분석은 각 문장별 감정(문장 수준)과 전체 문서의 종합적 감정(문서 수준)을 모두 반환합니다.",
     "has_image": false,
     "source": "ai_generated"
+  },
+  {
+    "id": "img_001",
+    "domain": "AI Workloads",
+    "question": "다음 이미지의 표를 참고하세요.\n이 표에서 '과거 데이터를 기반으로 주택 가격을 예측하는 것'이 이상 탐지의 예라는 설명은 올바릅니까?",
+    "options": {
+      "A": "예, 이상 탐지의 예이다.",
+      "B": "아니오, 이것은 회귀(Regression)의 예이다.",
+      "C": "예, 분류의 예이다.",
+      "D": "아니오, 클러스터링의 예이다."
+    },
+    "answer": "B",
+    "explanation": "과거 데이터를 기반으로 주택 가격을 예측하는 것은 숫자 값을 예측하는 회귀(Regression)입니다. 이상 탐지는 정상 패턴에서 벗어나는 데이터를 찾는 것입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p005_img2.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_002",
+    "domain": "AI Workloads",
+    "question": "다음 이미지를 참고하세요.\n의심스러운 로그인을 일반적인 패턴과의 편차를 통해 식별하는 것은 어떤 AI 워크로드에 해당합니까?",
+    "options": {
+      "A": "분류",
+      "B": "회귀",
+      "C": "이상 탐지",
+      "D": "클러스터링"
+    },
+    "answer": "C",
+    "explanation": "일반적인 패턴에서의 편차(이상치)를 찾아 의심스러운 로그인을 식별하는 것은 이상 탐지의 전형적인 사용 사례입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p005_img2.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_003",
+    "domain": "AI Workloads",
+    "question": "다음 이미지를 참고하세요.\n'사진에 사람이 포함되어 있는지 판단하는 것'은 어떤 AI 워크로드 유형에 해당합니까?",
+    "options": {
+      "A": "대화형 AI",
+      "B": "컴퓨터 비전",
+      "C": "자연어 처리",
+      "D": "이상 탐지"
+    },
+    "answer": "B",
+    "explanation": "이미지에서 사람을 감지하거나 판단하는 것은 컴퓨터 비전 워크로드입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p008_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_004",
+    "domain": "AI Workloads",
+    "question": "다음 이미지를 참고하세요.\n'리뷰가 긍정적인지 부정적인지 판단하는 것'은 어떤 AI 워크로드입니까?",
+    "options": {
+      "A": "컴퓨터 비전",
+      "B": "대화형 AI",
+      "C": "자연어 처리",
+      "D": "이상 탐지"
+    },
+    "answer": "C",
+    "explanation": "텍스트의 감성(긍정/부정)을 분석하는 것은 자연어 처리(NLP)의 감성 분석 기능입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p008_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_005",
+    "domain": "Machine Learning",
+    "question": "다음 이미지는 머신러닝 모델의 평가 차트입니다.\n이 'Predicted vs True' 차트에서 파란 선이 점선(Ideal)에 가까울수록 의미하는 것은?",
+    "options": {
+      "A": "모델의 예측이 실제 값과 차이가 크다.",
+      "B": "모델의 예측이 실제 값에 가깝다(모델 성능이 좋다).",
+      "C": "모델이 과적합되었다.",
+      "D": "모델이 분류 작업을 수행한다."
+    },
+    "answer": "B",
+    "explanation": "Predicted vs True 차트에서 예측 선이 이상적인 대각선(Ideal)에 가까울수록 모델의 예측이 실제 값에 가깝다는 의미로, 회귀 모델의 성능이 좋다는 것을 나타냅니다.",
+    "has_image": true,
+    "image_path": "assets/images/p029_img2.jpeg",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_006",
+    "domain": "Machine Learning",
+    "question": "다음 이미지의 차트는 어떤 유형의 머신러닝 모델을 평가하는 데 사용됩니까?",
+    "options": {
+      "A": "분류 모델",
+      "B": "클러스터링 모델",
+      "C": "회귀 모델",
+      "D": "강화 학습 모델"
+    },
+    "answer": "C",
+    "explanation": "Predicted vs True(예측값 vs 실제값) 차트는 회귀 모델의 성능을 평가하는 데 사용됩니다. 연속적인 숫자 값의 예측 정확도를 시각적으로 확인할 수 있습니다.",
+    "has_image": true,
+    "image_path": "assets/images/p029_img2.jpeg",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_007",
+    "domain": "Machine Learning",
+    "question": "다음 이미지를 참고하세요.\nAzure Machine Learning 디자이너에서 실시간 추론 파이프라인을 서비스로 배포하려면 모델을 어디에 배포해야 합니까?",
+    "options": {
+      "A": "로컬 웹 서비스",
+      "B": "Azure Container Instances",
+      "C": "Azure Kubernetes Service (AKS)",
+      "D": "Azure Machine Learning compute"
+    },
+    "answer": "C",
+    "explanation": "실시간 추론 파이프라인을 프로덕션 서비스로 배포하려면 Azure Kubernetes Service (AKS)에 배포해야 합니다. AKS는 높은 확장성과 안정성을 제공합니다.",
+    "has_image": true,
+    "image_path": "assets/images/p038_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_008",
+    "domain": "Machine Learning",
+    "question": "다음 이미지는 Azure Machine Learning 디자이너의 파이프라인입니다.\n이 파이프라인에서 'Automobile price data'를 사용하고 있으며, 빈 모듈 자리에 들어갈 올바른 알고리즘은 무엇입니까?",
+    "options": {
+      "A": "K-Means Clustering",
+      "B": "Linear Regression",
+      "C": "Convert to CSV",
+      "D": "Summarize Data"
+    },
+    "answer": "B",
+    "explanation": "자동차 가격(연속 숫자 값)을 예측하는 파이프라인이므로 회귀 알고리즘인 Linear Regression이 적합합니다. K-Means Clustering은 그룹화에 사용됩니다.",
+    "has_image": true,
+    "image_path": "assets/images/p052_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_009",
+    "domain": "Machine Learning",
+    "question": "다음 이미지의 파이프라인을 참고하세요.\n이 파이프라인에서 'Clean Missing Data' 다음에 수행해야 할 단계로 가장 적절한 것은?",
+    "options": {
+      "A": "모델 배포",
+      "B": "데이터 분할(Split Data)",
+      "C": "결과 시각화",
+      "D": "데이터 다운로드"
+    },
+    "answer": "B",
+    "explanation": "데이터 정제 후에는 학습용과 테스트용으로 데이터를 분할(Split Data)하는 것이 일반적인 ML 파이프라인 순서입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p052_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_010",
+    "domain": "Machine Learning",
+    "question": "다음 이미지를 참고하세요.\n'드래그 앤 드롭 인터페이스를 사용하여 모델을 학습하고 배포'하는 Azure ML 도구는 무엇입니까?",
+    "options": {
+      "A": "Automated machine learning",
+      "B": "The Azure portal",
+      "C": "Machine Learning designer",
+      "D": "Azure CLI"
+    },
+    "answer": "C",
+    "explanation": "Machine Learning designer는 시각적 드래그 앤 드롭 인터페이스를 제공하여 코드 없이 ML 파이프라인을 만들고 모델을 학습/배포할 수 있습니다.",
+    "has_image": true,
+    "image_path": "assets/images/p068_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_011",
+    "domain": "Machine Learning",
+    "question": "다음 이미지를 참고하세요.\n'머신러닝 실행을 위한 구성을 마법사로 선택'하는 도구는 어떤 것입니까?",
+    "options": {
+      "A": "Machine Learning designer",
+      "B": "Automated machine learning (AutoML)",
+      "C": "The Azure portal",
+      "D": "Jupyter Notebook"
+    },
+    "answer": "B",
+    "explanation": "Automated ML(AutoML)은 마법사(위자드) 형태로 구성을 선택하여 자동으로 최적의 알고리즘과 하이퍼파라미터를 찾아줍니다.",
+    "has_image": true,
+    "image_path": "assets/images/p068_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_012",
+    "domain": "Computer Vision",
+    "question": "다음 이미지를 참고하세요.\nCustom Vision 서비스에 대한 설명 중, '비디오 파일을 분석할 수 있다'는 올바릅니까?",
+    "options": {
+      "A": "예",
+      "B": "아니오"
+    },
+    "answer": "B",
+    "explanation": "Custom Vision은 이미지 분류와 객체 감지를 지원하지만, 비디오 파일 분석은 지원하지 않습니다. 비디오 분석은 Video Indexer 서비스를 사용해야 합니다.",
+    "has_image": true,
+    "image_path": "assets/images/p084_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_013",
+    "domain": "Computer Vision",
+    "question": "다음 이미지를 참고하세요.\nCustom Vision 서비스를 사용하려면 자체 데이터를 제공해야 합니까?",
+    "options": {
+      "A": "예, 자체 학습 데이터가 필요하다.",
+      "B": "아니오, 사전 학습된 모델만 사용한다.",
+      "C": "선택사항이다.",
+      "D": "텍스트 데이터만 필요하다."
+    },
+    "answer": "A",
+    "explanation": "Custom Vision은 사용자가 자체 이미지 데이터를 제공하여 모델을 학습시키는 서비스입니다. 사전 빌드된 모델을 사용하려면 Computer Vision 서비스를 사용합니다.",
+    "has_image": true,
+    "image_path": "assets/images/p084_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_014",
+    "domain": "NLP",
+    "question": "다음 이미지를 참고하세요.\n자연어 처리(NLP)를 사용하여 할 수 있는 작업은 무엇입니까?",
+    "options": {
+      "A": "이메일 메시지를 업무용과 개인용으로 분류",
+      "B": "미래 렌터카 수를 예측",
+      "C": "공장에서 온도가 극도로 높을 때 프로세스를 중단",
+      "D": "웹사이트 방문자의 거래 여부를 예측"
+    },
+    "answer": "A",
+    "explanation": "이메일 텍스트의 내용을 분석하여 업무용과 개인용으로 분류하는 것은 NLP의 텍스트 분류 기능입니다. 나머지는 회귀, 이상 탐지, 분류 등 다른 ML 유형입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p115_img2.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_015",
+    "domain": "NLP",
+    "question": "다음 이미지를 참고하세요.\nText Analytics 서비스가 문서에서 필기 서명을 감지할 수 있다는 설명은 올바릅니까?",
+    "options": {
+      "A": "예",
+      "B": "아니오"
+    },
+    "answer": "B",
+    "explanation": "Text Analytics는 텍스트 분석 서비스로, 감성 분석, 핵심 문구 추출, 언어 감지, 엔터티 인식 등을 수행합니다. 필기 서명 감지는 Computer Vision(OCR/Form Recognizer)의 기능입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p117_img2.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_016",
+    "domain": "NLP",
+    "question": "다음 이미지를 참고하세요.\nText Analytics 서비스가 문서에서 회사와 조직을 식별할 수 있습니까?",
+    "options": {
+      "A": "예, 엔터티 인식(NER) 기능으로 가능하다.",
+      "B": "아니오, 감성 분석만 가능하다.",
+      "C": "아니오, 번역만 가능하다.",
+      "D": "예, 하지만 영어만 지원한다."
+    },
+    "answer": "A",
+    "explanation": "Text Analytics의 명명된 엔터티 인식(NER) 기능은 텍스트에서 회사, 조직, 사람, 장소, 날짜 등의 엔터티를 자동으로 식별합니다.",
+    "has_image": true,
+    "image_path": "assets/images/p117_img2.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_017",
+    "domain": "NLP",
+    "question": "다음 이미지를 참고하세요.\n'텍스트에서 사람, 위치, 조직을 추출하는 것'은 어떤 NLP 워크로드 유형입니까?",
+    "options": {
+      "A": "감성 분석",
+      "B": "엔터티 인식",
+      "C": "핵심 문구 추출",
+      "D": "언어 모델링"
+    },
+    "answer": "B",
+    "explanation": "텍스트에서 사람, 위치, 조직 등의 명명된 엔터티를 추출하는 것은 엔터티 인식(Entity Recognition)입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p118_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_018",
+    "domain": "NLP",
+    "question": "다음 이미지를 참고하세요.\n'텍스트를 긍정-부정 척도로 평가하는 것'은 어떤 NLP 워크로드입니까?",
+    "options": {
+      "A": "엔터티 인식",
+      "B": "핵심 문구 추출",
+      "C": "감성 분석",
+      "D": "번역"
+    },
+    "answer": "C",
+    "explanation": "텍스트를 긍정-부정 척도로 평가하는 것은 감성 분석(Sentiment Analysis)입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p118_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_019",
+    "domain": "NLP",
+    "question": "다음 이미지를 참고하세요.\n'음성 요청을 텍스트로 변환'하는 Azure Cognitive Services는 무엇입니까?",
+    "options": {
+      "A": "Language service",
+      "B": "Speech",
+      "C": "Translator",
+      "D": "Computer Vision"
+    },
+    "answer": "B",
+    "explanation": "음성을 텍스트로 변환(Speech-to-Text)하는 것은 Azure Speech 서비스의 기능입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p133_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_020",
+    "domain": "NLP",
+    "question": "다음 이미지를 참고하세요.\n'사용자 요청의 의도를 식별'하는 Azure Cognitive Services는 무엇입니까?",
+    "options": {
+      "A": "Speech",
+      "B": "Translator",
+      "C": "Language service",
+      "D": "Computer Vision"
+    },
+    "answer": "C",
+    "explanation": "사용자의 의도(intent)를 식별하는 것은 Language service(LUIS/CLU)의 기능입니다. 사용자의 자연어 입력에서 의도와 엔터티를 추출합니다.",
+    "has_image": true,
+    "image_path": "assets/images/p133_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_021",
+    "domain": "Conversational AI",
+    "question": "다음 이미지를 참고하세요.\n'검색어와 관련된 이미지를 표시하는 애플리케이션'은 대화형 AI 워크로드의 예입니까?",
+    "options": {
+      "A": "예",
+      "B": "아니오"
+    },
+    "answer": "B",
+    "explanation": "검색어에 따라 이미지를 표시하는 것은 검색/추천 시스템이지, 대화형 AI가 아닙니다. 대화형 AI는 자연어로 대화하는 시스템(챗봇 등)을 의미합니다.",
+    "has_image": true,
+    "image_path": "assets/images/p142_img1.png",
+    "source": "ai_generated"
+  },
+  {
+    "id": "img_022",
+    "domain": "Conversational AI",
+    "question": "다음 이미지를 참고하세요.\n'비밀번호 재설정 요청을 제출하는 웹 폼'은 대화형 AI 워크로드의 예입니까?",
+    "options": {
+      "A": "예, 사용자와 상호작용하므로 대화형 AI이다.",
+      "B": "아니오, 단순한 웹 폼은 대화형 AI가 아니다.",
+      "C": "예, 모든 웹 인터페이스는 대화형 AI이다.",
+      "D": "상황에 따라 다르다."
+    },
+    "answer": "A",
+    "explanation": "비밀번호 재설정 요청을 자연어 대화로 처리하는 웹 폼은 대화형 AI의 예가 될 수 있습니다. 사용자의 요청을 이해하고 적절한 응답을 제공하는 자동화된 시스템입니다.",
+    "has_image": true,
+    "image_path": "assets/images/p142_img1.png",
+    "source": "ai_generated"
   }
 ]
