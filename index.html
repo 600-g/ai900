@@ -89,7 +89,7 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
 .hero h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
 .hero p { color: var(--ms-muted); font-size: 1rem; }
 
-.exam-info { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+.exam-info { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 24px 0; }
 .exam-info-box { background: var(--ms-card); border-radius: 10px; padding: 16px; text-align: center; border: 1px solid var(--ms-border); }
 .exam-info-box .val { font-size: 1.5rem; font-weight: 700; color: var(--ms-blue); }
 .exam-info-box .lbl { font-size: .75rem; color: var(--ms-muted); margin-top: 2px; }
@@ -268,6 +268,7 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
       <div class="exam-info-box"><div class="val">700</div><div class="lbl">합격 기준점</div></div>
       <div class="exam-info-box"><div class="val">1000</div><div class="lbl">만점</div></div>
       <div class="exam-info-box"><div class="val">45분</div><div class="lbl">제한 시간</div></div>
+      <div class="exam-info-box"><div class="val">40</div><div class="lbl">출제 문항</div></div>
       <div class="exam-info-box"><div class="val" id="total-q">0</div><div class="lbl">보유 문항</div></div>
     </div>
 
@@ -280,7 +281,7 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
       <div class="mode-card selected" data-mode="exam" onclick="selectMode('exam')">
         <div class="mc-icon"><i class="bi bi-stopwatch-fill" style="color:var(--ms-red)"></i></div>
         <h4>실전 모의고사</h4>
-        <p>45분 타이머 · 전체 문제<br>시험 종료 후 결과 확인 · 합격/불합격 판정</p>
+        <p>45분 타이머 · 40문제 (실전 비율)<br>시험 종료 후 결과 확인 · 합격/불합격 판정</p>
       </div>
       <div class="mode-card" data-mode="practice" onclick="selectMode('practice')">
         <div class="mc-icon"><i class="bi bi-book-fill" style="color:var(--ms-green)"></i></div>
@@ -457,10 +458,41 @@ function shuffle(arr) {
   return arr;
 }
 
+// ===== 실전 비율대로 문제 뽑기 (40문제) =====
+function pickExamQuestions() {
+  // AI-900 실제 시험 비율
+  const weights = {
+    'AI Workloads': 7,        // ~17.5%
+    'Machine Learning': 9,     // ~22.5%
+    'Computer Vision': 7,      // ~17.5%
+    'NLP': 7,                  // ~17.5%
+    'Responsible AI': 7,       // ~17.5%
+    'Conversational AI': 3     // ~7.5%
+  };
+  // 총 40문제
+  const picked = [];
+  const byDomain = {};
+  ALL.forEach(q => {
+    if (!byDomain[q.domain]) byDomain[q.domain] = [];
+    byDomain[q.domain].push(q);
+  });
+  Object.entries(weights).forEach(([domain, count]) => {
+    const pool = shuffle([...(byDomain[domain] || [])]);
+    picked.push(...pool.slice(0, count));
+  });
+  // 40문제가 안 되면 나머지에서 채움
+  if (picked.length < 40) {
+    const usedIds = new Set(picked.map(q => q.id));
+    const rest = shuffle(ALL.filter(q => !usedIds.has(q.id)));
+    picked.push(...rest.slice(0, 40 - picked.length));
+  }
+  return shuffle(picked);
+}
+
 // ===== 시험 시작 =====
 function startExam() {
   if (mode === 'exam') {
-    QUIZ = shuffle([...ALL]);
+    QUIZ = pickExamQuestions();
   } else {
     let filtered = getFilteredQuestions();
     shuffle(filtered);
