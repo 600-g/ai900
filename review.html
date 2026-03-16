@@ -3,129 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-900 오답 복습</title>
+<title>AI-900 오답노트</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <style>
-:root { --primary:#0078d4; --success:#107c10; --danger:#d13438; --bg:#f4f4f4; --card-bg:#fff; --text:#323130; --text-muted:#605e5c; --border:#edebe9; }
-* { box-sizing: border-box; }
-body { background:var(--bg); color:var(--text); font-family:'Segoe UI',-apple-system,sans-serif; margin:0; }
-.navbar { background:var(--primary); padding:12px 20px; display:flex; align-items:center; justify-content:space-between; }
-.navbar h1 { color:#fff; font-size:1.2rem; margin:0; font-weight:600; }
-.navbar a { color:rgba(255,255,255,.85); text-decoration:none; font-size:.9rem; margin-left:16px; }
-.navbar a:hover { color:#fff; }
-.container-custom { max-width:720px; margin:0 auto; padding:20px 16px; }
-.empty-state { text-align:center; padding:60px 20px; }
-.empty-state .icon { font-size:3rem; margin-bottom:16px; }
-.empty-state p { color:var(--text-muted); font-size:1.1rem; }
-.wrong-card { background:var(--card-bg); border-radius:12px; padding:20px; margin-bottom:16px; box-shadow:0 2px 8px rgba(0,0,0,.08); cursor:pointer; transition:all .15s; }
-.wrong-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.12); }
-.wrong-card.expanded { cursor:default; }
-.wrong-header { display:flex; justify-content:space-between; align-items:center; }
-.wrong-id { font-size:.8rem; color:var(--text-muted); }
-.wrong-domain { font-size:.75rem; background:#e8f0fe; color:var(--primary); padding:2px 8px; border-radius:4px; }
-.wrong-preview { margin-top:8px; font-size:.95rem; line-height:1.5; }
-.wrong-detail { display:none; margin-top:16px; padding-top:16px; border-top:1px solid var(--border); }
-.wrong-detail.show { display:block; }
-.wrong-options { list-style:none; padding:0; margin:12px 0; }
-.wrong-options li { padding:10px 14px; border-radius:6px; margin-bottom:6px; font-size:.9rem; }
-.wrong-options li.correct-opt { background:#dff6dd; border-left:4px solid var(--success); }
-.wrong-options li.normal-opt { background:#f8f8f8; }
-.explanation-text { background:#f0f6ff; border-left:4px solid var(--primary); padding:12px 16px; border-radius:0 8px 8px 0; font-size:.9rem; line-height:1.6; margin-top:12px; }
-.done-btn { margin-top:12px; padding:8px 20px; background:var(--success); color:#fff; border:none; border-radius:6px; font-size:.9rem; cursor:pointer; }
-.done-btn:hover { background:#0b6b0b; }
-.clear-all-btn { display:block; margin:20px auto 0; padding:10px 24px; background:var(--danger); color:#fff; border:none; border-radius:8px; font-size:.9rem; cursor:pointer; }
-.clear-all-btn:hover { background:#b02a2d; }
-.count-badge { background:var(--danger); color:#fff; padding:2px 10px; border-radius:12px; font-size:.85rem; margin-left:8px; }
-@media (max-width:480px) { .container-custom { padding:12px; } .wrong-card { padding:16px; } }
+:root { --ms-blue:#0078d4; --ms-dark:#1b1b1b; --ms-green:#107c10; --ms-red:#d13438; --ms-orange:#ff8c00; --ms-bg:#f3f2f1; --ms-card:#fff; --ms-border:#e1dfdd; --ms-text:#323130; --ms-muted:#605e5c; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg); color:var(--ms-text); }
+.top-bar { background:var(--ms-dark); color:#fff; padding:8px 20px; font-size:.8rem; }
+.header { background:#fff; border-bottom:1px solid var(--ms-border); padding:16px 20px; display:flex; align-items:center; justify-content:space-between; }
+.header h1 { font-size:1.3rem; font-weight:700; display:flex; align-items:center; gap:10px; }
+.header h1 .badge-exam { background:var(--ms-blue); color:#fff; font-size:.7rem; padding:3px 10px; border-radius:4px; }
+.nav-links { display:flex; gap:4px; }
+.nav-links a { text-decoration:none; color:var(--ms-muted); padding:8px 14px; border-radius:6px; font-size:.9rem; font-weight:500; display:flex; align-items:center; gap:6px; }
+.nav-links a:hover { background:#f3f2f1; color:var(--ms-text); }
+.nav-links a.active { color:var(--ms-blue); background:#e8f0fe; }
+.wrap { max-width:860px; margin:0 auto; padding:24px 16px; }
+
+.filter-bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+.filter-btn { padding:6px 14px; border:1px solid var(--ms-border); border-radius:6px; background:#fff; cursor:pointer; font-size:.85rem; }
+.filter-btn:hover { border-color:var(--ms-blue); }
+.filter-btn.active { background:var(--ms-blue); color:#fff; border-color:var(--ms-blue); }
+
+.summary-bar { display:flex; gap:12px; margin-bottom:20px; }
+.sb { background:var(--ms-card); border-radius:10px; padding:14px 20px; border:1px solid var(--ms-border); flex:1; text-align:center; }
+.sb .v { font-size:1.5rem; font-weight:700; color:var(--ms-red); }
+.sb .l { font-size:.75rem; color:var(--ms-muted); }
+
+.empty { text-align:center; padding:60px 20px; }
+.empty i { font-size:3rem; color:var(--ms-green); }
+.empty p { color:var(--ms-muted); margin-top:12px; font-size:1rem; }
+
+.w-card { background:var(--ms-card); border-radius:10px; border:1px solid var(--ms-border); margin-bottom:12px; overflow:hidden; }
+.w-header { padding:16px 20px; cursor:pointer; display:flex; align-items:center; gap:12px; }
+.w-header:hover { background:#faf9f8; }
+.w-tag { font-size:.7rem; padding:2px 8px; border-radius:4px; font-weight:600; white-space:nowrap; }
+.w-q { flex:1; font-size:.9rem; line-height:1.5; }
+.w-answer-badge { font-size:.75rem; padding:2px 8px; border-radius:4px; }
+.w-detail { display:none; padding:0 20px 20px; border-top:1px solid var(--ms-border); }
+.w-detail.show { display:block; padding-top:16px; }
+.w-opts { list-style:none; padding:0; margin:12px 0; }
+.w-opts li { padding:8px 12px; border-radius:6px; margin-bottom:4px; font-size:.9rem; }
+.w-opts li.correct { background:#dff6dd; border-left:3px solid var(--ms-green); }
+.w-opts li.normal { background:#f8f8f8; }
+.w-exp { background:#f0f6ff; border-left:3px solid var(--ms-blue); padding:12px 16px; border-radius:0 8px 8px 0; font-size:.85rem; line-height:1.6; margin:12px 0; }
+.w-actions { display:flex; gap:8px; }
+.w-actions button { padding:8px 16px; border-radius:6px; font-size:.85rem; font-weight:600; cursor:pointer; border:none; }
+.btn-done { background:var(--ms-green); color:#fff; }
+.btn-done:hover { background:#0b6b0b; }
+
+.bottom-actions { display:flex; gap:12px; justify-content:center; margin-top:24px; }
+.bottom-actions button { padding:12px 24px; border-radius:8px; border:none; cursor:pointer; font-weight:600; font-size:.9rem; display:flex; align-items:center; gap:6px; }
+.btn-clear { background:var(--ms-red); color:#fff; }
 </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <h1>오답 복습 <span class="count-badge" id="count-badge">0</span></h1>
-  <div>
-    <a href="index.html">문제풀기</a>
-    <a href="stats.html">통계</a>
+<div class="top-bar"><span>Microsoft</span> <span style="opacity:.5">|</span> <span>Azure AI Fundamentals</span></div>
+<div class="header">
+  <h1><i class="bi bi-journal-x" style="color:var(--ms-red)"></i> 오답노트 <span class="badge-exam">Review</span></h1>
+  <div class="nav-links">
+    <a href="index.html"><i class="bi bi-pencil-square"></i> 시험</a>
+    <a href="review.html" class="active"><i class="bi bi-journal-x"></i> 오답노트</a>
+    <a href="stats.html"><i class="bi bi-bar-chart-line"></i> 성적표</a>
   </div>
-</nav>
+</div>
 
-<div class="container-custom" id="content"></div>
+<div class="wrap">
+  <div id="summary" class="summary-bar"></div>
+  <div class="filter-bar" id="filter-bar"></div>
+  <div id="content"></div>
+  <div class="bottom-actions" id="bottom-actions"></div>
+</div>
 
 <script>
+const DOMAIN_MAP = {
+  'AI Workloads': { label: 'AI 워크로드', icon: '🤖', color: '#0078d4' },
+  'Machine Learning': { label: '머신러닝', icon: '🧠', color: '#5c2d91' },
+  'Computer Vision': { label: '컴퓨터 비전', icon: '👁️', color: '#008272' },
+  'NLP': { label: 'NLP', icon: '💬', color: '#e3008c' },
+  'Responsible AI': { label: '책임 있는 AI', icon: '⚖️', color: '#ff8c00' },
+  'Conversational AI': { label: '대화형 AI', icon: '🗣️', color: '#00bcf2' }
+};
+
 let allQuestions = [];
+let filter = '전체';
 
 async function init() {
   try {
     const res = await fetch('data/questions.json');
     allQuestions = await res.json();
-  } catch(e) {
-    document.getElementById('content').innerHTML = '<p style="text-align:center;color:red;">문제 데이터를 불러올 수 없습니다.</p>';
-    return;
-  }
+  } catch(e) {}
   render();
 }
 
-function getWrongList() {
-  return JSON.parse(localStorage.getItem('ai900_wrong_list') || '[]');
-}
-
-function saveWrongList(list) {
-  localStorage.setItem('ai900_wrong_list', JSON.stringify(list));
-}
+function getWrongList() { return JSON.parse(localStorage.getItem('ai900_wrong_list') || '[]'); }
+function saveWrongList(list) { localStorage.setItem('ai900_wrong_list', JSON.stringify(list)); }
 
 function render() {
   const wrongIds = getWrongList();
-  const badge = document.getElementById('count-badge');
-  badge.textContent = wrongIds.length;
-  const container = document.getElementById('content');
+  const wrongQs = wrongIds.map(id => allQuestions.find(q => q.id === id)).filter(Boolean);
 
-  if (wrongIds.length === 0) {
-    container.innerHTML = '<div class="empty-state"><div class="icon">🎉</div><p>오답이 없어요!<br>계속 이렇게 화이팅!</p><a href="index.html" style="display:inline-block;margin-top:16px;padding:12px 24px;background:#0078d4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">문제 풀러 가기</a></div>';
+  // 도메인별 카운트
+  const domainCount = {};
+  wrongQs.forEach(q => { domainCount[q.domain] = (domainCount[q.domain] || 0) + 1; });
+
+  // 요약
+  document.getElementById('summary').innerHTML = `
+    <div class="sb"><div class="v">${wrongQs.length}</div><div class="l">총 오답 수</div></div>
+    <div class="sb"><div class="v">${Object.keys(domainCount).length}</div><div class="l">영역</div></div>
+  `;
+
+  // 필터
+  const filterBar = document.getElementById('filter-bar');
+  const domains = ['전체', ...Object.keys(domainCount)];
+  filterBar.innerHTML = '';
+  domains.forEach(d => {
+    const btn = document.createElement('button');
+    const info = DOMAIN_MAP[d] || { icon: '📝', label: d };
+    const cnt = d === '전체' ? wrongQs.length : domainCount[d];
+    btn.className = 'filter-btn' + (d === filter ? ' active' : '');
+    btn.textContent = (d === '전체' ? '전체' : info.icon + ' ' + info.label) + ' (' + cnt + ')';
+    btn.onclick = () => { filter = d; render(); };
+    filterBar.appendChild(btn);
+  });
+
+  const container = document.getElementById('content');
+  if (wrongQs.length === 0) {
+    container.innerHTML = '<div class="empty"><i class="bi bi-emoji-smile-fill"></i><p>오답이 없습니다! 계속 이렇게 화이팅!</p><a href="index.html" style="display:inline-block;margin-top:16px;padding:12px 24px;background:var(--ms-blue);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">문제 풀러 가기</a></div>';
+    document.getElementById('bottom-actions').innerHTML = '';
     return;
   }
 
-  const wrongQuestions = wrongIds.map(id => allQuestions.find(q => q.id === id)).filter(Boolean);
-  let html = '';
-  wrongQuestions.forEach((q, i) => {
-    html += `
-    <div class="wrong-card" id="card-${q.id}" onclick="toggleDetail('${q.id}')">
-      <div class="wrong-header">
-        <span class="wrong-id">${q.id}</span>
-        <span class="wrong-domain">${q.domain}</span>
+  const filtered = filter === '전체' ? wrongQs : wrongQs.filter(q => q.domain === filter);
+
+  container.innerHTML = filtered.map(q => {
+    const info = DOMAIN_MAP[q.domain] || { label: q.domain, icon: '📝', color: '#666' };
+    return `<div class="w-card" id="card-${q.id}">
+      <div class="w-header" onclick="toggleDetail('${q.id}')">
+        <span class="w-tag" style="background:${info.color}15;color:${info.color}">${info.icon} ${info.label}</span>
+        <div class="w-q">${q.question.substring(0, 100)}${q.question.length > 100 ? '...' : ''}</div>
+        <span class="w-answer-badge" style="background:#dff6dd;color:var(--ms-green)">정답: ${q.answer}</span>
+        <i class="bi bi-chevron-down" style="color:var(--ms-muted)"></i>
       </div>
-      <div class="wrong-preview">${q.question.substring(0, 100)}${q.question.length > 100 ? '...' : ''}</div>
-      <div class="wrong-detail" id="detail-${q.id}">
-        <p style="font-size:.95rem;line-height:1.6;">${q.question}</p>
-        <ul class="wrong-options">
+      <div class="w-detail" id="detail-${q.id}">
+        <p style="font-size:.95rem;line-height:1.7;margin-bottom:12px;">${q.question}</p>
+        <ul class="w-opts">
           ${Object.entries(q.options).map(([k,v]) =>
-            `<li class="${k === q.answer ? 'correct-opt' : 'normal-opt'}"><strong>${k}.</strong> ${v} ${k === q.answer ? ' ✅' : ''}</li>`
+            `<li class="${k === q.answer ? 'correct' : 'normal'}"><strong>${k}.</strong> ${v} ${k === q.answer ? '✅ 정답' : ''}</li>`
           ).join('')}
         </ul>
-        <div class="explanation-text">${q.explanation}</div>
-        <button class="done-btn" onclick="event.stopPropagation(); markDone('${q.id}')">이 문제 완료 ✓</button>
+        ${q.explanation ? `<div class="w-exp"><strong>해설:</strong><br>${q.explanation}</div>` : ''}
+        <div class="w-actions">
+          <button class="btn-done" onclick="event.stopPropagation(); markDone('${q.id}')"><i class="bi bi-check-lg"></i> 학습 완료</button>
+        </div>
       </div>
     </div>`;
-  });
+  }).join('');
 
-  html += '<button class="clear-all-btn" onclick="clearAll()">전체 오답 초기화</button>';
-  container.innerHTML = html;
+  document.getElementById('bottom-actions').innerHTML = `
+    <button class="btn-clear" onclick="clearAll()"><i class="bi bi-trash3"></i> 전체 초기화</button>
+  `;
 }
 
 function toggleDetail(id) {
-  const detail = document.getElementById('detail-' + id);
-  const card = document.getElementById('card-' + id);
-  if (detail.classList.contains('show')) {
-    detail.classList.remove('show');
-    card.classList.remove('expanded');
-  } else {
-    detail.classList.add('show');
-    card.classList.add('expanded');
-  }
+  document.getElementById('detail-' + id).classList.toggle('show');
 }
 
 function markDone(id) {
-  let list = getWrongList();
-  list = list.filter(x => x !== id);
+  let list = getWrongList().filter(x => x !== id);
   saveWrongList(list);
   render();
 }

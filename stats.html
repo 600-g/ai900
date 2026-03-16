@@ -3,134 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-900 통계</title>
+<title>AI-900 성적표</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
-:root { --primary:#0078d4; --success:#107c10; --danger:#d13438; --bg:#f4f4f4; --card-bg:#fff; --text:#323130; --text-muted:#605e5c; --border:#edebe9; }
-* { box-sizing:border-box; }
-body { background:var(--bg); color:var(--text); font-family:'Segoe UI',-apple-system,sans-serif; margin:0; }
-.navbar { background:var(--primary); padding:12px 20px; display:flex; align-items:center; justify-content:space-between; }
-.navbar h1 { color:#fff; font-size:1.2rem; margin:0; font-weight:600; }
-.navbar a { color:rgba(255,255,255,.85); text-decoration:none; font-size:.9rem; margin-left:16px; }
-.navbar a:hover { color:#fff; }
-.container-custom { max-width:720px; margin:0 auto; padding:20px 16px; }
-.stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:24px; }
-.stat-box { background:var(--card-bg); border-radius:12px; padding:20px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,.08); }
-.stat-value { font-size:2rem; font-weight:700; color:var(--primary); }
-.stat-label { font-size:.8rem; color:var(--text-muted); margin-top:4px; }
-.chart-card { background:var(--card-bg); border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,.08); margin-bottom:20px; }
-.chart-card h3 { font-size:1rem; margin:0 0 16px; font-weight:600; }
-.session-list { list-style:none; padding:0; margin:0; }
-.session-item { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--border); font-size:.9rem; }
-.session-item:last-child { border-bottom:none; }
-.session-date { color:var(--text-muted); }
-.session-score { font-weight:600; }
-.empty-state { text-align:center; padding:60px 20px; }
-.empty-state .icon { font-size:3rem; margin-bottom:16px; }
-.empty-state p { color:var(--text-muted); }
-.reset-btn { display:block; margin:20px auto 0; padding:10px 24px; background:var(--danger); color:#fff; border:none; border-radius:8px; font-size:.9rem; cursor:pointer; }
-.reset-btn:hover { background:#b02a2d; }
-@media (max-width:480px) { .stat-grid { grid-template-columns:1fr; } .container-custom { padding:12px; } }
+:root { --ms-blue:#0078d4; --ms-dark:#1b1b1b; --ms-green:#107c10; --ms-red:#d13438; --ms-orange:#ff8c00; --ms-bg:#f3f2f1; --ms-card:#fff; --ms-border:#e1dfdd; --ms-text:#323130; --ms-muted:#605e5c; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg); color:var(--ms-text); }
+.top-bar { background:var(--ms-dark); color:#fff; padding:8px 20px; font-size:.8rem; }
+.header { background:#fff; border-bottom:1px solid var(--ms-border); padding:16px 20px; display:flex; align-items:center; justify-content:space-between; }
+.header h1 { font-size:1.3rem; font-weight:700; display:flex; align-items:center; gap:10px; }
+.header h1 .badge-exam { background:var(--ms-blue); color:#fff; font-size:.7rem; padding:3px 10px; border-radius:4px; }
+.nav-links { display:flex; gap:4px; }
+.nav-links a { text-decoration:none; color:var(--ms-muted); padding:8px 14px; border-radius:6px; font-size:.9rem; font-weight:500; display:flex; align-items:center; gap:6px; }
+.nav-links a:hover { background:#f3f2f1; color:var(--ms-text); }
+.nav-links a.active { color:var(--ms-blue); background:#e8f0fe; }
+.wrap { max-width:860px; margin:0 auto; padding:24px 16px; }
+
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px; }
+.sg { background:var(--ms-card); border-radius:10px; padding:18px; text-align:center; border:1px solid var(--ms-border); }
+.sg .v { font-size:1.8rem; font-weight:800; }
+.sg .l { font-size:.75rem; color:var(--ms-muted); margin-top:2px; }
+
+.card-section { background:var(--ms-card); border-radius:12px; padding:24px; border:1px solid var(--ms-border); margin-bottom:20px; }
+.card-section h3 { font-size:1.1rem; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+
+.session-table { width:100%; border-collapse:collapse; }
+.session-table th { text-align:left; font-size:.8rem; color:var(--ms-muted); padding:8px 10px; border-bottom:2px solid var(--ms-border); }
+.session-table td { padding:10px; border-bottom:1px solid var(--ms-border); font-size:.85rem; }
+.session-table tr:last-child td { border-bottom:none; }
+.score-badge { padding:2px 10px; border-radius:4px; font-weight:700; font-size:.8rem; }
+.score-pass { background:#dff6dd; color:var(--ms-green); }
+.score-fail { background:#fde7e9; color:var(--ms-red); }
+
+.empty { text-align:center; padding:60px 20px; }
+.empty i { font-size:3rem; color:var(--ms-blue); }
+.empty p { color:var(--ms-muted); margin-top:12px; }
+
+.reset-btn { display:block; margin:20px auto; padding:12px 24px; background:var(--ms-red); color:#fff; border:none; border-radius:8px; font-size:.9rem; font-weight:600; cursor:pointer; }
+
+@media (max-width:600px) { .stat-grid { grid-template-columns:repeat(2,1fr); } .session-table { font-size:.8rem; } }
 </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <h1>학습 통계</h1>
-  <div>
-    <a href="index.html">문제풀기</a>
-    <a href="review.html">오답복습</a>
+<div class="top-bar"><span>Microsoft</span> <span style="opacity:.5">|</span> <span>Azure AI Fundamentals</span></div>
+<div class="header">
+  <h1><i class="bi bi-bar-chart-line-fill" style="color:var(--ms-blue)"></i> 성적표 <span class="badge-exam">Statistics</span></h1>
+  <div class="nav-links">
+    <a href="index.html"><i class="bi bi-pencil-square"></i> 시험</a>
+    <a href="review.html"><i class="bi bi-journal-x"></i> 오답노트</a>
+    <a href="stats.html" class="active"><i class="bi bi-bar-chart-line"></i> 성적표</a>
   </div>
-</nav>
+</div>
 
-<div class="container-custom" id="content"></div>
+<div class="wrap" id="main"></div>
 
 <script>
+const DOMAIN_MAP = {
+  'AI Workloads': { label: 'AI 워크로드', icon: '🤖', color: '#0078d4' },
+  'Machine Learning': { label: '머신러닝', icon: '🧠', color: '#5c2d91' },
+  'Computer Vision': { label: '컴퓨터 비전', icon: '👁️', color: '#008272' },
+  'NLP': { label: 'NLP', icon: '💬', color: '#e3008c' },
+  'Responsible AI': { label: '책임 있는 AI', icon: '⚖️', color: '#ff8c00' },
+  'Conversational AI': { label: '대화형 AI', icon: '🗣️', color: '#00bcf2' }
+};
+
 function init() {
   const stats = JSON.parse(localStorage.getItem('ai900_stats') || 'null');
-  const container = document.getElementById('content');
+  const el = document.getElementById('main');
 
   if (!stats || stats.sessions.length === 0) {
-    container.innerHTML = '<div class="empty-state"><div class="icon">📊</div><p>아직 학습 기록이 없습니다.<br>문제를 풀면 통계가 나타납니다!</p><a href="index.html" style="display:inline-block;margin-top:16px;padding:12px 24px;background:#0078d4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">문제 풀러 가기</a></div>';
+    el.innerHTML = '<div class="empty"><i class="bi bi-bar-chart-line"></i><p>아직 학습 기록이 없습니다.<br>문제를 풀면 성적이 기록됩니다.</p><a href="index.html" style="display:inline-block;margin-top:16px;padding:12px 24px;background:var(--ms-blue);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">시험 보러 가기</a></div>';
     return;
   }
 
   const totalPct = stats.totalAnswered > 0 ? Math.round(stats.totalCorrect / stats.totalAnswered * 100) : 0;
   const wrongCount = JSON.parse(localStorage.getItem('ai900_wrong_list') || '[]').length;
+  const examSessions = stats.sessions.filter(s => s.score !== undefined);
+  const passCount = examSessions.filter(s => s.passed).length;
+  const bestScore = examSessions.length > 0 ? Math.max(...examSessions.map(s => s.score)) : 0;
+  const avgScore = examSessions.length > 0 ? Math.round(examSessions.reduce((a,s) => a + s.score, 0) / examSessions.length) : 0;
 
-  let html = `
-  <div class="stat-grid">
-    <div class="stat-box">
-      <div class="stat-value">${stats.totalAnswered}</div>
-      <div class="stat-label">총 풀이 수</div>
+  // 도메인별 누적 통계
+  const domainAgg = {};
+  stats.sessions.forEach(s => {
+    if (!s.domainStats) return;
+    Object.entries(s.domainStats).forEach(([d, ds]) => {
+      if (!domainAgg[d]) domainAgg[d] = { total: 0, correct: 0 };
+      domainAgg[d].total += ds.total;
+      domainAgg[d].correct += ds.correct;
+    });
+  });
+
+  let domainHTML = '';
+  Object.entries(domainAgg).sort((a,b) => (a[1].correct/a[1].total) - (b[1].correct/b[1].total)).forEach(([d, ds]) => {
+    const info = DOMAIN_MAP[d] || { label: d, icon: '📝', color: '#666' };
+    const pct = Math.round(ds.correct / ds.total * 100);
+    const color = pct >= 70 ? 'var(--ms-green)' : pct >= 50 ? 'var(--ms-orange)' : 'var(--ms-red)';
+    domainHTML += `<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+      <span style="min-width:120px;font-size:.85rem;">${info.icon} ${info.label}</span>
+      <div style="flex:1;height:8px;background:#e8e6e4;border-radius:4px;overflow:hidden;"><div style="height:100%;width:${pct}%;background:${color};border-radius:4px;"></div></div>
+      <span style="font-size:.85rem;font-weight:700;color:${color};min-width:40px;text-align:right;">${pct}%</span>
+    </div>`;
+  });
+
+  // 세션 테이블
+  let sessionsHTML = stats.sessions.slice(-20).reverse().map(s => {
+    const d = new Date(s.date);
+    const dateStr = `${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;
+    const scoreVal = s.score !== undefined ? s.score : Math.round(s.correct / s.total * 1000);
+    const passed = scoreVal >= 700;
+    const modeLabel = s.mode === 'exam' ? '실전' : '연습';
+    const timeStr = s.timeUsed ? Math.floor(s.timeUsed / 60) + '분' : '-';
+    return `<tr>
+      <td>${dateStr}</td>
+      <td><span style="font-size:.75rem;padding:2px 6px;border-radius:3px;background:${s.mode==='exam'?'#fde7e9':'#e8f0fe'};color:${s.mode==='exam'?'var(--ms-red)':'var(--ms-blue)'}">${modeLabel}</span></td>
+      <td>${s.correct}/${s.total}</td>
+      <td><span class="score-badge ${passed?'score-pass':'score-fail'}">${scoreVal}점</span></td>
+      <td>${passed ? '합격' : '불합격'}</td>
+      <td>${timeStr}</td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="stat-grid">
+      <div class="sg"><div class="v" style="color:var(--ms-blue)">${stats.sessions.length}</div><div class="l">총 응시 횟수</div></div>
+      <div class="sg"><div class="v" style="color:${bestScore>=700?'var(--ms-green)':'var(--ms-red)'}">${bestScore}</div><div class="l">최고 점수</div></div>
+      <div class="sg"><div class="v">${avgScore}</div><div class="l">평균 점수</div></div>
+      <div class="sg"><div class="v" style="color:var(--ms-green)">${passCount}/${examSessions.length}</div><div class="l">합격 횟수</div></div>
     </div>
-    <div class="stat-box">
-      <div class="stat-value">${totalPct}%</div>
-      <div class="stat-label">전체 정답률</div>
+
+    <div class="stat-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="sg"><div class="v">${stats.totalAnswered}</div><div class="l">총 풀이 수</div></div>
+      <div class="sg"><div class="v">${totalPct}%</div><div class="l">전체 정답률</div></div>
+      <div class="sg"><div class="v" style="color:var(--ms-red)">${wrongCount}</div><div class="l">누적 오답</div></div>
     </div>
-    <div class="stat-box">
-      <div class="stat-value">${wrongCount}</div>
-      <div class="stat-label">누적 오답</div>
+
+    <div class="card-section">
+      <h3><i class="bi bi-graph-up-arrow" style="color:var(--ms-blue)"></i> 점수 추이</h3>
+      <canvas id="chart-score" height="200"></canvas>
     </div>
-  </div>
 
-  <div class="chart-card">
-    <h3>세션별 정답률</h3>
-    <canvas id="chart-sessions" height="200"></canvas>
-  </div>
+    <div class="card-section">
+      <h3><i class="bi bi-pie-chart-fill" style="color:var(--ms-blue)"></i> 영역별 누적 정답률</h3>
+      ${domainHTML || '<p style="color:var(--ms-muted)">영역별 데이터가 없습니다.</p>'}
+    </div>
 
-  <div class="chart-card">
-    <h3>최근 학습 기록</h3>
-    <ul class="session-list">
-      ${stats.sessions.slice(-10).reverse().map(s => {
-        const d = new Date(s.date);
-        const dateStr = (d.getMonth()+1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + String(d.getMinutes()).padStart(2,'0');
-        const color = s.pct >= 80 ? 'var(--success)' : s.pct >= 50 ? '#e8a300' : 'var(--danger)';
-        return `<li class="session-item">
-          <span class="session-date">${dateStr} · ${s.domain || '전체'}</span>
-          <span class="session-score" style="color:${color}">${s.correct}/${s.total} (${s.pct}%)</span>
-        </li>`;
-      }).join('')}
-    </ul>
-  </div>
+    <div class="card-section">
+      <h3><i class="bi bi-clock-history" style="color:var(--ms-blue)"></i> 응시 기록</h3>
+      <div style="overflow-x:auto;">
+        <table class="session-table">
+          <thead><tr><th>날짜</th><th>모드</th><th>정답</th><th>점수</th><th>결과</th><th>시간</th></tr></thead>
+          <tbody>${sessionsHTML}</tbody>
+        </table>
+      </div>
+    </div>
 
-  <button class="reset-btn" onclick="resetStats()">통계 초기화</button>
+    <button class="reset-btn" onclick="resetStats()"><i class="bi bi-trash3"></i> 통계 초기화</button>
   `;
 
-  container.innerHTML = html;
-  drawChart(stats.sessions);
+  drawScoreChart(stats.sessions);
 }
 
-function drawChart(sessions) {
-  const last = sessions.slice(-15);
-  const ctx = document.getElementById('chart-sessions');
+function drawScoreChart(sessions) {
+  const ctx = document.getElementById('chart-score');
   if (!ctx) return;
+  const last = sessions.slice(-20);
+  const labels = last.map((s, i) => {
+    const d = new Date(s.date);
+    return (d.getMonth()+1) + '/' + d.getDate();
+  });
+  const scores = last.map(s => s.score !== undefined ? s.score : Math.round(s.correct / s.total * 1000));
 
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: last.map((s, i) => '#' + (i + 1)),
+      labels,
       datasets: [{
-        label: '정답률 (%)',
-        data: last.map(s => s.pct),
+        label: '점수',
+        data: scores,
         borderColor: '#0078d4',
         backgroundColor: 'rgba(0,120,212,0.1)',
         fill: true,
         tension: 0.3,
-        pointRadius: 4,
-        pointBackgroundColor: '#0078d4'
+        pointRadius: 5,
+        pointBackgroundColor: scores.map(s => s >= 700 ? '#107c10' : '#d13438'),
+        pointBorderColor: scores.map(s => s >= 700 ? '#107c10' : '#d13438'),
+        pointBorderWidth: 2
       }]
     },
     options: {
       responsive: true,
       scales: {
-        y: { min: 0, max: 100, ticks: { callback: v => v + '%' } }
+        y: {
+          min: 0, max: 1000,
+          ticks: { stepSize: 100 }
+        }
       },
       plugins: {
-        legend: { display: false }
+        legend: { display: false },
+        annotation: {}
       }
-    }
+    },
+    plugins: [{
+      id: 'passLine',
+      afterDraw(chart) {
+        const y = chart.scales.y.getPixelForValue(700);
+        const ctx2 = chart.ctx;
+        ctx2.save();
+        ctx2.strokeStyle = '#d13438';
+        ctx2.lineWidth = 1;
+        ctx2.setLineDash([6,4]);
+        ctx2.beginPath();
+        ctx2.moveTo(chart.chartArea.left, y);
+        ctx2.lineTo(chart.chartArea.right, y);
+        ctx2.stroke();
+        ctx2.fillStyle = '#d13438';
+        ctx2.font = '11px Segoe UI';
+        ctx2.fillText('합격선 700', chart.chartArea.right - 60, y - 6);
+        ctx2.restore();
+      }
+    }]
   });
 }
 
