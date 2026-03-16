@@ -2,11 +2,11 @@
   {
     "id": "q_001",
     "domain": "AI Workloads",
-    "question": "A company employs a team of customer service agents to provide telephone and email support to\ncustomers.\nThe company develops a webchat bot to provide automated answers to common customer\nqueries.\nWhich business benefit should the company expect as a result of creating the webchat bot\nsolution?",
+    "question": "한 회사에서 고객에게 전화 및 이메일 지원을 제공하는 고객 서비스 상담원 팀을 고용하고 있습니다.\n회사는 일반적인 고객 문의에 자동으로 답변하는 웹챗 봇을 개발합니다.\n웹챗 봇 솔루션을 만든 결과로 회사가 기대할 수 있는 비즈니스 이점은 무엇입니까?",
     "options": {
-      "A": "increased sales",
-      "B": "a reduced workload for the customer service agents",
-      "C": "improved product reliability"
+      "A": "매출 증가",
+      "B": "고객 서비스 상담원의 업무량 감소",
+      "C": "제품 신뢰성 향상"
     },
     "answer": "B",
     "explanation": "",
@@ -16,133 +16,133 @@
   {
     "id": "q_002",
     "domain": "AI Workloads",
-    "question": "For a machine learning progress, how should you split data for training and evaluation?",
+    "question": "머신러닝 과정에서 학습 및 평가를 위해 데이터를 어떻게 분할해야 합니까?",
     "options": {
-      "A": "Use features for training and labels for evaluation.",
-      "B": "Randomly split the data into rows for training and rows for evaluation.",
-      "C": "Use labels for training and features for evaluation.",
-      "D": "Randomly split the data into columns for training and columns for evaluation."
+      "A": "학습에는 특성(feature)을, 평가에는 레이블(label)을 사용합니다.",
+      "B": "데이터를 무작위로 학습용 행과 평가용 행으로 분할합니다.",
+      "C": "학습에는 레이블을, 평가에는 특성을 사용합니다.",
+      "D": "데이터를 무작위로 학습용 열과 평가용 열로 분할합니다."
     },
     "answer": "B",
-    "explanation": "The Split Data module is particularly useful when you need to separate data into training and\ntesting sets. Use the Split Rows option if you want to divide the data into two parts. You can\nspecify the percentage of data to put in each split, but by default, the data is divided 50-50. You\ncan also randomize the selection of rows in each group, and use stratified sampling.\nReference:",
+    "explanation": "Split Data 모듈은 데이터를 학습 세트와 테스트 세트로 분리해야 할 때 특히 유용합니다. 데이터를 두 부분으로 나누려면 Split Rows 옵션을 사용하세요. 각 분할에 넣을 데이터의 비율을 지정할 수 있으며, 기본적으로 데이터는 50-50으로 나뉩니다. 각 그룹의 행 선택을 무작위화하고 계층화 샘플링을 사용할 수도 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_004",
     "domain": "AI Workloads",
-    "question": "You build a machine learning model by using the automated machine learning user interface\n(UI).\nYou need to ensure that the model meets the Microsoft transparency principle for responsible AI.\nWhat should you do?",
+    "question": "자동화된 머신러닝 사용자 인터페이스(UI)를 사용하여 머신러닝 모델을 구축합니다.\nMicrosoft의 책임 있는 AI를 위한 투명성 원칙을 모델이 충족하도록 해야 합니다.\n어떻게 해야 합니까?",
     "options": {
-      "A": "Set Validation type to Auto.",
-      "B": "Enable Explain best model.",
-      "C": "Set Primary metric to accuracy.",
-      "D": "Set Max concurrent iterations to 0."
+      "A": "Validation type을 Auto로 설정합니다.",
+      "B": "Explain best model을 활성화합니다.",
+      "C": "Primary metric을 accuracy로 설정합니다.",
+      "D": "Max concurrent iterations를 0으로 설정합니다."
     },
     "answer": "B",
-    "explanation": "Model Explain Ability.\nMost businesses run on trust and being able to open the ML “black box” helps build\ntransparency and trust. In heavily regulated industries like healthcare and banking, it is critical\nto comply with regulations and best practices. One key aspect of this is understanding the\nrelationship between input variables (features) and model output.",
+    "explanation": "모델 설명 가능성.\n대부분의 비즈니스는 신뢰를 기반으로 운영되며, ML \"블랙박스\"를 열 수 있으면 투명성과 신뢰를 구축하는 데 도움이 됩니다. 의료 및 금융처럼 규제가 엄격한 산업에서는 규정과 모범 사례를 준수하는 것이 중요합니다. 이의 핵심 측면 중 하나는 입력 변수(특성)와 모델 출력 간의 관계를 이해하는 것입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_008",
     "domain": "AI Workloads",
-    "question": "You are designing an AI system that empowers everyone, including people who have hearing,\nvisual, and other impairments.\nThis is an example of which Microsoft guiding principle for responsible AI?",
+    "question": "청각, 시각 및 기타 장애가 있는 사람들을 포함하여 모든 사람에게 도움이 되는 AI 시스템을 설계하고 있습니다.\n이것은 Microsoft의 책임 있는 AI를 위한 어떤 지침 원칙의 예입니까?",
     "options": {
-      "A": "fairness",
-      "B": "inclusiveness",
-      "C": "reliability and safety",
-      "D": "accountability"
+      "A": "공정성",
+      "B": "포용성",
+      "C": "신뢰성 및 안전성",
+      "D": "책임성"
     },
     "answer": "B",
-    "explanation": "Inclusiveness: At Microsoft, we firmly believe everyone should benefit from intelligent\ntechnology, meaning it must incorporate and address a broad range of human needs and\nexperiences. For the 1 billion people with disabilities around the world, AI technologies can be a\ngame-changer.\nReference:",
+    "explanation": "포용성: Microsoft는 모든 사람이 지능형 기술의 혜택을 받아야 한다고 굳게 믿으며, 이는 광범위한 인간의 필요와 경험을 통합하고 다루어야 함을 의미합니다. 전 세계 10억 명의 장애인에게 AI 기술은 판도를 바꿀 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_011",
     "domain": "AI Workloads",
-    "question": "You are building an AI system.\nWhich task should you include to ensure that the service meets the Microsoft transparency\nprinciple for responsible AI?",
+    "question": "AI 시스템을 구축하고 있습니다.\nMicrosoft의 책임 있는 AI를 위한 투명성 원칙을 서비스가 충족하도록 어떤 작업을 포함해야 합니까?",
     "options": {
-      "A": "Ensure that all visuals have an associated text that can be read by a screen reader.",
-      "B": "Enable autoscaling to ensure that a service scales based on demand.",
-      "C": "Provide documentation to help developers debug code.",
-      "D": "Ensure that a training dataset is representative of the population."
+      "A": "모든 시각적 요소에 화면 판독기가 읽을 수 있는 관련 텍스트가 있는지 확인합니다.",
+      "B": "수요에 따라 서비스가 확장되도록 자동 스케일링을 활성화합니다.",
+      "C": "개발자가 코드를 디버그하는 데 도움이 되는 문서를 제공합니다.",
+      "D": "학습 데이터셋이 모집단을 대표하는지 확인합니다."
     },
     "answer": "C",
-    "explanation": "The correct answer is C.",
+    "explanation": "정답은 C입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_013",
     "domain": "AI Workloads",
-    "question": "Your company is exploring the use of voice recognition technologies in its smart home devices.\nThe company wants to identify any barriers that might unintentionally leave out specific user\ngroups.\nThis an example of which Microsoft guiding principle for responsible AI?",
+    "question": "귀사는 스마트 홈 장치에서 음성 인식 기술의 사용을 검토하고 있습니다.\n회사는 특정 사용자 그룹을 의도치 않게 배제할 수 있는 장벽을 식별하고자 합니다.\n이것은 Microsoft의 책임 있는 AI를 위한 어떤 지침 원칙의 예입니까?",
     "options": {
-      "A": "accountability",
-      "B": "fairness",
-      "C": "inclusiveness",
-      "D": "privacy and security"
+      "A": "책임성",
+      "B": "공정성",
+      "C": "포용성",
+      "D": "개인정보 보호 및 보안"
     },
     "answer": "C",
-    "explanation": "The correct answer is C.",
+    "explanation": "정답은 C입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_014",
     "domain": "AI Workloads",
-    "question": "What are three Microsoft guiding principles for responsible AI? Each correct answer presents a\ncomplete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Microsoft의 책임 있는 AI를 위한 세 가지 지침 원칙은 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "knowledgeability",
-      "B": "decisiveness",
-      "C": "inclusiveness",
-      "D": "fairness",
-      "E": "opinionatedness"
+      "A": "지식 가능성",
+      "B": "결단력",
+      "C": "포용성",
+      "D": "공정성",
+      "E": "독선성"
     },
     "answer": "C",
-    "explanation": "The correct answer is C.",
+    "explanation": "정답은 C입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_017",
     "domain": "AI Workloads",
-    "question": "You run a charity event that involves posting photos of people wearing sunglasses on Twitter.\nYou need to ensure that you only retweet photos that meet the following requirements:\n• Include one or more faces.\n• Contain at least one person wearing sunglasses.\nWhat should you use to analyze the images?",
+    "question": "선글라스를 착용한 사람들의 사진을 Twitter에 게시하는 자선 행사를 운영하고 있습니다.\n다음 요구 사항을 충족하는 사진만 리트윗하도록 해야 합니다:\n• 하나 이상의 얼굴을 포함할 것.\n• 선글라스를 착용한 사람이 최소 한 명 포함될 것.\n이미지를 분석하기 위해 무엇을 사용해야 합니까?",
     "options": {
-      "A": "the Verify operation in the Face service",
-      "B": "the Detect operation in the Face service",
-      "C": "the Describe Image operation in the Computer Vision service",
-      "D": "the Analyze Image operation in the Computer Vision service"
+      "A": "Face 서비스의 Verify 작업",
+      "B": "Face 서비스의 Detect 작업",
+      "C": "Computer Vision 서비스의 Describe Image 작업",
+      "D": "Computer Vision 서비스의 Analyze Image 작업"
     },
     "answer": "B",
-    "explanation": "The correct answer is B.",
+    "explanation": "정답은 B입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_018",
     "domain": "AI Workloads",
-    "question": "When you design an AI system to assess whether loans should be approved, the factors used to\nmake the decision should be explainable.\nThis is an example of which Microsoft guiding principle for responsible AI?",
+    "question": "대출 승인 여부를 평가하는 AI 시스템을 설계할 때, 결정에 사용된 요인을 설명할 수 있어야 합니다.\n이것은 Microsoft의 책임 있는 AI를 위한 어떤 지침 원칙의 예입니까?",
     "options": {
-      "A": "transparency",
-      "B": "inclusiveness",
-      "C": "fairness",
-      "D": "privacy and security"
+      "A": "투명성",
+      "B": "포용성",
+      "C": "공정성",
+      "D": "개인정보 보호 및 보안"
     },
     "answer": "A",
-    "explanation": "Achieving transparency helps the team to understand the data and algorithms used to train the\nmodel, what transformation logic was applied to the data, the final model generated, and its\nassociated assets. This information offers insights about how the model was created, which\nallows it to be reproduced in a transparent way.",
+    "explanation": "투명성을 달성하면 팀이 모델을 학습시키는 데 사용된 데이터와 알고리즘, 데이터에 적용된 변환 로직, 생성된 최종 모델 및 관련 자산을 이해하는 데 도움이 됩니다. 이 정보는 모델이 어떻게 생성되었는지에 대한 인사이트를 제공하여 투명한 방식으로 재현할 수 있게 합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_022",
     "domain": "AI Workloads",
-    "question": "You are building an AI-based app.\nYou need to ensure that the app uses the principles for responsible AI.\nWhich two principles should you follow? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "AI 기반 앱을 구축하고 있습니다.\n앱이 책임 있는 AI 원칙을 사용하도록 해야 합니다.\n어떤 두 가지 원칙을 따라야 합니까? 각 정답은 솔루션의 일부를 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "Implement an Agile software development methodology",
-      "B": "Implement a process of AI model validation as part of the software review process",
-      "C": "Establish a risk governance committee that includes members of the legal team, members of",
-      "D": "Prevent the disclosure of the use of AI-based algorithms for automated decision making"
+      "A": "Agile 소프트웨어 개발 방법론을 구현합니다",
+      "B": "소프트웨어 검토 프로세스의 일부로 AI 모델 검증 프로세스를 구현합니다",
+      "C": "법무팀 구성원을 포함하는 위험 거버넌스 위원회를 설립합니다",
+      "D": "자동화된 의사 결정을 위한 AI 기반 알고리즘 사용의 공개를 방지합니다"
     },
     "answer": "B",
     "explanation": "practices/trusted-ai\n\nresponsible-ai-practical",
@@ -152,12 +152,12 @@
   {
     "id": "q_027",
     "domain": "AI Workloads",
-    "question": "During the process of Machine Learning, when should you review evaluation metrics.",
+    "question": "머신러닝 과정에서 평가 지표를 언제 검토해야 합니까?",
     "options": {
-      "A": "Before you train a model.",
-      "B": "After you clean the data.",
-      "C": "Before you choose the type of model.",
-      "D": "After you test a model on the validation data."
+      "A": "모델을 학습시키기 전에.",
+      "B": "데이터를 정제한 후에.",
+      "C": "모델 유형을 선택하기 전에.",
+      "D": "검증 데이터로 모델을 테스트한 후에."
     },
     "answer": "D",
     "explanation": "",
@@ -167,12 +167,12 @@
   {
     "id": "q_028",
     "domain": "AI Workloads",
-    "question": "You have a natural language processing (NLP) model that was created by using data obtained\nwithout permission.\nWhich Microsoft principle for responsible AI does this breach?",
+    "question": "허가 없이 수집된 데이터를 사용하여 만든 자연어 처리(NLP) 모델이 있습니다.\n이것은 Microsoft의 책임 있는 AI를 위한 어떤 원칙을 위반합니까?",
     "options": {
-      "A": "reliability and safety",
-      "B": "privacy and security",
-      "C": "inclusiveness",
-      "D": "transparency"
+      "A": "신뢰성 및 안전성",
+      "B": "개인정보 보호 및 보안",
+      "C": "포용성",
+      "D": "투명성"
     },
     "answer": "D",
     "explanation": "",
@@ -182,94 +182,94 @@
   {
     "id": "q_031",
     "domain": "AI Workloads",
-    "question": "Which machine learning technique can be used for anomaly detection?",
+    "question": "이상 탐지에 사용할 수 있는 머신러닝 기법은 무엇입니까?",
     "options": {
-      "A": "A machine learning technique that classifies objects based on user supplied images.",
-      "B": "A machine learning technique that understands written and spoken language.",
-      "C": "A machine learning technique that classifies images based on their contents.",
-      "D": "A machine learning technique that analyzes data over time and identifies unusual changes."
+      "A": "사용자가 제공한 이미지를 기반으로 객체를 분류하는 머신러닝 기법.",
+      "B": "문어 및 구어를 이해하는 머신러닝 기법.",
+      "C": "내용을 기반으로 이미지를 분류하는 머신러닝 기법.",
+      "D": "시간에 따른 데이터를 분석하고 비정상적인 변화를 식별하는 머신러닝 기법."
     },
     "answer": "D",
-    "explanation": "Anomaly Detector, an AI service that helps you foresee problems before they occur.\nEasily embed time-series anomaly detection capabilities into your apps to help users identify\nproblems quickly. Anomaly Detector ingests time-series data of all types and selects the best\nanomaly detection algorithm for your data to ensure high accuracy. Detect spikes, dips,\ndeviations from cyclic patterns, and trend changes through both univariate and multivariate\nAPIs.",
+    "explanation": "Anomaly Detector는 문제가 발생하기 전에 예측하는 데 도움이 되는 AI 서비스입니다.\n시계열 이상 탐지 기능을 앱에 쉽게 내장하여 사용자가 문제를 빠르게 식별할 수 있도록 합니다. Anomaly Detector는 모든 유형의 시계열 데이터를 수집하고 데이터에 가장 적합한 이상 탐지 알고리즘을 선택하여 높은 정확도를 보장합니다. 단변량 및 다변량 API를 통해 급증, 하락, 주기적 패턴 이탈 및 추세 변화를 감지합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_032",
     "domain": "AI Workloads",
-    "question": "You have an AI-based loan approval system.\nDuring testing, you discover that the system has a gender bias.\nWhich responsible Al principle does this violate?",
+    "question": "AI 기반 대출 승인 시스템이 있습니다.\n테스트 중에 시스템에 성별 편향이 있음을 발견합니다.\n이것은 어떤 책임 있는 AI 원칙을 위반합니까?",
     "options": {
-      "A": "accountability",
-      "B": "reliability and safety",
-      "C": "transparency",
-      "D": "fairness"
+      "A": "책임성",
+      "B": "신뢰성 및 안전성",
+      "C": "투명성",
+      "D": "공정성"
     },
     "answer": "D",
-    "explanation": "Fairness - AI systems should treat all people fairly\nIncorrect:\nAccountability - People should be accountable for AI systems\nReliability & Safety - AI systems should perform reliably and safely\nTransparency - AI systems should be understandable\nReference: \nTopic 2, Describe fundamental principles of machine learning on Azure",
+    "explanation": "공정성 - AI 시스템은 모든 사람을 공정하게 대해야 합니다\n오답:\n책임성 - 사람들은 AI 시스템에 대해 책임을 져야 합니다\n신뢰성 및 안전성 - AI 시스템은 안정적이고 안전하게 작동해야 합니다\n투명성 - AI 시스템은 이해 가능해야 합니다\n참고:\n주제 2, Azure에서의 머신러닝 기본 원칙 설명",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_035",
     "domain": "AI Workloads",
-    "question": "You have the Predicted vs. True chart shown in the following exhibit.\nWhich type of model is the chart used to evaluate?",
+    "question": "다음 전시에 표시된 예측 vs. 실제 차트가 있습니다.\n이 차트는 어떤 유형의 모델을 평가하는 데 사용됩니까?",
     "options": {
-      "A": "classification",
-      "B": "regression",
-      "C": "clustering"
+      "A": "분류",
+      "B": "회귀",
+      "C": "클러스터링"
     },
     "answer": "B",
-    "explanation": "What is a Predicted vs. True chart?\nPredicted vs. True shows the relationship between a predicted value and its correlating true value\nfor a regression problem. This graph can be used to measure performance of a model as the\ncloser to the y=x line the predicted values are, the better the accuracy of a predictive model.\nReference:",
+    "explanation": "예측 vs. 실제 차트란 무엇입니까?\n예측 vs. 실제는 회귀 문제에 대해 예측 값과 해당 실제 값 간의 관계를 보여줍니다. 이 그래프는 모델의 성능을 측정하는 데 사용할 수 있으며, 예측 값이 y=x 선에 가까울수록 예측 모델의 정확도가 높습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_036",
     "domain": "AI Workloads",
-    "question": "Which type of machine learning should you use to predict the number of gift cards that will be\nsold next month?",
+    "question": "다음 달에 판매될 상품권 수를 예측하기 위해 어떤 유형의 머신러닝을 사용해야 합니까?",
     "options": {
-      "A": "classification",
-      "B": "regression",
-      "C": "clustering"
+      "A": "분류",
+      "B": "회귀",
+      "C": "클러스터링"
     },
     "answer": "B",
-    "explanation": "In the most basic sense, regression refers to prediction of a numeric target.\nLinear regression attempts to establish a linear relationship between one or more independent\nvariables and a numeric outcome, or dependent variable.\nYou use this module to define a linear regression method, and then train a model using a labeled\ndataset. The trained model can then be used to make predictions.\nReference:\n\nregression",
+    "explanation": "가장 기본적인 의미에서 회귀는 숫자 대상의 예측을 의미합니다.\n선형 회귀는 하나 이상의 독립 변수와 숫자 결과 또는 종속 변수 사이에 선형 관계를 설정하려고 시도합니다.\n이 모듈을 사용하여 선형 회귀 방법을 정의한 다음 레이블이 지정된 데이터셋을 사용하여 모델을 학습시킵니다. 학습된 모델은 예측에 사용할 수 있습니다.\n참고:\n\n회귀",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_037",
     "domain": "AI Workloads",
-    "question": "You have a dataset that contains information about taxi journeys that occurred during a given\nperiod.\nYou need to train a model to predict the fare of a taxi journey.\nWhat should you use as a feature?",
+    "question": "특정 기간 동안 발생한 택시 운행 정보가 포함된 데이터셋이 있습니다.\n택시 운행 요금을 예측하는 모델을 학습시켜야 합니다.\n특성(feature)으로 무엇을 사용해야 합니까?",
     "options": {
-      "A": "the number of taxi journeys in the dataset",
-      "B": "the trip distance of individual taxi journeys",
-      "C": "the fare of individual taxi journeys",
-      "D": "the trip ID of individual taxi journeys"
+      "A": "데이터셋의 택시 운행 수",
+      "B": "개별 택시 운행의 이동 거리",
+      "C": "개별 택시 운행의 요금",
+      "D": "개별 택시 운행의 운행 ID"
     },
     "answer": "B",
-    "explanation": "The label is the column you want to predict. The identified Features are the inputs you give the\nmodel to predict the Label.\nExample:\nThe provided data set contains the following columns:\nvendor_id: The ID of the taxi vendor is a feature.\nrate_code: The rate type of the taxi trip is a feature.\npassenger_count: The number of passengers on the trip is a feature.\ntrip_time_in_secs: The amount of time the trip took. You want to predict the fare of the trip\nbefore the trip is completed.",
+    "explanation": "레이블은 예측하려는 열입니다. 식별된 특성(Feature)은 레이블을 예측하기 위해 모델에 제공하는 입력입니다.\n예시:\n제공된 데이터셋에는 다음 열이 포함됩니다:\nvendor_id: 택시 업체의 ID는 특성입니다.\nrate_code: 택시 운행의 요금 유형은 특성입니다.\npassenger_count: 운행 승객 수는 특성입니다.\ntrip_time_in_secs: 운행에 걸린 시간. 운행이 완료되기 전에 운행 요금을 예측하려고 합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_038",
     "domain": "AI Workloads",
-    "question": "You need to predict the sea level in meters for the next 10 years.\nWhich type of machine learning should you use?",
+    "question": "향후 10년간 해수면을 미터 단위로 예측해야 합니다.\n어떤 유형의 머신러닝을 사용해야 합니까?",
     "options": {
-      "A": "classification",
-      "B": "regression",
-      "C": "clustering"
+      "A": "분류",
+      "B": "회귀",
+      "C": "클러스터링"
     },
     "answer": "B",
-    "explanation": "In the most basic sense, regression refers to prediction of a numeric target.\nLinear regression attempts to establish a linear relationship between one or more independent\nvariables and a numeric outcome, or dependent variable.\nYou use this module to define a linear regression method, and then train a model using a labeled\ndataset. The trained model can then be used to make predictions.\nReference:\n\nregression",
+    "explanation": "가장 기본적인 의미에서 회귀는 숫자 대상의 예측을 의미합니다.\n선형 회귀는 하나 이상의 독립 변수와 숫자 결과 또는 종속 변수 사이에 선형 관계를 설정하려고 시도합니다.\n이 모듈을 사용하여 선형 회귀 방법을 정의한 다음 레이블이 지정된 데이터셋을 사용하여 모델을 학습시킵니다. 학습된 모델은 예측에 사용할 수 있습니다.\n참고:\n\n회귀",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_042",
     "domain": "AI Workloads",
-    "question": "Which service should you use to extract text, key/value pairs, and table data automatically from\nscanned documents?",
+    "question": "스캔한 문서에서 텍스트, 키/값 쌍 및 테이블 데이터를 자동으로 추출하려면 어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Form Recognizer",
       "B": "Text Analytics",
@@ -277,33 +277,33 @@
       "D": "Custom Vision"
     },
     "answer": "A",
-    "explanation": "Accelerate your business processes by automating information extraction. Form Recognizer\napplies advanced machine learning to accurately extract text, key/value pairs, and tables from\ndocuments. With just a few samples, Form Recognizer tailors its understanding to your\ndocuments, both on-premises and in the cloud. Turn forms into usable data at a fraction of the\ntime and cost, so you can focus more time acting on the information rather than compiling it.\nReference:",
+    "explanation": "Form Recognizer는 고급 머신러닝을 적용하여 문서에서 텍스트, 키/값 쌍 및 테이블을 정확하게 추출하여 비즈니스 프로세스를 가속화합니다. 소수의 샘플만으로 Form Recognizer는 온프레미스와 클라우드 모두에서 문서에 대한 이해를 맞춤화합니다. 양식을 시간과 비용의 일부로 사용 가능한 데이터로 변환하여 정보를 수집하는 것보다 정보에 따라 행동하는 데 더 많은 시간을 할애할 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_044",
     "domain": "AI Workloads",
-    "question": "You use Azure Machine Learning designer to publish an inference pipeline.\nWhich two parameters should you use to access the web service? Each correct answer presents\npart of the solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Azure Machine Learning designer를 사용하여 추론 파이프라인을 게시합니다.\n웹 서비스에 액세스하기 위해 어떤 두 가지 매개변수를 사용해야 합니까? 각 정답은 솔루션의 일부를 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "the model name",
-      "B": "the training endpoint",
-      "C": "the authentication key",
-      "D": "the REST endpoint"
+      "A": "모델 이름",
+      "B": "학습 엔드포인트",
+      "C": "인증 키",
+      "D": "REST 엔드포인트"
     },
     "answer": "C",
-    "explanation": "You can consume a published pipeline in the Published pipelines page. Select a published\npipeline and find the REST endpoint of it.\nTo consume the pipeline, you need:\n• The REST endpoint for your service\n• The Primary Key for your service\nReference:\n\nlearning-designer/deploy-service",
+    "explanation": "게시된 파이프라인 페이지에서 게시된 파이프라인을 사용할 수 있습니다. 게시된 파이프라인을 선택하고 REST 엔드포인트를 찾으세요.\n파이프라인을 사용하려면 다음이 필요합니다:\n• 서비스의 REST 엔드포인트\n• 서비스의 기본 키\n참고:\n\nlearning-designer/deploy-service",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_051",
     "domain": "AI Workloads",
-    "question": "A medical research project uses a large anonymized dataset of brain scan images that are\ncategorized into predefined brain haemorrhage types.\nYou need to use machine learning to support early detection of the different brain haemorrhage\ntypes in the images before the images are reviewed by a person.\nThis is an example of which type of machine learning?",
+    "question": "의료 연구 프로젝트에서 사전 정의된 뇌출혈 유형으로 분류된 대량의 익명화된 뇌 스캔 이미지 데이터셋을 사용합니다.\n사람이 검토하기 전에 이미지에서 다양한 뇌출혈 유형의 조기 감지를 지원하기 위해 머신러닝을 사용해야 합니다.\n이것은 어떤 유형의 머신러닝의 예입니까?",
     "options": {
-      "A": "clustering",
-      "B": "regression",
-      "C": "classification"
+      "A": "클러스터링",
+      "B": "회귀",
+      "C": "분류"
     },
     "answer": "C",
     "explanation": "learning-designer/introduction",
@@ -313,11 +313,11 @@
   {
     "id": "q_052",
     "domain": "AI Workloads",
-    "question": "When training a model, why should you randomly split the rows into separate subsets?",
+    "question": "모델을 학습시킬 때, 행을 별도의 하위 집합으로 무작위 분할하는 이유는 무엇입니까?",
     "options": {
-      "A": "to train the model twice to attain better accuracy",
-      "B": "to train multiple models simultaneously to attain better performance",
-      "C": "to test the model by using data that was not used to train the model"
+      "A": "더 나은 정확도를 얻기 위해 모델을 두 번 학습시키기 위해",
+      "B": "더 나은 성능을 얻기 위해 여러 모델을 동시에 학습시키기 위해",
+      "C": "모델을 학습시키는 데 사용하지 않은 데이터로 모델을 테스트하기 위해"
     },
     "answer": "C",
     "explanation": "",
@@ -327,22 +327,22 @@
   {
     "id": "q_053",
     "domain": "AI Workloads",
-    "question": "You are evaluating whether to use a basic workspace or an enterprise workspace in Azure\nMachine Learning.\nWhat are two tasks that require an enterprise workspace? Each correct answer presents a\ncomplete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Azure Machine Learning에서 기본 작업 영역과 엔터프라이즈 작업 영역 중 어느 것을 사용할지 평가하고 있습니다.\n엔터프라이즈 작업 영역이 필요한 두 가지 작업은 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "Use a graphical user interface (GUI) to run automated machine learning experiments.",
-      "B": "Create a compute instance to use as a workstation.",
-      "C": "Use a graphical user interface (GUI) to define and run machine learning experiments from",
-      "D": "Create a dataset from a comma-separated value (CSV) file."
+      "A": "그래픽 사용자 인터페이스(GUI)를 사용하여 자동화된 머신러닝 실험을 실행합니다.",
+      "B": "워크스테이션으로 사용할 컴퓨팅 인스턴스를 만듭니다.",
+      "C": "그래픽 사용자 인터페이스(GUI)를 사용하여 머신러닝 실험을 정의하고 실행합니다.",
+      "D": "쉼표로 구분된 값(CSV) 파일에서 데이터셋을 만듭니다."
     },
     "answer": "A",
-    "explanation": "Note: Enterprise workspaces are no longer available as of September 2020. The basic workspace\nnow has all the functionality of the enterprise workspace.\nReference:",
+    "explanation": "참고: 엔터프라이즈 작업 영역은 2020년 9월부터 더 이상 제공되지 않습니다. 기본 작업 영역에 이제 엔터프라이즈 작업 영역의 모든 기능이 포함됩니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_054",
     "domain": "AI Workloads",
-    "question": "You need to predict the income range of a given customer by using the following dataset.\nWhich two fields should you use as features? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "다음 데이터셋을 사용하여 특정 고객의 소득 범위를 예측해야 합니다.\n특성(feature)으로 사용해야 하는 두 필드는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
       "A": "Education Level",
       "B": "Last Name",
@@ -351,14 +351,14 @@
       "E": "First Name"
     },
     "answer": "A",
-    "explanation": "First Name, Last Name, Age and Education Level are features. Income range is a label (what\nyou want to predict). First Name and Last Name are irrelevant in that they have no bearing on\nincome. Age and Education level are the features you should use.",
+    "explanation": "First Name, Last Name, Age, Education Level은 특성입니다. Income Range는 레이블(예측하려는 것)입니다. First Name과 Last Name은 소득과 관련이 없으므로 무관합니다. Age와 Education Level이 사용해야 하는 특성입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_055",
     "domain": "AI Workloads",
-    "question": "You are building a tool that will process images from retail stores and identify the products of\ncompetitors.\nThe solution will use a custom model.\nWhich Azure Cognitive Services service should you use?",
+    "question": "소매점의 이미지를 처리하고 경쟁사의 제품을 식별하는 도구를 구축하고 있습니다.\n솔루션은 커스텀 모델을 사용합니다.\n어떤 Azure Cognitive Services 서비스를 사용해야 합니까?",
     "options": {
       "A": "Custom Vision",
       "B": "Form Recognizer",
@@ -366,74 +366,74 @@
       "D": "Computer Vision"
     },
     "answer": "A",
-    "explanation": "The correct answer is A.",
+    "explanation": "정답은 A입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_058",
     "domain": "AI Workloads",
-    "question": "What are two metrics that you can use to evaluate a regression model? Each correct answer\npresents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "회귀 모델을 평가하는 데 사용할 수 있는 두 가지 지표는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "coefficient of determination (R2)",
-      "B": "F1 score",
-      "C": "root mean squared error (RMSE)",
-      "D": "area under curve (AUC)",
-      "E": "balanced accuracy"
+      "A": "결정 계수(R2)",
+      "B": "F1 점수",
+      "C": "평균 제곱근 오차(RMSE)",
+      "D": "곡선 아래 면적(AUC)",
+      "E": "균형 정확도"
     },
     "answer": "A",
-    "explanation": "A: R-squared (R2), or Coefficient of determination represents the predictive power of the model\nas a value between -inf and 1.00. 1.00 means there is a perfect fit, and the fit can be arbitrarily\npoor so the scores can be negative.\nC: RMS-loss or Root Mean Squared Error (RMSE) (also called Root Mean Square Deviation,\nRMSD), measures the difference between values predicted by a model and the values observed\nfrom the environment that is being modeled.",
+    "explanation": "A: R-squared(R2) 또는 결정 계수는 모델의 예측력을 -inf에서 1.00 사이의 값으로 나타냅니다. 1.00은 완벽한 적합을 의미하며, 적합도가 임의로 나쁠 수 있어 점수가 음수일 수 있습니다.\nC: RMS-loss 또는 평균 제곱근 오차(RMSE)(Root Mean Square Deviation, RMSD라고도 함)는 모델이 예측한 값과 모델링 중인 환경에서 관찰된 값 간의 차이를 측정합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_061",
     "domain": "AI Workloads",
-    "question": "Which type of machine learning should you use to identify groups of people who have similar\npurchasing habits?",
+    "question": "유사한 구매 습관을 가진 사람들의 그룹을 식별하려면 어떤 유형의 머신러닝을 사용해야 합니까?",
     "options": {
-      "A": "classification",
-      "B": "regression",
-      "C": "clustering"
+      "A": "분류",
+      "B": "회귀",
+      "C": "클러스터링"
     },
     "answer": "C",
-    "explanation": "Clustering is a machine learning task that is used to group instances of data into clusters that\ncontain similar characteristics. Clustering can also be used to identify relationships in a dataset\nReference:",
+    "explanation": "클러스터링은 유사한 특성을 가진 클러스터로 데이터 인스턴스를 그룹화하는 데 사용되는 머신러닝 작업입니다. 클러스터링은 데이터셋에서 관계를 식별하는 데에도 사용할 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_063",
     "domain": "AI Workloads",
-    "question": "Which metric can you use to evaluate a classification model?",
+    "question": "분류 모델을 평가하는 데 사용할 수 있는 지표는 무엇입니까?",
     "options": {
-      "A": "true positive rate",
-      "B": "mean absolute error (MAE)",
-      "C": "coefficient of determination (R2)",
-      "D": "root mean squared error (RMSE)"
+      "A": "참양성률",
+      "B": "평균 절대 오차(MAE)",
+      "C": "결정 계수(R2)",
+      "D": "평균 제곱근 오차(RMSE)"
     },
     "answer": "A",
-    "explanation": "What does a good model look like?\nAn ROC curve that approaches the top left corner with 100% true positive rate and 0% false\npositive rate will be the best model. A random model would display as a flat line from the\nbottom left to the top right corner. Worse than random would dip below the y=x line.\nReference:\n\nml#classification",
+    "explanation": "좋은 모델은 어떤 모습입니까?\n참양성률 100%와 거짓양성률 0%로 왼쪽 상단 모서리에 접근하는 ROC 곡선이 최적의 모델입니다. 무작위 모델은 왼쪽 하단에서 오른쪽 상단 모서리까지의 평탄한 선으로 표시됩니다. 무작위보다 나쁜 경우 y=x 선 아래로 내려갑니다.\n참고:\n\nml#classification",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_064",
     "domain": "AI Workloads",
-    "question": "Which two components can you drag onto a canvas in Azure Machine Learning designer? Each\ncorrect answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Azure Machine Learning designer에서 캔버스에 끌어다 놓을 수 있는 두 가지 구성 요소는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "dataset",
-      "B": "compute",
-      "C": "pipeline",
-      "D": "module"
+      "A": "데이터셋",
+      "B": "컴퓨팅",
+      "C": "파이프라인",
+      "D": "모듈"
     },
     "answer": "A",
-    "explanation": "You can drag-and-drop datasets and modules onto the canvas.\nReference:",
+    "explanation": "데이터셋과 모듈을 캔버스에 끌어다 놓을 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_065",
     "domain": "AI Workloads",
-    "question": "You need to create a training dataset and validation dataset from an existing dataset.\nWhich module in the Azure Machine Learning designer should you use?",
+    "question": "기존 데이터셋에서 학습 데이터셋과 검증 데이터셋을 만들어야 합니다.\nAzure Machine Learning designer에서 어떤 모듈을 사용해야 합니까?",
     "options": {
       "A": "Select Columns in Dataset",
       "B": "Add Rows",
@@ -441,44 +441,44 @@
       "D": "Join Data"
     },
     "answer": "C",
-    "explanation": "A common way of evaluating a model is to divide the data into a training and test set by using\nSplit Data, and then validate the model on the training data.\nUse the Split Data module to divide a dataset into two distinct sets.\nThe studio currently supports training/validation data splits\nReference:\n\ndata-splits",
+    "explanation": "모델을 평가하는 일반적인 방법은 Split Data를 사용하여 데이터를 학습 세트와 테스트 세트로 나눈 다음 학습 데이터로 모델을 검증하는 것입니다.\nSplit Data 모듈을 사용하여 데이터셋을 두 개의 별도 세트로 나눕니다.\nStudio는 현재 학습/검증 데이터 분할을 지원합니다.\n참고:\n\ndata-splits",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_073",
     "domain": "AI Workloads",
-    "question": "Which two actions are performed during the data ingestion and data preparation stage of an\nAzure Machine Learning process? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Azure Machine Learning 프로세스의 데이터 수집 및 데이터 준비 단계에서 수행되는 두 가지 작업은 무엇입니까? 각 정답은 솔루션의 일부를 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "Calculate the accuracy of the model.",
-      "B": "Score test data by using the model.",
-      "C": "Combine multiple datasets.",
-      "D": "Use the model for real-time predictions.",
-      "E": "Remove records that have missing values."
+      "A": "모델의 정확도를 계산합니다.",
+      "B": "모델을 사용하여 테스트 데이터에 점수를 매깁니다.",
+      "C": "여러 데이터셋을 결합합니다.",
+      "D": "실시간 예측에 모델을 사용합니다.",
+      "E": "누락된 값이 있는 레코드를 제거합니다."
     },
     "answer": "C",
-    "explanation": "The correct answer is C.",
+    "explanation": "정답은 C입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_074",
     "domain": "AI Workloads",
-    "question": "You need to predict the animal population of an area.\nWhich Azure Machine Learning type should you use?",
+    "question": "지역의 동물 개체수를 예측해야 합니다.\n어떤 Azure Machine Learning 유형을 사용해야 합니까?",
     "options": {
-      "A": "regression",
-      "B": "clustering",
-      "C": "classification"
+      "A": "회귀",
+      "B": "클러스터링",
+      "C": "분류"
     },
     "answer": "A",
-    "explanation": "Regression is a supervised machine learning technique used to predict numeric values.\nReference: \nmachine-learning-designer/1-introduction",
+    "explanation": "회귀는 숫자 값을 예측하는 데 사용되는 지도 학습 머신러닝 기법입니다.\n참고:\nmachine-learning-designer/1-introduction",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_075",
     "domain": "AI Workloads",
-    "question": "Which two languages can you use to write custom code for Azure Machine Learning designer?\nEach correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Azure Machine Learning designer에서 커스텀 코드를 작성하는 데 사용할 수 있는 두 가지 언어는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
       "A": "Python",
       "B": "R",
@@ -486,295 +486,295 @@
       "D": "Scala"
     },
     "answer": "A",
-    "explanation": "Use Azure Machine Learning designer for customizing using Python and R code.\nReference:",
+    "explanation": "Azure Machine Learning designer에서 Python 및 R 코드를 사용하여 커스터마이징할 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_077",
     "domain": "AI Workloads",
-    "question": "You have a dataset.\nYou need to build an Azure Machine Learning classification model that will identify defective\nproducts.\nWhat should you do first?",
+    "question": "데이터셋이 있습니다.\n불량 제품을 식별하는 Azure Machine Learning 분류 모델을 구축해야 합니다.\n먼저 무엇을 해야 합니까?",
     "options": {
-      "A": "Load the dataset.",
-      "B": "Create a clustering model.",
-      "C": "Split the data into training and testing datasets.",
-      "D": "Create a classification model."
+      "A": "데이터셋을 로드합니다.",
+      "B": "클러스터링 모델을 만듭니다.",
+      "C": "데이터를 학습 데이터셋과 테스트 데이터셋으로 분할합니다.",
+      "D": "분류 모델을 만듭니다."
     },
     "answer": "C",
-    "explanation": "Understand steps for classification\nYou can think of the steps to train and evaluate a classification machine learning model as:\n1. Prepare data: Identify the features and label in a dataset. Pre-process, or clean and\ntransform, the data as needed.\n2. Train model: Split the data into two groups, a training and a validation set. Train a\nmachine learning model using the training data set. Test the machine learning model for\nperformance using the validation data set.\n3.",
+    "explanation": "분류 단계 이해\n분류 머신러닝 모델을 학습하고 평가하는 단계를 다음과 같이 생각할 수 있습니다:\n1. 데이터 준비: 데이터셋에서 특성과 레이블을 식별합니다. 필요에 따라 데이터를 전처리하거나 정제 및 변환합니다.\n2. 모델 학습: 데이터를 학습 세트와 검증 세트의 두 그룹으로 나눕니다. 학습 데이터셋을 사용하여 머신러닝 모델을 학습시킵니다. 검증 데이터셋을 사용하여 머신러닝 모델의 성능을 테스트합니다.\n3.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_078",
     "domain": "AI Workloads",
-    "question": "You use Azure Machine Learning designer to build a model pipeline.\nWhat should you create before you can run the pipeline?",
+    "question": "Azure Machine Learning designer를 사용하여 모델 파이프라인을 구축합니다.\n파이프라인을 실행하기 전에 무엇을 만들어야 합니까?",
     "options": {
-      "A": "a registered model",
-      "B": "a compute resource",
-      "C": "a Jupyter notebook"
+      "A": "등록된 모델",
+      "B": "컴퓨팅 리소스",
+      "C": "Jupyter notebook"
     },
     "answer": "B",
-    "explanation": "To train the model, we will create Azure Machine Learning Compute resource.\nReference: \nvisual-interface/README.md",
+    "explanation": "모델을 학습시키기 위해 Azure Machine Learning Compute 리소스를 만들겠습니다.\n참고:\nvisual-interface/README.md",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_081",
     "domain": "AI Workloads",
-    "question": "You need to create a customer support solution to help customers access information. The\nsolution must support email, phone, and live chat channels.\nWhich type of Al solution should you use?",
+    "question": "고객이 정보에 접근할 수 있도록 고객 지원 솔루션을 만들어야 합니다. 솔루션은 이메일, 전화 및 실시간 채팅 채널을 지원해야 합니다.\n어떤 유형의 AI 솔루션을 사용해야 합니까?",
     "options": {
-      "A": "machine learning",
-      "B": "computer vision",
-      "C": "chatbot",
-      "D": "natural language processing (NLP)"
+      "A": "머신러닝",
+      "B": "컴퓨터 비전",
+      "C": "챗봇",
+      "D": "자연어 처리(NLP)"
     },
     "answer": "C",
-    "explanation": "AI chatbots use natural language processing (NLP) to help users to interact with web services or\napps through text, graphics, or speech. Chatbots can understand natural human language,\nemulate human conversation, and run simple, automated tasks. In addition, AI chatbots use\npredictive intelligence and analytics to learn a user’s preferences and use this knowledge to\nprovide recommendations and anticipate needs.",
+    "explanation": "AI 챗봇은 자연어 처리(NLP)를 사용하여 사용자가 텍스트, 그래픽 또는 음성을 통해 웹 서비스나 앱과 상호 작용할 수 있도록 합니다. 챗봇은 자연스러운 인간 언어를 이해하고, 인간 대화를 모방하며, 간단하고 자동화된 작업을 수행할 수 있습니다. 또한 AI 챗봇은 예측 인텔리전스와 분석을 사용하여 사용자의 선호도를 학습하고 이 지식을 사용하여 추천을 제공하고 필요를 예측합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_083",
     "domain": "AI Workloads",
-    "question": "Predicting how many vehicles will travel across a bridge on a give day is an example of\n_______.\nSelect the answer that correctly completes the sentence.",
+    "question": "특정 날에 다리를 통과할 차량 수를 예측하는 것은 _______의 예입니다.\n문장을 올바르게 완성하는 답을 선택하세요.",
     "options": {
-      "A": "regression",
-      "B": "translation",
-      "C": "classification",
-      "D": "clustering"
+      "A": "회귀",
+      "B": "번역",
+      "C": "분류",
+      "D": "클러스터링"
     },
     "answer": "A",
-    "explanation": "Regression is a supervised machine learning technique used to predict numeric values.\nReference: \nmachine-learning-designer/",
+    "explanation": "회귀는 숫자 값을 예측하는 데 사용되는 지도 학습 머신러닝 기법입니다.\n참고:\nmachine-learning-designer/",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_084",
     "domain": "AI Workloads",
-    "question": "In a machine learning model, the data that is used as inputs are called ________.\nSelect the answer that correctly completes the sentence.",
+    "question": "머신러닝 모델에서 입력으로 사용되는 데이터를 ________이라고 합니다.\n문장을 올바르게 완성하는 답을 선택하세요.",
     "options": {
-      "A": "dataset",
-      "B": "labels",
-      "C": "variables"
+      "A": "데이터셋",
+      "B": "레이블",
+      "C": "변수"
     },
     "answer": "B",
-    "explanation": "In machine learning, data labeling is the process of identifying raw data (images, text files,\nvideos, etc.) and adding one or more meaningful and informative labels to provide context so\nthat a machine learning model can learn from it.\nReference: \nlabeling-projects",
+    "explanation": "머신러닝에서 데이터 레이블링은 원시 데이터(이미지, 텍스트 파일, 동영상 등)를 식별하고 하나 이상의 의미 있고 유익한 레이블을 추가하여 머신러닝 모델이 이로부터 학습할 수 있도록 맥락을 제공하는 프로세스입니다.\n참고:\nlabeling-projects",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_089",
     "domain": "AI Workloads",
-    "question": "You need to create a clustering model and evaluate the model by using Azure Machine Learning\ndesigner.\nWhat should you do?",
+    "question": "Azure Machine Learning designer를 사용하여 클러스터링 모델을 만들고 평가해야 합니다.\n어떻게 해야 합니까?",
     "options": {
-      "A": "Split the original dataset into a dataset for training and a dataset for testing. Use the testing",
-      "B": "Use the original dataset for training and evaluation.",
-      "C": "Split the original dataset into a dataset for features and a dataset for labels. Use the features",
-      "D": "Split the original dataset into a dataset for training and a dataset for testing. Use the training"
+      "A": "원본 데이터셋을 학습용 데이터셋과 테스트용 데이터셋으로 분할합니다. 테스트용을 사용합니다.",
+      "B": "원본 데이터셋을 학습과 평가에 사용합니다.",
+      "C": "원본 데이터셋을 특성 데이터셋과 레이블 데이터셋으로 분할합니다. 특성을 사용합니다.",
+      "D": "원본 데이터셋을 학습용 데이터셋과 테스트용 데이터셋으로 분할합니다. 학습용을 사용합니다."
     },
     "answer": "A",
-    "explanation": "Understand steps for clustering\nYou can think of the steps to train and evaluate a clustering machine learning model as:\n1. Prepare data: Identify the features and label in a dataset. Pre-process, or clean and\ntransform, the data as needed.\n2. Train model: Split the data into two groups, a training and a validation set. Train a\nmachine learning model using the training data set. Test the machine learning model for\nperformance using the validation data set.\n3. Evaluate performance.\n4.",
+    "explanation": "클러스터링 단계 이해\n클러스터링 머신러닝 모델을 학습하고 평가하는 단계를 다음과 같이 생각할 수 있습니다:\n1. 데이터 준비: 데이터셋에서 특성과 레이블을 식별합니다. 필요에 따라 데이터를 전처리하거나 정제 및 변환합니다.\n2. 모델 학습: 데이터를 학습 세트와 검증 세트의 두 그룹으로 나눕니다. 학습 데이터셋을 사용하여 머신러닝 모델을 학습시킵니다. 검증 데이터셋을 사용하여 머신러닝 모델의 성능을 테스트합니다.\n3. 성능 평가.\n4.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_090",
     "domain": "AI Workloads",
-    "question": "You have a dataset that contains the columns shown in the following table.\nYou have a machine learning model that predicts the value of ColumnE based on the other\nnumeric columns.\nWhich type of model is this?",
+    "question": "다음 표에 표시된 열이 포함된 데이터셋이 있습니다.\n다른 숫자 열을 기반으로 ColumnE의 값을 예측하는 머신러닝 모델이 있습니다.\n이것은 어떤 유형의 모델입니까?",
     "options": {
-      "A": "analysis",
-      "B": "clustering",
-      "C": "regression"
+      "A": "분석",
+      "B": "클러스터링",
+      "C": "회귀"
     },
     "answer": "C",
-    "explanation": "Regression is a supervised machine learning technique used to predict numeric values.\nReference: \nmachine-learning-designer/",
+    "explanation": "회귀는 숫자 값을 예측하는 데 사용되는 지도 학습 머신러닝 기법입니다.\n참고:\nmachine-learning-designer/",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_091",
     "domain": "AI Workloads",
-    "question": "You need to track multiple versions of a model that was trained by using Azure Machine\nLearning.\nWhat should you do?",
+    "question": "Azure Machine Learning을 사용하여 학습된 모델의 여러 버전을 추적해야 합니다.\n어떻게 해야 합니까?",
     "options": {
-      "A": "Explain the model.",
-      "B": "Register the model.",
-      "C": "Register the training data.",
-      "D": "Provision an inference cluster."
+      "A": "모델을 설명합니다.",
+      "B": "모델을 등록합니다.",
+      "C": "학습 데이터를 등록합니다.",
+      "D": "추론 클러스터를 프로비저닝합니다."
     },
     "answer": "B",
-    "explanation": "Register and track machine learning models\nWith model registration, you can store and version your models in the Azure cloud, in your\nworkspace. The model registry makes it easy to organize and keep track of your trained models.\nReference: \nmanagement-and-deployment",
+    "explanation": "머신러닝 모델 등록 및 추적\n모델 등록을 사용하면 작업 영역의 Azure 클라우드에 모델을 저장하고 버전을 관리할 수 있습니다. 모델 레지스트리를 사용하면 학습된 모델을 쉽게 구성하고 추적할 수 있습니다.\n참고:\nmanagement-and-deployment",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_092",
     "domain": "AI Workloads",
-    "question": "You need to identify groups of rows with similar numeric values in a dataset.\nWhich type of machine learning should you use?",
+    "question": "데이터셋에서 유사한 숫자 값을 가진 행 그룹을 식별해야 합니다.\n어떤 유형의 머신러닝을 사용해야 합니까?",
     "options": {
-      "A": "clustering",
-      "B": "regression",
-      "C": "classification"
+      "A": "클러스터링",
+      "B": "회귀",
+      "C": "분류"
     },
     "answer": "A",
-    "explanation": "Clustering is an unsupervised machine learning technique used to group similar entities based on\ntheir features. Learn how to create clustering models using Azure Machine Learning designer.\nScenarios for clustering machine learning models\nClustering machine learning models are used in many industries. A few scenarios are:\nCluster customer attribute data into segments for marketing analysis.\nCluster geographic coordinates into regions of high traffic in a city for a ride-share application.",
+    "explanation": "클러스터링은 특성을 기반으로 유사한 엔터티를 그룹화하는 데 사용되는 비지도 학습 머신러닝 기법입니다. Azure Machine Learning designer를 사용하여 클러스터링 모델을 만드는 방법을 알아보세요.\n클러스터링 머신러닝 모델의 시나리오\n클러스터링 머신러닝 모델은 많은 산업에서 사용됩니다. 몇 가지 시나리오:\n마케팅 분석을 위해 고객 속성 데이터를 세그먼트로 클러스터링합니다.\n차량 공유 애플리케이션을 위해 도시의 교통량이 많은 지역으로 지리적 좌표를 클러스터링합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_094",
     "domain": "AI Workloads",
-    "question": "Your company wants to build a recycling machine for bottles. The recycling machine must\nautomatically identify bottles of the correct shape and reject all other items.\nWhich type of AI workload should the company use?",
+    "question": "귀사는 병 재활용 기계를 제조하려고 합니다. 재활용 기계는 올바른 모양의 병을 자동으로 식별하고 다른 모든 항목을 거부해야 합니다.\n어떤 유형의 AI 워크로드를 사용해야 합니까?",
     "options": {
-      "A": "anomaly detection",
-      "B": "conversational AI",
-      "C": "computer vision",
-      "D": "natural language processing"
+      "A": "이상 탐지",
+      "B": "대화형 AI",
+      "C": "컴퓨터 비전",
+      "D": "자연어 처리"
     },
     "answer": "C",
-    "explanation": "Azure's Computer Vision service gives you access to advanced algorithms that process images\nand return information based on the visual features you're interested in. For example, Computer\nVision can determine whether an image contains adult content, find specific brands or objects, or\nfind human faces.\nReference:",
+    "explanation": "Azure의 Computer Vision 서비스는 관심 있는 시각적 특성에 따라 이미지를 처리하고 정보를 반환하는 고급 알고리즘에 대한 액세스를 제공합니다. 예를 들어, Computer Vision은 이미지에 성인 콘텐츠가 포함되어 있는지 확인하거나, 특정 브랜드 또는 객체를 찾거나, 사람의 얼굴을 찾을 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_096",
     "domain": "AI Workloads",
-    "question": "In which two scenarios can you use the Form Recognizer service? Each correct answer presents\na complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Form Recognizer 서비스를 사용할 수 있는 두 가지 시나리오는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "Extract the invoice number from an invoice.",
-      "B": "Translate a form from French to English.",
-      "C": "Find image of product in a catalog.",
-      "D": "Identify the retailer from a receipt."
+      "A": "송장에서 송장 번호를 추출합니다.",
+      "B": "양식을 프랑스어에서 영어로 번역합니다.",
+      "C": "카탈로그에서 제품 이미지를 찾습니다.",
+      "D": "영수증에서 소매업체를 식별합니다."
     },
     "answer": "A",
-    "explanation": "The correct answer is A.",
+    "explanation": "정답은 A입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_099",
     "domain": "AI Workloads",
-    "question": "You need to develop a mobile app for employees to scan and store their expenses while\ntravelling.\nWhich type of computer vision should you use?",
+    "question": "직원들이 출장 중에 경비를 스캔하고 저장할 수 있는 모바일 앱을 개발해야 합니다.\n어떤 유형의 컴퓨터 비전을 사용해야 합니까?",
     "options": {
-      "A": "semantic segmentation",
-      "B": "image classification",
-      "C": "object detection",
-      "D": "optical character recognition (OCR)"
+      "A": "시맨틱 세그멘테이션",
+      "B": "이미지 분류",
+      "C": "객체 감지",
+      "D": "광학 문자 인식(OCR)"
     },
     "answer": "D",
-    "explanation": "Azure's Computer Vision API includes Optical Character Recognition (OCR) capabilities that\nextract printed or handwritten text from images. You can extract text from images, such as\nphotos of license plates or containers with serial numbers, as well as from documents - invoices,\nbills, financial reports, articles, and more.\nReference:\n\ntext",
+    "explanation": "Azure의 Computer Vision API에는 이미지에서 인쇄되거나 손으로 쓴 텍스트를 추출하는 광학 문자 인식(OCR) 기능이 포함되어 있습니다. 번호판이나 일련번호가 있는 컨테이너 사진과 같은 이미지에서 텍스트를 추출할 수 있으며, 송장, 청구서, 재무 보고서, 기사 등의 문서에서도 추출할 수 있습니다.\n참고:\n\ntext",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_101",
     "domain": "AI Workloads",
-    "question": "You are processing photos of runners in a race.\nYou need to read the numbers on the runners’ shirts to identity the runners in the photos.\nWhich type of computer vision should you use?",
+    "question": "경주에 참가한 러너들의 사진을 처리하고 있습니다.\n사진에서 러너를 식별하기 위해 러너의 셔츠에 있는 번호를 읽어야 합니다.\n어떤 유형의 컴퓨터 비전을 사용해야 합니까?",
     "options": {
-      "A": "facial recognition",
-      "B": "optical character recognition (OCR)",
-      "C": "image classification",
-      "D": "object detection"
+      "A": "얼굴 인식",
+      "B": "광학 문자 인식(OCR)",
+      "C": "이미지 분류",
+      "D": "객체 감지"
     },
     "answer": "B",
-    "explanation": "Optical character recognition (OCR) allows you to extract printed or handwritten text from\nimages and documents.\nReference:",
+    "explanation": "광학 문자 인식(OCR)을 사용하면 이미지와 문서에서 인쇄되거나 손으로 쓴 텍스트를 추출할 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_103",
     "domain": "AI Workloads",
-    "question": "You use drones to identify where weeds grow between rows of crops to send an instruction for\nthe removal of the weeds.\nThis is an example of which type of computer vision?",
+    "question": "드론을 사용하여 작물 행 사이에 잡초가 자라는 위치를 식별하여 잡초 제거 지시를 보냅니다.\n이것은 어떤 유형의 컴퓨터 비전의 예입니까?",
     "options": {
-      "A": "object detection",
-      "B": "optical character recognition (OCR)",
-      "C": "scene segmentation"
+      "A": "객체 감지",
+      "B": "광학 문자 인식(OCR)",
+      "C": "장면 분할"
     },
     "answer": "A",
-    "explanation": "Object detection is similar to tagging, but the API returns the bounding box coordinates for each\ntag applied. For example, if an image contains a dog, cat and person, the Detect operation will\nlist those objects together with their coordinates in the image.\nIncorrect Answers:\nB: Optical character recognition (OCR) allows you to extract printed or handwritten text from\nimages and documents.\nC: Scene segmentation determines when a scene changes in video based on visual cues.",
+    "explanation": "객체 감지는 태깅과 유사하지만, API가 적용된 각 태그에 대한 바운딩 박스 좌표를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다.\n오답:\nB: 광학 문자 인식(OCR)을 사용하면 이미지와 문서에서 인쇄되거나 손으로 쓴 텍스트를 추출할 수 있습니다.\nC: 장면 분할은 시각적 단서를 기반으로 비디오에서 장면이 변경되는 시점을 결정합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_106",
     "domain": "AI Workloads",
-    "question": "You need to determine the location of cars in an image so that you can estimate the distance\nbetween the cars.\nWhich type of computer vision should you use?",
+    "question": "이미지에서 자동차의 위치를 결정하여 자동차 간의 거리를 추정해야 합니다.\n어떤 유형의 컴퓨터 비전을 사용해야 합니까?",
     "options": {
-      "A": "optical character recognition (OCR)",
-      "B": "object detection",
-      "C": "image classification",
-      "D": "face detection"
+      "A": "광학 문자 인식(OCR)",
+      "B": "객체 감지",
+      "C": "이미지 분류",
+      "D": "얼굴 감지"
     },
     "answer": "B",
-    "explanation": "Object detection is similar to tagging, but the API returns the bounding box coordinates (in\npixels) for each object found. For example, if an image contains a dog, cat and person, the Detect\noperation will list those objects together with their coordinates in the image. You can use this\nfunctionality to process the relationships between the objects in an image. It also lets you\ndetermine whether there are multiple instances of the same tag in an image.",
+    "explanation": "객체 감지는 태깅과 유사하지만, API가 발견된 각 객체에 대한 바운딩 박스 좌표(픽셀 단위)를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다. 이 기능을 사용하여 이미지의 객체 간 관계를 처리할 수 있습니다. 또한 이미지에 동일한 태그의 여러 인스턴스가 있는지 확인할 수 있습니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_108",
     "domain": "AI Workloads",
-    "question": "You send an image to a Computer Vision API and receive back the annotated image shown in\nthe exhibit.\nWhich type of computer vision was used?",
+    "question": "Computer Vision API에 이미지를 보내고 전시에 표시된 주석이 달린 이미지를 받습니다.\n어떤 유형의 컴퓨터 비전이 사용되었습니까?",
     "options": {
-      "A": "object detection",
-      "B": "face detection",
-      "C": "optical character recognition (OCR)",
-      "D": "image classification"
+      "A": "객체 감지",
+      "B": "얼굴 감지",
+      "C": "광학 문자 인식(OCR)",
+      "D": "이미지 분류"
     },
     "answer": "A",
-    "explanation": "Object detection is similar to tagging, but the API returns the bounding box coordinates (in\npixels) for each object found. For example, if an image contains a dog, cat and person, the Detect\noperation will list those objects together with their coordinates in the image. You can use this\nfunctionality to process the relationships between the objects in an image. It also lets you\ndetermine whether there are multiple instances of the same tag in an image.",
+    "explanation": "객체 감지는 태깅과 유사하지만, API가 발견된 각 객체에 대한 바운딩 박스 좌표(픽셀 단위)를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다. 이 기능을 사용하여 이미지의 객체 간 관계를 처리할 수 있습니다. 또한 이미지에 동일한 태그의 여러 인스턴스가 있는지 확인할 수 있습니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_109",
     "domain": "AI Workloads",
-    "question": "What are two tasks that can be performed by using the Computer Vision service? Each correct\nanswer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "Computer Vision 서비스를 사용하여 수행할 수 있는 두 가지 작업은 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "Train a custom image classification model.",
-      "B": "Detect faces in an image.",
-      "C": "Recognize handwritten text.",
-      "D": "Translate the text in an image between languages."
+      "A": "커스텀 이미지 분류 모델을 학습시킵니다.",
+      "B": "이미지에서 얼굴을 감지합니다.",
+      "C": "손으로 쓴 텍스트를 인식합니다.",
+      "D": "이미지의 텍스트를 언어 간에 번역합니다."
     },
     "answer": "B",
-    "explanation": "B: Azure's Computer Vision service provides developers with access to advanced algorithms that\nprocess images and return information based on the visual features you're interested in. For\nexample, Computer Vision can determine whether an image contains adult content, find specific\nbrands or objects, or find human faces.\nC: Computer Vision includes Optical Character Recognition (OCR) capabilities. You can use the\nnew Read API to extract printed and handwritten text from images and documents.",
+    "explanation": "B: Azure의 Computer Vision 서비스는 개발자에게 관심 있는 시각적 특성에 따라 이미지를 처리하고 정보를 반환하는 고급 알고리즘에 대한 액세스를 제공합니다. 예를 들어, Computer Vision은 이미지에 성인 콘텐츠가 포함되어 있는지 확인하거나, 특정 브랜드 또는 객체를 찾거나, 사람의 얼굴을 찾을 수 있습니다.\nC: Computer Vision에는 광학 문자 인식(OCR) 기능이 포함되어 있습니다. 새로운 Read API를 사용하여 이미지와 문서에서 인쇄 및 손으로 쓴 텍스트를 추출할 수 있습니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_110",
     "domain": "AI Workloads",
-    "question": "What is a use case for classification?",
+    "question": "분류의 사용 사례는 무엇입니까?",
     "options": {
-      "A": "predicting how many cups of coffee a person will drink based on how many hours the person",
-      "B": "analyzing the contents of images and grouping images that have similar colors",
-      "C": "predicting whether someone uses a bicycle to travel to work based on the distance from home",
-      "D": "predicting how many minutes it will take someone to run a race based on past race times"
+      "A": "사람이 잠을 잔 시간을 기반으로 마실 커피 잔 수를 예측하는 것",
+      "B": "이미지의 내용을 분석하고 유사한 색상을 가진 이미지를 그룹화하는 것",
+      "C": "집에서 직장까지의 거리를 기반으로 누군가가 자전거로 출퇴근하는지 예측하는 것",
+      "D": "과거 경주 기록을 기반으로 누군가가 경주를 완주하는 데 걸리는 시간(분)을 예측하는 것"
     },
     "answer": "C",
-    "explanation": "Two-class classification provides the answer to simple two-choice questions such as Yes/No or\nTrue/False.\nIncorrect Answers:\nA: This is Regression.\nB: This is Clustering.\nD: This is Regression.\nReference:\n\nregression\n\nlearning-initialize-model-clustering",
+    "explanation": "이진 분류는 예/아니오 또는 참/거짓과 같은 간단한 두 가지 선택 질문에 대한 답을 제공합니다.\n오답:\nA: 이것은 회귀입니다.\nB: 이것은 클러스터링입니다.\nD: 이것은 회귀입니다.\n참고:\n\n회귀\n\nlearning-initialize-model-clustering",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_111",
     "domain": "AI Workloads",
-    "question": "What are two tasks that can be performed by using computer vision? Each correct answer\npresents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "컴퓨터 비전을 사용하여 수행할 수 있는 두 가지 작업은 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "Predict stock prices.",
-      "B": "Detect brands in an image.",
-      "C": "Detect the color scheme in an image",
-      "D": "Translate text between languages.",
-      "E": "Extract key phrases."
+      "A": "주가를 예측합니다.",
+      "B": "이미지에서 브랜드를 감지합니다.",
+      "C": "이미지에서 색상 체계를 감지합니다.",
+      "D": "언어 간 텍스트를 번역합니다.",
+      "E": "핵심 구문을 추출합니다."
     },
     "answer": "B",
-    "explanation": "B: Identify commercial brands in images or videos from a database of thousands of global logos.\nYou can use this feature, for example, to discover which brands are most popular on social\nmedia or most prevalent in media product placement.\nC: Analyze color usage within an image. Computer Vision can determine whether an image is\nblack & white or color and, for color images, identify the dominant and accent colors.\nReference:",
+    "explanation": "B: 수천 개의 글로벌 로고 데이터베이스에서 이미지나 동영상의 상업 브랜드를 식별합니다. 이 기능을 사용하여 소셜 미디어에서 가장 인기 있는 브랜드나 미디어 제품 배치에서 가장 많이 나타나는 브랜드를 발견할 수 있습니다.\nC: 이미지 내 색상 사용을 분석합니다. Computer Vision은 이미지가 흑백인지 컬러인지 판별할 수 있으며, 컬러 이미지의 경우 지배적인 색상과 강조 색상을 식별합니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_112",
     "domain": "AI Workloads",
-    "question": "You need to build an image tagging solution for social media that tags images of your friends\nautomatically.\nWhich Azure Cognitive Services service should you use?",
+    "question": "친구들의 이미지에 자동으로 태그를 지정하는 소셜 미디어용 이미지 태깅 솔루션을 구축해야 합니다.\n어떤 Azure Cognitive Services 서비스를 사용해야 합니까?",
     "options": {
       "A": "Face",
       "B": "Form Recognizer",
@@ -789,12 +789,12 @@
   {
     "id": "q_113",
     "domain": "AI Workloads",
-    "question": "A historian can use ________ to digitize newspaper articles.\nSelect the answer that correctly completes the sentence.",
+    "question": "역사학자는 ________을(를) 사용하여 신문 기사를 디지털화할 수 있습니다.\n문장을 올바르게 완성하는 답을 선택하세요.",
     "options": {
-      "A": "Object detection",
-      "B": "Facial recognition",
-      "C": "Image classification",
-      "D": "Optical character recognition (OCR)"
+      "A": "객체 감지",
+      "B": "얼굴 인식",
+      "C": "이미지 분류",
+      "D": "광학 문자 인식(OCR)"
     },
     "answer": "D",
     "explanation": "",
@@ -804,22 +804,22 @@
   {
     "id": "q_115",
     "domain": "AI Workloads",
-    "question": "Which Computer Vision feature can you use to generate automatic captions for digital\nphotographs?",
+    "question": "디지털 사진에 대한 자동 캡션을 생성하는 데 사용할 수 있는 Computer Vision 기능은 무엇입니까?",
     "options": {
-      "A": "Recognize text.",
-      "B": "Identify the areas of interest.",
-      "C": "Detect objects.",
-      "D": "Describe the images."
+      "A": "텍스트 인식.",
+      "B": "관심 영역 식별.",
+      "C": "객체 감지.",
+      "D": "이미지 설명."
     },
     "answer": "D",
-    "explanation": "Describe images with human-readable language\nComputer Vision can analyze an image and generate a human-readable phrase that describes its\ncontents. The algorithm returns several descriptions based on different visual features, and each\ndescription is given a confidence score. The final output is a list of descriptions ordered from\nhighest to lowest confidence.\nThe image description feature is part of the Analyze Image API.\nReference: \ndescribing-images",
+    "explanation": "사람이 읽을 수 있는 언어로 이미지 설명\nComputer Vision은 이미지를 분석하고 그 내용을 설명하는 사람이 읽을 수 있는 문구를 생성할 수 있습니다. 알고리즘은 다양한 시각적 특성을 기반으로 여러 설명을 반환하며, 각 설명에는 신뢰도 점수가 부여됩니다. 최종 출력은 가장 높은 신뢰도에서 가장 낮은 신뢰도 순으로 정렬된 설명 목록입니다.\n이미지 설명 기능은 Analyze Image API의 일부입니다.\n참고:\ndescribing-images",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_116",
     "domain": "AI Workloads",
-    "question": "Which service should you use to extract text, key/value pairs, and table data automatically from\nscanned documents?",
+    "question": "스캔한 문서에서 텍스트, 키/값 쌍 및 테이블 데이터를 자동으로 추출하려면 어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Custom Vision",
       "B": "Face",
@@ -827,14 +827,14 @@
       "D": "Language"
     },
     "answer": "C",
-    "explanation": "Form Recognizer applies advanced machine learning to accurately extract text, key-value pairs,\ntables, and structures from documents.\nReference:",
+    "explanation": "Form Recognizer는 고급 머신러닝을 적용하여 문서에서 텍스트, 키-값 쌍, 테이블 및 구조를 정확하게 추출합니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_119",
     "domain": "AI Workloads",
-    "question": "You need to create a model that labels a collection of your personal digital photographs.\nWhich Azure Cognitive Services service should you use?",
+    "question": "개인 디지털 사진 컬렉션에 레이블을 지정하는 모델을 만들어야 합니다.\n어떤 Azure Cognitive Services 서비스를 사용해야 합니까?",
     "options": {
       "A": "Form Recognizer",
       "B": "Custom Vision",
@@ -842,74 +842,74 @@
       "D": "Computer Vision"
     },
     "answer": "D",
-    "explanation": "Computer Vision, an AI service that analyzes content in images and video.\nExtract rich information from images and video\nBoost content discoverability, automate text extraction, analyze video in real time, and create\nproducts that more people can use by embedding cloud vision capabilities in your apps with\nComputer Vision, part of Azure Cognitive Services.",
+    "explanation": "Computer Vision은 이미지와 비디오의 콘텐츠를 분석하는 AI 서비스입니다.\n이미지와 비디오에서 풍부한 정보 추출\nAzure Cognitive Services의 일부인 Computer Vision을 사용하여 앱에 클라우드 비전 기능을 내장하여 콘텐츠 검색 가능성을 높이고, 텍스트 추출을 자동화하고, 비디오를 실시간으로 분석하고, 더 많은 사람들이 사용할 수 있는 제품을 만드세요.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_124",
     "domain": "NLP",
-    "question": "Your company manufactures widgets.\nYou have 1,000 digital photos of the widgets.\nYou need to identify the location of the widgets within the photos.\nWhat should you use?",
+    "question": "귀사는 위젯을 제조합니다.\n위젯의 디지털 사진 1,000장이 있습니다.\n사진 내 위젯의 위치를 식별해야 합니다.\n무엇을 사용해야 합니까?",
     "options": {
       "A": "Computer Vision Spatial Analysis",
-      "B": "Custom Vision object detection",
+      "B": "Custom Vision 객체 감지",
       "C": "Computer Vision Image Analysis",
-      "D": "Custom Vision classification"
+      "D": "Custom Vision 분류"
     },
     "answer": "B",
-    "explanation": "Object detection is similar to tagging, but the API returns the bounding box coordinates (in\npixels) for each object found in the image. For example, if an image contains a dog, cat and\nperson, the Detect operation will list those objects with their coordinates in the image. You can\nuse this functionality to process the relationships between the objects in an image. It also lets you\ndetermine whether there are multiple instances of the same object in an image.",
+    "explanation": "객체 감지는 태깅과 유사하지만, API가 이미지에서 발견된 각 객체에 대한 바운딩 박스 좌표(픽셀 단위)를 반환합니다. 예를 들어, 이미지에 개, 고양이, 사람이 있으면 Detect 작업이 해당 객체를 이미지의 좌표와 함께 나열합니다. 이 기능을 사용하여 이미지의 객체 간 관계를 처리할 수 있습니다. 또한 이미지에 동일한 객체의 여러 인스턴스가 있는지 확인할 수 있습니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_125",
     "domain": "NLP",
-    "question": "Natural language processing can be used to __________.\nSelect the answer that correctly completes the sentence.",
+    "question": "자연어 처리는 __________에 사용할 수 있습니다.\n문장을 올바르게 완성하는 답을 선택하세요.",
     "options": {
-      "A": "Analyze video content",
-      "B": "Generate speech",
-      "C": "Classify email messages as work-related or personal.",
-      "D": "Classify images"
+      "A": "비디오 콘텐츠 분석",
+      "B": "음성 생성",
+      "C": "이메일 메시지를 업무 관련 또는 개인으로 분류.",
+      "D": "이미지 분류"
     },
     "answer": "C",
-    "explanation": "Natural language processing (NLP) has many uses: sentiment analysis, topic detection, language\ndetection, key phrase extraction, and document categorization.\nNote: Specifically, you can use NLP to:\n*-> Classify documents. For instance, you can label documents as sensitive or spam.\nDo subsequent processing or searches. You can use NLP output for these purposes.\nSummarize text by identifying the entities that are present in the document.\nTag documents with keywords.",
+    "explanation": "자연어 처리(NLP)에는 감정 분석, 주제 감지, 언어 감지, 핵심 구문 추출 및 문서 분류 등 많은 용도가 있습니다.\n참고: 구체적으로 NLP를 사용하여 다음을 수행할 수 있습니다:\n*-> 문서를 분류합니다. 예를 들어, 문서에 민감 또는 스팸 레이블을 지정할 수 있습니다.\n후속 처리 또는 검색을 수행합니다. 이러한 목적으로 NLP 출력을 사용할 수 있습니다.\n텍스트에 존재하는 엔터티를 식별하여 텍스트를 요약합니다.\n키워드로 문서에 태그를 지정합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_126",
     "domain": "NLP",
-    "question": "You are developing a solution that uses the Text Analytics service.\nYou need to identify the main talking points in a collection of documents.\nWhich type of natural language processing should you use?",
+    "question": "Text Analytics 서비스를 사용하는 솔루션을 개발하고 있습니다.\n문서 컬렉션에서 주요 논점을 식별해야 합니다.\n어떤 유형의 자연어 처리를 사용해야 합니까?",
     "options": {
-      "A": "entity recognition",
-      "B": "key phrase extraction",
-      "C": "sentiment analysis",
-      "D": "language detection"
+      "A": "엔터티 인식",
+      "B": "핵심 구문 추출",
+      "C": "감정 분석",
+      "D": "언어 감지"
     },
     "answer": "B",
-    "explanation": "Broad entity extraction: Identify important concepts in text, including key\nKey phrase extraction/ Broad entity extraction: Identify important concepts in text, including key\nphrases and named entities such as people, places, and organizations.\nReference:\n\nlanguage-processing",
+    "explanation": "광범위한 엔터티 추출: 핵심 구문 및 사람, 장소, 조직과 같은 명명된 엔터티를 포함하여 텍스트에서 중요한 개념을 식별합니다.\n핵심 구문 추출/광범위한 엔터티 추출: 핵심 구문 및 사람, 장소, 조직과 같은 명명된 엔터티를 포함하여 텍스트에서 중요한 개념을 식별합니다.\n참고:\n\nlanguage-processing",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_127",
     "domain": "NLP",
-    "question": "In which two scenarios can you use speech recognition? Each correct answer presents a complete\nsolution.\nNOTE: Each correct selection is worth one point.",
+    "question": "음성 인식을 사용할 수 있는 두 가지 시나리오는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "an in-car system that reads text messages aloud",
-      "B": "providing closed captions for recorded or live videos",
-      "C": "creating an automated public address system for a train station",
-      "D": "creating a transcript of a telephone call or meeting"
+      "A": "문자 메시지를 소리 내어 읽어주는 차량 내 시스템",
+      "B": "녹화 또는 실시간 동영상에 자막을 제공",
+      "C": "기차역의 자동 안내 방송 시스템 만들기",
+      "D": "전화 통화 또는 회의의 대본 만들기"
     },
     "answer": "B",
-    "explanation": "The correct answer is B.",
+    "explanation": "정답은 B입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_129",
     "domain": "NLP",
-    "question": "You need to build an app that will read recipe instructions aloud to support users who have\nreduced vision.\nWhich version service should you use?",
+    "question": "시력이 저하된 사용자를 지원하기 위해 레시피 지침을 소리 내어 읽어주는 앱을 구축해야 합니다.\n어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Text Analytics",
       "B": "Translator",
@@ -917,29 +917,29 @@
       "D": "Language Understanding (LUIS)"
     },
     "answer": "C",
-    "explanation": "The correct answer is C.",
+    "explanation": "정답은 C입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_131",
     "domain": "NLP",
-    "question": "Your website has a chatbot to assist customers.\nYou need to detect when a customer is upset based on what the customer types in the chatbot.\nWhich type of AI workload should you use?",
+    "question": "웹사이트에 고객을 지원하는 챗봇이 있습니다.\n고객이 챗봇에 입력하는 내용을 기반으로 고객이 화가 났는지 감지해야 합니다.\n어떤 유형의 AI 워크로드를 사용해야 합니까?",
     "options": {
-      "A": "anomaly detection",
-      "B": "computer vision",
-      "C": "regression",
-      "D": "natural language processing"
+      "A": "이상 탐지",
+      "B": "컴퓨터 비전",
+      "C": "회귀",
+      "D": "자연어 처리"
     },
     "answer": "D",
-    "explanation": "Natural language processing (NLP) is used for tasks such as sentiment analysis, topic detection,\nlanguage detection, key phrase extraction, and document categorization.\nSentiment Analysis is the process of determining whether a piece of writing is positive, negative\nor neutral.\nNote:\nThere are several versions of this question in the exam. The question can have other incorrect\nanswer options, including the following:\n• semantic segmentation\nReference:\n\nlanguage-processing",
+    "explanation": "자연어 처리(NLP)는 감정 분석, 주제 감지, 언어 감지, 핵심 구문 추출 및 문서 분류와 같은 작업에 사용됩니다.\n감정 분석은 글이 긍정적인지, 부정적인지 또는 중립적인지 판별하는 프로세스입니다.\n참고:\n이 문제에는 시험에 여러 버전이 있습니다. 문제에는 다음과 같은 다른 오답 선택지가 포함될 수 있습니다:\n• 시맨틱 세그멘테이션\n참고:\n\nlanguage-processing",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_132",
     "domain": "NLP",
-    "question": "You plan to develop a bot that will enable users to query a knowledge base by using natural\nlanguage processing.\nWhich two services should you include in the solution? Each correct answer presents part of the\nsolution.\nNOTE: Each correct selection is worth one point.",
+    "question": "자연어 처리를 사용하여 사용자가 지식 기반을 쿼리할 수 있는 봇을 개발할 계획입니다.\n솔루션에 포함해야 하는 두 가지 서비스는 무엇입니까? 각 정답은 솔루션의 일부를 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
       "A": "QnA Maker",
       "B": "Azure Bot Service",
@@ -954,22 +954,22 @@
   {
     "id": "q_133",
     "domain": "NLP",
-    "question": "In which two scenarios can you use a speech synthesis solution? Each correct answer presents a\ncomplete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "음성 합성 솔루션을 사용할 수 있는 두 가지 시나리오는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "an automated voice that reads back a credit card number entered into a telephone by using a",
-      "B": "generating live captions for a news broadcast",
-      "C": "extracting key phrases from the audio recording of a meeting",
-      "D": "an AI character in a computer game that speaks audibly to a player"
+      "A": "전화기를 사용하여 입력한 신용카드 번호를 다시 읽어주는 자동 음성",
+      "B": "뉴스 방송의 실시간 자막 생성",
+      "C": "회의 오디오 녹음에서 핵심 구문 추출",
+      "D": "컴퓨터 게임에서 플레이어에게 음성으로 말하는 AI 캐릭터"
     },
     "answer": "A",
-    "explanation": "Azure Text to Speech is a Speech service feature that converts text to lifelike speech.\nIncorrect Answers:\nC: Extracting key phrases is not speech synthesis.\nReference:",
+    "explanation": "Azure Text to Speech는 텍스트를 자연스러운 음성으로 변환하는 Speech 서비스 기능입니다.\n오답:\nC: 핵심 구문 추출은 음성 합성이 아닙니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_136",
     "domain": "NLP",
-    "question": "You are building a knowledge base by using QnA Maker.\nWhich file format can you use to populate the knowledge base?",
+    "question": "QnA Maker를 사용하여 지식 기반을 구축하고 있습니다.\n지식 기반을 채우는 데 사용할 수 있는 파일 형식은 무엇입니까?",
     "options": {
       "A": "PPTX",
       "B": "XML",
@@ -977,19 +977,19 @@
       "D": "PDF"
     },
     "answer": "D",
-    "explanation": "D: Content types of documents you can add to a knowledge base:\nContent types include many standard structured documents such as PDF, DOC, and TXT.\nNote: The tool supports the following file formats for ingestion:\n• .tsv: QnA contained in the format Question(tab)Answer.\n• .txt, .docx, .pdf: QnA contained as regular FAQ content--that is, a sequence of questions\nand answers.\nIncorrect Answers:\nA: PPTX is the default presentation file format for new PowerPoint presentations.",
+    "explanation": "D: 지식 기반에 추가할 수 있는 콘텐츠 유형:\n콘텐츠 유형에는 PDF, DOC, TXT와 같은 많은 표준 구조화된 문서가 포함됩니다.\n참고: 이 도구는 수집을 위해 다음 파일 형식을 지원합니다:\n• .tsv: 질문(탭)답변 형식으로 포함된 QnA.\n• .txt, .docx, .pdf: 일반 FAQ 콘텐츠로 포함된 QnA—즉, 질문과 답변의 시퀀스.\n오답:\nA: PPTX는 새 PowerPoint 프레젠테이션의 기본 프레젠테이션 파일 형식입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_137",
     "domain": "NLP",
-    "question": "In which scenario should you use key phrase extraction?",
+    "question": "핵심 구문 추출을 사용해야 하는 시나리오는 무엇입니까?",
     "options": {
-      "A": "identifying whether reviews of a restaurant are positive or negative",
-      "B": "generating captions for a video based on the audio track",
-      "C": "identifying which documents provide information about the same topics",
-      "D": "translating a set of documents from English to German"
+      "A": "레스토랑 리뷰가 긍정적인지 부정적인지 식별",
+      "B": "오디오 트랙을 기반으로 비디오에 대한 자막 생성",
+      "C": "동일한 주제에 대한 정보를 제공하는 문서 식별",
+      "D": "일련의 문서를 영어에서 독일어로 번역"
     },
     "answer": "C",
     "explanation": "",
@@ -999,12 +999,12 @@
   {
     "id": "q_138",
     "domain": "NLP",
-    "question": "You have insurance claim reports that are stored as text.\nYou need to extract key terms from the reports to generate summaries.\nWhich type of AI workload should you use?",
+    "question": "텍스트로 저장된 보험 청구 보고서가 있습니다.\n요약을 생성하기 위해 보고서에서 핵심 용어를 추출해야 합니다.\n어떤 유형의 AI 워크로드를 사용해야 합니까?",
     "options": {
-      "A": "natural language processing",
-      "B": "conversational AI",
-      "C": "anomaly detection",
-      "D": "computer vision"
+      "A": "자연어 처리",
+      "B": "대화형 AI",
+      "C": "이상 탐지",
+      "D": "컴퓨터 비전"
     },
     "answer": "A",
     "explanation": "language-processing",
@@ -1014,7 +1014,7 @@
   {
     "id": "q_140",
     "domain": "NLP",
-    "question": "Which AI service can you use to interpret the meaning of a user input such as “Call me back\nlater?”",
+    "question": "\"나중에 다시 전화해주세요\"와 같은 사용자 입력의 의미를 해석하는 데 사용할 수 있는 AI 서비스는 무엇입니까?",
     "options": {
       "A": "Translator",
       "B": "Text Analytics",
@@ -1022,14 +1022,14 @@
       "D": "Language Understanding (LUIS)"
     },
     "answer": "D",
-    "explanation": "Language Understanding (LUIS) is a cloud-based AI service, that applies custom machine-\nlearning intelligence to a user's conversational, natural language text to predict overall meaning,\nand pull out relevant, detailed information.\nReference:",
+    "explanation": "Language Understanding (LUIS)은 사용자의 대화형 자연어 텍스트에 커스텀 머신러닝 인텔리전스를 적용하여 전체 의미를 예측하고 관련된 상세 정보를 추출하는 클라우드 기반 AI 서비스입니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_141",
     "domain": "NLP",
-    "question": "You are developing a chatbot solution in Azure.\nWhich service should you use to determine a user’s intent?",
+    "question": "Azure에서 챗봇 솔루션을 개발하고 있습니다.\n사용자의 의도를 결정하기 위해 어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Translator",
       "B": "QnA Maker",
@@ -1037,14 +1037,14 @@
       "D": "Language Understanding (LUIS)"
     },
     "answer": "D",
-    "explanation": "Language Understanding (LUIS) is a cloud-based API service that applies custom machine-\nlearning intelligence to a user's conversational, natural language text to predict overall meaning,\nand pull out relevant, detailed information.\nDesign your LUIS model with categories of user intentions called intents. Each intent needs\nexamples of user utterances. Each utterance can provide data that needs to be extracted with\nmachine-learning entities.\nReference:",
+    "explanation": "Language Understanding (LUIS)은 사용자의 대화형 자연어 텍스트에 커스텀 머신러닝 인텔리전스를 적용하여 전체 의미를 예측하고 관련된 상세 정보를 추출하는 클라우드 기반 API 서비스입니다.\n의도(intent)라는 사용자 의도의 범주로 LUIS 모델을 설계하세요. 각 의도에는 사용자 발화의 예시가 필요합니다. 각 발화는 머신러닝 엔터티로 추출해야 하는 데이터를 제공할 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_142",
     "domain": "NLP",
-    "question": "You need to make the written press releases of your company available in a range of languages.\nWhich service should you use?",
+    "question": "회사의 서면 보도 자료를 다양한 언어로 제공해야 합니다.\n어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Translator",
       "B": "Text Analytics",
@@ -1052,64 +1052,64 @@
       "D": "Language Understanding (LUIS)"
     },
     "answer": "A",
-    "explanation": "Translator is a cloud-based machine translation service you can use to translate text in near real-\ntime through a simple REST API call. The service uses modern neural machine translation\ntechnology and offers statistical machine translation technology. Custom Translator is an\nextension of Translator, which allows you to build neural translation systems.\nReference:",
+    "explanation": "Translator는 간단한 REST API 호출을 통해 거의 실시간으로 텍스트를 번역할 수 있는 클라우드 기반 기계 번역 서비스입니다. 이 서비스는 최신 신경 기계 번역 기술을 사용하고 통계적 기계 번역 기술을 제공합니다. Custom Translator는 Translator의 확장으로, 신경 번역 시스템을 구축할 수 있게 해줍니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_146",
     "domain": "NLP",
-    "question": "You are developing a natural language processing solution in Azure. The solution will analyze\ncustomer reviews and determine how positive or negative each review is.\nThis is an example of which type of natural language processing workload?",
+    "question": "Azure에서 자연어 처리 솔루션을 개발하고 있습니다. 솔루션은 고객 리뷰를 분석하고 각 리뷰가 얼마나 긍정적이거나 부정적인지 판별합니다.\n이것은 어떤 유형의 자연어 처리 워크로드의 예입니까?",
     "options": {
-      "A": "language detection",
-      "B": "sentiment analysis",
-      "C": "key phrase extraction",
-      "D": "entity recognition"
+      "A": "언어 감지",
+      "B": "감정 분석",
+      "C": "핵심 구문 추출",
+      "D": "엔터티 인식"
     },
     "answer": "B",
-    "explanation": "Sentiment Analysis is the process of determining whether a piece of writing is positive, negative\nor neutral.\nReference:\n\nlanguage-processing",
+    "explanation": "감정 분석은 글이 긍정적인지, 부정적인지 또는 중립적인지 판별하는 프로세스입니다.\n참고:\n\nlanguage-processing",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_147",
     "domain": "NLP",
-    "question": "You use natural language processing to process text from a Microsoft news story.\nYou receive the output shown in the following exhibit.\nWhich type of natural languages processing was performed?",
+    "question": "자연어 처리를 사용하여 Microsoft 뉴스 기사의 텍스트를 처리합니다.\n다음 전시에 표시된 출력을 받습니다.\n어떤 유형의 자연어 처리가 수행되었습니까?",
     "options": {
-      "A": "entity recognition",
-      "B": "key phrase extraction",
-      "C": "sentiment analysis",
-      "D": "translation"
+      "A": "엔터티 인식",
+      "B": "핵심 구문 추출",
+      "C": "감정 분석",
+      "D": "번역"
     },
     "answer": "A",
-    "explanation": "Named Entity Recognition (NER) is the ability to identify different entities in text and categorize\nthem into pre-defined classes or types such as: person, location, event, product, and organization.\nIn this question, the square brackets indicate the entities such as DateTime, PersonType, Skill.\nReference:\n\nhow-to-entity-linking?tabs=version-3-preview",
+    "explanation": "명명된 엔터티 인식(NER)은 텍스트에서 다양한 엔터티를 식별하고 사람, 위치, 이벤트, 제품, 조직 등 사전 정의된 클래스 또는 유형으로 분류하는 기능입니다.\n이 질문에서 대괄호는 DateTime, PersonType, Skill 등의 엔터티를 나타냅니다.\n참고:\n\nhow-to-entity-linking?tabs=version-3-preview",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_149",
     "domain": "NLP",
-    "question": "You are authoring a Language Understanding (LUIS) application to support a music festival.\nYou want users to be able to ask questions about scheduled shows, such as: “Which act is\nplaying on the main stage?”\nThe question “Which act is playing on the main stage?” is an example of which type of element?",
+    "question": "음악 페스티벌을 지원하기 위한 Language Understanding (LUIS) 애플리케이션을 작성하고 있습니다.\n사용자가 \"메인 스테이지에서 어떤 공연이 진행되나요?\"와 같은 예정된 공연에 대한 질문을 할 수 있기를 원합니다.\n\"메인 스테이지에서 어떤 공연이 진행되나요?\"라는 질문은 어떤 유형의 요소의 예입니까?",
     "options": {
-      "A": "an intent",
-      "B": "an utterance",
-      "C": "a domain",
-      "D": "an entity"
+      "A": "의도(intent)",
+      "B": "발화(utterance)",
+      "C": "도메인",
+      "D": "엔터티(entity)"
     },
     "answer": "B",
-    "explanation": "Utterances are input from the user that your app needs to interpret.\nReference:",
+    "explanation": "발화(utterance)는 앱이 해석해야 하는 사용자의 입력입니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_150",
     "domain": "NLP",
-    "question": "You build a QnA Maker bot by using a frequently asked questions (FAQ) page.\nYou need to add professional greetings and other responses to make the bot more user friendly.\nWhat should you do?",
+    "question": "자주 묻는 질문(FAQ) 페이지를 사용하여 QnA Maker 봇을 구축합니다.\n봇을 더 사용자 친화적으로 만들기 위해 전문적인 인사말과 기타 응답을 추가해야 합니다.\n어떻게 해야 합니까?",
     "options": {
-      "A": "Increase the confidence threshold of responses",
-      "B": "Enable active learning",
-      "C": "Create multi-turn questions",
-      "D": "Add chit-chat"
+      "A": "응답의 신뢰도 임계값을 높입니다",
+      "B": "능동 학습을 활성화합니다",
+      "C": "다중 턴 질문을 만듭니다",
+      "D": "잡담(chit-chat)을 추가합니다"
     },
     "answer": "D",
     "explanation": "knowledge-base?tabs=v1",
@@ -1119,7 +1119,7 @@
   {
     "id": "q_151",
     "domain": "NLP",
-    "question": "You need to develop a chatbot for a website. The chatbot must answer users’ questions based on\nthe information in the following documents:\n• A product troubleshooting guide in a Microsoft Word document\n• A frequently asked questions (FAQ) list on a webpage\nWhich service should you use to process the documents?",
+    "question": "웹사이트용 챗봇을 개발해야 합니다. 챗봇은 다음 문서의 정보를 기반으로 사용자의 질문에 답해야 합니다:\n• Microsoft Word 문서의 제품 문제 해결 가이드\n• 웹페이지의 자주 묻는 질문(FAQ) 목록\n문서를 처리하기 위해 어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Azure Bot Service",
       "B": "Language Understanding",
@@ -1127,60 +1127,60 @@
       "D": "QnA Maker"
     },
     "answer": "D",
-    "explanation": "The correct answer is D.",
+    "explanation": "정답은 D입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_152",
     "domain": "NLP",
-    "question": "You are building a Language Understanding model for an e-commerce business.\nYou need to ensure that the model detects when utterances are outside the intended scope of the\nmodel.\nWhat should you do?",
+    "question": "전자 상거래 비즈니스를 위한 Language Understanding 모델을 구축하고 있습니다.\n모델이 의도된 범위를 벗어난 발화를 감지하도록 해야 합니다.\n어떻게 해야 합니까?",
     "options": {
-      "A": "Test the model by using new utterances",
-      "B": "Add utterances to the None intent",
-      "C": "Create a prebuilt task entity",
-      "D": "Create a new model"
+      "A": "새로운 발화를 사용하여 모델을 테스트합니다",
+      "B": "None 의도에 발화를 추가합니다",
+      "C": "미리 빌드된 작업 엔터티를 만듭니다",
+      "D": "새 모델을 만듭니다"
     },
     "answer": "B",
-    "explanation": "The None intent is filled with utterances that are outside of your domain.\nReference:",
+    "explanation": "None 의도는 도메인 밖의 발화로 채워집니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_153",
     "domain": "NLP",
-    "question": "Which two scenarios are examples of a natural language processing workload? Each correct\nanswer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "자연어 처리 워크로드의 예인 두 가지 시나리오는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "monitoring the temperature of machinery to turn on a fan when the temperature reaches a",
-      "B": "a smart device in the home that responds to questions such as, \"What will the weather be like",
-      "C": "a website that uses a knowledge base to interactively respond to users' questions",
-      "D": "assembly line machinery that autonomously inserts headlamps into cars"
+      "A": "기계의 온도를 모니터링하여 온도가 특정 수준에 도달하면 팬을 켜는 것",
+      "B": "\"내일 날씨가 어떨까요?\"와 같은 질문에 응답하는 가정용 스마트 장치",
+      "C": "지식 기반을 사용하여 사용자의 질문에 대화형으로 응답하는 웹사이트",
+      "D": "자동차에 헤드램프를 자율적으로 삽입하는 조립 라인 기계"
     },
     "answer": "B",
-    "explanation": "Natural language processing (NLP) is used for tasks such as sentiment analysis, topic detection,\nlanguage detection, key phrase extraction, and document categorization.\nReference: \nchoices/natural-language-processing",
+    "explanation": "자연어 처리(NLP)는 감정 분석, 주제 감지, 언어 감지, 핵심 구문 추출 및 문서 분류와 같은 작업에 사용됩니다.\n참고:\nchoices/natural-language-processing",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_154",
     "domain": "NLP",
-    "question": "You have an AI solution that provides users with the ability to control smart devices by using\nverbal commands.\nWhich two types of natural language processing (NLP) workloads does the solution use? Each\ncorrect answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "사용자가 음성 명령을 사용하여 스마트 장치를 제어할 수 있는 AI 솔루션이 있습니다.\n솔루션이 사용하는 두 가지 유형의 자연어 처리(NLP) 워크로드는 무엇입니까? 각 정답은 솔루션의 일부를 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "text-to-speech",
-      "B": "key phrase extraction",
-      "C": "speech-to-text",
-      "D": "language modeling",
-      "E": "translation"
+      "A": "텍스트 음성 변환",
+      "B": "핵심 구문 추출",
+      "C": "음성 텍스트 변환",
+      "D": "언어 모델링",
+      "E": "번역"
     },
     "answer": "B",
-    "explanation": "Key phrase extraction is one of the features offered by Azure Cognitive Service for Language, a\ncollection of machine learning and AI algorithms in the cloud for developing intelligent\napplications that involve written language. Use key phrase extraction to quickly identify the\nmain concepts in text. For example, in the text \"The food was delicious and the staff were\nwonderful.\", key phrase extraction will return the main topics: \"food\" and \"wonderful staff\".",
+    "explanation": "핵심 구문 추출은 Azure Cognitive Service for Language에서 제공하는 기능 중 하나로, 클라우드에서 작성된 언어를 포함하는 지능형 애플리케이션을 개발하기 위한 머신러닝 및 AI 알고리즘 모음입니다. 핵심 구문 추출을 사용하여 텍스트의 주요 개념을 빠르게 식별합니다. 예를 들어, \"음식이 맛있었고 직원이 훌륭했습니다.\"라는 텍스트에서 핵심 구문 추출은 주요 주제인 \"음식\"과 \"훌륭한 직원\"을 반환합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_157",
     "domain": "NLP",
-    "question": "You need to make the written press releases of your company available in a range of languages.\nWhich service should you use?",
+    "question": "회사의 서면 보도 자료를 다양한 언어로 제공해야 합니다.\n어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Speech",
       "B": "Language",
@@ -1188,79 +1188,79 @@
       "D": "Personalizer"
     },
     "answer": "C",
-    "explanation": "Translator, an AI service for real-time document and text translation.\nTranslate text instantly or in batches across more than 100 languages, powered by the latest\ninnovations in machine translation. Support a wide range of use cases, such as translation for call\ncenters, multilingual conversational agents, or in-app communication.\nReference:",
+    "explanation": "Translator는 실시간 문서 및 텍스트 번역을 위한 AI 서비스입니다.\n기계 번역의 최신 혁신으로 구동되는 100개 이상의 언어로 텍스트를 즉시 또는 일괄 번역합니다. 콜센터 번역, 다국어 대화형 에이전트 또는 앱 내 통신과 같은 다양한 사용 사례를 지원합니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_158",
     "domain": "NLP",
-    "question": "You have insurance claim reports that are stored as text.\nYou need to extract key terms from the reports to generate summaries.\nWhich type of AI workload should you use?",
+    "question": "텍스트로 저장된 보험 청구 보고서가 있습니다.\n요약을 생성하기 위해 보고서에서 핵심 용어를 추출해야 합니다.\n어떤 유형의 AI 워크로드를 사용해야 합니까?",
     "options": {
-      "A": "anomaly detection",
-      "B": "natural language processing",
-      "C": "computer vision",
-      "D": "knowledge mining"
+      "A": "이상 탐지",
+      "B": "자연어 처리",
+      "C": "컴퓨터 비전",
+      "D": "지식 마이닝"
     },
     "answer": "B",
-    "explanation": "Key phrase extraction is one of the features offered by Azure Cognitive Service for Language, a\ncollection of machine learning and AI algorithms in the cloud for developing intelligent\napplications that involve written language. Use key phrase extraction to quickly identify the\nmain concepts in text. For example, in the text \"The food was delicious and the staff were\nwonderful.\", key phrase extraction will return the main topics: \"food\" and \"wonderful staff\".",
+    "explanation": "핵심 구문 추출은 Azure Cognitive Service for Language에서 제공하는 기능 중 하나로, 클라우드에서 작성된 언어를 포함하는 지능형 애플리케이션을 개발하기 위한 머신러닝 및 AI 알고리즘 모음입니다. 핵심 구문 추출을 사용하여 텍스트의 주요 개념을 빠르게 식별합니다. 예를 들어, \"음식이 맛있었고 직원이 훌륭했습니다.\"라는 텍스트에서 핵심 구문 추출은 주요 주제인 \"음식\"과 \"훌륭한 직원\"을 반환합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_159",
     "domain": "NLP",
-    "question": "You need to build an app that will read recipe instructions aloud to support users who have\nreduced vision.\nWhich version service should you use?",
+    "question": "시력이 저하된 사용자를 지원하기 위해 레시피 지침을 소리 내어 읽어주는 앱을 구축해야 합니다.\n어떤 서비스를 사용해야 합니까?",
     "options": {
-      "A": "Language service",
+      "A": "Language 서비스",
       "B": "Translator",
       "C": "Speech",
       "D": "Personalizer"
     },
     "answer": "C",
-    "explanation": "Speech, a managed service offering industry-leading speech capabilities such as speech-to-text,\ntext-to-speech, speech translation, and speaker recognition.\nReference:",
+    "explanation": "Speech는 음성 텍스트 변환, 텍스트 음성 변환, 음성 번역 및 화자 인식과 같은 업계 최고의 음성 기능을 제공하는 관리형 서비스입니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_161",
     "domain": "NLP",
-    "question": "An app that analyzes social media posts to identify their tone is an example of which type of\nnatural language processing (NLP) workload?",
+    "question": "소셜 미디어 게시물을 분석하여 그 어조를 식별하는 앱은 어떤 유형의 자연어 처리(NLP) 워크로드의 예입니까?",
     "options": {
-      "A": "sentiment analysis",
-      "B": "speech recognition",
-      "C": "key phrase extraction",
-      "D": "entity recognition"
+      "A": "감정 분석",
+      "B": "음성 인식",
+      "C": "핵심 구문 추출",
+      "D": "엔터티 인식"
     },
     "answer": "A",
-    "explanation": "Sentiment analysis is analytical technique that uses statistics, natural language processing, and\nmachine learning to determine the emotional meaning of communications. Companies use\nsentiment analysis to evaluate customer messages, call center interactions, online reviews, social\nmedia posts, and other content.\nReference: \nextract-meaning.html",
+    "explanation": "감정 분석은 통계, 자연어 처리 및 머신러닝을 사용하여 커뮤니케이션의 감정적 의미를 결정하는 분석 기법입니다. 기업은 감정 분석을 사용하여 고객 메시지, 콜센터 상호 작용, 온라인 리뷰, 소셜 미디어 게시물 및 기타 콘텐츠를 평가합니다.\n참고:\nextract-meaning.html",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_162",
     "domain": "NLP",
-    "question": "You are building a chatbot that will use natural language processing (NLP) to perform the\nfollowing actions based on the text input of a user.\n• Accept customer orders.\n• Retrieve support documents.\n• Retrieve order status updates.\nWhich type of NLP should you use?",
+    "question": "사용자의 텍스트 입력을 기반으로 다음 작업을 수행하기 위해 자연어 처리(NLP)를 사용하는 챗봇을 구축하고 있습니다.\n• 고객 주문 수락.\n• 지원 문서 검색.\n• 주문 상태 업데이트 검색.\n어떤 유형의 NLP를 사용해야 합니까?",
     "options": {
-      "A": "sentiment analysis",
-      "B": "named entity recognition",
-      "C": "translation",
-      "D": "language modeling"
+      "A": "감정 분석",
+      "B": "명명된 엔터티 인식",
+      "C": "번역",
+      "D": "언어 모델링"
     },
     "answer": "B",
-    "explanation": "What is custom named entity recognition (NER)?\nCustom NER is one of the custom features offered by Azure Cognitive Service for Language. It\nis a cloud-based API service that applies machine-learning intelligence to enable you to build\ncustom models for custom named entity recognition tasks.\nCustom NER enables users to build custom AI models to extract domain-specific entities from\nunstructured text, such as contracts or financial documents.\nReference: \nnamed-entity-recognition/overview",
+    "explanation": "커스텀 명명된 엔터티 인식(NER)이란 무엇입니까?\n커스텀 NER은 Azure Cognitive Service for Language에서 제공하는 커스텀 기능 중 하나입니다. 계약서나 재무 문서와 같은 비정형 텍스트에서 도메인별 엔터티를 추출하기 위한 커스텀 모델을 구축할 수 있는 클라우드 기반 API 서비스입니다.\n커스텀 NER은 사용자가 계약서나 재무 문서와 같은 비정형 텍스트에서 도메인별 엔터티를 추출하기 위한 커스텀 AI 모델을 구축할 수 있게 합니다.\n참고:\nnamed-entity-recognition/overview",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_165",
     "domain": "NLP",
-    "question": "You have a website that includes customer reviews.\nYou need to store the reviews in English and present the reviews to users in their respective\nlanguage by recognizing each user's geographical location.\nWhich type of natural language processing workload should you use?",
+    "question": "고객 리뷰가 포함된 웹사이트가 있습니다.\n리뷰를 영어로 저장하고 각 사용자의 지리적 위치를 인식하여 해당 언어로 리뷰를 제공해야 합니다.\n어떤 유형의 자연어 처리 워크로드를 사용해야 합니까?",
     "options": {
-      "A": "key phrase extraction",
-      "B": "speech recognition",
-      "C": "language modeling",
-      "D": "translation"
+      "A": "핵심 구문 추출",
+      "B": "음성 인식",
+      "C": "언어 모델링",
+      "D": "번역"
     },
     "answer": "A",
     "explanation": "",
@@ -1270,42 +1270,42 @@
   {
     "id": "q_168",
     "domain": "NLP",
-    "question": "You have a custom question answering solution.\nYou create a bot that uses the knowledge base to respond to customer requests.\nYou need to identify what the bot can perform without adding additional skills.\nWhat should you identify?",
+    "question": "커스텀 질문 답변 솔루션이 있습니다.\n지식 기반을 사용하여 고객 요청에 응답하는 봇을 만듭니다.\n추가 스킬을 추가하지 않고 봇이 수행할 수 있는 것을 식별해야 합니다.\n무엇을 식별해야 합니까?",
     "options": {
-      "A": "Register customer purchases.",
-      "B": "Register customer complaints.",
-      "C": "Answer questions from multiple users simultaneously.",
-      "D": "Provide customers with return materials authorization (RMA) numbers."
+      "A": "고객 구매를 등록합니다.",
+      "B": "고객 불만을 등록합니다.",
+      "C": "여러 사용자의 질문에 동시에 답변합니다.",
+      "D": "고객에게 반품 승인(RMA) 번호를 제공합니다."
     },
     "answer": "C",
-    "explanation": "Incorrect:\nSkill actions include\n* Use skills for complex, multi-turn operations. For example, schedule a meeting or book a\nflight. (Not A, Not B)\n* Use skills to emit any supported bot response. For example, show an adaptive card or send\nrandom responses. (not C)\nReference:",
+    "explanation": "오답:\n스킬 작업에는 다음이 포함됩니다\n* 복잡한 다중 턴 작업에 스킬을 사용합니다. 예: 회의 일정 잡기 또는 항공편 예약. (A 아님, B 아님)\n* 지원되는 봇 응답을 내보내기 위해 스킬을 사용합니다. 예: 적응형 카드 표시 또는 임의 응답 전송. (C 아님)\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_169",
     "domain": "NLP",
-    "question": "You have a solution that analyzes social media posts to extract the mentions of city names and\nthe city names discussed most frequently.\nWhich type of natural language processing (NLP) workload does the solution use?",
+    "question": "소셜 미디어 게시물을 분석하여 도시 이름의 언급을 추출하고 가장 자주 논의되는 도시 이름을 파악하는 솔루션이 있습니다.\n솔루션이 사용하는 자연어 처리(NLP) 워크로드의 유형은 무엇입니까?",
     "options": {
-      "A": "speech recognition",
-      "B": "sentiment analysis",
-      "C": "key phrase extraction",
-      "D": "entity recognition"
+      "A": "음성 인식",
+      "B": "감정 분석",
+      "C": "핵심 구문 추출",
+      "D": "엔터티 인식"
     },
     "answer": "C",
-    "explanation": "Key phrase extraction is one of the features offered by Azure Cognitive Service for Language, a\ncollection of machine learning and AI algorithms in the cloud for developing intelligent\napplications that involve written language. Use key phrase extraction to quickly identify the\nmain concepts in text. For example, in the text \"The food was delicious and the staff were\nwonderful.\", key phrase extraction will return the main topics: \"food\" and \"wonderful staff\".",
+    "explanation": "핵심 구문 추출은 Azure Cognitive Service for Language에서 제공하는 기능 중 하나로, 클라우드에서 작성된 언어를 포함하는 지능형 애플리케이션을 개발하기 위한 머신러닝 및 AI 알고리즘 모음입니다. 핵심 구문 추출을 사용하여 텍스트의 주요 개념을 빠르게 식별합니다. 예를 들어, \"음식이 맛있었고 직원이 훌륭했습니다.\"라는 텍스트에서 핵심 구문 추출은 주요 주제인 \"음식\"과 \"훌륭한 직원\"을 반환합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_171",
     "domain": "NLP",
-    "question": "You have a webchat bot that provides responses from a QnA Maker knowledge base.\nYou need to ensure that the bot uses user feedback to improve the relevance of the responses\nover time.\nWhat should you use?",
+    "question": "QnA Maker 지식 기반의 응답을 제공하는 웹챗 봇이 있습니다.\n봇이 사용자 피드백을 사용하여 시간이 지남에 따라 응답의 관련성을 개선하도록 해야 합니다.\n무엇을 사용해야 합니까?",
     "options": {
-      "A": "key phrase extraction",
-      "B": "sentiment analysis",
-      "C": "business logic",
-      "D": "active learning"
+      "A": "핵심 구문 추출",
+      "B": "감정 분석",
+      "C": "비즈니스 로직",
+      "D": "능동 학습"
     },
     "answer": "D",
     "explanation": "knowledge-base",
@@ -1315,7 +1315,7 @@
   {
     "id": "q_172",
     "domain": "NLP",
-    "question": "You are developing a conversational AI solution that will communicate with users through\nmultiple channels including email, Microsoft Teams, and webchat.\nWhich service should you use?",
+    "question": "이메일, Microsoft Teams 및 웹챗을 포함한 여러 채널을 통해 사용자와 소통하는 대화형 AI 솔루션을 개발하고 있습니다.\n어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Text Analytics",
       "B": "Azure Bot Service",
@@ -1330,23 +1330,23 @@
   {
     "id": "q_174",
     "domain": "NLP",
-    "question": "You need to provide content for a business chatbot that will help answer simple user queries.\nWhat are three ways to create question and answer text by using QnA Maker? Each correct\nanswer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "간단한 사용자 쿼리에 답변하는 비즈니스 챗봇용 콘텐츠를 제공해야 합니다.\nQnA Maker를 사용하여 질문과 답변 텍스트를 만드는 세 가지 방법은 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "Generate the questions and answers from an existing webpage.",
-      "B": "Use automated machine learning to train a model based on a file that contains the questions.",
-      "C": "Manually enter the questions and answers.",
-      "D": "Connect the bot to the Cortana channel and ask questions by using Cortana.",
-      "E": "Import chit-chat content from a predefined data source."
+      "A": "기존 웹페이지에서 질문과 답변을 생성합니다.",
+      "B": "질문이 포함된 파일을 기반으로 자동화된 머신러닝을 사용하여 모델을 학습시킵니다.",
+      "C": "수동으로 질문과 답변을 입력합니다.",
+      "D": "봇을 Cortana 채널에 연결하고 Cortana를 사용하여 질문합니다.",
+      "E": "미리 정의된 데이터 소스에서 잡담 콘텐츠를 가져옵니다."
     },
     "answer": "A",
-    "explanation": "Automatic extraction\nExtract question-answer pairs from semi-structured content, including FAQ pages, support\nwebsites, excel files, SharePoint documents, product manuals and policies.\nReference:",
+    "explanation": "자동 추출\n자주 묻는 질문 페이지, 지원 웹사이트, Excel 파일, SharePoint 문서, 제품 매뉴얼 및 정책을 포함한 반구조화된 콘텐츠에서 질문-답변 쌍을 추출합니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_175",
     "domain": "NLP",
-    "question": "You have a frequently asked questions (FAQ) PDF file.\nYou need to create a conversational support system based on the FAQ.\nWhich service should you use?",
+    "question": "자주 묻는 질문(FAQ) PDF 파일이 있습니다.\nFAQ를 기반으로 대화형 지원 시스템을 만들어야 합니다.\n어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "QnA Maker",
       "B": "Text Analytics",
@@ -1354,14 +1354,14 @@
       "D": "Language Understanding (LUIS)"
     },
     "answer": "A",
-    "explanation": "QnA Maker is a cloud-based API service that lets you create a conversational question-and-\nanswer layer over your existing data. Use it to build a knowledge base by extracting questions\nand answers from your semi-structured content, including FAQs, manuals, and documents.\nReference:",
+    "explanation": "QnA Maker는 기존 데이터 위에 대화형 질문-답변 계층을 만들 수 있는 클라우드 기반 API 서비스입니다. FAQ, 매뉴얼 및 문서를 포함한 반구조화된 콘텐츠에서 질문과 답변을 추출하여 지식 기반을 구축하는 데 사용합니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_176",
     "domain": "NLP",
-    "question": "You need to reduce the load on telephone operators by implementing a chatbot to answer simple\nquestions with predefined answers.\nWhich two AI service should you use to achieve the goal? Each correct answer presents part of\nthe solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "미리 정의된 답변으로 간단한 질문에 답하는 챗봇을 구현하여 전화 상담원의 부담을 줄여야 합니다.\n목표를 달성하기 위해 어떤 두 가지 AI 서비스를 사용해야 합니까? 각 정답은 솔루션의 일부를 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
       "A": "Text Analytics",
       "B": "QnA Maker",
@@ -1369,19 +1369,19 @@
       "D": "Translator"
     },
     "answer": "B",
-    "explanation": "Bots are a popular way to provide support through multiple communication channels. You can\nuse the QnA Maker service and Azure Bot Service to create a bot that answers user questions.\nReference:",
+    "explanation": "봇은 여러 통신 채널을 통해 지원을 제공하는 인기 있는 방법입니다. QnA Maker 서비스와 Azure Bot Service를 사용하여 사용자 질문에 답하는 봇을 만들 수 있습니다.\n참고:",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_177",
     "domain": "NLP",
-    "question": "Which two scenarios are examples of a conversational AI workload? Each correct answer\npresents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "대화형 AI 워크로드의 예인 두 가지 시나리오는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "a smart device in the home that responds to questions such as “What will the weather be like",
-      "B": "a website that uses a knowledge base to interactively respond to users’ questions",
-      "C": "assembly line machinery that autonomously inserts headlamps into cars",
-      "D": "monitoring the temperature of machinery to turn on a fan when the temperature reaches a"
+      "A": "\"내일 날씨가 어떨까요?\"와 같은 질문에 응답하는 가정용 스마트 장치",
+      "B": "지식 기반을 사용하여 사용자의 질문에 대화형으로 응답하는 웹사이트",
+      "C": "자동차에 헤드램프를 자율적으로 삽입하는 조립 라인 기계",
+      "D": "기계의 온도를 모니터링하여 온도가 특정 수준에 도달하면 팬을 켜는 것"
     },
     "answer": "A",
     "explanation": "",
@@ -1391,12 +1391,12 @@
   {
     "id": "q_178",
     "domain": "NLP",
-    "question": "You have the process shown in the following exhibit.\nWhich type of AI solution is shown in the diagram?",
+    "question": "다음 전시에 표시된 프로세스가 있습니다.\n다이어그램에 표시된 AI 솔루션의 유형은 무엇입니까?",
     "options": {
-      "A": "a sentiment analysis solution",
-      "B": "a chatbot",
-      "C": "a machine learning model",
-      "D": "a computer vision application"
+      "A": "감정 분석 솔루션",
+      "B": "챗봇",
+      "C": "머신러닝 모델",
+      "D": "컴퓨터 비전 애플리케이션"
     },
     "answer": "B",
     "explanation": "",
@@ -1406,7 +1406,7 @@
   {
     "id": "q_179",
     "domain": "NLP",
-    "question": "You need to develop a web-based AI solution for a customer support system. Users must be able\nto interact with a web app that will guide them to the best resource or answer.\nWhich service should you use?",
+    "question": "고객 지원 시스템을 위한 웹 기반 AI 솔루션을 개발해야 합니다. 사용자가 최적의 리소스나 답변으로 안내하는 웹 앱과 상호 작용할 수 있어야 합니다.\n어떤 서비스를 사용해야 합니까?",
     "options": {
       "A": "Custom Vision",
       "B": "QnA Maker",
@@ -1414,14 +1414,14 @@
       "D": "Face"
     },
     "answer": "B",
-    "explanation": "QnA Maker is a cloud-based API service that lets you create a conversational question-and-\nanswer layer over your existing data. Use it to build a knowledge base by extracting questions\nand answers from your semi-structured content, including FAQs, manuals, and documents.\nAnswer users’ questions with the best answers from the QnAs in your knowledge base—\nautomatically. Your knowledge base gets smarter, too, as it continually learns from user\nbehavior.",
+    "explanation": "QnA Maker는 기존 데이터 위에 대화형 질문-답변 계층을 만들 수 있는 클라우드 기반 API 서비스입니다. FAQ, 매뉴얼 및 문서를 포함한 반구조화된 콘텐츠에서 질문과 답변을 추출하여 지식 기반을 구축하는 데 사용합니다.\n지식 기반의 QnA에서 최적의 답변으로 사용자의 질문에 자동으로 답합니다. 지식 기반은 사용자 행동에서 지속적으로 학습하여 더 똑똑해집니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_180",
     "domain": "NLP",
-    "question": "Which AI service should you use to create a bot from a frequently asked questions (FAQ)\ndocument?",
+    "question": "자주 묻는 질문(FAQ) 문서에서 봇을 만들기 위해 어떤 AI 서비스를 사용해야 합니까?",
     "options": {
       "A": "QnA Maker",
       "B": "Language Understanding (LUIS)",
@@ -1436,12 +1436,12 @@
   {
     "id": "q_182",
     "domain": "NLP",
-    "question": "Which scenario is an example of a webchat bot?",
+    "question": "웹챗 봇의 예인 시나리오는 무엇입니까?",
     "options": {
-      "A": "Determine whether reviews entered on a website for a concert are positive or negative, and",
-      "B": "Translate into English questions entered by customers at a kiosk so that the appropriate person",
-      "C": "Accept questions through email, and then route the email messages to the correct person",
-      "D": "From a website interface, answer common questions about scheduled events and ticket"
+      "A": "콘서트에 대한 웹사이트에 입력된 리뷰가 긍정적인지 부정적인지 판별하고",
+      "B": "키오스크에서 고객이 입력한 질문을 영어로 번역하여 적절한 사람이",
+      "C": "이메일을 통해 질문을 받고, 이메일 메시지를 올바른 사람에게 전달하는",
+      "D": "웹사이트 인터페이스에서 예정된 이벤트와 티켓에 대한 일반적인 질문에 답변하는"
     },
     "answer": "D",
     "explanation": "",
@@ -1451,42 +1451,42 @@
   {
     "id": "q_186",
     "domain": "NLP",
-    "question": "Which two scenarios are examples of a conversational AI workload? Each correct answer\npresents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "대화형 AI 워크로드의 예인 두 가지 시나리오는 무엇입니까? 각 정답은 완전한 솔루션을 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
-      "A": "a telephone answering service that has a pre-recorder message",
-      "B": "a chatbot that provides users with the ability to find answers on a website by themselves",
-      "C": "telephone voice menus to reduce the load on human resources",
-      "D": "a service that creates frequently asked questions (FAQ) documents by crawling public"
+      "A": "사전 녹음된 메시지가 있는 전화 응답 서비스",
+      "B": "사용자가 웹사이트에서 스스로 답변을 찾을 수 있도록 하는 챗봇",
+      "C": "인적 자원의 부담을 줄이기 위한 전화 음성 메뉴",
+      "D": "공개 문서를 크롤링하여 자주 묻는 질문(FAQ) 문서를 만드는 서비스"
     },
     "answer": "B",
-    "explanation": "B: A bot is an automated software program designed to perform a particular task. Think of it as a\nrobot without a body.\nC: Automated customer interaction is essential to a business of any size. In fact, 61% of\nconsumers prefer to communicate via speech, and most of them prefer self-service. Because\ncustomer satisfaction is a priority for all businesses, self-service is a critical facet of any\ncustomer-facing communications strategy.",
+    "explanation": "B: 봇은 특정 작업을 수행하도록 설계된 자동화된 소프트웨어 프로그램입니다. 몸이 없는 로봇이라고 생각하세요.\nC: 자동화된 고객 상호 작용은 모든 규모의 비즈니스에 필수적입니다. 실제로 소비자의 61%가 음성을 통한 소통을 선호하며, 대부분은 셀프 서비스를 선호합니다. 고객 만족이 모든 비즈니스의 우선 과제이기 때문에 셀프 서비스는 고객 대면 커뮤니케이션 전략의 핵심 측면입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_189",
     "domain": "NLP",
-    "question": "You have a knowledge base of frequently asked questions (FAQ).\nYou create a bot that uses the knowledge base to respond to customer requests.\nYou need to identify what the bot can perform without adding additional skills.\nWhat should you identify?",
+    "question": "자주 묻는 질문(FAQ) 지식 기반이 있습니다.\n지식 기반을 사용하여 고객 요청에 응답하는 봇을 만듭니다.\n추가 스킬을 추가하지 않고 봇이 수행할 수 있는 것을 식별해야 합니다.\n무엇을 식별해야 합니까?",
     "options": {
-      "A": "Register customer purchases.",
-      "B": "Register customer complaints.",
-      "C": "Answer questions from multiple users simultaneously.",
-      "D": "Provide customers with return materials authorization (RMA) numbers."
+      "A": "고객 구매를 등록합니다.",
+      "B": "고객 불만을 등록합니다.",
+      "C": "여러 사용자의 질문에 동시에 답변합니다.",
+      "D": "고객에게 반품 승인(RMA) 번호를 제공합니다."
     },
     "answer": "C",
-    "explanation": "The correct answer is C.",
+    "explanation": "정답은 C입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
   {
     "id": "q_193",
     "domain": "NLP",
-    "question": "You have an Azure Machine Learning pipeline that contains a Split Data module.\nThe Split Data module outputs to a Train Model module and a Score Model module.\nWhat is the function of the Split Data module?",
+    "question": "Split Data 모듈이 포함된 Azure Machine Learning 파이프라인이 있습니다.\nSplit Data 모듈은 Train Model 모듈과 Score Model 모듈로 출력됩니다.\nSplit Data 모듈의 기능은 무엇입니까?",
     "options": {
-      "A": "scaling numeric variables so that they are within a consistent numeric range",
-      "B": "creating training and validation datasets",
-      "C": "diverting records that have missing data",
-      "D": "selecting columns that must be included in the model"
+      "A": "숫자 변수를 일관된 숫자 범위 내에 있도록 스케일링",
+      "B": "학습 및 검증 데이터셋 만들기",
+      "C": "누락된 데이터가 있는 레코드 전환",
+      "D": "모델에 포함해야 하는 열 선택"
     },
     "answer": "B",
     "explanation": "",
@@ -1496,12 +1496,12 @@
   {
     "id": "q_194",
     "domain": "NLP",
-    "question": "Which statement is an example of a Microsoft responsible AI principle?",
+    "question": "다음 중 Microsoft의 책임 있는 AI 원칙의 예인 문장은 무엇입니까?",
     "options": {
-      "A": "AI systems must use only publicly available data",
-      "B": "AI systems must be transparent and inclusive",
-      "C": "AI systems must keep personal details public",
-      "D": "AI systems must protect the interests of the company"
+      "A": "AI 시스템은 공개적으로 사용 가능한 데이터만 사용해야 합니다",
+      "B": "AI 시스템은 투명하고 포용적이어야 합니다",
+      "C": "AI 시스템은 개인 정보를 공개해야 합니다",
+      "D": "AI 시스템은 회사의 이익을 보호해야 합니다"
     },
     "answer": "B",
     "explanation": "",
@@ -1511,7 +1511,7 @@
   {
     "id": "q_196",
     "domain": "NLP",
-    "question": "You need to reduce the load on telephone operators by implementing a chatbot to answer simple\nquestions with predefined answers.\nWhich two AI services should you use to achieve the goal? Each correct answers presents part of\nthe solution.\nNOTE: Each correct selection is worth one point.",
+    "question": "미리 정의된 답변으로 간단한 질문에 답하는 챗봇을 구현하여 전화 상담원의 부담을 줄여야 합니다.\n목표를 달성하기 위해 어떤 두 가지 AI 서비스를 사용해야 합니까? 각 정답은 솔루션의 일부를 제시합니다.\n참고: 각 올바른 선택은 1점입니다.",
     "options": {
       "A": "Azure Machine Learning",
       "B": "Azure Bot Service",

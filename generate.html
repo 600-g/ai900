@@ -8,11 +8,29 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <style>
 :root { --ms-blue:#0078d4; --ms-dark:#1b1b1b; --ms-green:#107c10; --ms-red:#d13438; --ms-orange:#ff8c00; --ms-bg:#f3f2f1; --ms-card:#fff; --ms-border:#e1dfdd; --ms-text:#323130; --ms-muted:#605e5c; }
-[data-theme="dark"] { --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a; }
-[data-theme="dark"] .header { background:var(--ms-card); border-color:var(--ms-border); }
-[data-theme="dark"] .top-bar { background:var(--ms-dark); }
+/* ===== DARK MODE ===== */
+[data-theme="dark"] {
+  --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a;
+  color-scheme: dark;
+}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4,
+[data-theme="dark"] p,[data-theme="dark"] span,[data-theme="dark"] div,[data-theme="dark"] li,
+[data-theme="dark"] label,[data-theme="dark"] strong,
+[data-theme="dark"] input,[data-theme="dark"] select { color: var(--ms-text); }
+[data-theme="dark"] .badge-exam,[data-theme="dark"] .btn-generate,
+[data-theme="dark"] .btn-save,[data-theme="dark"] .btn-download,[data-theme="dark"] .btn-clear-gen { color:#fff; }
+[data-theme="dark"] .top-bar { background:var(--ms-dark); color:#fff; }
+[data-theme="dark"] .header { background:var(--ms-card); }
+[data-theme="dark"] .card { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .sg { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .form-input,[data-theme="dark"] .form-select { background:var(--ms-bg); border-color:var(--ms-border); }
+[data-theme="dark"] .cost-info { background:#2d2510; border-color:#5c4a1a; }
+[data-theme="dark"] .gen-q { background:#374151; border-color:var(--ms-blue); }
+[data-theme="dark"] .saved-info { background:#0d2818; }
+[data-theme="dark"] .key-status.connected { background:#0d2818; border-color:#107c10; }
 [data-theme="dark"] .nav-links a.active { background:#1e3a5f; }
 [data-theme="dark"] .nav-links a:hover { background:rgba(255,255,255,.08); }
+
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg); color:var(--ms-text); }
 .top-bar { background:var(--ms-dark); color:#fff; padding:8px 20px; font-size:.8rem; }
@@ -25,39 +43,57 @@ body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg);
 .nav-links a.active { color:var(--ms-blue); background:#e8f0fe; }
 .wrap { max-width:860px; margin:0 auto; padding:24px 16px; }
 
-.card { background:var(--ms-card); border-radius:12px; padding:24px; border:1px solid var(--ms-border); margin-bottom:20px; }
-.card h3 { font-size:1.1rem; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
-
 .stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:24px; }
 .sg { background:var(--ms-card); border-radius:10px; padding:18px; text-align:center; border:1px solid var(--ms-border); }
 .sg .v { font-size:1.8rem; font-weight:800; color:var(--ms-blue); }
 .sg .l { font-size:.75rem; color:var(--ms-muted); margin-top:2px; }
 
-.domain-row { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
-.domain-row .label { min-width:140px; font-size:.85rem; }
-.domain-row .bar-bg { flex:1; height:8px; background:var(--ms-border); border-radius:4px; overflow:hidden; }
-.domain-row .bar { height:100%; border-radius:4px; }
-.domain-row .count { font-size:.85rem; color:var(--ms-muted); min-width:60px; text-align:right; }
+.card { background:var(--ms-card); border-radius:12px; padding:24px; border:1px solid var(--ms-border); margin-bottom:20px; }
+.card h3 { font-size:1.1rem; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+.form-label { font-size:.9rem; font-weight:600; margin-bottom:6px; display:block; }
+.form-input { width:100%; padding:10px 14px; border:1px solid var(--ms-border); border-radius:8px; font-size:.9rem; background:var(--ms-card); color:var(--ms-text); }
+.form-input:focus { outline:none; border-color:var(--ms-blue); box-shadow:0 0 0 3px rgba(0,120,212,.15); }
+.form-select { width:100%; padding:10px 14px; border:1px solid var(--ms-border); border-radius:8px; font-size:.9rem; background:var(--ms-card); color:var(--ms-text); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.form-group { margin-bottom:16px; }
 
-.how-to { background:var(--ms-card); border-radius:12px; padding:24px; border:1px solid var(--ms-border); margin-bottom:20px; }
-.how-to h3 { font-size:1.1rem; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
-.step { display:flex; gap:14px; margin-bottom:16px; align-items:flex-start; }
-.step:last-child { margin-bottom:0; }
-.step-num { width:32px; height:32px; border-radius:50%; background:var(--ms-blue); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.9rem; flex-shrink:0; }
-.step-text { font-size:.9rem; line-height:1.6; padding-top:4px; }
-.step-text code { background:var(--ms-bg); padding:2px 8px; border-radius:4px; font-size:.85rem; }
-[data-theme="dark"] .step-text code { background:#374151; }
+/* API 키 상태 */
+.key-status { padding:12px 16px; border-radius:8px; font-size:.9rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.key-status.none { background:#fde7e9; border:1px solid var(--ms-red); }
+.key-status.connected { background:#dff6dd; border:1px solid var(--ms-green); }
+.key-input-row { display:flex; gap:8px; }
+.key-input-row input { flex:1; }
+.btn-key { padding:10px 16px; border-radius:8px; border:none; cursor:pointer; font-weight:600; font-size:.85rem; white-space:nowrap; }
+.btn-key-save { background:var(--ms-blue); color:#fff; }
+.btn-key-del { background:var(--ms-red); color:#fff; }
+.api-hint { font-size:.8rem; color:var(--ms-muted); margin-top:6px; }
+.api-hint a { color:var(--ms-blue); }
 
-.example-box { background:var(--ms-bg); border-radius:8px; padding:16px; margin-top:16px; font-size:.85rem; line-height:1.6; }
-[data-theme="dark"] .example-box { background:#374151; }
-.example-box .ex-title { font-weight:700; margin-bottom:8px; color:var(--ms-blue); }
+.btn-generate { display:block; width:100%; padding:16px; background:var(--ms-blue); color:#fff; border:none; border-radius:10px; font-size:1.1rem; font-weight:700; cursor:pointer; transition:background .15s; }
+.btn-generate:hover { background:#106ebe; }
+.btn-generate:disabled { background:#c8c6c4; cursor:not-allowed; }
+.cost-info { background:#fff8e6; border:1px solid #ffd54f; padding:12px 16px; border-radius:8px; font-size:.85rem; margin-bottom:16px; }
 
+.progress-box { display:none; text-align:center; padding:32px; }
+.progress-box.show { display:block; }
+.spinner { width:48px; height:48px; border:4px solid var(--ms-border); border-top-color:var(--ms-blue); border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 16px; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.result-box { display:none; }
+.result-box.show { display:block; }
+.gen-q { background:var(--ms-bg); border-radius:8px; padding:16px; margin-bottom:10px; border-left:4px solid var(--ms-blue); }
+.gen-q .gq-domain { font-size:.75rem; color:var(--ms-blue); font-weight:600; margin-bottom:4px; }
+.gen-q .gq-text { font-size:.9rem; line-height:1.5; margin-bottom:8px; }
+.gen-q .gq-opts { font-size:.85rem; color:var(--ms-muted); }
+
+.saved-info { display:flex; gap:12px; padding:14px 20px; background:#dff6dd; border-radius:8px; font-size:.9rem; align-items:center; margin-bottom:16px; }
 .btn-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
 .btn-row button { padding:10px 20px; border-radius:8px; border:none; cursor:pointer; font-weight:600; font-size:.9rem; display:flex; align-items:center; gap:6px; }
+.btn-save { background:var(--ms-green); color:#fff; }
 .btn-download { background:var(--ms-blue); color:#fff; }
 .btn-clear-gen { background:var(--ms-red); color:#fff; }
 
-@media (max-width:600px) { .stat-grid { grid-template-columns:1fr; } .header { flex-direction:column; align-items:flex-start; } .nav-links { flex-wrap:wrap; } }
+@media (max-width:600px) { .form-row { grid-template-columns:1fr; } .stat-grid { grid-template-columns:1fr; } .header { flex-direction:column; align-items:flex-start; } .nav-links { flex-wrap:wrap; } }
 </style>
 <script>
 (function(){ if(localStorage.getItem('ai900_dark_mode')==='true') document.documentElement.setAttribute('data-theme','dark'); })();
@@ -80,107 +116,305 @@ body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg);
 <div class="wrap">
   <div class="stat-grid" id="stat-grid"></div>
 
-  <div class="card">
-    <h3><i class="bi bi-pie-chart-fill" style="color:var(--ms-blue)"></i> 도메인별 문제 현황</h3>
-    <div id="domain-list"></div>
+  <!-- API 키 영역 -->
+  <div class="card" id="key-card">
+    <h3><i class="bi bi-key-fill" style="color:var(--ms-orange)"></i> API 키</h3>
+    <div id="key-area"></div>
   </div>
 
-  <div class="how-to">
-    <h3><i class="bi bi-stars" style="color:var(--ms-orange)"></i> 문제 생성 방법</h3>
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-text">터미널에서 <strong>Claude Code</strong>를 실행합니다.<br><code>claude</code></div>
+  <!-- 생성 옵션 (키 등록 후 표시) -->
+  <div class="card" id="gen-card" style="display:none;">
+    <h3><i class="bi bi-sliders" style="color:var(--ms-blue)"></i> 문제 생성</h3>
+    <div class="form-row">
+      <div>
+        <label class="form-label">도메인</label>
+        <select class="form-select" id="gen-domain">
+          <option value="전체">전체 (골고루)</option>
+          <option value="AI Workloads">AI 워크로드</option>
+          <option value="Machine Learning">머신러닝</option>
+          <option value="Computer Vision">컴퓨터 비전</option>
+          <option value="NLP">자연어 처리 (NLP)</option>
+          <option value="Responsible AI">책임 있는 AI</option>
+          <option value="Conversational AI">대화형 AI</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">문제 수</label>
+        <select class="form-select" id="gen-count">
+          <option value="5">5문제</option>
+          <option value="10" selected>10문제</option>
+          <option value="20">20문제</option>
+        </select>
+      </div>
     </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-text">원하는 도메인과 문제 수를 요청합니다.</div>
+    <div class="form-row">
+      <div>
+        <label class="form-label">난이도</label>
+        <select class="form-select" id="gen-diff">
+          <option value="실제 시험 수준" selected>실전 수준</option>
+          <option value="쉬움">쉬움</option>
+          <option value="어려움">어려움</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">언어</label>
+        <select class="form-select" id="gen-lang">
+          <option value="ko" selected>한국어</option>
+          <option value="en">영어</option>
+        </select>
+      </div>
     </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-text">Claude가 <code>questions.json</code>에 직접 문제를 추가하고 배포합니다. API 키 불필요!</div>
+    <div class="cost-info">
+      <i class="bi bi-info-circle-fill" style="color:var(--ms-orange)"></i>
+      10문제 생성 비용: 약 $0.01 이하 (Haiku). 키를 한 번 저장하면 다시 입력할 필요 없습니다.
     </div>
+    <button class="btn-generate" id="btn-generate" onclick="generateQuestions()">
+      <i class="bi bi-stars"></i> 문제 생성
+    </button>
+  </div>
 
-    <div class="example-box">
-      <div class="ex-title">요청 예시</div>
-      "AI-900 Computer Vision 문제 10개 생성해줘"<br>
-      "책임 있는 AI 어려운 문제 20개 추가해줘"<br>
-      "부족한 도메인 문제 골고루 30개 만들어줘"
+  <!-- 진행 중 -->
+  <div class="card progress-box" id="progress-box">
+    <div class="spinner"></div>
+    <div style="font-size:1rem;font-weight:600;">AI가 문제를 생성 중...</div>
+    <div style="font-size:.85rem;color:var(--ms-muted);margin-top:8px;" id="progress-text"></div>
+  </div>
+
+  <!-- 결과 -->
+  <div class="card result-box" id="result-box">
+    <h3><i class="bi bi-check-circle-fill" style="color:var(--ms-green)"></i> <span id="result-title">생성 완료</span></h3>
+    <div id="gen-results"></div>
+    <div class="btn-row">
+      <button class="btn-save" onclick="saveGenerated()"><i class="bi bi-floppy"></i> 문제은행에 추가</button>
+      <button class="btn-download" onclick="downloadGenerated()"><i class="bi bi-download"></i> JSON 다운로드</button>
     </div>
   </div>
 
+  <!-- 관리 -->
   <div class="card" id="manage-card" style="display:none;">
     <h3><i class="bi bi-database-fill" style="color:var(--ms-blue)"></i> AI 생성 문제 관리</h3>
-    <p style="font-size:.9rem;color:var(--ms-muted);margin-bottom:16px;">AI로 생성되어 localStorage에 저장된 문제입니다. 시험에 자동 포함됩니다.</p>
+    <p style="font-size:.9rem;color:var(--ms-muted);margin-bottom:16px;">저장된 AI 문제는 시험에 자동 포함됩니다.</p>
     <div class="btn-row">
-      <button class="btn-download" onclick="downloadGenerated()"><i class="bi bi-download"></i> JSON 다운로드</button>
-      <button class="btn-clear-gen" onclick="clearGenerated()"><i class="bi bi-trash3"></i> AI 문제 삭제</button>
+      <button class="btn-download" onclick="downloadAllGenerated()"><i class="bi bi-download"></i> 전체 다운로드</button>
+      <button class="btn-clear-gen" onclick="clearGenerated()"><i class="bi bi-trash3"></i> 전체 삭제</button>
     </div>
   </div>
 </div>
 
 <script>
-const DOMAIN_MAP = {
-  'AI Workloads': { label: 'AI 워크로드', icon: '\u{1F916}', color: '#0078d4' },
-  'Machine Learning': { label: '머신러닝', icon: '\u{1F9E0}', color: '#5c2d91' },
-  'Computer Vision': { label: '컴퓨터 비전', icon: '\u{1F441}', color: '#008272' },
-  'NLP': { label: 'NLP', icon: '\u{1F4AC}', color: '#e3008c' },
-  'Responsible AI': { label: '책임 있는 AI', icon: '\u2696\uFE0F', color: '#ff8c00' },
-  'Conversational AI': { label: '대화형 AI', icon: '\u{1F5E3}', color: '#00bcf2' }
-};
+let generatedQuestions = [];
 
 async function init() {
-  let allQ = [];
+  let baseCount = 0;
   try {
     const res = await fetch('data/questions.json');
-    allQ = await res.json();
+    const data = await res.json();
+    baseCount = data.length;
   } catch(e) {}
-  const generated = JSON.parse(localStorage.getItem('ai900_generated') || '[]');
-  const total = allQ.length + generated.length;
-
-  // 도메인별 카운트
-  const counts = {};
-  [...allQ, ...generated].forEach(q => { counts[q.domain] = (counts[q.domain] || 0) + 1; });
+  const genCount = JSON.parse(localStorage.getItem('ai900_generated') || '[]').length;
 
   document.getElementById('stat-grid').innerHTML = `
-    <div class="sg"><div class="v">${allQ.length}</div><div class="l">기본 문제</div></div>
-    <div class="sg"><div class="v">${generated.length}</div><div class="l">AI 생성</div></div>
-    <div class="sg"><div class="v">${total}</div><div class="l">전체 문제</div></div>
+    <div class="sg"><div class="v">${baseCount}</div><div class="l">기본 문제</div></div>
+    <div class="sg"><div class="v">${genCount}</div><div class="l">AI 생성</div></div>
+    <div class="sg"><div class="v">${baseCount + genCount}</div><div class="l">전체</div></div>
   `;
 
-  const domainEl = document.getElementById('domain-list');
-  const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]);
-  domainEl.innerHTML = sorted.map(([domain, count]) => {
-    const info = DOMAIN_MAP[domain] || { label: domain, icon: '', color: '#666' };
-    const pct = Math.round(count / total * 100);
-    return `<div class="domain-row">
-      <span class="label">${info.icon} ${info.label}</span>
-      <div class="bar-bg"><div class="bar" style="width:${pct}%;background:${info.color}"></div></div>
-      <span class="count">${count}문제</span>
-    </div>`;
-  }).join('');
+  renderKeyArea();
+  if (genCount > 0) document.getElementById('manage-card').style.display = 'block';
+}
 
-  // 관리 카드
-  if (generated.length > 0) {
-    document.getElementById('manage-card').style.display = 'block';
+function renderKeyArea() {
+  const key = localStorage.getItem('ai900_api_key');
+  const area = document.getElementById('key-area');
+
+  if (key) {
+    const masked = key.substring(0, 10) + '···' + key.substring(key.length - 4);
+    area.innerHTML = `
+      <div class="key-status connected">
+        <i class="bi bi-check-circle-fill" style="color:var(--ms-green)"></i>
+        <div style="flex:1"><strong>API 키 등록됨</strong><br><span style="font-size:.8rem;color:var(--ms-muted)">${masked}</span></div>
+        <button class="btn-key btn-key-del" onclick="deleteKey()"><i class="bi bi-trash3"></i> 삭제</button>
+      </div>`;
+    document.getElementById('gen-card').style.display = 'block';
+  } else {
+    area.innerHTML = `
+      <div class="key-status none">
+        <i class="bi bi-exclamation-circle-fill" style="color:var(--ms-red)"></i>
+        API 키를 등록하면 사이트에서 바로 문제를 생성할 수 있습니다.
+      </div>
+      <div class="form-group">
+        <label class="form-label">Anthropic API Key</label>
+        <div class="key-input-row">
+          <input type="password" class="form-input" id="api-key-input" placeholder="sk-ant-...">
+          <button class="btn-key btn-key-save" onclick="saveKey()">저장</button>
+        </div>
+        <div class="api-hint">한 번만 입력하면 브라우저에 저장됩니다. <a href="https://console.anthropic.com/settings/keys" target="_blank">키 발급받기</a></div>
+      </div>`;
+    document.getElementById('gen-card').style.display = 'none';
   }
 }
 
+function saveKey() {
+  const key = document.getElementById('api-key-input').value.trim();
+  if (!key) { alert('API 키를 입력해주세요.'); return; }
+  if (!key.startsWith('sk-')) { alert('올바른 API 키 형식이 아닙니다.'); return; }
+  localStorage.setItem('ai900_api_key', key);
+  renderKeyArea();
+}
+
+function deleteKey() {
+  if (confirm('API 키를 삭제하시겠습니까?')) {
+    localStorage.removeItem('ai900_api_key');
+    renderKeyArea();
+  }
+}
+
+async function generateQuestions() {
+  const apiKey = localStorage.getItem('ai900_api_key');
+  if (!apiKey) return;
+
+  const domain = document.getElementById('gen-domain').value;
+  const count = parseInt(document.getElementById('gen-count').value);
+  const diff = document.getElementById('gen-diff').value;
+  const lang = document.getElementById('gen-lang').value;
+  const langText = lang === 'ko' ? '한국어' : '영어';
+
+  const domainText = domain === '전체' ?
+    'AI Workloads, Machine Learning, Computer Vision, NLP, Responsible AI, Conversational AI 중 골고루' : domain;
+
+  const prompt = `당신은 Microsoft AI-900 Azure AI Fundamentals 시험 문제 출제 전문가입니다.
+
+아래 조건에 맞는 AI-900 시험 문제 ${count}개를 JSON 배열로 생성해주세요.
+
+조건:
+- 도메인: ${domainText}
+- 난이도: ${diff}
+- 실제 Microsoft AI-900 시험 형식과 동일
+- 보기는 A, B, C, D 4개
+- 각 문제에 상세한 해설 포함
+- 문제, 보기, 해설 모두 ${langText}로 작성
+- Azure 서비스명은 영어 유지 (예: Azure Machine Learning, Cognitive Services)
+
+반드시 아래 JSON 형식의 배열만 출력하세요. 다른 텍스트 없이:
+[
+  {
+    "domain": "도메인명 영어 (AI Workloads/Machine Learning/Computer Vision/NLP/Responsible AI/Conversational AI)",
+    "question": "문제 텍스트",
+    "options": { "A": "보기A", "B": "보기B", "C": "보기C", "D": "보기D" },
+    "answer": "정답(A/B/C/D)",
+    "explanation": "상세 해설"
+  }
+]`;
+
+  document.getElementById('btn-generate').disabled = true;
+  document.getElementById('progress-box').classList.add('show');
+  document.getElementById('result-box').classList.remove('show');
+  document.getElementById('progress-text').textContent = `${count}문제 생성 중... (약 10~30초)`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 8192,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error?.message || `API 오류 (${response.status})`);
+    }
+
+    const data = await response.json();
+    const text = data.content[0].text.trim();
+
+    let jsonStr = text;
+    const codeMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (codeMatch) jsonStr = codeMatch[1].trim();
+
+    const questions = JSON.parse(jsonStr);
+    if (!Array.isArray(questions)) throw new Error('응답이 배열 형식이 아닙니다.');
+
+    const ts = Date.now();
+    generatedQuestions = questions.map((q, i) => ({
+      id: `gen_${ts}_${String(i+1).padStart(3,'0')}`,
+      domain: q.domain || domain,
+      question: q.question,
+      options: q.options,
+      answer: q.answer,
+      explanation: q.explanation || '',
+      has_image: false,
+      source: 'ai_generated'
+    }));
+
+    renderResults();
+  } catch (e) {
+    alert('생성 실패: ' + e.message);
+  } finally {
+    document.getElementById('btn-generate').disabled = false;
+    document.getElementById('progress-box').classList.remove('show');
+  }
+}
+
+function renderResults() {
+  document.getElementById('result-title').textContent = `${generatedQuestions.length}문제 생성 완료`;
+  const el = document.getElementById('gen-results');
+  el.innerHTML = generatedQuestions.map((q, i) => {
+    const optsStr = Object.entries(q.options).map(([k,v]) => `<strong>${k}.</strong> ${v}`).join('<br>');
+    return `<div class="gen-q">
+      <div class="gq-domain">${q.domain} · 정답: ${q.answer}</div>
+      <div class="gq-text">${i+1}. ${q.question}</div>
+      <div class="gq-opts">${optsStr}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('result-box').classList.add('show');
+}
+
+function saveGenerated() {
+  if (generatedQuestions.length === 0) return;
+  const saved = JSON.parse(localStorage.getItem('ai900_generated') || '[]');
+  saved.push(...generatedQuestions);
+  localStorage.setItem('ai900_generated', JSON.stringify(saved));
+  const cnt = generatedQuestions.length;
+  generatedQuestions = [];
+  document.getElementById('result-box').classList.remove('show');
+  document.getElementById('manage-card').style.display = 'block';
+  init();
+  alert(`${cnt}문제가 추가되었습니다! 시험 페이지에서 바로 풀 수 있습니다.`);
+}
+
 function downloadGenerated() {
+  if (generatedQuestions.length === 0) return;
+  downloadJSON(generatedQuestions, 'ai900_gen_' + Date.now() + '.json');
+}
+
+function downloadAllGenerated() {
   const saved = JSON.parse(localStorage.getItem('ai900_generated') || '[]');
   if (saved.length === 0) return;
-  const blob = new Blob([JSON.stringify(saved, null, 2)], { type: 'application/json' });
+  downloadJSON(saved, 'ai900_all_generated.json');
+}
+
+function downloadJSON(data, filename) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'ai900_generated.json';
+  a.download = filename;
   a.click();
-  URL.revokeObjectURL(a.href);
 }
 
 function clearGenerated() {
   const saved = JSON.parse(localStorage.getItem('ai900_generated') || '[]');
   if (saved.length === 0) return;
-  if (confirm('AI 생성 문제 ' + saved.length + '개를 모두 삭제하시겠습니까?')) {
+  if (confirm(`AI 문제 ${saved.length}개를 삭제하시겠습니까?`)) {
     localStorage.removeItem('ai900_generated');
+    document.getElementById('manage-card').style.display = 'none';
     init();
   }
 }

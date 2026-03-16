@@ -8,13 +8,27 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <style>
 :root { --ms-blue:#0078d4; --ms-dark:#1b1b1b; --ms-green:#107c10; --ms-red:#d13438; --ms-orange:#ff8c00; --ms-bg:#f3f2f1; --ms-card:#fff; --ms-border:#e1dfdd; --ms-text:#323130; --ms-muted:#605e5c; }
-[data-theme="dark"] { --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a; }
-[data-theme="dark"] .header { background:var(--ms-card); border-color:var(--ms-border); }
-[data-theme="dark"] .top-bar { background:var(--ms-dark); }
+/* ===== DARK MODE ===== */
+[data-theme="dark"] {
+  --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a;
+  color-scheme: dark;
+}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4,
+[data-theme="dark"] p,[data-theme="dark"] span,[data-theme="dark"] div,[data-theme="dark"] li,
+[data-theme="dark"] label,[data-theme="dark"] strong { color: var(--ms-text); }
+[data-theme="dark"] .badge-exam,[data-theme="dark"] .btn-danger { color:#fff; }
+[data-theme="dark"] .toggle-slider { background:#4b5563; }
+[data-theme="dark"] .top-bar { background:var(--ms-dark); color:#fff; }
+[data-theme="dark"] .header { background:var(--ms-card); }
+[data-theme="dark"] .card { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .setting-row { border-color:var(--ms-border); }
+[data-theme="dark"] .si-box { background:#374151; }
+[data-theme="dark"] .nav-links a.active { background:#1e3a5f; }
+[data-theme="dark"] .nav-links a:hover { background:rgba(255,255,255,.08); }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg); color:var(--ms-text); }
 .top-bar { background:var(--ms-dark); color:#fff; padding:8px 20px; font-size:.8rem; }
-.header { background:#fff; border-bottom:1px solid var(--ms-border); padding:16px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.header { background:var(--ms-card); border-bottom:1px solid var(--ms-border); padding:16px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
 .header h1 { font-size:1.3rem; font-weight:700; display:flex; align-items:center; gap:10px; }
 .header h1 .badge-exam { background:var(--ms-blue); color:#fff; font-size:.7rem; padding:3px 10px; border-radius:4px; }
 .nav-links { display:flex; gap:4px; flex-wrap:wrap; }

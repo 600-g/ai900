@@ -20,38 +20,55 @@
   --ms-text: #323130;
   --ms-muted: #605e5c;
 }
-[data-theme="dark"] { --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a; }
-[data-theme="dark"] .header { background:var(--ms-card); border-color:var(--ms-border); }
-[data-theme="dark"] .top-bar { background:var(--ms-dark); }
-[data-theme="dark"] .mode-card { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
+/* ===== DARK MODE ===== */
+[data-theme="dark"] {
+  --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a;
+  color-scheme: dark;
+}
+/* 전역 텍스트 색상 강제 */
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4,
+[data-theme="dark"] p,[data-theme="dark"] span,[data-theme="dark"] div,[data-theme="dark"] li,
+[data-theme="dark"] td,[data-theme="dark"] th,[data-theme="dark"] label,[data-theme="dark"] strong,
+[data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea,
+[data-theme="dark"] button { color: var(--ms-text); }
+/* 색상 지정된 요소 보호 */
+[data-theme="dark"] .badge-exam { color:#fff; }
+[data-theme="dark"] .start-btn,[data-theme="dark"] .btn-submit,[data-theme="dark"] .btn-next,
+[data-theme="dark"] .btn-finish,[data-theme="dark"] .ra-primary { color:#fff; }
+[data-theme="dark"] .opt.correct .opt-key { color:#fff; background:var(--ms-green); }
+[data-theme="dark"] .opt.wrong .opt-key { color:#fff; background:var(--ms-red); }
+[data-theme="dark"] .opt.sel .opt-key { color:#fff; background:var(--ms-blue); }
+[data-theme="dark"] .q-nav-btn.current { color:#fff; }
+[data-theme="dark"] .top-bar { background:var(--ms-dark); color:#fff; }
+/* 배경 */
+[data-theme="dark"] .header { background:var(--ms-card); }
+[data-theme="dark"] .mode-card { background:var(--ms-card); border-color:var(--ms-border); }
 [data-theme="dark"] .mode-card:hover { box-shadow:0 4px 16px rgba(0,120,212,.2); }
 [data-theme="dark"] .mode-card.selected { background:#1e3a5f; border-color:var(--ms-blue); }
-[data-theme="dark"] .po-btn { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .opt { border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .po-btn { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .opt { border-color:var(--ms-border); }
 [data-theme="dark"] .opt:hover { background:#2a3441; }
 [data-theme="dark"] .opt.sel { background:#1e3a5f; }
-[data-theme="dark"] .opt-key { background:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .opt-key { background:var(--ms-border); }
 [data-theme="dark"] .nav-links a.active { background:#1e3a5f; }
 [data-theme="dark"] .nav-links a:hover { background:rgba(255,255,255,.08); }
-[data-theme="dark"] .explanation { background:#1e3a5f; color:var(--ms-text); }
-[data-theme="dark"] .q-card { background:var(--ms-card); color:var(--ms-text); }
-[data-theme="dark"] .q-nav { background:var(--ms-card); }
-[data-theme="dark"] .q-nav-btn { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .quiz-top { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .exam-info-box { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .domain-weights { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .practice-opts { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .start-btn { background:var(--ms-blue); }
-[data-theme="dark"] .result-hero { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .rs-box { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .domain-analysis { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .explanation { background:#1e3a5f; }
+[data-theme="dark"] .q-nav-btn { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .exam-info-box,[data-theme="dark"] .domain-weights,
+[data-theme="dark"] .practice-opts,[data-theme="dark"] .q-card,
+[data-theme="dark"] .quiz-top,[data-theme="dark"] .q-nav,
+[data-theme="dark"] .result-hero,[data-theme="dark"] .rs-box,
+[data-theme="dark"] .domain-analysis,[data-theme="dark"] .chart-box,
+[data-theme="dark"] .wrong-section { background:var(--ms-card); border-color:var(--ms-border); }
 [data-theme="dark"] .da-row { border-color:var(--ms-border); }
-[data-theme="dark"] .chart-box { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .wrong-section { background:var(--ms-card); border-color:var(--ms-border); color:var(--ms-text); }
-[data-theme="dark"] .wrong-item { background:#2a1a1a; color:var(--ms-text); }
+[data-theme="dark"] .wrong-item { background:#2a1a1a; }
 [data-theme="dark"] .wrong-item:hover { background:#3a2020; }
-[data-theme="dark"] .hero p, [data-theme="dark"] .hero h2 { color:var(--ms-text); }
-[data-theme="dark"] .sub { color:var(--ms-muted); }
+[data-theme="dark"] .dw-bar-bg,[data-theme="dark"] .da-bar-bg { background:#374151; }
+[data-theme="dark"] .prog-bar { background:#374151; }
+/* 결과화면 인라인 스타일 덮어쓰기 */
+[data-theme="dark"] .result-alert { background:#2d2510 !important; border-color:#5c4a1a !important; }
+[data-theme="dark"] .result-tip { background:#1e3a5f !important; border-color:#2a5a8f !important; }
+[data-theme="dark"] .wi-answer { border-color:#3a2020 !important; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--ms-bg); color: var(--ms-text); min-height: 100vh; }
 
@@ -199,6 +216,8 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
 .chart-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
 
 .result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.result-alert { background:#fff8e6; border:1px solid #ffd54f; }
+.result-tip { background:#f0f6ff; border:1px solid #b4d6fa; }
 .result-actions button, .result-actions a { padding: 14px 28px; border-radius: 10px; font-size: .95rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; }
 .ra-primary { background: var(--ms-blue); color: #fff; }
 .ra-outline { background: #fff; color: var(--ms-blue); border: 2px solid var(--ms-blue) !important; }
@@ -504,7 +523,9 @@ function renderQ() {
 
   let qHTML = q.question;
   if (q.has_image && q.image_path) {
-    qHTML += `<img src="${q.image_path}" alt="문제 이미지">`;
+    qHTML += `<img src="${q.image_path}" alt="문제 이미지" onerror="this.outerHTML='<div style=\\'padding:16px;background:var(--ms-bg);border-radius:8px;text-align:center;color:var(--ms-muted);margin-top:12px;border:2px dashed var(--ms-border)\\'>⚠️ 이미지를 불러올 수 없습니다</div>'">`;
+  } else if (q.has_image) {
+    qHTML += `<div style="padding:16px;background:var(--ms-bg);border-radius:8px;text-align:center;color:var(--ms-muted);margin-top:12px;border:2px dashed var(--ms-border)"><i class="bi bi-image" style="font-size:2rem"></i><br>이 문제에는 이미지가 포함되어 있으나 현재 제공되지 않습니다</div>`;
   }
   document.getElementById('q-text').innerHTML = qHTML;
 
@@ -769,10 +790,10 @@ function renderResult(score, passed, correct, wrong, domainStats, pct, mUsed, sU
       <div class="rs-box"><div class="v">${mode === 'exam' ? mUsed + '분' + sUsed + '초' : '-'}</div><div class="l">소요 시간</div></div>
     </div>
 
-    ${unanswered > 0 ? `<div style="background:#fff8e6;border:1px solid #ffd54f;padding:14px 20px;border-radius:10px;margin-bottom:20px;font-size:.9rem;">
+    ${unanswered > 0 ? `<div class="result-alert" style="padding:14px 20px;border-radius:10px;margin-bottom:20px;font-size:.9rem;">
       <i class="bi bi-exclamation-triangle-fill" style="color:var(--ms-orange)"></i> <strong>미응답 ${unanswered}문제</strong>가 오답 처리되었습니다. 실전에서는 모든 문제에 반드시 답하세요.</div>` : ''}
 
-    <div style="background:#f0f6ff;border:1px solid #b4d6fa;padding:14px 20px;border-radius:10px;margin-bottom:20px;font-size:.9rem;">
+    <div class="result-tip" style="padding:14px 20px;border-radius:10px;margin-bottom:20px;font-size:.9rem;">
       <i class="bi bi-lightbulb-fill" style="color:var(--ms-blue)"></i> <strong>학습 조언:</strong> ${advice}
     </div>
 
