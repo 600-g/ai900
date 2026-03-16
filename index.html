@@ -361,11 +361,12 @@ let practiceDomain = '전체';
 
 const DOMAIN_MAP = {
   'AI Workloads': { label: 'AI 워크로드 및 고려사항', weight: '15-20%', icon: '🤖', color: '#0078d4' },
-  'Machine Learning': { label: '머신러닝 기본 원리', weight: '20-25%', icon: '🧠', color: '#5c2d91' },
+  'Machine Learning': { label: '머신러닝 기본 원리', weight: '15-20%', icon: '🧠', color: '#5c2d91' },
   'Computer Vision': { label: '컴퓨터 비전', weight: '15-20%', icon: '👁️', color: '#008272' },
   'NLP': { label: '자연어 처리(NLP)', weight: '15-20%', icon: '💬', color: '#e3008c' },
-  'Responsible AI': { label: '책임 있는 AI', weight: '15-20%', icon: '⚖️', color: '#ff8c00' },
-  'Conversational AI': { label: '대화형 AI', weight: '5-10%', icon: '🗣️', color: '#00bcf2' }
+  'Generative AI': { label: '생성형 AI', weight: '20-25%', icon: '✨', color: '#6b21a8' },
+  'Responsible AI': { label: '책임 있는 AI', weight: '포함', icon: '⚖️', color: '#ff8c00' },
+  'Conversational AI': { label: '대화형 AI', weight: '포함', icon: '🗣️', color: '#00bcf2' }
 };
 
 async function init() {
@@ -460,14 +461,15 @@ function shuffle(arr) {
 
 // ===== 실전 비율대로 문제 뽑기 (40문제) =====
 function pickExamQuestions() {
-  // AI-900 실제 시험 비율
+  // AI-900 실제 시험 비율 (2025년 5월 기준)
   const weights = {
-    'AI Workloads': 7,        // ~17.5%
-    'Machine Learning': 9,     // ~22.5%
-    'Computer Vision': 7,      // ~17.5%
-    'NLP': 7,                  // ~17.5%
-    'Responsible AI': 7,       // ~17.5%
-    'Conversational AI': 3     // ~7.5%
+    'AI Workloads': 7,        // 15-20%
+    'Machine Learning': 7,     // 15-20%
+    'Computer Vision': 7,      // 15-20%
+    'NLP': 7,                  // 15-20%
+    'Generative AI': 9,        // 20-25%
+    'Responsible AI': 2,       // 포함
+    'Conversational AI': 1     // 포함
   };
   // 총 40문제
   const picked = [];
