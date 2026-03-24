@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-900 AI 학습 도우미</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+:root { --ms-blue:#0078d4; --ms-dark:#1b1b1b; --ms-green:#107c10; --ms-red:#d13438; --ms-orange:#ff8c00; --ms-bg:#f3f2f1; --ms-card:#fff; --ms-border:#e1dfdd; --ms-text:#323130; --ms-muted:#605e5c; }
+[data-theme="dark"] { --ms-bg:#1b1b2f; --ms-card:#1f2937; --ms-border:#374151; --ms-text:#e5e7eb; --ms-muted:#9ca3af; --ms-dark:#0f172a; color-scheme:dark; }
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] p,
+[data-theme="dark"] span,[data-theme="dark"] div,[data-theme="dark"] li,
+[data-theme="dark"] label,[data-theme="dark"] strong,
+[data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea { color:var(--ms-text); }
+[data-theme="dark"] .top-bar { background:var(--ms-dark); color:#fff; }
+[data-theme="dark"] .header { background:var(--ms-card); }
+[data-theme="dark"] .card { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] .nav-links a.active { background:#1e3a5f; }
+[data-theme="dark"] .nav-links a:hover { background:rgba(255,255,255,.08); }
+[data-theme="dark"] .msg-user { background:#1e3a5f; }
+[data-theme="dark"] .msg-ai { background:#374151; }
+[data-theme="dark"] .input-box { background:var(--ms-card); border-color:var(--ms-border); }
+[data-theme="dark"] #chat-input { background:var(--ms-bg); border-color:var(--ms-border); color:var(--ms-text); }
+[data-theme="dark"] .key-status.none { background:#3a1820; border-color:var(--ms-red); }
+[data-theme="dark"] .key-status.connected { background:#0d2818; border-color:#107c10; }
+[data-theme="dark"] .img-preview-area { background:var(--ms-bg); border-color:var(--ms-border); }
+[data-theme="dark"] .paste-hint { background:#1e3a5f; border-color:var(--ms-blue); }
+[data-theme="dark"] code { background:#374151; color:#93c5fd; }
+
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Segoe UI',-apple-system,sans-serif; background:var(--ms-bg); color:var(--ms-text); display:flex; flex-direction:column; height:100vh; overflow:hidden; }
+.top-bar { background:var(--ms-dark); color:#fff; padding:8px 20px; font-size:.8rem; flex-shrink:0; }
+.header { background:var(--ms-card); border-bottom:1px solid var(--ms-border); padding:12px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; flex-shrink:0; }
+.header h1 { font-size:1.3rem; font-weight:700; display:flex; align-items:center; gap:10px; }
+.header h1 .badge-exam { background:var(--ms-blue); color:#fff; font-size:.7rem; padding:3px 10px; border-radius:4px; }
+.nav-links { display:flex; gap:4px; flex-wrap:wrap; }
+.nav-links a { text-decoration:none; color:var(--ms-muted); padding:8px 14px; border-radius:6px; font-size:.9rem; font-weight:500; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+.nav-links a:hover { background:rgba(0,0,0,.05); color:var(--ms-text); }
+.nav-links a.active { color:var(--ms-blue); background:#e8f0fe; }
+
+/* 메인 채팅 영역 */
+.chat-wrap { flex:1; display:flex; flex-direction:column; max-width:860px; width:100%; margin:0 auto; padding:0 16px; overflow:hidden; }
+
+/* API 키 없을 때 */
+.key-card { background:var(--ms-card); border-radius:12px; padding:24px; border:1px solid var(--ms-border); margin:20px 0; }
+.key-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:16px; }
+.key-status { padding:12px 16px; border-radius:8px; font-size:.9rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.key-status.none { background:#fde7e9; border:1px solid var(--ms-red); }
+.key-status.connected { background:#dff6dd; border:1px solid var(--ms-green); }
+.key-input-row { display:flex; gap:8px; }
+.key-input-row input { flex:1; padding:10px 14px; border:1px solid var(--ms-border); border-radius:8px; font-size:.9rem; background:var(--ms-card); color:var(--ms-text); }
+.btn-key { padding:10px 16px; border-radius:8px; border:none; cursor:pointer; font-weight:600; font-size:.85rem; white-space:nowrap; }
+.btn-key-save { background:var(--ms-blue); color:#fff; }
+.api-hint { font-size:.8rem; color:var(--ms-muted); margin-top:6px; }
+.api-hint a { color:var(--ms-blue); }
+
+/* 채팅 메시지 영역 */
+#chat-messages { flex:1; overflow-y:auto; padding:16px 0; display:flex; flex-direction:column; gap:12px; }
+.msg-wrap { display:flex; flex-direction:column; gap:4px; }
+.msg-wrap.user { align-items:flex-end; }
+.msg-wrap.ai { align-items:flex-start; }
+.msg-label { font-size:.75rem; color:var(--ms-muted); padding:0 4px; display:flex; align-items:center; gap:4px; }
+.msg-user { background:#0078d4; color:#fff; border-radius:18px 18px 4px 18px; padding:10px 16px; max-width:75%; font-size:.9rem; line-height:1.5; }
+.msg-ai { background:var(--ms-card); border:1px solid var(--ms-border); border-radius:18px 18px 18px 4px; padding:12px 16px; max-width:85%; font-size:.9rem; line-height:1.6; }
+.msg-ai code { background:#f3f2f1; padding:2px 6px; border-radius:4px; font-size:.85rem; }
+.msg-ai pre { background:#f3f2f1; padding:12px; border-radius:8px; overflow-x:auto; margin:8px 0; font-size:.85rem; }
+.msg-ai strong { color:var(--ms-blue); }
+.msg-ai ul, .msg-ai ol { padding-left:20px; margin:6px 0; }
+.msg-img { max-width:100%; border-radius:8px; margin-top:6px; display:block; max-height:200px; object-fit:contain; }
+
+/* 로딩 점 */
+.typing-dots { display:flex; gap:4px; padding:14px 16px; }
+.typing-dots span { width:8px; height:8px; border-radius:50%; background:var(--ms-muted); animation:bounce .8s infinite; }
+.typing-dots span:nth-child(2) { animation-delay:.15s; }
+.typing-dots span:nth-child(3) { animation-delay:.3s; }
+@keyframes bounce { 0%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-6px); } }
+
+/* 입력 박스 */
+.input-area { flex-shrink:0; padding:12px 0 16px; }
+.img-preview-area { display:none; background:var(--ms-bg); border:1px solid var(--ms-border); border-radius:10px; padding:10px 12px; margin-bottom:8px; position:relative; }
+.img-preview-area.show { display:flex; align-items:center; gap:10px; }
+.img-preview-area img { height:60px; width:60px; object-fit:cover; border-radius:6px; border:1px solid var(--ms-border); }
+.img-preview-area .img-info { flex:1; font-size:.85rem; color:var(--ms-muted); }
+.btn-remove-img { background:var(--ms-red); color:#fff; border:none; border-radius:6px; padding:4px 10px; cursor:pointer; font-size:.8rem; }
+.input-box { display:flex; flex-direction:column; gap:8px; background:var(--ms-card); border:1px solid var(--ms-border); border-radius:12px; padding:12px; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.input-row { display:flex; gap:8px; align-items:flex-end; }
+#chat-input { flex:1; border:none; outline:none; font-size:.9rem; resize:none; background:transparent; color:var(--ms-text); font-family:inherit; max-height:120px; min-height:40px; line-height:1.5; }
+.input-actions { display:flex; gap:6px; align-items:center; }
+.btn-attach { background:none; border:1px solid var(--ms-border); border-radius:8px; padding:8px 10px; cursor:pointer; color:var(--ms-muted); font-size:1rem; transition:all .15s; }
+.btn-attach:hover { background:var(--ms-bg); color:var(--ms-blue); border-color:var(--ms-blue); }
+.btn-send { background:var(--ms-blue); color:#fff; border:none; border-radius:8px; padding:8px 16px; cursor:pointer; font-size:.9rem; font-weight:600; transition:background .15s; white-space:nowrap; display:flex; align-items:center; gap:6px; }
+.btn-send:hover { background:#106ebe; }
+.btn-send:disabled { background:#c8c6c4; cursor:not-allowed; }
+.input-hints { display:flex; justify-content:space-between; align-items:center; font-size:.75rem; color:var(--ms-muted); }
+.paste-hint { background:#e8f0fe; border:1px dashed var(--ms-blue); border-radius:6px; padding:4px 10px; color:var(--ms-blue); font-weight:500; }
+
+/* 빈 화면 */
+.empty-chat { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:16px; color:var(--ms-muted); padding:20px; }
+.empty-chat .icon { font-size:3rem; color:var(--ms-blue); opacity:.4; }
+.empty-chat h3 { font-size:1.1rem; color:var(--ms-text); font-weight:600; }
+.empty-chat p { font-size:.9rem; max-width:380px; line-height:1.6; }
+.example-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:8px; }
+.chip { background:var(--ms-card); border:1px solid var(--ms-border); border-radius:20px; padding:8px 16px; font-size:.85rem; cursor:pointer; color:var(--ms-text); transition:all .15s; }
+.chip:hover { border-color:var(--ms-blue); color:var(--ms-blue); background:#e8f0fe; }
+
+.btn-clear { background:none; border:none; cursor:pointer; color:var(--ms-muted); font-size:.8rem; padding:4px 8px; border-radius:6px; }
+.btn-clear:hover { background:var(--ms-bg); color:var(--ms-red); }
+
+#file-input { display:none; }
+
+@media (max-width:600px) { .header { flex-direction:column; align-items:flex-start; } .nav-links { flex-wrap:wrap; } .msg-user, .msg-ai { max-width:92%; } }
+</style>
+<script>
+(function(){ if(localStorage.getItem('ai900_dark_mode')==='true') document.documentElement.setAttribute('data-theme','dark'); })();
+</script>
+</head>
+<body>
+
+<div class="top-bar"><span>Microsoft</span> <span style="opacity:.5">|</span> <span>Azure AI Fundamentals</span></div>
+<div class="header">
+  <h1><a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px"><i class="bi bi-chat-dots-fill" style="color:var(--ms-blue)"></i> AI 학습 도우미 <span class="badge-exam">Vision</span></a></h1>
+  <div class="nav-links">
+    <a href="index.html"><i class="bi bi-pencil-square"></i> 시험</a>
+    <a href="review.html"><i class="bi bi-journal-x"></i> 오답노트</a>
+    <a href="stats.html"><i class="bi bi-bar-chart-line"></i> 성적표</a>
+    <a href="generate.html"><i class="bi bi-robot"></i> AI생성</a>
+    <a href="chat.html" class="active"><i class="bi bi-chat-dots"></i> AI채팅</a>
+    <a href="settings.html"><i class="bi bi-gear"></i> 설정</a>
+  </div>
+</div>
+
+<div class="chat-wrap">
+
+  <!-- API 키 없을 때 -->
+  <div class="key-card" id="key-card" style="display:none;">
+    <h3><i class="bi bi-key-fill" style="color:var(--ms-orange)"></i> API 키 필요</h3>
+    <div class="key-status none">
+      <i class="bi bi-exclamation-circle-fill" style="color:var(--ms-red)"></i>
+      AI 채팅 기능을 사용하려면 Anthropic API 키가 필요합니다.
+    </div>
+    <div>
+      <div class="key-input-row">
+        <input type="password" id="api-key-input" placeholder="sk-ant-...">
+        <button class="btn-key btn-key-save" onclick="saveKey()">저장</button>
+      </div>
+      <div class="api-hint">한 번만 입력하면 브라우저에 저장됩니다. <a href="https://console.anthropic.com/settings/keys" target="_blank">키 발급받기 →</a></div>
+    </div>
+  </div>
+
+  <!-- 채팅 메시지 영역 -->
+  <div id="chat-messages">
+    <!-- 빈 상태 -->
+    <div class="empty-chat" id="empty-state">
+      <div class="icon"><i class="bi bi-chat-dots"></i></div>
+      <h3>AI-900 학습 도우미</h3>
+      <p>궁금한 개념을 물어보거나, <strong>문제 스크린샷</strong>을 붙여넣으면 바로 분석해줍니다.</p>
+      <div class="example-chips" id="example-chips">
+        <div class="chip" onclick="sendExample(this)">Azure ML과 AutoML 차이가 뭐야?</div>
+        <div class="chip" onclick="sendExample(this)">Computer Vision vs Custom Vision 비교해줘</div>
+        <div class="chip" onclick="sendExample(this)">책임 있는 AI 6가지 원칙 설명해줘</div>
+        <div class="chip" onclick="sendExample(this)">NLP 서비스 종류 정리해줘</div>
+        <div class="chip" onclick="sendExample(this)">시험에 자주 나오는 함정 문제 패턴이 뭐야?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 입력 영역 -->
+  <div class="input-area">
+    <!-- 이미지 미리보기 -->
+    <div class="img-preview-area" id="img-preview-area">
+      <img id="img-preview-thumb" src="" alt="첨부 이미지">
+      <div class="img-info" id="img-info">이미지 첨부됨</div>
+      <button class="btn-remove-img" onclick="removeImage()"><i class="bi bi-x"></i> 제거</button>
+    </div>
+
+    <div class="input-box" id="input-box">
+      <div class="input-row">
+        <textarea id="chat-input" placeholder="AI-900 개념을 질문하거나, 문제 스크린샷을 붙여넣으세요 (Ctrl+V)" rows="1"
+          onkeydown="handleKeydown(event)" oninput="autoResize(this)"></textarea>
+        <div class="input-actions">
+          <button class="btn-attach" onclick="document.getElementById('file-input').click()" title="이미지 첨부">
+            <i class="bi bi-image"></i>
+          </button>
+          <button class="btn-send" id="btn-send" onclick="sendMessage()">
+            <i class="bi bi-send-fill"></i> 전송
+          </button>
+        </div>
+      </div>
+      <div class="input-hints">
+        <span class="paste-hint"><i class="bi bi-clipboard"></i> Ctrl+V로 스크린샷 바로 붙여넣기 가능</span>
+        <button class="btn-clear" onclick="clearChat()"><i class="bi bi-arrow-clockwise"></i> 대화 초기화</button>
+      </div>
+    </div>
+    <input type="file" id="file-input" accept="image/*" onchange="handleFileSelect(event)">
+  </div>
+
+</div>
+
+<script>
+const SYSTEM_PROMPT = `당신은 Microsoft AI-900 Azure AI Fundamentals 시험 준비를 돕는 전문 AI 학습 도우미입니다.
+
+역할:
+- AI-900 시험 개념을 쉽고 명확하게 설명합니다
+- 스크린샷이나 이미지로 문제를 보내면 문제를 분석하고 정답과 풀이 방법을 설명합니다
+- 헷갈리는 Azure AI 서비스들의 차이점을 비교 설명합니다
+- 시험에 자주 나오는 패턴과 함정을 알려줍니다
+
+응답 규칙:
+- 한국어로 대화합니다 (Azure 서비스명은 영어 유지)
+- 핵심을 먼저 말하고, 필요시 상세 설명 추가
+- 문제 이미지를 받으면: ① 문제 내용 파악 → ② 정답 → ③ 이유 설명 순서로 답변
+- 마크다운 형식으로 가독성 있게 작성 (굵게, 목록 등 활용)`;
+
+let conversationHistory = [];
+let attachedImage = null; // { base64, mediaType, name }
+
+// 초기화
+function init() {
+  const key = localStorage.getItem('ai900_api_key');
+  if (!key) {
+    document.getElementById('key-card').style.display = 'block';
+    document.getElementById('btn-send').disabled = true;
+  }
+}
+
+function saveKey() {
+  const key = document.getElementById('api-key-input').value.trim();
+  if (!key || !key.startsWith('sk-')) { alert('올바른 API 키를 입력해주세요.'); return; }
+  localStorage.setItem('ai900_api_key', key);
+  document.getElementById('key-card').style.display = 'none';
+  document.getElementById('btn-send').disabled = false;
+}
+
+// 클립보드 붙여넣기 (스크린샷)
+document.addEventListener('paste', function(e) {
+  const items = e.clipboardData?.items;
+  if (!items) return;
+  for (const item of items) {
+    if (item.type.startsWith('image/')) {
+      e.preventDefault();
+      const file = item.getAsFile();
+      loadImageFile(file);
+      break;
+    }
+  }
+});
+
+// 파일 선택
+function handleFileSelect(e) {
+  const file = e.target.files[0];
+  if (file) loadImageFile(file);
+  e.target.value = '';
+}
+
+function loadImageFile(file) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const dataUrl = e.target.result;
+    const base64 = dataUrl.split(',')[1];
+    const mediaType = file.type || 'image/jpeg';
+    attachedImage = { base64, mediaType, name: file.name || '스크린샷' };
+    showImagePreview(dataUrl, file.name || '스크린샷');
+  };
+  reader.readAsDataURL(file);
+}
+
+function showImagePreview(dataUrl, name) {
+  document.getElementById('img-preview-thumb').src = dataUrl;
+  document.getElementById('img-info').textContent = name + ' — 전송 시 AI가 이미지를 분석합니다';
+  document.getElementById('img-preview-area').classList.add('show');
+  document.getElementById('chat-input').focus();
+}
+
+function removeImage() {
+  attachedImage = null;
+  document.getElementById('img-preview-area').classList.remove('show');
+  document.getElementById('img-preview-thumb').src = '';
+}
+
+// 예시 질문 클릭
+function sendExample(el) {
+  document.getElementById('chat-input').value = el.textContent;
+  sendMessage();
+}
+
+// 키 입력 처리
+function handleKeydown(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+// 메시지 전송
+async function sendMessage() {
+  const apiKey = localStorage.getItem('ai900_api_key');
+  if (!apiKey) return;
+
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text && !attachedImage) return;
+
+  const sendBtn = document.getElementById('btn-send');
+  sendBtn.disabled = true;
+  input.value = '';
+  input.style.height = 'auto';
+
+  // 빈 상태 숨김
+  const emptyState = document.getElementById('empty-state');
+  if (emptyState) emptyState.remove();
+
+  // 유저 메시지 표시
+  const userContent = buildUserContent(text, attachedImage);
+  appendUserMessage(text, attachedImage);
+
+  // 히스토리에 추가
+  conversationHistory.push({ role: 'user', content: userContent });
+
+  // 이미지 초기화
+  const currentImage = attachedImage;
+  if (currentImage) removeImage();
+
+  // AI 응답 로딩
+  const loadingEl = appendLoading();
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 2048,
+        system: SYSTEM_PROMPT,
+        messages: conversationHistory
+      })
+    });
+
+    loadingEl.remove();
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error?.message || `API 오류 (${response.status})`);
+    }
+
+    const data = await response.json();
+    const aiText = data.content[0].text;
+    conversationHistory.push({ role: 'assistant', content: aiText });
+    appendAiMessage(aiText);
+
+  } catch (e) {
+    loadingEl.remove();
+    appendAiMessage(`❌ **오류 발생**\n\n${e.message}\n\nAPI 키를 확인하거나 잠시 후 다시 시도해주세요.`);
+  } finally {
+    sendBtn.disabled = false;
+    input.focus();
+  }
+}
+
+// 유저 메시지 콘텐츠 빌드 (Claude API 형식)
+function buildUserContent(text, image) {
+  if (!image) return text || '';
+  const parts = [];
+  if (image) {
+    parts.push({ type: 'image', source: { type: 'base64', media_type: image.mediaType, data: image.base64 } });
+  }
+  if (text) parts.push({ type: 'text', text });
+  else parts.push({ type: 'text', text: '이 이미지(문제)를 분석하고 풀이해주세요.' });
+  return parts;
+}
+
+// UI: 유저 메시지 추가
+function appendUserMessage(text, image) {
+  const container = document.getElementById('chat-messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'msg-wrap user';
+
+  let imgHtml = '';
+  if (image) {
+    const src = `data:${image.mediaType};base64,${image.base64}`;
+    imgHtml = `<img src="${src}" class="msg-img" alt="첨부 이미지">`;
+  }
+
+  wrap.innerHTML = `
+    <div class="msg-label"><i class="bi bi-person-fill"></i> 나</div>
+    <div class="msg-user">${imgHtml}${text ? escapeHtml(text) : (image ? '이미지 분석 요청' : '')}</div>
+  `;
+  container.appendChild(wrap);
+  scrollToBottom();
+}
+
+// UI: AI 메시지 추가
+function appendAiMessage(text) {
+  const container = document.getElementById('chat-messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'msg-wrap ai';
+  wrap.innerHTML = `
+    <div class="msg-label"><i class="bi bi-robot"></i> AI 도우미</div>
+    <div class="msg-ai">${markdownToHtml(text)}</div>
+  `;
+  container.appendChild(wrap);
+  scrollToBottom();
+}
+
+// UI: 로딩 추가
+function appendLoading() {
+  const container = document.getElementById('chat-messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'msg-wrap ai';
+  wrap.innerHTML = `
+    <div class="msg-label"><i class="bi bi-robot"></i> AI 도우미</div>
+    <div class="msg-ai"><div class="typing-dots"><span></span><span></span><span></span></div></div>
+  `;
+  container.appendChild(wrap);
+  scrollToBottom();
+  return wrap;
+}
+
+function scrollToBottom() {
+  const c = document.getElementById('chat-messages');
+  c.scrollTop = c.scrollHeight;
+}
+
+function clearChat() {
+  if (conversationHistory.length === 0) return;
+  if (!confirm('대화 내용을 모두 초기화할까요?')) return;
+  conversationHistory = [];
+  const c = document.getElementById('chat-messages');
+  c.innerHTML = `
+    <div class="empty-chat" id="empty-state">
+      <div class="icon"><i class="bi bi-chat-dots"></i></div>
+      <h3>AI-900 학습 도우미</h3>
+      <p>궁금한 개념을 물어보거나, <strong>문제 스크린샷</strong>을 붙여넣으면 바로 분석해줍니다.</p>
+      <div class="example-chips" id="example-chips">
+        <div class="chip" onclick="sendExample(this)">Azure ML과 AutoML 차이가 뭐야?</div>
+        <div class="chip" onclick="sendExample(this)">Computer Vision vs Custom Vision 비교해줘</div>
+        <div class="chip" onclick="sendExample(this)">책임 있는 AI 6가지 원칙 설명해줘</div>
+        <div class="chip" onclick="sendExample(this)">NLP 서비스 종류 정리해줘</div>
+        <div class="chip" onclick="sendExample(this)">시험에 자주 나오는 함정 문제 패턴이 뭐야?</div>
+      </div>
+    </div>`;
+}
+
+// 간단한 마크다운 → HTML 변환
+function markdownToHtml(text) {
+  return text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/```[\w]*\n?([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^### (.+)$/gm, '<h4 style="margin:10px 0 4px;font-size:.95rem">$1</h4>')
+    .replace(/^## (.+)$/gm, '<h3 style="margin:12px 0 6px;font-size:1rem">$1</h3>')
+    .replace(/^# (.+)$/gm, '<h2 style="margin:12px 0 6px;font-size:1.05rem">$1</h2>')
+    .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g, s => '<ul>' + s + '</ul>')
+    .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+init();
+</script>
+</body>
+</html>
