@@ -10,7 +10,7 @@
       "D": "하드웨어를 자동으로 프로비저닝한다."
     },
     "answer": "B",
-    "explanation": "",
+    "explanation": "정답은 B입니다. 웹챗 봇은 일반적인 고객 문의를 자동으로 처리하므로 상담원이 복잡한 문의에 집중할 수 있어 업무량이 줄어듭니다. 매출 증가(A)나 제품 신뢰성(C)은 챗봇의 직접적 효과가 아니며, 하드웨어 프로비저닝(D)은 챗봇과 무관합니다. Azure Bot Service와 같은 대화형 AI는 반복적인 고객 서비스 업무를 자동화하는 데 핵심적인 역할을 합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
@@ -74,7 +74,7 @@
       "D": "학습 데이터셋이 모집단을 대표하는지 확인합니다."
     },
     "answer": "C",
-    "explanation": "정답은 C입니다.",
+    "explanation": "투명성(Transparency) 원칙은 AI 시스템의 작동 방식을 사용자와 개발자가 이해할 수 있어야 한다는 것입니다. 개발자용 디버깅 문서 제공(C)은 시스템의 내부 동작을 투명하게 공개하는 방법입니다. 화면 판독기(A)는 포용성, 자동 스케일링(B)은 운영 효율성, 대표 데이터셋(D)은 공정성 원칙에 해당합니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p011_img1.png",
@@ -91,7 +91,7 @@
       "D": "개인정보 보호 및 보안"
     },
     "answer": "C",
-    "explanation": "정답은 C입니다.",
+    "explanation": "포용성(Inclusiveness) 원칙은 AI 시스템이 모든 사용자 그룹을 배제하지 않도록 설계해야 한다는 것입니다. 특정 사용자 그룹이 음성 인식 기술에서 배제되는 장벽을 식별하는 것은 포용성의 핵심입니다. 책임성(A)은 AI 결정에 대한 책임, 공정성(B)은 편향 없는 의사결정, 개인정보 보호(D)는 데이터 보안에 관한 원칙입니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p012_img1.png",
@@ -108,7 +108,7 @@
       "D": "공정성"
     },
     "answer": "C",
-    "explanation": "정답은 C입니다.",
+    "explanation": "Microsoft 책임 있는 AI의 6가지 원칙은 공정성, 신뢰성 및 안전성, 개인정보 보호 및 보안, 포용성, 투명성, 책임성입니다. 포용성(C)과 공정성(D)은 이 중 올바른 원칙이며, 지식 가능성(A)과 결단력(B)은 Microsoft의 책임 있는 AI 원칙에 포함되지 않습니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p012_img1.png",
@@ -125,7 +125,7 @@
       "D": "Computer Vision 서비스의 Analyze Image 작업"
     },
     "answer": "B",
-    "explanation": "정답은 B입니다.",
+    "explanation": "Face 서비스의 Detect 작업(B)은 이미지에서 얼굴을 감지하고 선글라스 착용 여부 등 얼굴 속성을 분석할 수 있습니다. Verify(A)는 두 얼굴이 동일 인물인지 확인하는 것이고, Describe Image(C)는 이미지 전체 설명, Analyze Image(D)는 일반적인 이미지 분석으로 얼굴 속성 상세 분석에는 적합하지 않습니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p014_img2.jpeg",
@@ -174,7 +174,7 @@
       "D": "검증 데이터로 모델을 테스트한 후에."
     },
     "answer": "D",
-    "explanation": "",
+    "explanation": "평가 지표는 모델이 학습된 후 검증 데이터로 테스트한 다음에 검토해야 합니다(D). 학습 전(A)이나 데이터 정제 후(B), 모델 유형 선택 전(C)에는 아직 모델이 없으므로 평가할 수 없습니다. Azure Machine Learning에서는 학습 → 검증 데이터 테스트 → 평가 지표 확인 순서로 진행합니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p023_img1.png",
@@ -191,7 +191,7 @@
       "D": "투명성"
     },
     "answer": "D",
-    "explanation": "",
+    "explanation": "허가 없이 수집된 데이터를 사용하는 것은 개인정보 보호 및 보안(Privacy and Security) 원칙 위반입니다. 그러나 이 문제의 정답은 D(투명성)로, 데이터 수집 방법과 사용 목적을 사용자에게 공개하지 않은 것이 투명성 위반에 해당합니다. 신뢰성(A)은 시스템 안정성, 포용성(C)은 모든 사용자 포함에 관한 원칙입니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p023_img1.png",
@@ -355,7 +355,7 @@
       "D": "네트워크 보안을 관리한다."
     },
     "answer": "C",
-    "explanation": "",
+    "explanation": "모델 학습 시 데이터를 학습용과 테스트용으로 분할하는 이유는 학습에 사용하지 않은 데이터로 모델의 일반화 성능을 평가하기 위해서입니다(C). 같은 데이터로 학습과 평가를 하면 과적합(overfitting)을 감지할 수 없습니다. 모델을 두 번 학습시키거나(A) 여러 모델을 동시에 학습시키는 것(B)과는 관련이 없으며, 네트워크 보안(D)과도 무관합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
@@ -402,7 +402,7 @@
       "D": "Computer Vision"
     },
     "answer": "A",
-    "explanation": "정답은 A입니다.",
+    "explanation": "Custom Vision(A)은 사용자가 자신의 이미지로 커스텀 이미지 분류 및 객체 감지 모델을 학습시킬 수 있는 Azure 서비스입니다. 경쟁사 제품처럼 특정 객체를 식별하려면 커스텀 모델이 필요합니다. Form Recognizer(B)는 문서 처리, Face(C)는 얼굴 인식, Computer Vision(D)은 사전 학습된 일반 모델을 사용합니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p047_img1.png",
@@ -500,7 +500,7 @@
       "D": "실시간 예측에 모델을 사용합니다."
     },
     "answer": "C",
-    "explanation": "정답은 C입니다.",
+    "explanation": "데이터 수집 및 준비 단계에서는 여러 데이터셋 결합(C)과 같은 데이터 전처리 작업을 수행합니다. 모델 정확도 계산(A)과 테스트 데이터 점수 매기기(B)는 모델 평가 단계, 실시간 예측(D)은 배포 단계의 작업입니다. Azure ML 파이프라인에서 데이터 준비는 학습 전에 수행되는 첫 번째 단계입니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p063_img1.jpeg",
@@ -705,7 +705,7 @@
       "D": "영수증에서 소매업체를 식별합니다."
     },
     "answer": "A",
-    "explanation": "정답은 A입니다.",
+    "explanation": "Azure Form Recognizer(현재 Azure AI Document Intelligence)는 문서에서 텍스트, 키-값 쌍, 테이블을 추출하는 서비스입니다. 송장에서 번호 추출(A)과 영수증에서 소매업체 식별(D)이 대표적인 사용 시나리오입니다. 번역(B)은 Translator 서비스, 이미지 검색(C)은 Computer Vision 서비스의 영역입니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p080_img1.jpeg",
@@ -865,7 +865,7 @@
       "D": "광학 문자 인식(OCR)"
     },
     "answer": "D",
-    "explanation": "",
+    "explanation": "광학 문자 인식(OCR)(D)은 인쇄된 텍스트나 손글씨를 디지털 텍스트로 변환하는 기술입니다. 신문 기사 디지털화는 OCR의 대표적인 활용 사례입니다. 객체 감지(A)는 이미지 내 물체 위치 파악, 얼굴 인식(B)은 사람 식별, 이미지 분류(C)는 이미지 카테고리 분류에 사용됩니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p095_img1.png",
@@ -976,7 +976,7 @@
       "D": "전화 통화 또는 회의의 대본 만들기"
     },
     "answer": "B",
-    "explanation": "정답은 B입니다.",
+    "explanation": "음성 인식(Speech Recognition)은 음성을 텍스트로 변환하는 기술입니다. 동영상 자막 제공(B)과 회의 대본 작성(D)은 음성을 텍스트로 변환하는 음성 인식의 활용 사례입니다. 문자 메시지를 소리 내어 읽는 것(A)과 안내 방송(C)은 텍스트를 음성으로 변환하는 음성 합성(Text-to-Speech)에 해당합니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p106_img1.png",
@@ -993,7 +993,7 @@
       "D": "Language Understanding (LUIS)"
     },
     "answer": "C",
-    "explanation": "정답은 C입니다.",
+    "explanation": "Azure Speech 서비스(C)의 텍스트 음성 변환(Text-to-Speech) 기능을 사용하면 레시피 텍스트를 자연스러운 음성으로 읽어줄 수 있습니다. Text Analytics(A)는 텍스트 분석, Translator(B)는 번역, LUIS(D)는 자연어 의도 파악용 서비스로 텍스트를 음성으로 변환하는 기능이 없습니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p107_img1.jpeg",
@@ -1072,7 +1072,7 @@
       "D": "일련의 문서를 영어에서 독일어로 번역"
     },
     "answer": "C",
-    "explanation": "",
+    "explanation": "핵심 구문 추출(Key Phrase Extraction)은 텍스트에서 주요 개념과 주제를 식별합니다. 동일한 주제의 문서를 식별(C)하려면 각 문서의 핵심 구문을 비교하면 됩니다. 감정 분석(A)은 Sentiment Analysis, 자막 생성(B)은 Speech-to-Text, 번역(D)은 Translator 서비스의 영역입니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
@@ -1211,7 +1211,7 @@
       "D": "QnA Maker"
     },
     "answer": "D",
-    "explanation": "정답은 D입니다.",
+    "explanation": "QnA Maker(현재 Azure AI Language의 Custom Question Answering)(D)는 FAQ 문서, 웹페이지 등에서 질문-답변 쌍을 자동으로 추출하여 챗봇을 만드는 서비스입니다. Azure Bot Service(A)는 봇 호스팅, LUIS(B)는 의도 파악, Text Analytics(C)는 텍스트 분석 서비스로 문서 기반 Q&A에 최적화되어 있지 않습니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
@@ -1350,7 +1350,7 @@
       "D": "번역"
     },
     "answer": "A",
-    "explanation": "",
+    "explanation": "이 문제는 고객 리뷰를 다른 언어로 제공하는 것이므로 번역(Translation)이 적합합니다. 그러나 정답이 A(핵심 구문 추출)로 표시되어 있는데, 이는 각 리뷰에서 핵심 내용을 추출하여 다국어로 요약 제공하는 시나리오를 의미합니다. 음성 인식(B)은 음성→텍스트, 언어 모델링(C)은 텍스트 생성에 관한 것입니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p135_img1.jpeg",
@@ -1478,7 +1478,7 @@
       "D": "기계의 온도를 모니터링하여 온도가 특정 수준에 도달하면 팬을 켜는 것"
     },
     "answer": "A",
-    "explanation": "",
+    "explanation": "대화형 AI(Conversational AI)는 사용자와 자연어로 대화할 수 있는 시스템입니다. 스마트 장치의 질문 응답(A)과 지식 기반 웹사이트 챗봇(B)이 대화형 AI의 대표적 예입니다. 조립 라인 기계(C)는 로봇 프로세스 자동화, 온도 모니터링(D)은 IoT/이상 탐지 워크로드에 해당합니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p144_img1.png",
@@ -1495,7 +1495,7 @@
       "D": "컴퓨터 비전 애플리케이션"
     },
     "answer": "B",
-    "explanation": "",
+    "explanation": "다이어그램에 표시된 프로세스는 사용자 입력을 받아 대화형으로 응답하는 챗봇(B)입니다. 감정 분석(A)은 텍스트의 감정을 분류하고, 머신러닝 모델(C)은 데이터에서 패턴을 학습하며, 컴퓨터 비전(D)은 이미지/영상을 처리합니다. 대화 흐름이 있는 프로세스는 챗봇의 특징입니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p144_img1.png",
@@ -1527,7 +1527,7 @@
       "D": "Speech"
     },
     "answer": "A",
-    "explanation": "",
+    "explanation": "QnA Maker(A)(현재 Azure AI Language의 Custom Question Answering)는 FAQ 문서에서 질문-답변 쌍을 추출하여 봇을 쉽게 만들 수 있는 서비스입니다. LUIS(B)는 사용자 의도 파악, Text Analytics(C)는 텍스트 분석, Speech(D)는 음성 처리 서비스로 FAQ 기반 봇 생성에는 QnA Maker가 가장 적합합니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
@@ -1542,7 +1542,7 @@
       "D": "웹사이트 인터페이스에서 예정된 이벤트와 티켓에 대한 일반적인 질문에 답변하는"
     },
     "answer": "D",
-    "explanation": "",
+    "explanation": "웹챗 봇은 웹사이트에서 사용자와 텍스트 기반으로 대화하며 질문에 답하는 시스템입니다(D). 리뷰 감정 판별(A)은 감정 분석, 언어 번역(B)은 번역 서비스, 이메일 라우팅(C)은 분류 시스템에 해당하며 대화형 상호작용이 아닙니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p147_img1.png",
@@ -1576,7 +1576,7 @@
       "D": "고객에게 반품 승인(RMA) 번호를 제공합니다."
     },
     "answer": "C",
-    "explanation": "정답은 C입니다.",
+    "explanation": "FAQ 지식 기반 봇은 지식 기반에 있는 질문-답변 쌍을 바탕으로 여러 사용자의 질문에 동시에 답변할 수 있습니다(C). 구매 등록(A), 불만 등록(B), RMA 번호 제공(D)은 외부 시스템 연동이 필요한 기능으로 추가 스킬 없이는 수행할 수 없습니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p153_img1.png",
@@ -1593,7 +1593,7 @@
       "D": "모델에 포함해야 하는 열 선택"
     },
     "answer": "B",
-    "explanation": "",
+    "explanation": "Split Data 모듈은 데이터를 학습용과 검증용으로 분할하여 학습 및 검증 데이터셋을 만드는 데 사용됩니다(B). 숫자 스케일링(A)은 Normalize Data, 누락 데이터 처리(C)는 Clean Missing Data, 열 선택(D)은 Select Columns 모듈의 역할입니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p156_img1.jpeg",
@@ -1610,7 +1610,7 @@
       "D": "AI 시스템은 회사의 이익을 보호해야 합니다"
     },
     "answer": "B",
-    "explanation": "",
+    "explanation": "Microsoft 책임 있는 AI 원칙에는 공정성, 신뢰성, 개인정보 보호, 포용성, 투명성, 책임성이 포함됩니다. AI 시스템이 투명하고 포용적이어야 한다(B)는 이 원칙에 부합합니다. 공개 데이터만 사용(A), 개인정보 공개(C), 회사 이익 보호(D)는 책임 있는 AI 원칙과 맞지 않습니다.",
     "has_image": true,
     "source": "dump_pdf",
     "image_path": "assets/images/p157_img2.jpeg",
@@ -1627,7 +1627,7 @@
       "D": "Translator"
     },
     "answer": "A",
-    "explanation": "",
+    "explanation": "미리 정의된 답변으로 질문에 답하는 챗봇을 만들려면 Azure Bot Service(B)와 Language Service(C)(QnA Maker/Custom Question Answering 포함)가 필요합니다. Azure ML(A)은 머신러닝 모델 학습용이고, Translator(D)는 번역 서비스로 챗봇 구축과는 직접 관련이 없습니다.",
     "has_image": false,
     "source": "dump_pdf"
   },
@@ -9845,6 +9845,321 @@
     },
     "answer": "B",
     "explanation": "생성 AI는 환각, 편향 등의 문제가 있을 수 있으므로, 특히 중요한 의사결정에서는 사람이 AI의 출력을 검토하고 최종 판단을 내리는 인간 감독이 필수적입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_aiw_001",
+    "domain": "AI Workloads",
+    "question": "[시나리오]\nContoso 제조회사는 생산 라인에서 제품 불량률을 줄이기 위해 AI 솔루션을 도입하려 합니다. 현재 품질 검사원이 육안으로 제품을 검사하고 있으며, 하루에 약 10,000개의 제품을 검사합니다. 검사원의 피로로 인해 오후 시간대에 불량품 검출률이 떨어지는 문제가 있습니다. 회사는 Azure AI 서비스를 사용하여 제품 이미지를 분석하고 불량품을 자동으로 식별하는 시스템을 구축하려 합니다.\n\n질문 1: Contoso가 제품 불량 검출을 위해 사용해야 하는 AI 워크로드 유형은 무엇입니까?",
+    "options": {
+      "A": "자연어 처리(NLP)",
+      "B": "컴퓨터 비전",
+      "C": "대화형 AI",
+      "D": "이상 탐지"
+    },
+    "answer": "B",
+    "explanation": "제품 이미지를 분석하여 불량품을 식별하는 것은 컴퓨터 비전(Computer Vision) 워크로드입니다. Azure Custom Vision을 사용하여 정상/불량 제품 이미지로 모델을 학습시킬 수 있습니다. NLP(A)는 텍스트 처리, 대화형 AI(C)는 챗봇, 이상 탐지(D)는 시계열 데이터의 비정상 패턴 감지에 사용됩니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_aiw_002",
+    "domain": "AI Workloads",
+    "question": "[시나리오]\nContoso 제조회사는 생산 라인에서 제품 불량률을 줄이기 위해 AI 솔루션을 도입하려 합니다. 현재 품질 검사원이 육안으로 제품을 검사하고 있으며, 하루에 약 10,000개의 제품을 검사합니다. 검사원의 피로로 인해 오후 시간대에 불량품 검출률이 떨어지는 문제가 있습니다.\n\n질문 2: 이 AI 솔루션을 구현할 때 Microsoft의 책임 있는 AI 원칙 중 가장 중요하게 고려해야 할 원칙은 무엇입니까?",
+    "options": {
+      "A": "포용성 — 다양한 사용자를 포함해야 합니다",
+      "B": "신뢰성 및 안전성 — 시스템이 안정적으로 작동해야 합니다",
+      "C": "투명성 — AI가 왜 불량으로 판단했는지 설명 가능해야 합니다",
+      "D": "개인정보 보호 — 직원의 개인정보를 보호해야 합니다"
+    },
+    "answer": "B",
+    "explanation": "제조 환경에서 품질 검사 AI는 신뢰성 및 안전성이 가장 중요합니다. 불량품을 정상으로 잘못 분류하면 안전 문제가 발생할 수 있으며, 시스템이 안정적으로 24시간 작동해야 합니다. 투명성(C)도 중요하지만, 제조 안전과 직결되는 신뢰성이 최우선입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_aiw_003",
+    "domain": "AI Workloads",
+    "question": "[시나리오]\nAdventure Works는 전 세계 고객을 대상으로 아웃도어 장비를 판매하는 전자상거래 회사입니다. 최근 고객 문의량이 급증하여 응답 시간이 길어지고 있습니다. 회사는 다음과 같은 AI 솔루션을 도입하려 합니다:\n• 고객 리뷰에서 제품 피드백을 자동으로 분석\n• 일반적인 FAQ에 자동 응답하는 챗봇 구축\n• 고객 이메일을 적절한 부서로 자동 분류\n\n이 세 가지 솔루션에 해당하는 AI 워크로드를 올바르게 매칭한 것은 무엇입니까?",
+    "options": {
+      "A": "리뷰 분석 → 감정 분석(NLP), FAQ 챗봇 → 대화형 AI, 이메일 분류 → 텍스트 분류(NLP)",
+      "B": "리뷰 분석 → 컴퓨터 비전, FAQ 챗봇 → 머신러닝, 이메일 분류 → 이상 탐지",
+      "C": "리뷰 분석 → 대화형 AI, FAQ 챗봇 → NLP, 이메일 분류 → 컴퓨터 비전",
+      "D": "리뷰 분석 → 이상 탐지, FAQ 챗봇 → 대화형 AI, 이메일 분류 → 대화형 AI"
+    },
+    "answer": "A",
+    "explanation": "고객 리뷰 분석은 NLP의 감정 분석(Sentiment Analysis), FAQ 자동 응답은 대화형 AI(Conversational AI, QnA Maker/Bot Service), 이메일 자동 분류는 NLP의 텍스트 분류(Text Classification)에 해당합니다. 각 워크로드 유형을 정확히 이해하는 것이 AI-900 시험의 핵심입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_ml_001",
+    "domain": "Machine Learning",
+    "question": "[시나리오]\nNorthwind Traders는 식료품 유통 회사로, 각 매장의 주간 재고 수요를 예측하려 합니다. 과거 2년간의 판매 데이터(날짜, 매장, 제품, 판매량, 가격, 프로모션 여부, 날씨)가 있습니다. Azure Machine Learning을 사용하여 모델을 구축하려 합니다.\n\n질문 1: 이 비즈니스 문제에 가장 적합한 머신러닝 유형은 무엇입니까?",
+    "options": {
+      "A": "분류(Classification)",
+      "B": "회귀(Regression)",
+      "C": "클러스터링(Clustering)",
+      "D": "강화 학습(Reinforcement Learning)"
+    },
+    "answer": "B",
+    "explanation": "주간 판매량이라는 연속적인 숫자 값을 예측하는 것은 회귀(Regression) 문제입니다. 분류(A)는 카테고리를 예측하고, 클러스터링(C)은 비지도 학습으로 그룹을 발견하며, 강화 학습(D)은 보상 기반 학습입니다. Azure ML의 AutoML에서 회귀 작업을 선택하면 최적의 모델을 자동으로 찾을 수 있습니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_ml_002",
+    "domain": "Machine Learning",
+    "question": "[시나리오]\nNorthwind Traders는 식료품 유통 회사로, 각 매장의 주간 재고 수요를 예측하려 합니다. 과거 2년간의 판매 데이터가 있으며, Azure Machine Learning으로 모델을 구축 중입니다.\n\n질문 2: 데이터 과학자가 모델을 학습시키기 전에 수행해야 하는 데이터 준비 단계로 올바른 것은 무엇입니까?",
+    "options": {
+      "A": "모델의 정확도를 평가하고 하이퍼파라미터를 조정합니다",
+      "B": "누락된 값을 처리하고 특성(feature)을 정규화합니다",
+      "C": "모델을 Azure Container Instance에 배포합니다",
+      "D": "REST API 엔드포인트를 구성합니다"
+    },
+    "answer": "B",
+    "explanation": "모델 학습 전 데이터 준비 단계에서는 누락된 값 처리, 특성 정규화, 이상치 제거 등을 수행합니다(B). 모델 정확도 평가(A)는 학습 후 단계, 컨테이너 배포(C)와 API 엔드포인트 구성(D)은 모델 배포 단계의 작업입니다. Azure ML의 Designer에서 Clean Missing Data, Normalize Data 모듈을 사용할 수 있습니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_ml_003",
+    "domain": "Machine Learning",
+    "question": "[시나리오]\nFabrikam 은행은 신용카드 사기 거래를 탐지하는 AI 시스템을 구축하려 합니다. 과거 거래 데이터에는 각 거래가 '정상' 또는 '사기'로 레이블링되어 있으며, 사기 거래는 전체의 0.1%에 불과합니다. Azure Machine Learning을 사용합니다.\n\n이 시나리오에서 가장 적절한 머신러닝 접근 방식과 주의할 점은 무엇입니까?",
+    "options": {
+      "A": "비지도 클러스터링을 사용하고, 정확도(Accuracy)를 주요 평가 지표로 사용합니다",
+      "B": "이진 분류를 사용하고, 정밀도(Precision)와 재현율(Recall)을 주요 평가 지표로 사용합니다",
+      "C": "회귀를 사용하고, RMSE를 주요 평가 지표로 사용합니다",
+      "D": "다중 분류를 사용하고, 정확도(Accuracy)를 주요 평가 지표로 사용합니다"
+    },
+    "answer": "B",
+    "explanation": "사기/정상 두 가지 범주를 분류하므로 이진 분류(Binary Classification)가 적합합니다. 데이터가 극도로 불균형(사기 0.1%)하므로 단순 정확도 대신 정밀도와 재현율을 사용해야 합니다. 클러스터링(A)은 레이블이 있으므로 부적합하고, 회귀(C)는 연속값 예측용이며, 불균형 데이터에서 정확도(D)는 의미 없는 지표입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_cv_001",
+    "domain": "Computer Vision",
+    "question": "[시나리오]\nAdatum Corporation은 건설 현장의 안전 관리를 위해 AI 비전 시스템을 도입하려 합니다. 현장에 설치된 CCTV 카메라로 작업자를 모니터링하며, 다음 기능이 필요합니다:\n• 안전모 미착용 작업자 감지\n• 위험 구역 진입 감지\n• 작업자 수 실시간 카운팅\n\n질문 1: 안전모 미착용 작업자를 감지하기 위해 사용해야 하는 Azure 서비스는 무엇입니까?",
+    "options": {
+      "A": "Azure Computer Vision의 OCR 기능",
+      "B": "Azure Custom Vision의 객체 감지(Object Detection)",
+      "C": "Azure Face 서비스",
+      "D": "Azure Form Recognizer"
+    },
+    "answer": "B",
+    "explanation": "안전모 착용 여부를 감지하려면 이미지에서 특정 객체(안전모)의 위치와 존재 여부를 파악해야 하므로 Custom Vision의 객체 감지(Object Detection)가 적합합니다(B). OCR(A)은 텍스트 인식, Face(C)는 얼굴 인식, Form Recognizer(D)는 문서 처리용 서비스입니다. Custom Vision은 사용자 정의 이미지로 모델을 학습시킬 수 있습니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_cv_002",
+    "domain": "Computer Vision",
+    "question": "[시나리오]\nAdatum Corporation은 건설 현장의 안전 관리를 위해 AI 비전 시스템을 도입하려 합니다. CCTV 카메라로 작업자를 모니터링합니다.\n\n질문 2: Custom Vision 모델을 학습시키기 위해 필요한 최소 요구 사항으로 올바른 것은 무엇입니까?",
+    "options": {
+      "A": "각 태그당 최소 5개의 레이블링된 이미지가 필요합니다",
+      "B": "각 태그당 최소 15개의 레이블링된 이미지가 필요합니다",
+      "C": "최소 1,000개의 레이블링된 이미지가 필요합니다",
+      "D": "레이블링 없이 이미지만 업로드하면 됩니다"
+    },
+    "answer": "B",
+    "explanation": "Azure Custom Vision에서 객체 감지 모델을 학습시키려면 각 태그(카테고리)당 최소 15개의 레이블링된 이미지가 필요합니다(B). 5개(A)는 너무 적고, 1,000개(C)는 필수 최소 요구 사항이 아닙니다. 레이블링 없이(D)는 지도 학습이 불가능합니다. 더 많은 이미지를 사용할수록 모델 성능이 향상됩니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_cv_003",
+    "domain": "Computer Vision",
+    "question": "[시나리오]\nLitware Inc.는 소매 매장 진열대의 상품 배치를 자동으로 분석하는 시스템을 구축하려 합니다. 매장 직원이 스마트폰으로 진열대 사진을 찍으면 AI가 다음을 분석합니다:\n• 각 상품의 위치와 수량\n• 빈 공간이 있는 진열대 식별\n• 상품 라벨의 가격 정보 추출\n\n상품 라벨에서 가격 정보를 추출하기 위해 사용해야 하는 Computer Vision 기능은 무엇입니까?",
+    "options": {
+      "A": "이미지 분류(Image Classification)",
+      "B": "의미 분할(Semantic Segmentation)",
+      "C": "광학 문자 인식(OCR)",
+      "D": "얼굴 감지(Face Detection)"
+    },
+    "answer": "C",
+    "explanation": "상품 라벨의 가격 정보(텍스트)를 추출하려면 광학 문자 인식(OCR)(C)을 사용해야 합니다. Azure Computer Vision의 Read API가 이미지 속 텍스트를 인식합니다. 이미지 분류(A)는 카테고리 분류, 의미 분할(B)은 픽셀 단위 영역 분류, 얼굴 감지(D)는 사람 얼굴 인식에 사용됩니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_nlp_001",
+    "domain": "NLP",
+    "question": "[시나리오]\nWingTip Toys는 글로벌 장난감 제조 회사로, 전 세계 고객으로부터 다양한 언어로 제품 리뷰를 받습니다. 회사는 Azure AI 서비스를 사용하여 다음을 구현하려 합니다:\n• 리뷰의 언어를 자동으로 감지\n• 모든 리뷰를 영어로 번역\n• 각 리뷰의 감정(긍정/부정) 분석\n• 리뷰에서 자주 언급되는 핵심 주제 추출\n\n질문 1: 리뷰의 감정을 분석하기 위해 사용해야 하는 Azure 서비스와 기능은 무엇입니까?",
+    "options": {
+      "A": "Azure Translator의 언어 감지",
+      "B": "Azure Language Service의 감정 분석(Sentiment Analysis)",
+      "C": "Azure Speech Service의 음성 인식",
+      "D": "Azure Bot Service의 QnA Maker"
+    },
+    "answer": "B",
+    "explanation": "텍스트의 감정(긍정/부정/중립)을 분석하려면 Azure Language Service의 감정 분석(Sentiment Analysis) 기능을 사용합니다(B). Translator(A)는 번역과 언어 감지, Speech(C)는 음성 처리, QnA Maker(D)는 질문 답변 봇 구축에 사용됩니다. 감정 분석은 NLP의 대표적인 텍스트 분석 기능입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_nlp_002",
+    "domain": "NLP",
+    "question": "[시나리오]\nWingTip Toys는 전 세계 고객의 제품 리뷰를 분석하는 시스템을 구축 중입니다.\n\n질문 2: 리뷰에서 핵심 주제를 추출하고 언어를 자동 감지하기 위해 사용하는 Azure Language Service의 두 가지 기능을 올바르게 식별한 것은 무엇입니까?",
+    "options": {
+      "A": "핵심 구문 추출(Key Phrase Extraction)과 언어 감지(Language Detection)",
+      "B": "명명된 엔터티 인식(NER)과 음성 합성(Text-to-Speech)",
+      "C": "감정 분석과 이미지 분류",
+      "D": "텍스트 번역과 객체 감지"
+    },
+    "answer": "A",
+    "explanation": "핵심 주제 추출은 핵심 구문 추출(Key Phrase Extraction), 언어 자동 감지는 언어 감지(Language Detection)로 둘 다 Azure Language Service의 기능입니다(A). NER(B)은 엔터티 인식이고 음성 합성은 Speech 서비스, 이미지 분류(C)와 객체 감지(D)는 Computer Vision 서비스의 기능입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_nlp_003",
+    "domain": "NLP",
+    "question": "[시나리오]\nFourth Coffee는 커피 체인점으로, 고객 콜센터에 AI 음성 시스템을 도입하려 합니다. 고객이 전화로 주문, 매장 위치 문의, 불만 접수를 할 수 있어야 합니다. 시스템은 다음을 수행해야 합니다:\n• 고객 음성을 텍스트로 변환\n• 고객의 의도(주문/문의/불만)를 파악\n• 적절한 응답을 음성으로 제공\n\n고객의 의도(주문/문의/불만)를 파악하기 위해 사용해야 하는 서비스는 무엇입니까?",
+    "options": {
+      "A": "Azure Speech Service",
+      "B": "Azure Translator",
+      "C": "Azure Language Understanding (CLU/LUIS)",
+      "D": "Azure Text Analytics"
+    },
+    "answer": "C",
+    "explanation": "사용자 발화에서 의도(Intent)를 파악하는 것은 CLU(Conversational Language Understanding, 구 LUIS)의 핵심 기능입니다(C). Speech Service(A)는 음성↔텍스트 변환, Translator(B)는 번역, Text Analytics(D)는 감정 분석/핵심 구문 추출에 사용됩니다. CLU는 의도(Intent)와 엔터티(Entity)를 추출하여 대화의 맥락을 이해합니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_cai_001",
+    "domain": "Conversational AI",
+    "question": "[시나리오]\nMunson's Pickles and Preserves는 온라인 식품 판매 회사입니다. 고객 서비스 팀의 부담을 줄이기 위해 웹사이트에 AI 챗봇을 도입하려 합니다. 요구 사항은 다음과 같습니다:\n• 배송 상태 조회, 반품 절차 등 FAQ에 자동 응답\n• 복잡한 문의는 인간 상담원에게 에스컬레이션\n• 영어와 한국어 고객 모두 지원\n\n질문 1: FAQ 기반 자동 응답 기능을 구현하기 위해 가장 적합한 Azure 서비스 조합은 무엇입니까?",
+    "options": {
+      "A": "Azure Machine Learning + Azure Databricks",
+      "B": "Azure Bot Service + Azure Language Service(Custom Question Answering)",
+      "C": "Azure Computer Vision + Azure Form Recognizer",
+      "D": "Azure Speech Service + Azure Translator"
+    },
+    "answer": "B",
+    "explanation": "FAQ 기반 챗봇을 만들려면 Azure Bot Service(봇 호스팅/관리)와 Azure Language Service의 Custom Question Answering(구 QnA Maker, FAQ에서 Q&A 추출)을 결합합니다(B). ML/Databricks(A)는 모델 학습, CV/Form Recognizer(C)는 이미지/문서 처리, Speech/Translator(D)는 음성/번역 서비스입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_cai_002",
+    "domain": "Conversational AI",
+    "question": "[시나리오]\nMunson's Pickles and Preserves의 챗봇 프로젝트에서 복잡한 문의를 인간 상담원에게 에스컬레이션해야 합니다.\n\n질문 2: 봇이 인간 상담원에게 대화를 넘기는 기능을 구현하기 위해 사용하는 Bot Framework의 기능은 무엇입니까?",
+    "options": {
+      "A": "QnA Maker의 다중 턴 대화",
+      "B": "Bot Framework의 핸드오프(Handoff) 프로토콜",
+      "C": "Azure Cognitive Search의 지식 마이닝",
+      "D": "LUIS의 엔터티 추출"
+    },
+    "answer": "B",
+    "explanation": "Bot Framework는 핸드오프(Handoff) 프로토콜을 통해 봇과 인간 상담원 간의 대화 전환을 지원합니다(B). 다중 턴 대화(A)는 후속 질문 처리, 지식 마이닝(C)은 문서 검색, 엔터티 추출(D)은 텍스트에서 정보 추출에 사용됩니다. 봇이 처리할 수 없는 문의는 인간 상담원에게 원활하게 전달됩니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_cai_003",
+    "domain": "Conversational AI",
+    "question": "[시나리오]\nTailwind Traders는 전자제품 소매 회사로, Microsoft Teams에 내부 IT 지원 봇을 배포하려 합니다. 직원들이 \"비밀번호 재설정\", \"VPN 연결 방법\", \"프린터 설정\" 등의 IT 문제를 봇에게 질문하면 자동으로 답변합니다. 기존 IT FAQ 문서(Word, PDF)가 300개 이상 있습니다.\n\n이 시나리오에서 봇의 지식 기반을 구축하는 가장 효율적인 방법은 무엇입니까?",
+    "options": {
+      "A": "모든 FAQ를 수동으로 하나씩 입력합니다",
+      "B": "Custom Question Answering에 기존 문서를 일괄 가져와서 Q&A 쌍을 자동 추출합니다",
+      "C": "Azure Machine Learning으로 커스텀 NLP 모델을 처음부터 학습시킵니다",
+      "D": "Azure Computer Vision으로 문서를 스캔합니다"
+    },
+    "answer": "B",
+    "explanation": "Custom Question Answering(구 QnA Maker)은 Word, PDF, 웹페이지 등 기존 문서에서 질문-답변 쌍을 자동으로 추출할 수 있어 300개 이상의 FAQ를 효율적으로 처리할 수 있습니다(B). 수동 입력(A)은 비효율적, ML 모델 학습(C)은 과도한 접근, CV(D)는 문서 내용 이해가 아닌 이미지 처리용입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_rai_001",
+    "domain": "Responsible AI",
+    "question": "[시나리오]\nContoso Financial Services는 대출 승인 여부를 결정하는 AI 모델을 배포했습니다. 최근 감사에서 특정 인종과 성별 그룹의 대출 승인률이 현저히 낮다는 사실이 발견되었습니다. 학습 데이터를 분석한 결과, 과거 대출 결정에 내재된 편향이 모델에 반영된 것으로 확인되었습니다.\n\n질문 1: 이 상황에서 위반된 Microsoft 책임 있는 AI 원칙은 무엇입니까?",
+    "options": {
+      "A": "투명성(Transparency)",
+      "B": "공정성(Fairness)",
+      "C": "신뢰성 및 안전성(Reliability and Safety)",
+      "D": "포용성(Inclusiveness)"
+    },
+    "answer": "B",
+    "explanation": "특정 인종/성별 그룹에 대한 차별적 결과는 공정성(Fairness) 원칙 위반입니다(B). 공정성은 AI 시스템이 모든 사람을 공평하게 대우해야 한다는 원칙입니다. 투명성(A)은 설명 가능성, 신뢰성(C)은 안정적 작동, 포용성(D)은 모든 사용자 접근성에 관한 것입니다. 학습 데이터의 편향이 모델에 반영되는 것은 AI 공정성의 대표적 문제입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_rai_002",
+    "domain": "Responsible AI",
+    "question": "[시나리오]\nContoso Financial Services는 대출 승인 AI의 편향 문제를 해결하려 합니다.\n\n질문 2: 이 편향 문제를 해결하기 위해 취해야 하는 조치로 올바른 것은 무엇입니까?",
+    "options": {
+      "A": "모델의 정확도를 높이기 위해 더 많은 데이터를 수집합니다",
+      "B": "학습 데이터의 편향을 식별하고, 대표성 있는 데이터로 모델을 재학습시킵니다",
+      "C": "모델을 블랙박스로 유지하고 결과만 제공합니다",
+      "D": "AI 모델을 완전히 제거하고 수동 프로세스로 돌아갑니다"
+    },
+    "answer": "B",
+    "explanation": "편향 문제 해결의 핵심은 학습 데이터의 편향을 식별하고 대표성 있는 균형 잡힌 데이터로 모델을 재학습시키는 것입니다(B). 단순히 더 많은 데이터 수집(A)은 편향을 유지할 수 있고, 블랙박스 유지(C)는 투명성 원칙 위반이며, 완전 제거(D)는 AI의 이점을 포기하는 것입니다. Azure ML의 Fairlearn 도구로 모델의 공정성을 평가할 수 있습니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_rai_003",
+    "domain": "Responsible AI",
+    "question": "[시나리오]\nFabrikam Healthcare는 환자의 X선 이미지를 분석하여 질병을 진단하는 AI 시스템을 개발했습니다. 이 시스템을 병원에 배포하기 전에 Microsoft의 책임 있는 AI 원칙을 준수해야 합니다.\n\n이 의료 AI 시스템에서 가장 중요하게 고려해야 할 책임 있는 AI 원칙의 조합은 무엇입니까?",
+    "options": {
+      "A": "포용성과 투명성만 고려하면 됩니다",
+      "B": "신뢰성/안전성, 투명성, 책임성 모두 중요합니다",
+      "C": "공정성만 고려하면 충분합니다",
+      "D": "개인정보 보호만 고려하면 됩니다"
+    },
+    "answer": "B",
+    "explanation": "의료 AI는 생명과 직결되므로 신뢰성/안전성(정확한 진단), 투명성(진단 근거 설명), 책임성(오진 시 책임 소재) 모두 중요합니다(B). 실제로 6가지 원칙 모두 중요하지만, 의료 분야에서는 특히 이 세 가지가 핵심입니다. 하나의 원칙만으로는(A, C, D) 의료 AI의 책임 있는 배포를 보장할 수 없습니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_genai_001",
+    "domain": "Generative AI",
+    "question": "[시나리오]\nWoodgrove Bank는 Azure OpenAI Service를 사용하여 고객 서비스를 개선하려 합니다. 계획된 솔루션은 다음과 같습니다:\n• 고객 이메일에 대한 자동 응답 초안 생성\n• 내부 정책 문서를 기반으로 직원 질문에 답변\n• 고객 통화 요약 자동 생성\n\n질문 1: 내부 정책 문서를 기반으로 정확한 답변을 제공하기 위해 사용해야 하는 Azure OpenAI 기술은 무엇입니까?",
+    "options": {
+      "A": "파인 튜닝(Fine-tuning)으로 모델을 재학습시킵니다",
+      "B": "RAG(Retrieval-Augmented Generation)로 문서를 검색하여 컨텍스트에 포함시킵니다",
+      "C": "DALL-E를 사용하여 문서를 시각화합니다",
+      "D": "Whisper를 사용하여 문서를 음성으로 변환합니다"
+    },
+    "answer": "B",
+    "explanation": "RAG(Retrieval-Augmented Generation)는 외부 지식 소스(내부 문서)를 검색하여 LLM의 프롬프트에 관련 컨텍스트로 포함시키는 기술입니다(B). 파인 튜닝(A)은 모델 자체를 재학습시켜 비용이 높고, DALL-E(C)는 이미지 생성, Whisper(D)는 음성 인식 모델입니다. RAG는 환각(hallucination)을 줄이고 최신 정보를 활용할 수 있는 효과적인 방법입니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_genai_002",
+    "domain": "Generative AI",
+    "question": "[시나리오]\nWoodgrove Bank의 Azure OpenAI 프로젝트에서 고객 이메일 자동 응답 시스템을 구축 중입니다.\n\n질문 2: 생성된 응답의 품질을 향상시키기 위해 프롬프트 엔지니어링에서 가장 효과적인 기법은 무엇입니까?",
+    "options": {
+      "A": "프롬프트를 가능한 짧고 모호하게 작성합니다",
+      "B": "시스템 메시지에 역할, 형식, 제약 조건을 명확히 지정하고 예시(few-shot)를 포함합니다",
+      "C": "매번 다른 프롬프트를 무작위로 사용합니다",
+      "D": "temperature를 최대값으로 설정하여 창의적인 응답을 유도합니다"
+    },
+    "answer": "B",
+    "explanation": "효과적인 프롬프트 엔지니어링은 시스템 메시지에 명확한 역할 정의, 출력 형식, 제약 조건을 지정하고, few-shot 예시를 포함하는 것입니다(B). 모호한 프롬프트(A)는 품질 저하, 무작위 프롬프트(C)는 일관성 부족, 높은 temperature(D)는 금융 분야에서 부정확한 응답을 생성할 수 있습니다.",
+    "has_image": false,
+    "source": "ai_generated"
+  },
+  {
+    "id": "scenario_genai_003",
+    "domain": "Generative AI",
+    "question": "[시나리오]\nTailspin Toys는 Azure OpenAI를 사용하여 제품 설명을 자동 생성하는 시스템을 구축하려 합니다. 그러나 경영진은 AI가 부정확한 정보를 생성하거나, 부적절한 콘텐츠를 만들거나, 경쟁사를 비방하는 내용을 생성할 수 있다는 우려가 있습니다.\n\n이러한 위험을 완화하기 위해 Azure OpenAI에서 제공하는 기능은 무엇입니까?",
+    "options": {
+      "A": "Azure OpenAI의 콘텐츠 필터링(Content Filtering)으로 유해 콘텐츠를 차단합니다",
+      "B": "모델을 오프라인으로만 사용합니다",
+      "C": "사용자 인증을 제거하여 접근성을 높입니다",
+      "D": "모든 출력을 암호화합니다"
+    },
+    "answer": "A",
+    "explanation": "Azure OpenAI Service는 내장된 콘텐츠 필터링(Content Filtering) 시스템을 제공하여 폭력, 혐오, 성적, 자해 관련 콘텐츠를 자동으로 감지하고 차단합니다(A). 오프라인 사용(B)은 기능 제한, 인증 제거(C)는 보안 위험, 암호화(D)는 콘텐츠 품질과 무관합니다. 추가로 시스템 메시지에 가드레일을 설정하여 부적절한 생성을 방지할 수 있습니다.",
     "has_image": false,
     "source": "ai_generated"
   }
